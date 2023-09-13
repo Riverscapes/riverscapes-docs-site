@@ -32,12 +32,8 @@ module.exports = {
         ],
       },
       {
-        title: 'Contact',
-        url: '/',
-      },
-      {
-        title: 'Search',
-        url: '/search',
+        title: 'StyleGuide',
+        url: '/demo',
       },
     ],
   },
