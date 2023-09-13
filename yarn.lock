@@ -3248,6 +3248,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@riverscapes/developer-website@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@riverscapes/developer-website@workspace:."
+  dependencies:
+    "@riverscapes/gatsby-theme": ^0.1.5
+    gatsby: ^5.10.0
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    typescript: ^4.7.2
+  languageName: unknown
+  linkType: soft
+
 "@riverscapes/gatsby-theme@npm:^0.1.5":
   version: 0.1.5
   resolution: "@riverscapes/gatsby-theme@npm:0.1.5"
@@ -3280,18 +3292,6 @@ __metadata:
   checksum: ff3fdb20e01c3df77cead5d73e258bea4e3ce008b6d3a6d3f56dbb8d1e1c51ebce7e3f0905d759b9b22b1103fc2ece875e2020aba13fff186538cdecf764541e
   languageName: node
   linkType: hard
-
-"@riverscapes/website@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@riverscapes/website@workspace:."
-  dependencies:
-    "@riverscapes/gatsby-theme": ^0.1.5
-    gatsby: ^5.10.0
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    typescript: ^4.7.2
-  languageName: unknown
-  linkType: soft
 
 "@sideway/address@npm:^4.1.3":
   version: 4.1.4

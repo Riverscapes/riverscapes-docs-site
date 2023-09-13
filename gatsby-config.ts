@@ -1,30 +1,33 @@
 import { GatsbyConfig } from 'gatsby'
 
 module.exports = {
+  // You need pathPrefix if you're hosting GitHub Pages at a Project Pages or if your
+  // site will live at a subdirectory like https://example.com/mypathprefix/.  
   pathPrefix: '/developer-website',
   siteMetadata: {
     title: `Riverscapes Developer Website`,
+    // Optional but leave this blank if you don't want to use it.
     helpWidgetId: "",
     author: {
       name: `Philip Bailey`,
     },
     description: ``,
-    siteUrl: `https://riverscapes.net/`,
+    siteUrl: `https://riverscapes.github.io/developer-website`,
     social: {
       twitter: `RiverscapesC`,
     },
     menuLinks: [
       {
         title: 'Menu Item 1',
-        url: '/about-us',
+        url: '/other',
         items: [
           {
-            title: 'What is a riverscape',
-            url: '/about-us/what-is-a-riverscape',
+            title: 'Submenu 1',
+            url: '/other',
           },
           {
-            title: 'FAIR principles',
-            url: '/about-us/fair-principles',
+            title: 'Submenu 2',
+            url: '/other',
           },
         ],
       },
