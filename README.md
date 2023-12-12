@@ -2,8 +2,8 @@
 
 TODO: INSERT INSTRUCTIONS ON USING AND DEPLOYING
 
-- Run yarn install
-- Run yarn start
+- Run `yarn install`
+- Run `yarn start`
 
 ## Upgrading to latest theme
 
@@ -11,3 +11,4 @@ because we have a custom theme and we have `"@riverscapes/gatsby-theme": "latest
 
 ```bash
 yarn up
+```
