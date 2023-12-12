@@ -35,7 +35,7 @@ There are a few MUI components we expose by default that are relatively safe to 
 
   * `<Box />` This is [Mui's `Box` component](https://mui.com/material-ui/react-box/). Use it instead of `<div />`
   * `<Stack />` This is [Mui's `Stack` component](https://mui.com/material-ui/react-stack/). Use it to space things evenly across the screen.
-  * `<Grid />` This is [Mui's `Grid` component](https://mui.com/material-ui/components/grid/). This is for more complex layouts and should be used carefully as it may not be mobile-compatible.
+  * `<Grid />` This is [Mui's `Grid` component](https://mui.com/material-ui/react-grid/). This is for more complex layouts and should be used carefully as it may not be mobile-compatible.
   * `<Alert />` This is [Mui's `Alert` component](https://mui.com/material-ui/react-alert/). Use it to draw attention or anounce something.
   * *That's all for now. We may add to this list as needed...*
 
@@ -330,7 +330,9 @@ def add(a, b):
 
 ## Stack
 
-### Vertical Stack
+`<Stack />` This is [Mui's Stack component](https://mui.com/material-ui/react-stack/). Use it to space things evenly either as a row or a column. This is preferable to `<Grid />` for simple layouts.
+
+#### Vertical Stack
 
 <Stack spacing={2} border="2px solid red">
   <Box to=''>Thing 1</Box>
@@ -338,7 +340,7 @@ def add(a, b):
   <Box to=''>Thing 3</Box>
 </Stack>
 
-### Horizontal Stack
+#### Horizontal Stack
 
 <Stack spacing={2} border="2px solid red" direction="row" justifyContent="center">
   <Box to=''>Thing 1</Box>
@@ -347,6 +349,11 @@ def add(a, b):
 </Stack>
 
 ## Grids
+
+Grids are useful for more complex layouts. They are not responsive by default so you need to use the `xs`, `sm`, `md`, `lg`, and `xl` props to make them responsive. You can also use the `spacing` prop to add space between the grid items. More information can be found [here](https://mui.com/components/grid/).
+
+
+***NOTE: Always try using `<Stack />` before using `<Grid />`. It's much easier to use and is responsive by default.***
 
 <Grid container border="1px solid red">
   <Grid item xs={12} md={2} border="1px solid blue">Row1-Thing1</Grid>
@@ -359,6 +366,8 @@ def add(a, b):
 </Grid>
 
 ## Alert
+
+Alert is a component that draws attention to something. It's useful for announcements or warnings. You can find more information [here](https://mui.com/components/alert/).
 
 <Alert severity="info">
   This is an info alert — <strong>check it out!</strong>
