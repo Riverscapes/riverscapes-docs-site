@@ -1,4 +1,4 @@
----
+-------------------
 title: Demo & Styleguide
 date: "2023-05-20T22:12:03.284Z"
 description: "Demo Page where you can see how to do things"
@@ -40,28 +40,36 @@ There are a few MUI components we expose by default that are relatively safe to 
   * `<Alert />` This is [Mui's `Alert` component](https://mui.com/material-ui/react-alert/). Use it to draw attention or anounce something.
   * *That's all for now. We may add to this list as needed...*
 
+See the Advanced section below for more information on how to use MUI components.
+
 Using homepage elements on non-homepage pages may cause strange things to happen so use it carefully.
 
 As we continue to use and grow our sites we will likely add to this list.
 
-## Use MUI Components *(sparingly)*
+----------------
+
+## Import other MUI Components *(sparingly)*
 
 This site is built on the [Material UI](https://mui.com/) framework. For special cases we may need to use components that are not exposed by default. In order to do that we need to import them from the `@mui/material` package.
 
 #### This should be done sparingly for a number of very good reasons:
 
+1. Our markdown already translates to these components in many cases. Keeping the site as close to pure Markdown as possible keeps the site aligned to the styleguide. When you go rogue with components you can easily deviate from the styleguide.
 1. **Maintainability**: The more components we use the more difficult it is to maintain the site. If MUI puts out a new patch that we decide to upgrade to the pure markdown components will not require ANY changes but the custom MUI components will all need to be re-tested across all our sites.
 1. **Context**: Not all MUI components are designed to work inside the main content of the page.
 2. **Responsiveness**: Not all components are responsive by default. Make sure you preview any changes on a phone or tablet before you commit them.
 3. **Modularity**: If you find yourself using the same pattern on multiple pages or multiple sites we should create a new `Baked-in` component for it. This will guarantee consistency across all our sites and make it easier to maintain.
 
-All of that said, if you absolutely need to use 
+All of that said, if you absolutely need to use MUI components other than the ones that are baked in you must import them:
 
 ```typescript
 import { Container, Divider, Grid, Card, CardActionArea, CardMedia, CardContent, Typography } from '@mui/material'
 
 <Divider />
 ```
+
+----------------
+
 ## Use MUI Icons
 
 Our theme has access to the [Material UI Icons](https://mui.com/components/material-icons/) library. You can use them in markdown like this:
@@ -74,6 +82,8 @@ import FaceIcon from '@mui/icons-material/Face';
 <FaceIcon />
 <Button to='../about-us' color='error' endIcon={<FaceIcon />}>About us Button</Button>
 ```
+
+----------------
 
 ## **Don't** Use HTML tags
 
@@ -122,6 +132,8 @@ External links operate the same way. Linking internally will navigate using the 
 
 **NOTE: Again, don't use the `<a>` tag. It will not render properly.**
 
+----------------
+
 ## Buttons
 
 Buttons are almost identical to links. Linking internally will navigate using the current browser tab and external links will open a new tab.
@@ -148,6 +160,8 @@ Buttons are almost identical to links. Linking internally will navigate using th
 ```jsx
 <Button to='https://google.com'>Google dot com</Button>
 ```
+
+----------------
 
 ## Images
 
@@ -248,6 +262,8 @@ Paragraph2 In amet excepteur non labore anim pariatur nostrud ad consequat quis 
 
 Paragraph3 Elit labore aliquip exercitation dolor voluptate reprehenderit occaecat esse Lorem consectetur ad. Occaecat non esse velit in. Qui aute eu elit consectetur duis anim sunt cupidatat. Elit aliquip dolor ex commodo anim. Nulla Lorem sit et aute velit officia aute adipisicing. Adipisicing esse eiusmod nulla elit exercitation laborum. Consectetur cillum sint adipisicing laborum ex aute et dolor labore amet in in dolore.
 
+----------------
+
 ## Youtube embeds
 
 We have a custom component for youtube embedding
@@ -261,6 +277,8 @@ We have a custom component for youtube embedding
 You can also embed using the `<iframe />` from youtube but it's not as nice AND you should rename the attributes to be camelCase from `frameborder` to `frameBorder` and `allowfullscreen` to `allowFullScreen` or you get browser console warnings:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1hPxGmTGarM?si=fj1mSgn4toCCv5vY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+----------------
 
 ## Code Blocks
 
@@ -299,6 +317,8 @@ def add(a, b):
   return a + b
 
 ```
+
+----------------
 
 # Advanced
 
