@@ -3252,7 +3252,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@riverscapes/developer-website@workspace:."
   dependencies:
-    "@riverscapes/gatsby-theme": ^0.1.5
+    "@riverscapes/gatsby-theme": latest
     gatsby: ^5.10.0
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -3260,9 +3260,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@riverscapes/gatsby-theme@npm:^0.1.5":
-  version: 0.1.5
-  resolution: "@riverscapes/gatsby-theme@npm:0.1.5"
+"@riverscapes/gatsby-theme@npm:latest":
+  version: 0.1.7
+  resolution: "@riverscapes/gatsby-theme@npm:0.1.7"
   dependencies:
     "@emotion/react": ^11.11.0
     "@emotion/styled": ^11.11.0
@@ -3284,12 +3284,13 @@ __metadata:
     gatsby-source-filesystem: ^5.10.0
     gatsby-transformer-remark: ^6.10.0
     gatsby-transformer-sharp: ^5.10.0
+    loglevel: ^1.8.1
     prismjs: ^1.29.0
   peerDependencies:
     gatsby: ^5.10.0
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: ff3fdb20e01c3df77cead5d73e258bea4e3ce008b6d3a6d3f56dbb8d1e1c51ebce7e3f0905d759b9b22b1103fc2ece875e2020aba13fff186538cdecf764541e
+  checksum: 18e0064d3a0c0aa0de7d51691264ab8661ddfd21579979f1f39979ff66e52e392ff2b9f20530099294f991d448298c5f032a0d499f633ff4b1ed6e30a42e6597
   languageName: node
   linkType: hard
 
@@ -10730,6 +10731,13 @@ __metadata:
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
+  languageName: node
+  linkType: hard
+
+"loglevel@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "loglevel@npm:1.8.1"
+  checksum: a1a62db40291aaeaef2f612334c49e531bff71cc1d01a2acab689ab80d59e092f852ab164a5aedc1a752fdc46b7b162cb097d8a9eb2cf0b299511106c29af61d
   languageName: node
   linkType: hard
 
