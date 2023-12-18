@@ -1,30 +1,62 @@
 ---
 title: Home
-description: "Riverscapes website"
+description: "Riverscapes developer documentation"
 banner: true
 isHome: false
 ---
 
-Nostrud laborum enim tempor laboris officia deserunt ad dolor tempor velit cillum id et et. Nisi aute laborum enim duis nostrud elit consequat veniam ad in irure labore cillum. Tempor anim consequat nisi reprehenderit cillum culpa id Lorem ut eu fugiat commodo eu. Et incididunt aliqua in mollit reprehenderit occaecat anim pariatur deserunt. Occaecat labore dolor mollit fugiat. Enim est est esse enim ullamco.
+import { Container } from '@mui/material'
+import CardImage from '/static/images/card-image.jpg'
 
-Excepteur velit id culpa amet. Ullamco id nostrud velit consequat nulla nostrud labore et in pariatur. Id sint mollit veniam ullamco officia occaecat cillum cillum elit nostrud excepteur minim qui.
+<Container maxWidth="xl">
 
-Adipisicing ex nostrud id et pariatur consectetur ea sit eu qui reprehenderit cillum cupidatat pariatur. Laboris culpa pariatur enim consectetur pariatur magna aliqua laborum tempor nisi amet commodo. Lorem sunt aute ea magna ea dolor mollit. Dolore cupidatat dolore irure qui commodo aliqua in. Qui labore duis sunt et adipisicing nulla. Enim Lorem duis eu ut exercitation.
+This website is the developer documentation for the [Riverscapes Consortium](https://riverscapes.net). You can learn about how we build tools and the datathey produce, as well as how you can contribute your own tools and data. 
 
-## Heading 1
+Use this web site learn to learn about the standards and documentation techniques required to collaborate with the Riverscapes Consortium.
 
-Lorem anim nisi tempor magna. Minim enim eiusmod in ex do aliqua adipisicing et commodo. Ea sunt excepteur adipisicing occaecat. Duis do laborum adipisicing sint laborum ea cillum voluptate. Qui labore enim officia ea. Ipsum incididunt pariatur in commodo veniam.
+## Resources for Developers
 
-### SubHeading 1
+<Container maxWidth="xl">
+    <Grid container spacing={4} sx={{mt: 3}} padding={0}>
+      <StoryCard 
+        title="Standards & Compliance"
+        image={CardImage}
+        description="Learn about riverscapes standards and how to make your tools and data compliant."
+        to="/standards" />
+      <StoryCard 
+        title="Riverscapes API"
+        image={CardImage}
+        description="Learn how to use the Riverscapes API to access data."
+        to="/getting-started" />
+      <StoryCard 
+        title="Documentation"
+        image={CardImage}
+        description="Resources to build Riverscapes documentation and websites."
+        to="/documentation" />
+    </Grid>
+</Container>
 
-In ad deserunt velit proident dolor amet elit cupidatat. Et ipsum magna enim cupidatat. Commodo qui sunt in non. Esse duis ex eu mollit est labore ad anim. Voluptate veniam ullamco mollit nulla consectetur enim cupidatat nisi. Amet sint mollit ullamco cillum duis voluptate.
 
-Ad irure laboris laboris minim. Irure est irure id magna culpa eiusmod voluptate occaecat consequat laborum. In esse reprehenderit ullamco do incididunt enim consectetur amet deserunt quis cupidatat cupidatat proident aliqua. Nostrud ut cillum laboris eu enim labore sunt consectetur elit minim ex et. Ut ipsum nostrud voluptate elit ipsum sit dolore magna commodo ea irure nisi quis aliqua. Proident aliqua esse incididunt tempor veniam laborum sint aliqua cillum id nisi eu ex enim.
+## Other Riverscapes Sites
 
-## Heading 2
+<Container maxWidth="xl">
+    <Grid container spacing={4} sx={{mt: 3}} padding={0}>
+      <StoryCard 
+        title="Riverscapes Consortium"
+        image={CardImage}
+        description="The Riverscapes Consortium main site."
+        to="/download/install" />
+      <StoryCard 
+        title="Our Tools"
+        image={CardImage}
+        description="Learn about each of our Riverscapes compliant tools."
+        to="https://tools.riverscapes.net" />
+      <StoryCard 
+        title="Data Exchange"
+        image={CardImage}
+        description="Discover and download Riverscapes compliant data."
+        to="https://data.riverscapes.net" />
+    </Grid>
+</Container>
 
-Eu tempor nostrud exercitation commodo amet sint nulla amet. Duis nostrud officia mollit et dolore magna minim aliquip duis id. Incididunt proident excepteur officia velit aute exercitation. Cupidatat cupidatat sint labore enim ullamco reprehenderit qui proident amet nostrud dolor ea aliquip. Dolor ullamco velit exercitation elit excepteur aliquip ipsum culpa sint dolore qui. Qui proident sint in commodo veniam duis veniam mollit nostrud nisi nulla. Eu duis dolore laborum nulla dolor nisi laboris consequat esse dolor aute est.
-
-Deserunt ad consequat deserunt consequat ut ea consectetur exercitation laboris. Quis culpa exercitation enim proident aliqua fugiat cillum irure sint mollit. Dolor sint laboris minim esse ea eu. Minim laborum proident reprehenderit veniam. Et nisi minim eu occaecat esse cillum nisi sunt nulla mollit dolor proident ut dolor. Ut pariatur id aliquip id nostrud cupidatat velit officia ipsum do tempor. Fugiat et esse ut quis adipisicing consequat Lorem ex eu do officia id sint dolore.
-
-Magna do ipsum consectetur incididunt ipsum cillum ex nisi quis sint occaecat cupidatat. Non commodo magna amet reprehenderit aliquip labore veniam ullamco voluptate aliquip sunt esse pariatur nostrud. Deserunt do dolor incididunt elit ad sit.
+</Container>

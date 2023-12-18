@@ -18,23 +18,29 @@ module.exports = {
     },
     menuLinks: [
       {
-        title: 'Menu Item 1',
-        url: '/other',
-        items: [
-          {
-            title: 'Submenu 1',
-            url: '/other',
-          },
-          {
-            title: 'Submenu 2',
-            url: '/other',
-          },
-        ],
+        title: 'Standards',
+        url: '/standards',
+        items: [],
       },
       {
-        title: 'StyleGuide',
-        url: '/demo',
+        title: 'API',
+        url: '/api',
+        items: [],
       },
+      {
+        title: 'Documentation',
+        url: '/documentation',
+        items: [
+          {
+            title: 'Gatsby Instructions',
+            url: '/documentation',
+          },
+          {
+            title: 'Demo Page',
+            url: '/documentation/demo',
+          }
+        ]
+      }
     ],
   },
   plugins: [
