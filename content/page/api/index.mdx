@@ -3,3 +3,69 @@ title: Riverscapes API
 description: query and download data from the Riverscapes Data Exchange
 banner: true
 ---
+
+Underneath the [Riverscapes Data Exchange](https://data.riverscapes/net) is a powerful Application Programming Interface (API) that allows you to query and download data from the Data Exchange. This API is built uising GraphQL and can be used from most modern programming languages such as Python, R, and Javascript.
+
+## Security
+
+The API is secured using the same technology as the Data Exchange itself. 
+
+### Authentication
+
+You will need a Riverscapes account to use the API. The easiest way to get an account is to [sign up for the Data Exchange](https://data.riverscapes.net/signup). Once you have an account, you can use the same credentials to access the API.
+
+### Authorization
+
+The API uses the same authorization model as the Data Exchange. In other words, you can access the same projects and data that you can access through the Data Exchange with your user credentials. If there are private datasets that are inaccessible to you through the Data Exchange, you will not be able to access them through the API.
+
+## The Riverscapes Data Model
+
+The Riverscapes Data Model is a set of concepts that describe the data that is stored in the Data Exchange. It consists of the following objects:
+
+### Projects
+
+Projects are the foundation of the Riverscapes Data Model. A project is a collection of data that is related to a specific area and theme. Projects can represent a single river reach or an entire watershed. They can also represent a single theme such as fish habitat or a combination of themes such as fish habitat and beaver restoration. 
+
+By far the most numerous projects in the Data Exchange are those that represent a watershed. These projects are created by the Riverscapes Consortium by running our models in the cloud using [Cyber Castor](/api/cyber-castor).
+
+There are also Data Exchange projects that represent individual river reaches, just a few hundred metres of stream.
+
+Each project is associated with a **project type**. The project type describes the theme of the project. For example, a project type might be `fish_habitat` or `beaver_restoration`. The project type is used to determine which datasets are associated with the project. For example, a project with a project type of `fish_habitat` might have datasets that contain fish habitat data. The project type also defines how the project appears in the Data Exchange Web Viewer by specifying which business logic to use.
+
+### Datasets
+
+Each project can contain one or more datasets. A dataset might be a single file such as a [GeoPackage](https://www.geopackage.org/) or a collection of files such as a [ShapeFile](). They can also be reports, imaages, logs, CSV files, practicaally any file based format.
+
+### Files
+
+Each dataset contains one or more files.
+
+### Users
+
+Users are individuals with a Riverscapes account. Users can be members of one or more organizations. Users, like organizations, can be the owner of a project. And users can be members of one or more organizations.
+
+### Organizations
+
+Organizations, like users, can own projects. They are used to simplify the access permissions to projects. Users can be members of one or more organizations.
+
+### Collections
+
+Collections are a way to group projects together. They are used to simplify the access permissions to projects. Users can create collections and add projects to them. Users can also share collections with other users.
+
+### Tags
+
+Each project can have one or more tag. Tags are used to group projects together. For example, all of the projects that represent a watershed might have the tag `watershed`. Tags are also used to search for projects.
+
+### Project Metadata
+
+Each project can metadata key/value pairs that describe the project. For example, a project might have a `watershed` key with a value of `Sandy River Watershed`. Project metadata is also used to search for projects.
+
+### Visibility
+
+Projects can have one of three visibility settings:
+
+* `public` - Anyone can see and download this project.
+* `private` - Anyone can see this project, but specific access is required to download it.
+* `secret` - Only those with specific access can see or download this project.
+
+## Accessing the API with GraphQL

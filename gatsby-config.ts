@@ -25,13 +25,25 @@ module.exports = {
       {
         title: 'API',
         url: '/api',
-        items: [],
+        items: [
+          {
+            title: 'API',
+            url: '/api',
+          },
+          {
+            title: 'Cyber Castor',
+            url: '/api/cyber-castor',
+          }
+        ],
       },
       {
         title: 'Documentation',
         url: '/documentation',
         items: [
           {
+            title: 'Visual Identity',
+            url: '/documentation/visual-identity',
+          }, {
             title: 'Gatsby Instructions',
             url: '/documentation',
           },
