@@ -4,15 +4,15 @@ description: How to build and document a Riverscapes asset
 banner: true
 ---
 
-The Riverscapes Consortium produces documentation for our tools and standards using websites like this one. These websites are written in [React](https://reactjs.org) using a plugin called [Gatsby](https://www.gatsbyjs.org/). This page is a guide for how to build and document a Riverscapes asset using this technology.
+The Riverscapes Consortium produces documentation for our tools and standards using websites like this one. These websites are written in [React](https://reactjs.org) using a plugin called [Gatsby](https://www.gatsbyjs.org/). This page is a guide for how to build and document a Riverscapes website using this technology.
 
 ## An Introduction to Gatsby
 
-Gatsby is a static site generator  that converts files written in [Markdown](https://www.markdownguide.org/) into a website. Gatsby is built on top of [React](https://reactjs.org/), a popular JavaScript library for building user interfaces. To build one of these websites you only need to be familiar with Markdown and React is optional. You write content in Markdown, push the changes to GitHub and the website is automatically built and published.
+Gatsby is a static site generator  that converts files written in [Markdown](https://www.markdownguide.org/) into a website. Gatsby is built on top of [React](https://reactjs.org/), a popular JavaScript library for building user interfaces. To build one of these websites you only need to be familiar with Markdown, React is optional. You write content in Markdown, push the changes to GitHub and the website is automatically built and published.
 
 ## Hosting
 
-The Riverscapes Consortium hosts our software code and documentation websites on [GitHub](https://github.com/Riverscapes). We use GitHub Actions to automate the publishing of our Gatsby websites when we push the markdown to GitHub.
+The Riverscapes Consortium hosts our software code and documentation websites on [GitHub](https://github.com/Riverscapes). We use GitHub [Actions](https://github.com/features/actions) to automate the publishing of our Gatsby websites when we push the markdown to GitHub.
 
 ## The Riverscapes Gatsby Theme
 
@@ -20,9 +20,9 @@ We have published a [Riverscapes theme for Gatsby](https://github.com/Riverscape
 
 See the [demo page](./demo) for examples and instructions on how to use the Gatsby theme, what markdown elements to use and how to reference images etc.
 
-## New Riverscapes Gatsby Theme Site
+## Theming a New Riverscapes Gatsby Site
 
-The following assumes that you want to host a Riverscapes documentation webiste inside a GitHub repository that already contains code for a Riverscapes tool, model or app. (As opposed to hosting a riverscapes themed site in an empty repository where the website is the only asset.)
+The following assumes that you want to host a Riverscapes documentation webiste inside a GitHub repository that already contains code for a Riverscapes tool, model or app. You do this by placing the Gatsby site within a folder called `docs` in the root of the repository. (As opposed to hosting a riverscapes themed site in an empty repository where the website is the only asset and there's no other code.)
 
 ### Install NodeJS
 
@@ -65,7 +65,9 @@ Follow the steps in the next section to run the site locally and then push it to
 
 ## Running Gatsby Locally
 
-1. Open a terminal and make sure you are in the ./docs folder with the correct version of Nodejs (see above).
+This assumes that you have installed NodeJS and Yarn as described above.
+
+1. Open a terminal and make sure you are in the `./docs` folder with the correct version of Nodejs (see above).
 1. Run `yarn start` to start the dev server and develop locally.
 1. Open a browser (if one doesn't pop-up automatically) and visit http://localhost:8000 to see the site.
 
@@ -92,12 +94,11 @@ These steps include making a git commit. It is recommended that you isolate the 
 1. It's a good idea to run the site locally to verify that the upgrade has worked correctly and that there are no negative side effects.
 1. Commit your changes and push them to GitHub. The GitHub actions will handle the publishing of the site. Wait 3-5 minutes and then check the live site.
 
-
 ## Jekyll vs Gatsby
 
 In the past we used a different software tool called [Jekyll](https://jekyllrb.com/) to build our documentation websites. Jekyll is a static site generator like Gatsby. The two softwares are very similar in that they both convert markdown files into a website. However, Jekyll is written in Ruby and Gatsby is written in JavaScript. Jekyll is older and more mature but Gatsby is more modern and has a larger community of developers. We have decided to move to Gatsby because it is more flexible and easier to customize.
 
-The biggest difference is that in Gatsby you write files with the extension `*.mdx` instead of just *.md. The `x` stands for `jsx` which is a file extension used by React. This means that you can use React components inside your markdown files. This is a powerful feature that allows you to do things like embed interactive maps and charts inside your documentation.
+The biggest difference is that in Gatsby you write files with the extension `*.mdx` instead of just `*.md`. The `x` stands for `jsx` which is a file extension used by React. This means that you can use React components inside your markdown files. This is a powerful feature that allows you to do things like embed interactive maps and charts inside your documentation.
 
 ### Migrating a Jekyll site to Gatsby
 

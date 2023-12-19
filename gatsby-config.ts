@@ -44,7 +44,7 @@ module.exports = {
             title: 'Visual Identity',
             url: '/documentation/visual-identity',
           }, {
-            title: 'Gatsby Instructions',
+            title: 'Documentation Websites',
             url: '/documentation',
           },
           {
