@@ -3247,7 +3247,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@riverscapes/developer-website@workspace:."
   dependencies:
-    "@riverscapes/gatsby-theme": ^0.1.21
+    "@riverscapes/gatsby-theme": ^0.1.22
     gatsby: ^5.10.0
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -3255,9 +3255,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@riverscapes/gatsby-theme@npm:^0.1.21":
-  version: 0.1.21
-  resolution: "@riverscapes/gatsby-theme@npm:0.1.21"
+"@riverscapes/gatsby-theme@npm:^0.1.22":
+  version: 0.1.22
+  resolution: "@riverscapes/gatsby-theme@npm:0.1.22"
   dependencies:
     "@emotion/react": ^11.11.0
     "@emotion/styled": ^11.11.0
@@ -3268,25 +3268,25 @@ __metadata:
     "@mui/material": ^5.14.8
     "@mui/x-tree-view": ^6.17.0
     gatsby-plugin-image: ^3.10.0
-    gatsby-plugin-manifest: ^5.10.0
-    gatsby-plugin-mdx: ^5.10.0
+    gatsby-plugin-manifest: ^5.13.0
+    gatsby-plugin-mdx: ^5.13.0
     gatsby-plugin-mdx-source-name: ^1.0.1
-    gatsby-plugin-sharp: ^5.10.0
+    gatsby-plugin-sharp: ^5.13.0
     gatsby-remark-autolink-headers: ^6.10.0
     gatsby-remark-images: ^7.10.0
     gatsby-remark-prismjs: ^7.10.0
     gatsby-remark-responsive-iframe: ^6.10.0
-    gatsby-source-filesystem: ^5.10.0
+    gatsby-source-filesystem: ^5.13.0
     gatsby-transformer-remark: ^6.10.0
-    gatsby-transformer-sharp: ^5.10.0
+    gatsby-transformer-sharp: ^5.13.0
     loglevel: ^1.8.1
     prismjs: ^1.29.0
     remark-gfm: ^3.0.0
   peerDependencies:
-    gatsby: ^5.10.0
+    gatsby: ^5.13.0
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 8eaebb295a037d5503176b64689572c46f0738e201bbd6f199107a862854ea02bd5e0742a24c91408c4966268b71198632860d0eb2db869e064dc5cd18784f87
+  checksum: 6e7545555661794d83ef2e6a2b9e8b9f9cec5ac2f06d105a0e1dc8ccb9566fd09140f2f673ffe19f6a9fc45ba1f9d92718f5a3432cce2d12ff2914a9d4c5c31a
   languageName: node
   linkType: hard
 
@@ -8098,7 +8098,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-manifest@npm:^5.10.0":
+"gatsby-plugin-manifest@npm:^5.13.0":
   version: 5.13.0
   resolution: "gatsby-plugin-manifest@npm:5.13.0"
   dependencies:
@@ -8120,7 +8120,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-mdx@npm:^5.10.0":
+"gatsby-plugin-mdx@npm:^5.13.0":
   version: 5.13.0
   resolution: "gatsby-plugin-mdx@npm:5.13.0"
   dependencies:
@@ -8175,7 +8175,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-sharp@npm:^5.10.0":
+"gatsby-plugin-sharp@npm:^5.13.0":
   version: 5.13.0
   resolution: "gatsby-plugin-sharp@npm:5.13.0"
   dependencies:
@@ -8335,7 +8335,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-source-filesystem@npm:^5.10.0":
+"gatsby-source-filesystem@npm:^5.13.0":
   version: 5.13.0
   resolution: "gatsby-source-filesystem@npm:5.13.0"
   dependencies:
@@ -8406,7 +8406,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-transformer-sharp@npm:^5.10.0":
+"gatsby-transformer-sharp@npm:^5.13.0":
   version: 5.13.0
   resolution: "gatsby-transformer-sharp@npm:5.13.0"
   dependencies:
