@@ -1,7 +1,7 @@
 ---
 title: Demo & Styleguide
 description: "Demo Page where you can see how to do things"
-NOTE: IF YOU EDIT THIS FILE MAKE SURE TO UPDATE ITS COUNTERPART IN https://github.com/Riverscapes/riverscapes-gatsby-theme
+NOTE: WARNING THIS PAGE IS CONSTANTLY BEING REPLACED. IF YOU EDIT THIS FILE MAKE SURE TO UPDATE ITS COUNTERPART IN https://github.com/Riverscapes/riverscapes-gatsby-theme OR YOU WILL LIKELY LOOSE YOUR CHANGES.
 banner: true
 ---
 
@@ -26,7 +26,7 @@ These components were designed specifically for the Riverscapes homepage site an
   * `<Button />` This is `MuiButton` wrapped around the Gatsby Link component for navigation. See examples below.
   * `<Link />` This is Mui's `Link` component wrapped around Gatsby's Link component. See examples below.
   * `<Youtube />` This is a helper since we use a lot of youtube videos. See examples below.
-  * `<StaticImage />` This is a helper since we use a lot of images. See examples below.
+  * `<Image />` This is a helper since we use a lot of images. See examples below.
 
 ### Material UI Components exposed by default:
 
@@ -485,6 +485,16 @@ def add(a, b):
 ----------------
 
 # Advanced
+
+## `noFrame` mode
+
+Sometimes we need to render just the content of a page inside one of our tools. For this we simply add `render=noFrame` query param to the end of the URL. For example:
+
+```
+https://whatever.riverscapes.net/whatever/whatever?render=noFrame
+```
+
+This will strip out the sidebar, header and footer and allow the content to be rendered on its own.
 
 ## Material UI (MUI)
 
