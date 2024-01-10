@@ -1,0 +1,29 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/usr/bin/zsh"
+      },
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "eriklynd.json-tools",
+        "yzhang.markdown-all-in-one",
+        "unifiedjs.vscode-mdx",
+        "dbaeumer.vscode-eslint",
+        "christian-kohler.npm-intellisense",
+        "mhutchie.git-graph"
+      ]
+    }
+  },
+  "workspaceFolder": "/workspaces/developer-website/DeveloperWebsite.code-workspace",
+  "postCreateCommand": [
+    "sh -c \"$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)\"",
+    "wget https://raw.githubusercontent.com/Riverscapes/environment/master/nar-ys.zsh-theme -O ~/.oh-my-zsh/custom/themes/nar-ys.zsh-theme",
+    "wget https://raw.githubusercontent.com/Riverscapes/environment/master/.aliases -O ~/.aliases",
+    "wget https://raw.githubusercontent.com/Riverscapes/environment/master/.zshrc -O ~/.zshrc",
+    "npm install -g yarn@3",
+    "yarn install"
+  ]
+}
