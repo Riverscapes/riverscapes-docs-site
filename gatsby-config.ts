@@ -8,6 +8,9 @@ module.exports = {
     title: `Riverscapes Developer Website`,
     // Optional but leave this blank if you don't want to use it.
     helpWidgetId: "",
+    flags: {
+      DEV_SSR: false,
+    },
     author: {
       name: `Philip Bailey`,
     },
