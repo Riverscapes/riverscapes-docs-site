@@ -3247,7 +3247,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@riverscapes/developer-website@workspace:."
   dependencies:
-    "@riverscapes/gatsby-theme": "npm:^0.1.23"
+    "@riverscapes/gatsby-theme": "npm:^0.1.24"
     gatsby: "npm:^5.10.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -3255,9 +3255,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@riverscapes/gatsby-theme@npm:^0.1.23":
-  version: 0.1.23
-  resolution: "@riverscapes/gatsby-theme@npm:0.1.23"
+"@riverscapes/gatsby-theme@npm:^0.1.24":
+  version: 0.1.24
+  resolution: "@riverscapes/gatsby-theme@npm:0.1.24"
   dependencies:
     "@emotion/react": "npm:^11.11.0"
     "@emotion/styled": "npm:^11.11.0"
@@ -3273,11 +3273,10 @@ __metadata:
     gatsby-plugin-mdx-source-name: "npm:^1.0.1"
     gatsby-plugin-sharp: "npm:^5.13.0"
     gatsby-remark-autolink-headers: "npm:^6.10.0"
-    gatsby-remark-images: "npm:^7.10.0"
     gatsby-remark-prismjs: "npm:^7.10.0"
     gatsby-remark-responsive-iframe: "npm:^6.10.0"
     gatsby-source-filesystem: "npm:^5.13.0"
-    gatsby-transformer-remark: "npm:^6.10.0"
+    gatsby-transformer-remark: "npm:^6.13.0"
     gatsby-transformer-sharp: "npm:^5.13.0"
     loglevel: "npm:^1.8.1"
     prismjs: "npm:^1.29.0"
@@ -3286,7 +3285,7 @@ __metadata:
     gatsby: ^5.13.0
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 0d4ef6d24aa93afbed3383b44cc4be319c7f7af482d1abeb1d7a19e604b6819ec45878b681beda4810e6de2fcf10e260ad39ffa4b82098e60974d4daccfdb5ff
+  checksum: e2a50676f40b1e87ce6ce8d488efa70a3472b49f6675081ff66b612995fb3c14be4224c607f664d5384ca6c9e1d429436fb9d19d325b609c5b4f97a5dae8ea1f
   languageName: node
   linkType: hard
 
@@ -8265,27 +8264,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-remark-images@npm:^7.10.0":
-  version: 7.13.0
-  resolution: "gatsby-remark-images@npm:7.13.0"
-  dependencies:
-    "@babel/runtime": "npm:^7.20.13"
-    chalk: "npm:^4.1.2"
-    cheerio: "npm:^1.0.0-rc.10"
-    gatsby-core-utils: "npm:^4.13.0"
-    is-relative-url: "npm:^3.0.0"
-    lodash: "npm:^4.17.21"
-    mdast-util-definitions: "npm:^4.0.0"
-    query-string: "npm:^6.14.1"
-    unist-util-select: "npm:^3.0.4"
-    unist-util-visit-parents: "npm:^3.1.1"
-  peerDependencies:
-    gatsby: ^5.0.0-next
-    gatsby-plugin-sharp: ^5.0.0-next
-  checksum: 3c93e083f7694578f1c969e5142162ad302954f2508e705c8d9fd24ac000da689e6028cb5d10dcdcaaa89bb3c59105ac1d8ff50db32c5577a5b586f97d9d2ba1
-  languageName: node
-  linkType: hard
-
 "gatsby-remark-prismjs@npm:^7.10.0":
   version: 7.13.0
   resolution: "gatsby-remark-prismjs@npm:7.13.0"
@@ -8374,7 +8352,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-transformer-remark@npm:^6.10.0":
+"gatsby-transformer-remark@npm:^6.13.0":
   version: 6.13.0
   resolution: "gatsby-transformer-remark@npm:6.13.0"
   dependencies:
@@ -16258,7 +16236,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unist-util-visit-parents@npm:^3.0.0, unist-util-visit-parents@npm:^3.1.1":
+"unist-util-visit-parents@npm:^3.0.0":
   version: 3.1.1
   resolution: "unist-util-visit-parents@npm:3.1.1"
   dependencies:

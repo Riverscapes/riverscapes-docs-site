@@ -15,6 +15,12 @@
       "command": "yarn exec gatsby clean",
       "request": "launch",
       "type": "node-terminal"
+    },
+    {
+      "name": "📦 Upgrade Gatsby Theme",
+      "command": "yarn up @riverscapes/gatsby-theme",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }
