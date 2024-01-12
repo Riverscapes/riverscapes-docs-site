@@ -1,7 +1,16 @@
 {
   "dockerFile": "Dockerfile",
+  "name": "Gatsby Docs Dev Container",
+  "waitFor": "onCreateCommand",
+  // On container creation, install dependencies.
+  "postCreateCommand": "yarn install",
+  // Build and run the dev site on container start.
+  "postAttachCommand": "gatsby build; gatsby serve -H 0.0.0.0 -p 8000",
   "customizations": {
     "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      },
       "extensions": [
         "GitHub.copilot",
         "GitHub.copilot-chat",
@@ -14,7 +23,15 @@
       ]
     }
   },
-  "postCreateCommand": [
-    "yarn install"
+  // Trigger actions on ports. More info: https://containers.dev/implementors/json_reference/#port-attributes
+  "portsAttributes": {
+    "8000": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    8000
   ]
 }
