@@ -53,6 +53,10 @@ module.exports = {
           {
             title: 'Demo Page',
             url: '/documentation/demo',
+          },
+          {
+            title: 'Developing Riverscapes Tools',
+            url: '/documentation/rstools',
           }
         ]
       }
