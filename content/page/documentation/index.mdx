@@ -99,10 +99,10 @@ The following assumes that you have an existing GitHub repository with a `docs` 
 
 1. Clone the repository to your local machine.
 2. In git, make sure that you are currently at the head of the branch that is being used to publish the Jekyll site. This is typically caled `docs` and can be verified using the repository settings page.
+1. Create a new temporary branch for the Gatsby migration. Call it `gatsby-docs`.
 1. Delete the file called `Gemfile`.
 1. Delete the file called `.gitignore`.
 1. Delete the file called `_config.yml`.
-1. Create a new temporary branch for the Gatsby migration. Call it `gatsby-docs`.
 1. Create a new folder inside the `docs` folder called `OLD_JEKYLL`.
 1. Move all remaining files into a temporary `docs/OLD_JEKYLL` folder so that Gatsby will ignore them for now. We do this because Jekyll allows you to use files in any location and it can be confusing to have them in the same folder as the new Gatsby files. We want to move them out of the way for now and then bring them back one-by-one as we fix them.
 Change file extension from *.md to *.mdx
