@@ -34,6 +34,10 @@ module.exports = {
             url: '/api',
           },
           {
+            title: 'Command Line Interface',
+            url: '/api/rscli',
+          },
+          {
             title: 'Cyber Castor',
             url: '/api/cyber-castor',
           }
