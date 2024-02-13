@@ -1,5 +1,5 @@
-name: Gatsby GHPages Publish
-# NOTE: This is designed to work for a site living in the /docs folder. You'll need to make changes if it is not.
+name: Gatsby Publish
+
 on:
   push:
     branches:
@@ -32,23 +32,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version-file: ./.nvmrc
+          node-version-file: .nvmrc
           cache-dependency-path: ./package.json
           cache: yarn
 
       - name: Get correct version of Yarn
         run: corepack enable; yarn set version berry
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v3
-        with:
-          # Automatically inject pathPrefix in your Gatsby configuration file.
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-          static_site_generator: gatsby
-
-
+      # Having a cache can save us a lot of time when installing dependencies
       - name: Restore cache
         uses: actions/cache@v3
         with:
@@ -59,10 +50,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
 
+      # This is the yarn install step
       - name: Install dependencies
         working-directory: .
-        run: yarn install
-        
+        run: yarn install --immutable --immutable-cache
+
       - name: Build with Gatsby
         working-directory: .
         env:
