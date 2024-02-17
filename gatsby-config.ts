@@ -26,8 +26,8 @@ module.exports = {
         items: [],
       },
       {
-        title: 'API',
-        url: '/api',
+        title: 'Dev Tools',
+        url: '/dev-tools',
         items: [
           {
             title: 'API',
@@ -35,11 +35,15 @@ module.exports = {
           },
           {
             title: 'Command Line Interface',
-            url: '/api/rscli',
+            url: '/devl-tools/rscli',
           },
           {
             title: 'Cyber Castor',
-            url: '/api/cyber-castor',
+            url: '/dev-tools/cyber-castor',
+          },
+          {
+            title: 'RSXML Python Package',
+            url: '/dev-tools/rsxml',
           }
         ],
       },
