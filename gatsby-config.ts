@@ -31,7 +31,7 @@ module.exports = {
         items: [
           {
             title: 'API',
-            url: '/api',
+            url: '/dev-tools',
           },
           {
             title: 'Command Line Interface',
