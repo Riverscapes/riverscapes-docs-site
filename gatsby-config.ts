@@ -35,7 +35,7 @@ module.exports = {
           },
           {
             title: 'Command Line Interface',
-            url: '/devl-tools/rscli',
+            url: '/dev-tools/rscli',
           },
           {
             title: 'Cyber Castor',
