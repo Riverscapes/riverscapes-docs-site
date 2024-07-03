@@ -7,7 +7,7 @@ banner: true
 
 Underneath the [Riverscapes Data Exchange](https://data.riverscapes/net) is a powerful Application Programming Interface (API) that allows you to query and download data from the Data Exchange. This API is built uising [GraphQL](https://graphql.org/) and can be used from most modern programming languages such as Python, R, and JavaScript.
 
-The [Riverscapes Command Line Interface (RSCLI)](./rscli) is a command line application that uses the API to access the Data Exchange. It is a good place to start if you want to access data in the exchange but don't want to learn about individual API calls.
+The [Riverscapes Command Line Interface (RSCLI)](./rscli) is a command line application that uses the API to access the Data Exchange. It is a good place to start if you want to access data in the exchange but don't want to learn about individual API calls. RSCLI is more appropriate if you just want to download a handful of projects. If you want to download a large number of projects, you will need to write your own code.
 
 ## Security
 
@@ -109,4 +109,25 @@ The GraphQL is also self-documenting. Within Insomnia or Postman you can click o
 
 ## Accessing the API with a Programming Language
 
+There are several examples of scripts that connect to the Data Exchange API to download projects:
+
+- [Merge Projects Script](https://github.com/Riverscapes/riverscapes-tools/blob/528241745fdb7228640754f3a131e0543b650669/lib/cybercastor/cybercastor/merge-projects.py)
+
+### Multiple Projects For a Given Watershed
+
+The Data Exchange can and does contain multiple projects of a specific type for a given watershed. There are many instances where we have run multiple versions of a model (e.g. VBET) for a particular watershed. You should anticipate this when coding against the API and incporporate logic to handle multiple projects for a given watershed. One way to do this is to distinguish the projects by there version. We do this using semantic versioning using the `semver` Python package and code like this:
+
+```python
+# Find the model with the greatest version number
+project_versions = {}
+for project_id, project_info in projects.items():
+    for key, val in {meta_item['key']: meta_item['value'] for meta_item in project_info['meta']}.items():
+        if key.replace(' ', '').lower() == 'modelversion' and val is not None:
+            project_versions[semver.VersionInfo(val)] = project_id
+            break
+
+project_versions_list = list(project_versions)
+project_versions_list.sort(reverse=True)
+return projects[project_versions[project_versions_list[0]]]
+```
 
