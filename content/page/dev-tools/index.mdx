@@ -4,10 +4,9 @@ description: query and download data from the Riverscapes Data Exchange
 banner: true
 ---
 
+Underneath the [Riverscapes Data Exchange](https://data.riverscapes/net) is a powerful Application Programming Interface (API) that allows you to query and download data from the Data Exchange. This API is built using [GraphQL](https://graphql.org/) and can be used from most modern programming languages such as Python, R, and JavaScript.
 
-Underneath the [Riverscapes Data Exchange](https://data.riverscapes/net) is a powerful Application Programming Interface (API) that allows you to query and download data from the Data Exchange. This API is built uising [GraphQL](https://graphql.org/) and can be used from most modern programming languages such as Python, R, and JavaScript.
-
-The [Riverscapes Command Line Interface (RSCLI)](./rscli) is a command line application that uses the API to access the Data Exchange. It is a good place to start if you want to access data in the exchange but don't want to learn about individual API calls. RSCLI is more appropriate if you just want to download a handful of projects. If you want to download a large number of projects, you will need to write your own code.
+The [Riverscapes Command Line Interface (rscli)](./rscli) is a command line application that uses the API to access the Data Exchange. It is a good place to start if you want to access data in the exchange but don't want to learn about individual API calls. Using rscli is appropriate if you want to download a handful of projects. If you want to download a large number of projects, you will need to write your own code.
 
 ## Security
 
@@ -29,17 +28,17 @@ The Riverscapes Data Model is a set of concepts that describe the data that is s
 
 ### Projects
 
-Projects are the foundation of the Riverscapes Data Model. A project is a collection of data that is related to a specific area and theme. Projects can represent a single river reach or an entire watershed. They can also represent a single theme such as fish habitat or a combination of themes such as fish habitat and beaver restoration. 
+Projects are the foundation of the Riverscapes Data Model. A project is a collection of data that is related to a specific area and theme. Projects can represent a single river reach or an entire watershed. They can also represent a single theme such as fish habitat or a combination of themes such as fish habitat and beaver restoration.
 
 By far the most numerous projects in the Data Exchange are those that represent a watershed. These projects are created by the Riverscapes Consortium by running our models in the cloud using [Cyber Castor](/api/cyber-castor).
 
 There are also Data Exchange projects that represent individual river reaches, just a few hundred metres of stream.
 
-Each project is associated with a **project type**. The project type describes the theme of the project. For example, a project type might be `fish_habitat` or `beaver_restoration`. The project type is used to determine which datasets are associated with the project. For example, a project with a project type of `fish_habitat` might have datasets that contain fish habitat data. The project type also defines how the project appears in the Data Exchange Web Viewer by specifying which business logic to use.
+Each project is associated with a **project type**. The project type describes the theme of the project. For example, a project type might be `fish_habitat` or `beaver_restoration`. The project type is used to determine which datasets are associated with the project. For example, a project with a project type of `fish_habitat` might have datasets that contain fish habitat data. The project type also defines how the project appears in the any Riverscapes Viewer including the Data Exchange Web Viewer by specifying which business logic to use.
 
 ### Datasets
 
-Each project can contain one or more datasets. A dataset might be a single file such as a [GeoPackage](https://www.geopackage.org/) or a collection of files such as a [ShapeFile](). They can also be reports, imaages, logs, CSV files, practicaally any file based format.
+Each project can contain one or more datasets. A dataset might be represented by a single file such as a [GeoPackage](https://www.geopackage.org/) or a collection of files, for example for a [shapefile](https://en.wikipedia.org/wiki/Shapefile). Projects can also contain reports, images, logs, CSV files, -- practically any file-based format.
 
 ### Files
 
@@ -63,7 +62,7 @@ Each project can have one or more tag. Tags are used to group projects together.
 
 ### Project Metadata
 
-Each project can metadata key/value pairs that describe the project. For example, a project might have a `watershed` key with a value of `Sandy River Watershed`. Project metadata is also used to search for projects.
+Each project has metadata formatted as key/value pairs that describe the project. For example, a project might have a `watershed` key with a value of `Sandy River Watershed`. Project metadata is also used to search for projects.
 
 ### Visibility
 
@@ -77,7 +76,7 @@ Projects can have one of three visibility settings:
 
 Before you attempt to connect to the API via computer code, its strongly recommended that you develop your queries using desktop API software tool such as [Postman](https://www.postman.com) or [Insomnia](https://insomnia.rest). These tools allow you to interact with the API and see the results of your queries. Once you have your queries working, you can then move on to writing code.
 
-Start by making a basic query and then gradually add more clauses to get more specific. Here's a basic query for getting all projects of type "VBET", the Riverscapes [Valley Bottem Estimation Tool](https://tools.riverscapes.net/vbet/):
+Start by making a basic query and then gradually add more clauses to get more specific. Here's a basic query for getting all projects of type "VBET", the Riverscapes [Valley Bottom Estimation Tool](https://tools.riverscapes.net/vbet/):
 
 ```graphql
   query searchProjects_query(
@@ -117,7 +116,7 @@ There are several examples of scripts that connect to the Data Exchange API to d
 
 ### Multiple Projects For a Given Watershed
 
-The Data Exchange can and does contain multiple projects of a specific type for a given watershed. There are many instances where we have run multiple versions of a model (e.g. VBET) for a particular watershed. You should anticipate this when coding against the API and incporporate logic to handle multiple projects for a given watershed. One way to do this is to distinguish the projects by there version. We do this using semantic versioning using the `semver` Python package and code like this:
+The Data Exchange can and does contain multiple projects of a specific type for a given watershed. There are many instances where we have run multiple versions of a model (e.g. VBET) for a particular watershed. You should anticipate this when coding against the API and incporporate logic to handle multiple projects for a given watershed. One way to do this is to distinguish the projects by their version. We do this using semantic versioning using the `semver` Python package and code like this:
 
 ```python
 # Find the model with the greatest version number
@@ -132,4 +131,3 @@ project_versions_list = list(project_versions)
 project_versions_list.sort(reverse=True)
 return projects[project_versions[project_versions_list[0]]]
 ```
-
