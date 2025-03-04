@@ -14,9 +14,9 @@ When you use the `extRef=""` attribute and upload your project into the warehous
 A secondary benefit of using the `extRef` attribute is the system may only keep one copy of that layer and corresponding map tiles. This sharing will only happen in cases where the layers and the datasets share a 1:1 relationship like a TIF file, SHP file etc. **Geopackages will not be able to use this functionality for reasons we will explain below.**
 
 
-## The simple 1:1 case (Geotiff, SHP):
+## The simple 1:1 case (GeoTIFF, SHP):
 
-For 1:1 layer:dataset types like GeoTiff, SHP, etc. The mechanism for referencing an upstream project is pretty simple:
+For 1:1 layer:dataset types like GeoTIFF, SHP, etc. The mechanism for referencing an upstream project is pretty simple:
 
 ```xml
 <!-- Here's the original Dataset node in a RSContext project -->
