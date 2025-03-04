@@ -6,7 +6,7 @@ banner: true
 
 > The Riverscapes Consortium (RC) data standards is a simple flexible way of describing any data so that it can be stored in the Riverscapes Data Exchange and also be visualized with relevant, consistent cartography.
 
-We have intentionally kept our standards minimal. We have designed it to be just enough to catalog each dataset and how it should be displayed in our RiverscapesViewers. 
+We have intentionally kept our standards minimal. We have designed it to be just enough to catalog each dataset and how it should be displayed in our Riverscapes Viewers.
 
 ## Core Concepts
 
@@ -20,8 +20,8 @@ The data standard lists the data in question including mandatory and optional me
 
 The XML rules are simple and generic. They are intended to accommodate data formats that are common among river scientists, while remaining flexible about how you choose to organize your data to accommodate its geospatial or temporal dimensionality.
 
-Each project possesses its own XML file and the name of the file is always project.rs.xml. This file is packaged and travels with the data so that our applications (Data Exchange, Viewer and Studio)know about the standard and can discover, process and visualize the data in the dataset. The project.rs.xml really is the magic sauce of the riverscapes data standard. It makes all other parts of our approach function.
- 
+Each project possesses its own XML file and the name of the file is always project.rs.xml. This file is packaged and travels with the data so that our applications (Data Exchange, Viewer and Studio) know about the standard and can discover, process and visualize the data in the dataset. The project.rs.xml really is the magic sauce of the riverscapes data standard. It makes all other parts of our approach function.
+
 ## Business Logic
 
 Software that displays datasets to users, such as the Riverscapes Viewer, use another XML file called Business Logic to translate the project XML file into more practical ways for the users to interact with the data. The Business Logic XML file defines how to organize the datasets in the project into a hierarchical tree and how to symbolize the data in maps.
@@ -31,12 +31,12 @@ There is one [Business Logic XSD ruleset](https://github.com/Riverscapes/Riversc
 Users can also customize the Business Logic for a particular model should they wish to visualize a project in different ways.
 
 ## Why Data Standards Are Important
- 
+
 ### Increases Interoperability
 
 The simple act of standardizing data on open source formats eliminates the need for expensive proprietary software that excludes those without the necessary license. Moreover, the standards allow for automated approaches to data processing that dramatically increase the scale at which analysis can be performed. The project.rs.xml makes it possible for any tool to read and load any file structure and use the data. Its with this approach that the Riverscapes Consortium has developed approximately six models that combine to form a data processing waterfall, each model handing off its outputs to the next step in the process. None of this would be possible without the riverscapes data standards.
 
-### Faster Map Visualization 
+### Faster Map Visualization
 
 Simply dragging geospatial layers onto a map in GIS and accepting the default symbology limits the value we are gleaming from our data. We have solved this problem by incorporating a system of consistent cartographic symbology. This allows a model developer to design symbology once and have it reused across all our applications, regardless of whether its on the web, QGIS or ArcGIS.
 
