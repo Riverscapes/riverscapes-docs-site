@@ -23,7 +23,6 @@ module.exports = {
       {
         title: 'Standards',
         url: '/standards',
-        items: [],
       },
       {
         title: 'Dev Tools',
