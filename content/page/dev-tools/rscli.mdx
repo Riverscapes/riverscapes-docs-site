@@ -4,7 +4,7 @@ description: Riverscapes Command Line Interface (rscli)
 banner: true
 ---
 
-The Riverscapes Command Line Interface (rscli) is a small, lightlight application for interacting with the [Riverscapes Data Exchange](https://data.riverscapes.net) and the associated [API](../). Using rscli simplifies the process of uploading and downloading data from the Riverscapes Data Exchange. It handles authenticating your user account and validating data uploads.
+The Riverscapes Command Line Interface (rscli) is a small, lightweight application for interacting with the [Riverscapes Data Exchange](https://data.riverscapes.net) and the associated [API](../). Using rscli simplifies the process of uploading and downloading data from the Riverscapes Data Exchange. It handles authenticating your user account and validating data uploads.
 
 # Prerequisites
 
@@ -12,9 +12,9 @@ You must have Node.js version 18 installed on your computer to use rscli. You ca
 
 # Installing and Updating rscli
 
-Open a command line prompt (Terminal on Mac; Windows Terminal or Command Prompt on Windows) and run the following command:
+Open a command-line terminal (such as Windows Terminal, macOS Terminal, or a Linux terminal) and run the following command:
 
-```bash
+```sh
 npm install -g @riverscapes/cli
 ```
 
@@ -24,7 +24,7 @@ npm install -g @riverscapes/cli
 
 Since rscli is a command line application, to use it open the command line prompt used to install it (above) and run the `rscli` command. The application has excellent POSEX help for all the available commands and options. To see the help, run the following command:
 
-```bash
+```sh
 rscli --help
 ```
 
@@ -32,7 +32,7 @@ rscli --help
 
 For help uploading data, run the following command:
 
-```bash
+```sh
 rscli upload --help
 ```
 
@@ -40,7 +40,7 @@ rscli upload --help
 
 The most common rscli use case is to download projects from the [Riverscapes Data Exchange](https://data.riverscapes.net). In the following command, replace the `<local_empty_folder>` with a path on your computer to an empty folder where the project will be downloaded. Replace the `<project_guid>` with the GUID of a project. You can obtain this GUID from the URL when viewing the project details in the Data Exchange.
 
-```bash
+```sh
 rscli download <local_empty_folder> --id <project_guid>
 ```
 
@@ -48,6 +48,38 @@ You must have read permissions to access the project before you can download it.
 
 For help downloading data, run the following command:
 
-```bash
+```sh
 rscli download --help
 ```
+
+### Downloading specific files from a project
+
+The `--file-filter` option allows you to download only files that match a specific pattern, described using regex. The project.rs.xml file is always downloaded, and the files are downloaded respecting the folder structure of the project.
+
+Here are some examples.
+
+#### Download only the project bounds file
+
+```sh
+rscli download <local_empty_folder> --id <project_guid> --file-filter "project_bounds\.geojson"
+```
+
+Explanation: Replace `<your_local_folder>` and `<project_guid>` with the actual values, no angle brackets.
+
+#### Download only GeoPackages
+
+```sh
+rscli download <local_empty_folder> --id <project_guid> --file-filter "\.gpkg$"
+```
+
+Explanation: The `$` character in regex means "end of the line", so this pattern will match any file that ends with `.gpkg`.
+
+#### Download set of specific files
+
+This will download any file with vegetation in the name, the nhdplushr.gpkg file, the dem_hillshade.tif file, and the project bounds file. 
+
+```sh
+rscli download <your_local_folder> --id <project_guid> --file-filter "(vegetation|nhdplushr.gpkg|dem_hillshade.tif|project_bounds.geojson)" 
+```
+
+Explanation: The file filter is a regex pattern, so the `|` character is used to separate the patterns. The . in regex means "any character", so if there was a file called dem_hillshade-tif.jpg that would match as well.
