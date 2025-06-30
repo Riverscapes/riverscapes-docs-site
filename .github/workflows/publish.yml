@@ -3,7 +3,7 @@ name: Gatsby GHPages Publish
 on:
   push:
     branches:
-      - main
+      - developer-legacy
 
 concurrency:
   group: "pages"
