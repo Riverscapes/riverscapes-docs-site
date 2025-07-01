@@ -1,0 +1,60 @@
+---
+title: Documentation Guide
+description: Writing content for docs.riverscapes.net *NEW 2025 June 30*
+banner: true
+---
+
+:::tip[## See also]
+
+* Draft [Table of Contents Google Doc](https://docs.google.com/spreadsheets/d/1z2zneBdZIrL2vqD4iJ_hSQAqQuD0YbwzHP250B2_AVw/edit?usp=sharing)
+* the communication guide for information about our writing style ([early draft in Google Docs](https://docs.google.com/document/d/16Xp0VH2yHCJ0UdAcAnX1SE1KsCM9y6mUbl4HtCL_cqI/edit?usp=sharing))
+* Design style guide for information about our visual identity (already on this site)
+* technical guide to our docusaurus sites
+
+:::
+
+# High Level Patterns
+
+## Page naming and organization
+* Title of page must convey what the content of the page is without being overly long
+	* if needed, use a subtitle  to clarify who the audience 
+* Try to separate pages by content type (inspired by the [diataxis approach to documentation](https://diataxis.fr/)) 
+	* overview/marketing - high level 'teaser' page that illustrate at a glance what this is,  why you'd want it. 
+	* reference material
+	* how-to guides 
+	* tutorials. We don't have many of these... yet
+	* explanation - deeper explanation reasons behind things
+* How-tos should use active voice. 
+	* How to create a riverscapes project ✅ 
+	* **not** Creating a riverscapes project ❌
+	* **not** Riverscapes projects ❌
+* Every page title within a section should ideally be unique to avoid confusion in search results or browser tabs.
+* Page titles can repeat information from their parent, but paths should not. For example a page may be titled "Data Exchange API Reference", while its url is `data-exchange/api/reference`. The title is **not** "Reference" and not the url is **not** `data-exchange/api/data-exchange-api-reference`. 
+
+## Paths
+
+* lower-case and kebab-case, ie data-exchange
+* Favour flatter hierarchies over highly nested paths - 4 levels should be the maximum 
+* nav path can introduce organization that is not part of the URL. In example below, the page who-can-apply is nested under Introduction but "Introduction" is not part of the URL path
+![[/images/contribute/docusaurus-example-algolia-screenshot.png]]
+* thus all our major 'products' are top level paths, e.g. data-exchange, viewer, riverscapes-projects
+
+## Images
+
+Images should be stored in folder `static\images\`. If specific to a certain page, put it in a subfolder.
+
+# Outside Examples
+
+Since we are [using Docusaurus](./docusaurus), looking at other sites that also use this tool is especially useful. 
+* https://hasura.io/docs/ A large site
+* https://docsearch.algolia.com/docs/what-is-docsearch 
+
+# Relationship of docs.riverscapes.net to other sites
+
+## Riverscapes tools (`tools.riverscapes.net`)
+
+Think of the Riverscapes Tools site like the 'app store' for Riverscapes. This is a catalog of tools that consume or generate riverscapes projects. This will include extensive documentation about the tool and the model it implements, but general information such how to create and contribute a new tool will live in this site (`docs.riverscapes.net`).
+
+
+
+
