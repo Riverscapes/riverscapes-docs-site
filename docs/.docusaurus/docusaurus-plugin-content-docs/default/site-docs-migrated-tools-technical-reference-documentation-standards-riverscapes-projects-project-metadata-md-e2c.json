@@ -1,0 +1,27 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/metadata",
+  "title": "MetaData",
+  "description": "Metadata tags can be used in a few key places inside the Project XML:",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/metadata.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project",
+  "slug": "/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/metadata",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/metadata",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/metadata.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "MetaData",
+    "weight": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "GUIDs",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/guids"
+  },
+  "next": {
+    "title": "Linking to other projects",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/project-links"
+  }
+}

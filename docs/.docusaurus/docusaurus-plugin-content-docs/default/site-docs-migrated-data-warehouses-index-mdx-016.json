@@ -1,0 +1,28 @@
+{
+  "id": "MIGRATED/Data_Warehouses/index",
+  "title": "Riverscapes Warehouse",
+  "description": "The Riverscapes Consortium organizes and serves data via a  data warehouse . The data warehouse provides access to both the underlying data (packaged in riverscapes projects) as well as making these data explorable via a  warehouse explorer or interactive web maps. We only serve and host data packaged in fully  Riverscapes-Compliant   Riverscapes Projects .",
+  "source": "@site/docs/MIGRATED/Data_Warehouses/index.mdx",
+  "sourceDirName": "MIGRATED/Data_Warehouses",
+  "slug": "/MIGRATED/Data_Warehouses/",
+  "permalink": "/riverscapes-docs/MIGRATED/Data_Warehouses/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Data_Warehouses/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Riverscapes Warehouse",
+    "banner": true,
+    "origin": "riverscapes-website-jekyll/Data_Warehouses/signup.md"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "About RC",
+    "permalink": "/riverscapes-docs/MIGRATED/About/"
+  },
+  "next": {
+    "title": "Getting Data from Warehouse",
+    "permalink": "/riverscapes-docs/MIGRATED/Data_Warehouses/gettingaround"
+  }
+}

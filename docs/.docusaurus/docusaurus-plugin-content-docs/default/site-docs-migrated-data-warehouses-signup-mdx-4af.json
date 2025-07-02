@@ -1,0 +1,28 @@
+{
+  "id": "MIGRATED/Data_Warehouses/signup",
+  "title": "Riverscapes Consortium Account",
+  "description": "To get data from the Riverscapes Warehouse, you need to create an account or connect your Google Account.",
+  "source": "@site/docs/MIGRATED/Data_Warehouses/signup.mdx",
+  "sourceDirName": "MIGRATED/Data_Warehouses",
+  "slug": "/MIGRATED/Data_Warehouses/signup",
+  "permalink": "/riverscapes-docs/MIGRATED/Data_Warehouses/signup",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Data_Warehouses/signup.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Riverscapes Consortium Account",
+    "origin": "riverscapes-website-jekyll/Data_Warehouses/signup.md",
+    "banner": true
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Getting Data from Warehouse",
+    "permalink": "/riverscapes-docs/MIGRATED/Data_Warehouses/gettingaround"
+  },
+  "next": {
+    "title": "Github Actions for RiverscapesXML",
+    "permalink": "/riverscapes-docs/MIGRATED/RiverscapesXML/GHActions"
+  }
+}

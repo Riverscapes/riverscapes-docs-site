@@ -1,0 +1,53 @@
+---
+title: Command Line Interface
+description: Riverscapes Command Line Interface (rscli)
+banner: true
+---
+
+The Riverscapes Command Line Interface (rscli) is a small, lightlight application for interacting with the [Riverscapes Data Exchange](https://data.riverscapes.net) and the associated [API](../). Using rscli simplifies the process of uploading and downloading data from the Riverscapes Data Exchange. It handles authenticating your user account and validating data uploads.
+
+# Prerequisites
+
+You must have Node.js version 18 installed on your computer to use rscli. You can download the latest version of Node.js from the [official website](https://nodejs.org/). At the time of writing, it must be version 18, preferably the Long Term Support (LTS).
+
+# Installing and Updating rscli
+
+Open a command line prompt (Terminal on Mac; Windows Terminal or Command Prompt on Windows) and run the following command:
+
+```bash
+npm install -g @riverscapes/cli
+```
+
+**To update** to latest version, use the same command as for installation. 
+
+# Using rscli
+
+Since rscli is a command line application, to use it open the command line prompt used to install it (above) and run the `rscli` command. The application has excellent POSEX help for all the available commands and options. To see the help, run the following command:
+
+```bash
+rscli --help
+```
+
+## Uploading Projects
+
+For help uploading data, run the following command:
+
+```bash
+rscli upload --help
+```
+
+## Downloading Projects
+
+The most common rscli use case is to download projects from the [Riverscapes Data Exchange](https://data.riverscapes.net). In the following command, replace the `<local_empty_folder>` with a path on your computer to an empty folder where the project will be downloaded. Replace the `<project_guid>` with the GUID of a project. You can obtain this GUID from the URL when viewing the project details in the Data Exchange.
+
+```bash
+rscli download <local_empty_folder> --id <project_guid>
+```
+
+You must have read permissions to access the project before you can download it. A good rule of thumb is that if you can see the project details in the Data Exchange then you can download the project. Unlike downloading projects from the Data Exchange that will result in a zip file, rscli will download the project as raw individual uncompressed files.
+
+For help downloading data, run the following command:
+
+```bash
+rscli download --help
+```

@@ -1,0 +1,27 @@
+{
+  "id": "MIGRATED/Tools/index",
+  "title": "Tools",
+  "description": "",
+  "source": "@site/docs/MIGRATED/Tools/index.mdx",
+  "sourceDirName": "MIGRATED/Tools",
+  "slug": "/MIGRATED/Tools/",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Tools",
+    "banner": true
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "XML Project References",
+    "permalink": "/riverscapes-docs/MIGRATED/RiverscapesXML/ProjectReferences"
+  },
+  "next": {
+    "title": "Documentation Standards",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/index",
+  "title": "Tool Web Sites",
+  "description": "Every riverscapes tool (piece of software) is documented using its own web site. These sites use a consistent design and content. They are intended to help end users discover, obtain and run the tools. The web sites are written as plain text markdown files stored in a GitHub repository. GitHub then handles serving these files as a web site.",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/index.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites",
+  "slug": "/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/index.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Tool Web Sites",
+    "weight": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Source Code Documentation",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Source_Code/"
+  },
+  "next": {
+    "title": "Common Content",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/Common"
+  }
+}

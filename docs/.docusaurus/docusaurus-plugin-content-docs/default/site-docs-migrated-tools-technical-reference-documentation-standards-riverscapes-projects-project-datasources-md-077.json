@@ -1,0 +1,27 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/datasources",
+  "title": "DataSources (Inputs/Outputs)",
+  "description": "DataSources can be defined in two places:",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/datasources.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project",
+  "slug": "/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/datasources",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/datasources",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/datasources.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "DataSources (Inputs/Outputs)",
+    "weight": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Program XML",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Program/"
+  },
+  "next": {
+    "title": "GUIDs",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/guids"
+  }
+}

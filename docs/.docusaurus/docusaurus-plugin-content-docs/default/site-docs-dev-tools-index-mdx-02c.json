@@ -1,0 +1,28 @@
+{
+  "id": "dev-tools/index",
+  "title": "Riverscapes API",
+  "description": "query and download data from the Riverscapes Data Exchange",
+  "source": "@site/docs/dev-tools/index.mdx",
+  "sourceDirName": "dev-tools",
+  "slug": "/dev-tools/",
+  "permalink": "/riverscapes-docs/dev-tools/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/dev-tools/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Riverscapes API",
+    "description": "query and download data from the Riverscapes Data Exchange",
+    "banner": true
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Value Proposition for Tool Developers and Researchers",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/valueproposition"
+  },
+  "next": {
+    "title": "Cyber Castor",
+    "permalink": "/riverscapes-docs/dev-tools/cyber-castor"
+  }
+}

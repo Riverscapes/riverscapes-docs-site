@@ -1,0 +1,26 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/index",
+  "title": "Tool Report Card Instructions",
+  "description": "See here for a preview of a blank Tool Report Card Template.",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/index.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards",
+  "slug": "/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/index.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Tool Report Card Instructions"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Consistency & Utility",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/Consistency"
+  },
+  "next": {
+    "title": "Riverscapes Report Card Template",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/Tool_ReportCard_0-0-00"
+  }
+}

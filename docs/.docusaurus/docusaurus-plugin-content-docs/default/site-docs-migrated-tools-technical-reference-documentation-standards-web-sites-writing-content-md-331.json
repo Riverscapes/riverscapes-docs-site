@@ -1,0 +1,27 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/writing_content",
+  "title": "Writing Content",
+  "description": "This page contains techniques for enhancing web sites stored on GitHub. GitHub uses Jekyll to take a set of documents written in markdown and publish them as a full blown web site. What follows are several tricks, techniques and patterns for enhancing these Jekyll web sites with features that make the web sites more useful. For example, adding a table of contents or injecting a page header.",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/writing_content.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites",
+  "slug": "/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/writing_content",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/writing_content",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/writing_content.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Writing Content",
+    "weight": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Theming a Tool Web Site",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/theming"
+  },
+  "next": {
+    "title": "Database Driven Tools",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/database"
+  }
+}

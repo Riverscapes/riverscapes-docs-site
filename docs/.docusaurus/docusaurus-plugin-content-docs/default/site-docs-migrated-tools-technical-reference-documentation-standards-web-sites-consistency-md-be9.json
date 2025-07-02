@@ -1,0 +1,27 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/Consistency",
+  "title": "Consistency & Utility",
+  "description": "Making your documentation consistent",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/Consistency.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites",
+  "slug": "/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/Consistency",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/Consistency",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/Consistency.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Consistency & Utility",
+    "weight": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Common Content",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/Common"
+  },
+  "next": {
+    "title": "Tool Report Card Instructions",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "MIGRATED/Tools/reportcards",
+  "title": "RC Report Cards",
+  "description": "Report Card",
+  "source": "@site/docs/MIGRATED/Tools/reportcards.mdx",
+  "sourceDirName": "MIGRATED/Tools",
+  "slug": "/MIGRATED/Tools/reportcards",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/reportcards",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/reportcards.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "RC Report Cards",
+    "banner": true
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Tool Discrimination",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/discrimination"
+  },
+  "next": {
+    "title": "Tool Standards Explained",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/toolStandards"
+  }
+}

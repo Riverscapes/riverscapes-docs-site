@@ -1,0 +1,28 @@
+{
+  "id": "documentation/index",
+  "title": "Documentation",
+  "description": "How to build and document a Riverscapes asset",
+  "source": "@site/docs/documentation/index.mdx",
+  "sourceDirName": "documentation",
+  "slug": "/documentation/",
+  "permalink": "/riverscapes-docs/documentation/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/documentation/index.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Documentation",
+    "description": "How to build and document a Riverscapes asset",
+    "banner": true
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "RSXML",
+    "permalink": "/riverscapes-docs/dev-tools/rsxml"
+  },
+  "next": {
+    "title": "BRAT Capacity Validation",
+    "permalink": "/riverscapes-docs/documentation/brat-capacity-validation"
+  }
+}

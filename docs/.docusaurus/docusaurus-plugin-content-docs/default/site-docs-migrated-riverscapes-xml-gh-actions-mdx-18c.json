@@ -1,0 +1,28 @@
+{
+  "id": "MIGRATED/RiverscapesXML/GHActions",
+  "title": "Github Actions for RiverscapesXML",
+  "description": "Github Actions for RiverscapesXML",
+  "source": "@site/docs/MIGRATED/RiverscapesXML/GHActions.mdx",
+  "sourceDirName": "MIGRATED/RiverscapesXML",
+  "slug": "/MIGRATED/RiverscapesXML/GHActions",
+  "permalink": "/riverscapes-docs/MIGRATED/RiverscapesXML/GHActions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/RiverscapesXML/GHActions.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Github Actions for RiverscapesXML",
+    "description": "Github Actions for RiverscapesXML",
+    "comment": "These came from https://raw.githubusercontent.com/Riverscapes/RiverscapesXML/master/docs/GHActions.md"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Riverscapes Consortium Account",
+    "permalink": "/riverscapes-docs/MIGRATED/Data_Warehouses/signup"
+  },
+  "next": {
+    "title": "XML Project References",
+    "permalink": "/riverscapes-docs/MIGRATED/RiverscapesXML/ProjectReferences"
+  }
+}

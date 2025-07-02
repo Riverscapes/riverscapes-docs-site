@@ -1,0 +1,24 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/subdomain",
+  "title": "subdomain",
+  "description": "<!-- ---",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/subdomain.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites",
+  "slug": "/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/subdomain",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/subdomain",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/subdomain.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "styleguide",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/styleguide"
+  },
+  "next": {
+    "title": "Testing Sites Locally",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/testing_locally"
+  }
+}

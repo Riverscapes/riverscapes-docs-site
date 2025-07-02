@@ -1,0 +1,26 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/project-links",
+  "title": "Linking to other projects",
+  "description": "Sometimes you need to grab resources like inputs and reference layers from other projects. You do it like so:",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/project-links.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project",
+  "slug": "/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/project-links",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/project-links",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/project-links.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Linking to other projects"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "MetaData",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/metadata"
+  },
+  "next": {
+    "title": "The Project XML",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/projectxml"
+  }
+}

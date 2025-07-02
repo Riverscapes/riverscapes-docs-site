@@ -1,0 +1,27 @@
+{
+  "id": "MIGRATED/Tools/valueproposition",
+  "title": "Value Proposition for Tool Developers and Researchers",
+  "description": "One of the realities of most academic research in the riverscape sciences is investigators are rarely rewarded or funded for doing a better job on development of their ideas. Although we are frequently encouraged to articualte (or speculate) about the significance of our research and ideas and what their impact could be to broader audiences and application, most entities funding research rarely pay for proper deployment. Some researchers will argue that \"deployment is not my job\" or \"my ideas are so good, someone else will take them and deploy them\". Those same researchers frequently complain why their great ideas are not having broader impact.",
+  "source": "@site/docs/MIGRATED/Tools/valueproposition.md",
+  "sourceDirName": "MIGRATED/Tools",
+  "slug": "/MIGRATED/Tools/valueproposition",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/valueproposition",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/valueproposition.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Value Proposition for Tool Developers and Researchers",
+    "banner": true
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Tool Standards Explained",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/toolStandards"
+  },
+  "next": {
+    "title": "Riverscapes API",
+    "permalink": "/riverscapes-docs/dev-tools/"
+  }
+}

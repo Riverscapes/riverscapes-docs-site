@@ -1,0 +1,28 @@
+{
+  "id": "dev-tools/cyber-castor",
+  "title": "Cyber Castor",
+  "description": "Cloud engine for automating riverscapes models",
+  "source": "@site/docs/dev-tools/cyber-castor.mdx",
+  "sourceDirName": "dev-tools",
+  "slug": "/dev-tools/cyber-castor",
+  "permalink": "/riverscapes-docs/dev-tools/cyber-castor",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/dev-tools/cyber-castor.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Cyber Castor",
+    "description": "Cloud engine for automating riverscapes models",
+    "banner": true
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Riverscapes API",
+    "permalink": "/riverscapes-docs/dev-tools/"
+  },
+  "next": {
+    "title": "Command Line Interface",
+    "permalink": "/riverscapes-docs/dev-tools/rscli"
+  }
+}

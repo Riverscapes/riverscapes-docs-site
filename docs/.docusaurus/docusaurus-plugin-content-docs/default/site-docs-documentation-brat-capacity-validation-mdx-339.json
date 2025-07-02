@@ -1,0 +1,28 @@
+{
+  "id": "documentation/brat-capacity-validation",
+  "title": "BRAT Capacity Validation",
+  "description": "Instructions for running the BRAT capacity validation tool.",
+  "source": "@site/docs/documentation/brat-capacity-validation.mdx",
+  "sourceDirName": "documentation",
+  "slug": "/documentation/brat-capacity-validation",
+  "permalink": "/riverscapes-docs/documentation/brat-capacity-validation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/documentation/brat-capacity-validation.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "BRAT Capacity Validation",
+    "description": "Instructions for running the BRAT capacity validation tool.",
+    "banner": true
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Documentation",
+    "permalink": "/riverscapes-docs/documentation/"
+  },
+  "next": {
+    "title": "BRAT Vegetation Suitability Parameterization",
+    "permalink": "/riverscapes-docs/documentation/brat-parameterization"
+  }
+}

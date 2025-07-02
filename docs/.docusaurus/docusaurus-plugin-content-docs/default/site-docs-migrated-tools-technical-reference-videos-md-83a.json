@@ -1,0 +1,27 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/videos",
+  "title": "Visual Studio Code Demos",
+  "description": "Posts and videos from @philpbaileynar  to help you getting started with Visual Studio Code.",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/videos.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference",
+  "slug": "/MIGRATED/Tools/Technical_Reference/videos",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/videos",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/videos.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Visual Studio Code Demos",
+    "weight": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Database Driven Tools",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/database"
+  },
+  "next": {
+    "title": "Tool Discrimination",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/discrimination"
+  }
+}

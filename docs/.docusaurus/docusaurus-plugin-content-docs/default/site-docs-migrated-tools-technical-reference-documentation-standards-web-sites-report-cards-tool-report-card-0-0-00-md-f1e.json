@@ -1,0 +1,27 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/Tool_ReportCard_0-0-00",
+  "title": "Riverscapes Report Card Template",
+  "description": "<!-- TODO - TEMPLATE",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/Tool_ReportCard_0-0-00.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards",
+  "slug": "/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/Tool_ReportCard_0-0-00",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/Tool_ReportCard_0-0-00",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/Tool_ReportCard_0-0-00.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Riverscapes Report Card Template",
+    "weight": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Tool Report Card Instructions",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/"
+  },
+  "next": {
+    "title": "Automated Bibliographies",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/bibliographies"
+  }
+}

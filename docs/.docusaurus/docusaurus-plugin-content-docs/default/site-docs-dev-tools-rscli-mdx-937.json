@@ -1,0 +1,28 @@
+{
+  "id": "dev-tools/rscli",
+  "title": "Command Line Interface",
+  "description": "Riverscapes Command Line Interface (rscli)",
+  "source": "@site/docs/dev-tools/rscli.mdx",
+  "sourceDirName": "dev-tools",
+  "slug": "/dev-tools/rscli",
+  "permalink": "/riverscapes-docs/dev-tools/rscli",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/dev-tools/rscli.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Command Line Interface",
+    "description": "Riverscapes Command Line Interface (rscli)",
+    "banner": true
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Cyber Castor",
+    "permalink": "/riverscapes-docs/dev-tools/cyber-castor"
+  },
+  "next": {
+    "title": "RSXML",
+    "permalink": "/riverscapes-docs/dev-tools/rsxml"
+  }
+}

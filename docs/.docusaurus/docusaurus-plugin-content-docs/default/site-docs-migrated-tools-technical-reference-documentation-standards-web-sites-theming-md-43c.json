@@ -1,0 +1,27 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/theming",
+  "title": "Theming a Tool Web Site",
+  "description": "We have developed a single theme that controls the look and feel of sites related to riverscapes. It's the theme that's applied to this site. If you have a Riverscapes site that doesn't look like this page or is missing page elements used on this site, then you need to follow the instructions below.",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/theming.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites",
+  "slug": "/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/theming",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/theming",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/theming.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Theming a Tool Web Site",
+    "weight": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Testing Sites Locally",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/testing_locally"
+  },
+  "next": {
+    "title": "Writing Content",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/writing_content"
+  }
+}

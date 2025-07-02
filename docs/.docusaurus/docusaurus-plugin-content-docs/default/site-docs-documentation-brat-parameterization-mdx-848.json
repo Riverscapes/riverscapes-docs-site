@@ -1,0 +1,28 @@
+{
+  "id": "documentation/brat-parameterization",
+  "title": "BRAT Vegetation Suitability Parameterization",
+  "description": "Instructions for checking and assigning vegetation suitability scores for running the BRAT model.",
+  "source": "@site/docs/documentation/brat-parameterization.mdx",
+  "sourceDirName": "documentation",
+  "slug": "/documentation/brat-parameterization",
+  "permalink": "/riverscapes-docs/documentation/brat-parameterization",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/documentation/brat-parameterization.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "BRAT Vegetation Suitability Parameterization",
+    "description": "Instructions for checking and assigning vegetation suitability scores for running the BRAT model.",
+    "banner": true
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "BRAT Capacity Validation",
+    "permalink": "/riverscapes-docs/documentation/brat-capacity-validation"
+  },
+  "next": {
+    "title": "demo",
+    "permalink": "/riverscapes-docs/documentation/demo"
+  }
+}

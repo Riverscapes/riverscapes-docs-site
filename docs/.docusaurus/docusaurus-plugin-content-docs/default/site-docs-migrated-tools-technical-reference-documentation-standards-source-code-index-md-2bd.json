@@ -1,0 +1,27 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/Source_Code/index",
+  "title": "Source Code Documentation",
+  "description": "Riverscapes tools are public and intended to be used by a broad variety of users. Therefore it is vital that the source code is logically organized and well documented.",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Source_Code/index.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/Source_Code",
+  "slug": "/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Source_Code/",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Source_Code/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Source_Code/index.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Source Code Documentation",
+    "weight": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "XML Validation",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/xml_validation"
+  },
+  "next": {
+    "title": "Tool Web Sites",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/WebSites/"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "dev-tools/rsxml",
+  "title": "RSXML",
+  "description": "A free, public Python package for authoring Riverscapes projects",
+  "source": "@site/docs/dev-tools/rsxml.mdx",
+  "sourceDirName": "dev-tools",
+  "slug": "/dev-tools/rsxml",
+  "permalink": "/riverscapes-docs/dev-tools/rsxml",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/dev-tools/rsxml.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "RSXML",
+    "description": "A free, public Python package for authoring Riverscapes projects",
+    "banner": true
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Command Line Interface",
+    "permalink": "/riverscapes-docs/dev-tools/rscli"
+  },
+  "next": {
+    "title": "Documentation",
+    "permalink": "/riverscapes-docs/documentation/"
+  }
+}

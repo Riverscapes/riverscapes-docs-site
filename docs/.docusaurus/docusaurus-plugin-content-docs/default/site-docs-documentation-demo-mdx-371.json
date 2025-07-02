@@ -1,0 +1,24 @@
+{
+  "id": "documentation/demo",
+  "title": "demo",
+  "description": "{/* ---",
+  "source": "@site/docs/documentation/demo.mdx",
+  "sourceDirName": "documentation",
+  "slug": "/documentation/demo",
+  "permalink": "/riverscapes-docs/documentation/demo",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/documentation/demo.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "BRAT Vegetation Suitability Parameterization",
+    "permalink": "/riverscapes-docs/documentation/brat-parameterization"
+  },
+  "next": {
+    "title": "Project Getting Started",
+    "permalink": "/riverscapes-docs/documentation/project-getting-started"
+  }
+}

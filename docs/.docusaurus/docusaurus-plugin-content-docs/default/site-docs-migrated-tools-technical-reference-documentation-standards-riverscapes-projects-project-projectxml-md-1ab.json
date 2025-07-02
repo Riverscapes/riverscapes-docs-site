@@ -1,0 +1,27 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/projectxml",
+  "title": "The Project XML",
+  "description": "Quick Link:",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/projectxml.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project",
+  "slug": "/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/projectxml",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/projectxml",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/projectxml.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "The Project XML",
+    "weight": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Linking to other projects",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/project-links"
+  },
+  "next": {
+    "title": "Realizations",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/realizations"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/xml_validation",
+  "title": "XML Validation",
+  "description": "Riverscapes relies on several different Extensible Markup Language (XML) files. They are used to define the individual projects, the data warehouses that store these projects and also how the projects are displayed in RAVE.",
+  "source": "@site/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/xml_validation.md",
+  "sourceDirName": "MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects",
+  "slug": "/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/xml_validation",
+  "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/xml_validation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/xml_validation.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "XML Validation"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Realizations",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/Project/realizations"
+  },
+  "next": {
+    "title": "Source Code Documentation",
+    "permalink": "/riverscapes-docs/MIGRATED/Tools/Technical_Reference/Documentation_Standards/Source_Code/"
+  }
+}

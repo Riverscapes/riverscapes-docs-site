@@ -1,0 +1,28 @@
+{
+  "id": "documentation/rstools",
+  "title": "Developing Riverscapes Tools",
+  "description": "The following video provides a brief overview of the Riverscapes Tools development process. This uses GitHub Code Spaces to code and run the tools in the cloud. The advantage of this approach is that you are guaranteed to have a working development that comes with the correct versions of all the dependencies. These depdencies are also the identical versions used by Cyber Castor to run the tools in batches.",
+  "source": "@site/docs/documentation/rstools.mdx",
+  "sourceDirName": "documentation",
+  "slug": "/documentation/rstools",
+  "permalink": "/riverscapes-docs/documentation/rstools",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template/docs/documentation/rstools.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Developing Riverscapes Tools",
+    "layout": "default",
+    "parent": "Documentation"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Project Getting Started",
+    "permalink": "/riverscapes-docs/documentation/project-getting-started"
+  },
+  "next": {
+    "title": "visual-identity",
+    "permalink": "/riverscapes-docs/documentation/visual-identity"
+  }
+}
