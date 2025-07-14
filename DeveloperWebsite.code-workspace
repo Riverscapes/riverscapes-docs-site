@@ -1,17 +1,13 @@
 {
   "folders": [
     {
-      "name": "🏠 Root",
+      "name": "📜 Riverscapes Docs",
       "path": "."
     },
-    {
-      "name": "📜 Docs",
-      "path": "docs"
-    }
   ],
   "settings": {
     // TODO: Add your own site name here. Replace "GATSBYDOCS" with your site name or "QRiS Docs -" or whatever you want to see in the window title.
-    "window.title": "Developer Docs${separator}${activeEditorShort}${separator}${rootName}",
+    "window.title": "Riverscapes Docs${separator}${activeEditorShort}${separator}${rootName}",
     "[mdx]": {
       "editor.wordWrap": "bounded",
       "editor.wordWrapColumn": 80
@@ -33,6 +29,8 @@
     "search.exclude": {
       "**/node_modules/**": true,
       "**/.cache/**": true,
+      "**/.docusaurus/**": true,
+      "**/build/**": true,
       "**/public/**": true,
       "**/dist/**": true
     },

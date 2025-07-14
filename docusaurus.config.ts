@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic'
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'RIVERSCAPES TEMPLATE', // Site title displayed in the browser tab
+  title: 'Riverscapes Docs', // Site title displayed in the browser tab
   tagline: 'This is a template for a riverscapes site.', // Short description shown in meta tags
   favicon: 'favicon.ico', // Path to site favicon
 
@@ -13,12 +13,8 @@ const config: Config = {
     v4: true, // Enables compatibility with upcoming Docusaurus v4 features
   },
 
-  url: 'https://your-docusaurus-site.example.com', // The base URL of your site (no trailing slash)
-  baseUrl: '/riverscapes-docs', // The sub-path where your site is served (used in GitHub Pages)
-
-  // GitHub pages deployment config
-  organizationName: 'Riverscapes', // GitHub org/user name
-  projectName: 'riverscapes-docs', // GitHub repo name
+  url: 'https://docs.riverscapes.net', // The base URL of your site (no trailing slash)
+  baseUrl: '/', // The sub-path where your site is served (used in GitHub Pages)
 
   onBrokenLinks: 'throw', // Throw an error on broken links
   onBrokenMarkdownLinks: 'warn', // Warn instead of throwing for broken markdown links
