@@ -1,6 +1,6 @@
-# 🧼 Clean Template Site
+# Riverscapes Documentation - docs.riverscapes.net
 
-This project demonstrates the smallest possible Docusaurus site setup. It is designed for simplicity and ease of use, requiring only essential files and folders.
+This project is the the new Docusaurus Riverscapes Docs site.
 
 ---
 
@@ -24,7 +24,7 @@ This project demonstrates the smallest possible Docusaurus site setup. It is des
 
 - **Easy to maintain:**  
   Just focus on writing docs and adding images.
-
+yar
 - **Extendable:**  
   Leverage custom React components for richer documentation.
 
