@@ -33,7 +33,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts', // Path to sidebar config
           routeBasePath: '/', // Serve docs at site root
-          editUrl: 'https://github.com/Riverscapes/riverscapes-docs/tree/main/sites/template', // "Edit this page" link
+          editUrl: 'https://github.com/Riverscapes/riverscapes-docs-site/tree/main/', // "Edit this page" link
         },
       } satisfies Preset.Options,
     ],
@@ -43,7 +43,7 @@ const config: Config = {
     image: 'img/logo.png', // Social sharing image
 
     navbar: {
-      title: 'RIVERSCAPES TEMPLATE', // Navbar title
+      title: 'Riverscapes Docs', // Navbar title
       logo: {
         alt: 'Riverscapes Studio Logo', // Logo alt text
         src: 'img/logo.png', // Logo image path
