@@ -1,8 +1,6 @@
 ---
-title: Merging Projects
-description: "Merging riverscapes projects together"
-banner: true
-isHome: false
+title: How to Merge Riverscapes Projects
+description: Merging riverscapes projects together
 ---
 
 The merge tool is an experimental tool that allows you to merge multiple Riverscapes projects together. This is useful when you have multiple projects that cover an area of interest and you want to combine them into a single project. 
@@ -13,11 +11,11 @@ Currently, the merge tool only operates on rasters and GeoPackage layers. It doe
 
 Note that the output merged project is of the same type as all the input projects. Once uploaded into the Data Exchange, the merged project will be available for download and use in the same way as any other project, including any of the [Viewer](https://viewer.riverscapes.net) softwares.
 
-# Considerations
+## Considerations
 
 The merge process downloads each individual project from the Data Exchange, merges them together. You need sufficient disk space on the code space to store all the projects that you are merging together, as well as the merged output. Big project types, such as tauDEM, might need a large code space. 
 
-# Preparation
+## Preparation
 
 Create a collection within the Riverscapes Data Exchange and add all the projects that you want to merge together.
 
@@ -31,7 +29,7 @@ https://data.riverscapes.net/c/fc198d51-c154-497e-9972-38929a047544/
 
 You just want the GUID that comes after the `/c/` in the URL. Remove the trailing `/` if it is there.
 
-# Merging Projects
+## Merging Projects
 
 1. Open a CodeSpace in the [Riverscapes Tools](https://github.com/Riverscapes/riverscapes-tools) GitHub repository.
 1. Make sure you are using the `CYBERCASTOR.code-workspace`. This is not opened by default when you start the code space.
@@ -42,7 +40,7 @@ You just want the GUID that comes after the `/c/` in the URL. Remove the trailin
 1. Save the `launch.json` file.
 1. Run the `EXPERIMENTAL Merge Projects` configuration using the debug play menu. The merged project will be placed at the location specified in the last launch.json configuration parameter. This output folder is created under `/workspaces` (I think).
 
-# Upload to Data Exchange
+## Upload to Data Exchange
 
 Once you have merged the projects, you can upload the merged project to the Data Exchange. You can do this using the [rscli](https://developer.riverscapes.net/dev-tools/rscli/) command line interface. Be sure to use the correct owning organization.
 
