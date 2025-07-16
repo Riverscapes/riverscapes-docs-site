@@ -21,6 +21,17 @@ description: A description of the page
 page-status: stub,messy,mature,protected,generated
 page-priority: low,medium,high
 ---
+
+The `page-status` and `page-priority` tags are proposed for internal use and have no impact on how the page is displayed. 
+
+```
+
+### How to embed a Youtube Video
+
+Use this syntax: 
+
+```
+<YouTubeEmbed videoId="mfyhjVfECf4" />
 ```
 
 ## Common theme repository
