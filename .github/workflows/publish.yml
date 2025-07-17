@@ -1,86 +1,56 @@
-name: Gatsby GHPages Publish
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - main
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Default to bash
-defaults:
-  run:
-    shell: bash
-
 jobs:
-  # Build job
   build:
+    name: Build Docusaurus
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
         with:
-          node-version-file: ./.nvmrc
-          cache-dependency-path: ./package.json
+          fetch-depth: 0
+      - uses: actions/setup-node@v4 
+        with:
+          node-version: 22
           cache: yarn
+          cache-dependency-path: yarn.lock
 
-      - name: Get correct version of Yarn
-        run: corepack enable; yarn set version berry
+      - name: Enable Corepack
+        run: corepack enable
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
-        with:
-          # Automatically inject pathPrefix in your Gatsby configuration file.
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-          static_site_generator: gatsby
-
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            ./.yarn/cache
-            ./public
-            ./.cache
-          key: ${{ runner.os }}-gatsby-build-${{ hashFiles('public') }}
-          restore-keys: |
-            ${{ runner.os }}-gatsby-build-
+      - name: Install correct Yarn version
+        run: corepack prepare yarn@3.6.3 --activate
 
       - name: Install dependencies
-        working-directory: .
-        run: yarn install --immutable
-        
-      - name: Build with Gatsby
-        working-directory: .
-        env:
-          PREFIX_PATHS: 'true'
-        run: yarn run build
+        run: yarn install --frozen-lockfile
 
-      - name: Upload artifact
+      - name: Build website
+        run: yarn build
+
+      - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: build
 
-  # Deployment job
   deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
