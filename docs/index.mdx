@@ -4,42 +4,78 @@ description: "Riverscapes Developer Resources"
 sidebar_position: 1
 ---
 
-![Card image](/img/card-image.jpg)
+# Riverscapes Docs
 
-Welcome to the Riverscapes Developer Portal, your go-to resource for developers and advanced users within the [Riverscapes Consortium](https://riverscapes.net). Explore our [standards](./standards/), harness our [APIs](./dev-tools/), and ensure your models, code, and data adhere to our standards so they can be badged "Riverscapes-Compliant". Discover how our tools are crafted, learn about the data they generate, and find out how you can contribute your own tools and models.
+Welcome to the Riverscapes documentation portal. This site brings together a wealth of information about the [Riverscapes Consortium](https://riverscapes.net)'s efforts to develop standards, apps, tools and data focused on improving riverscape health.
 
-## Resources for Developers
 
-### [Standards & Compliance](/standards)
-![Card image](/img/card-image.jpg)
-Learn about riverscapes standards and how to make your tools and data compliant.
+import { ToolsWrapper } from "@site/src/components/ToolsWrapper/ToolsWrapper";
 
----
+<ToolsWrapper
+  cardsize="md"
+  cards={[
+    {
+      title: "Products",
+      description:
+        "Information about how the products developed by the Riverscapes Consortium can be used.",
+      toolUrl: "/products",
+    },{
+      title: "Standards",
+      description:
+        "Our standards for organizing data, and how it appears in the Data Exchange and GIS Viewers.",
+      toolUrl: "/data-exchange",
+    },{
+      title: "Get Involved",
+      description:
+        "Instructions describing how to perform specific tasks with riverscapes data, tools and workflows.",
+      toolUrl: "/data-exchange",
+    },{
+      title: "Iniatives",
+      description:
+        "Descriptions of past and current efforts to produce riverscapes data around the World.",
+      toolUrl: "/data-exchange",
+    },
+  ]}
+/>
 
-### [Riverscapes API](/getting-started)
-![Card image](/img/card-image.jpg)
-Learn how to use the Riverscapes API to access data.
+## Products
 
----
+This site describes several products that Riverscapes Consortium has developed or is developing. These include:
 
-### [Documentation](/documentation)
-![Card image](/img/card-image.jpg)
-Resources to build Riverscapes documentation and websites.
+<ToolsWrapper
+  cardsize="md"
+  cards={[
+    {
+      title: "Data Exchange",
+      description:
+        "Documentation about our portal for discovering and sharing riverscapes data.",
+      toolUrl: "/data-exchange",
+    },{
+      title: "rscli",
+      description:
+        "A command line interface for interacting with Riverscapes Data Exchange. It allows you to download and upload riverscapes data.",
+      toolUrl: "/products/rscli",
+    },{
+      title: "PBR Explorer",
+      description:
+        "Instructions for using the PBR Explorer platform that helps practitioners celebrate their riverscapes restoration successes.",
+      toolUrl: "/data-exchange",
+    },{
+      title: "Iniatives",
+      description:
+        "Descriptions of past and current efforts to produce riverscapes data around the World.",
+      toolUrl: "/data-exchange",
+    },
+  ]}
+/>
 
-## Other Riverscapes Sites
 
-### [Riverscapes Consortium](https://riverscapes.net)
-![Card image](/img/card-image.jpg)
-The Riverscapes Consortium main site.
+## About the Riverscapes Consortium
 
----
+We are a collective of scientists, riverscape practitioners, and supporters brought together by shared challenges and common motivations. Our goal is promoting healthy riverscapes for all. 
 
-### [Our Tools](https://tools.riverscapes.net)
-![Card image](/img/card-image.jpg)
-Learn about each of our Riverscapes compliant tools.
+We are committed to building open-source tools to make it easier for researchers, practitioners and students to manage their own riverscapes. The breadth of ecological challenges ahead of us requires a diverse community working together across disciplines, geographic boundaries, and perspectives. Our hope is that we can spark scientific collaborations worldwide to more effectively tackle the urgent challenge of riverscape degradation.
 
----
+## Our Mission
 
-### [Data Exchange](https://data.riverscapes.net)
-![Card image](/img/card-image.jpg)
-Discover and download Riverscapes compliant data.
+Promoting vibrant, healthy riverscapes for all where thriving ecosystems and human societies can coexist and benefit one another for a more resilient future.

@@ -35,7 +35,7 @@ There are approximately 18,000 HUC10 watersheds in the United States, of which w
 
 ## BRAT
 
-![BRAT](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/images/2025_conus_model_run_status_maps/status_map_brat.png)
+![BRAT](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/images/2025_conus_model_run_status_maps/status_map_riverscapes_brat.png)
 
 ## RCAT
 

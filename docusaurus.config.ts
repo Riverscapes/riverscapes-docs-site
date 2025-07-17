@@ -40,21 +40,21 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/logo.png', // Social sharing image
+    image: 'img/rc_logo.png', // Social sharing image
 
     navbar: {
       title: 'Riverscapes Docs', // Navbar title
       logo: {
         alt: 'Riverscapes Studio Logo', // Logo alt text
-        src: 'img/logo.png', // Logo image path
+        src: 'img/logos/rc_logo.png', // Logo image path
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar', // ID of the sidebar defined in sidebars.ts
-          position: 'left',
-          label: 'MENU1', // Label in the navbar
-        },
+        //   {
+        //     type: 'docSidebar',
+        //     sidebarId: 'tutorialSidebar', // ID of the sidebar defined in sidebars.ts
+        //     position: 'left',
+        //     label: 'MENU1', // Label in the navbar
+        //   },
         {
           href: 'https://github.com/Riverscapes/riverscapes-docs', // External GitHub link
           label: 'GitHub',
