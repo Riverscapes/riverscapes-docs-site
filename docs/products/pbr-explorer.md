@@ -80,21 +80,28 @@ The `Menu Bar` is the primary tool for navigating the Explorer.
   - **Description of Construction Elements** (10): Brief description of *restoration activities* (design, as-built construction, etc.) undertaken in your project. For example, if low-tech structures (e.g., BDAs, PALS) were built, describe the types of structures, materials used, construction methods, etc. This should ideally be kept between 1-2 paragraphs. Optional.  
   - **Budget** (11): Detailed breakdown of your project’s *costs and expenditures*. You can enter estimates for typical project expenses such as planning, labor, maintenance, etc. organized by pre-project, implementation, and post-project phases. Optional. 
 
-  - **Photos** (12): Project photos can be uploaded **after your project is created** and submitted to the Explorer. Each photo must be **100 MB or smaller**. If you upload multiple photos, you can select one to be the cover photo, which will be featured on the project card. Optional. 
+  - **Photos** (12): Project photos (*limited to 20*) can be uploaded **after your project is created** and submitted to the Explorer. Each photo must be **100 MB or smaller**. If you upload multiple photos, you can select one to be the cover photo, which will be featured on the project card. Optional. 
 
-  - **Related Projects** (13): *Link existing projects* to your own to highlight shared funding, different treatment phases, or geographical proximity. Type into the search bar to start filtering results. Optional. 
+  - **Related Projects** (13): *Link existing projects* to your own (*limited to 10*) to highlight shared funding, different treatment phases, or geographical proximity. Type into the search bar to start filtering results. Optional. 
 
-  - **Publishing and Accessibility** (14): Can list your project as a *draft* or make it *private*. Refer to the following table for more details. Optional. 
+  - **Publishing and Accessibility** (14): Can list your project as a *draft* or make it *private*. Refer to the following table for more details. Optional.
+
+|    |      Draft Project      |  Private Project |
+|:----------:|:-------------:|:------:|
+| Use | Ideal for incomplete or partially complete projects (i.e., no implementation) | Preclude public access to project (e.g., private property)  |
+| Visibility | Found on profile page of administrator | Found on profile page of administrator and affiliated organizations  |
+| Included in As-Built Statistics | No | Yes |
 
 ## Video Demonstration
 
 ## FAQ
 
-Q: Why should I enter my project to the PBR Explorer?
+Q: Why should I enter my project to the PBR Explorer? **You should enter your project into the Explorer to showcase it to the Riverscapes community, monitor as-built progression (i.e., as-built statistics) over time, and acknowledge involved organizations for their contribution.**  
 
-Q: When should I create a new project?  
+Q: When should I create a new project? **You can enter your project into the Explorer either upon completion (after its implementation), or during pre-implementation if you want to track it early. If entered before implementation, you can designate your project as a draft via "Publishing & Accessibility" to exclude it from as-built statistics. Ultimately, the decision is up to you**.
 
-Q: How should I enter a project with multiple treatments? **For each phase, you should enter a new project**. 
+Q: How should I enter a project with multiple treatments? **For each project phase, you should create a new entry in the Explorer. This ensures that each phase is distinct from the initial as-built. You can link project phases using the "Related Projects" feature to track treatment progression**. 
+
 
 Q: My project occurred on private property and the landowner doesn’t want to disclose its location to the public. Can I still enter it into the Explorer? **Yes you can. Under Publishing & Accessibility, you can make a project private. This means that the project will only be visible to the administrator and involved organizations**.  
 
