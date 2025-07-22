@@ -30,9 +30,23 @@ The `page-status` and `page-priority` tags are proposed for internal use and hav
 
 Use this syntax: 
 
-```
+
+#### Individual Video
+
+```ts
 <YouTubeEmbed videoId="mfyhjVfECf4" />
 ```
+
+
+<YouTubeEmbed videoId="mfyhjVfECf4" />
+
+#### Playlists
+
+```ts
+<YouTubeEmbed videoId="videoseries?si=ShLyh1OooBaksIn1&amp;list=PLbpi6ZahtOH4sXk8IP-z9gW9oDz5XjQwA" />
+```
+
+<YouTubeEmbed videoId="videoseries?si=ShLyh1OooBaksIn1&amp;list=PLbpi6ZahtOH4sXk8IP-z9gW9oDz5XjQwA" />
 
 ## Common theme repository
 
