@@ -2,148 +2,101 @@
 title: PBR Explorer
 ---
 
-## Overview of PBR Explorer
+## What is PBR Explorer
 
-Launched in May 2025, the latest version of PBR Explorer introduces a completely overhauled interface to upload, view, and organize process-based restoration projects. New features added include:  
+[PBR Explorer](https://pbr.riverscapes.net/) is an interactive web platform that **shares and promotes process-based restoration (PBR) projects**. Users can easily **upload** detailed project information, **acknowledge** collaborating partners, and **publicly showcase** their work to clientele, stakeholders, and broader restoration community. The Explorer **supports a diverse range of restoration actions** including riparian plantings, structural as-builts, beaver translocations, and more, while providing statistical summaries of completed work. 
 
-- Streamlined Project Upload: Effortlessly add new projects to the Explorer as an individual or organization.
-- Improved Project Detail: Users can now include additional details like timelines, budgets, and more for uploaded projects.
- - Enhanced Project Design: View current and completed restoration projects with greater clarity and detail.
+For a live demonstration of how to use the website, be sure to watch the video at the bottom of this page.
 
-These improvements aim to showcase and promote restoration work of individual practitioners and organizations to the broader restoration community.
+## How to Use the Menu Bar
+The `Menu Bar` is the primary tool for navigating the Explorer.
 
-Click here to launch the new PBR website.
-
-This comprehensive tutorial will guide you through the new features and improvements, showing you how to upload and organize restoration projects in the Explorer, and attribute credit to organizations involved in your restoration work. For a live demonstration, be sure to watch the video at the bottom of this page.
-
-## Search Bar 
-The Search Bar at the top of the page allows you to quickly find restoration projects or PBR organizations. Begin typing (minimum of three characters) to start filtering results. 
-
-## About Tab
-
-To learn more about PBR Explorer and its mission, click on the About tab. This page offers comprehensive sections covering: 
-
-- Process-Based Restoration: Learn about the guiding principles and supporting scientific articles for low-tech process-based restoration.
-- Riverscapes Consortium: Explore the Riverscapes Consortium community and its many applications, including the Community Platform, Data Exchange, Riverscapes Studio, and Riverscapes Tools.
-- Acknowledgements: See who contributed to PBR Explorer, including our partners and funders.
-- Help and Support: Get assistance by connecting with our support team, reading a knowledge-based article, or engaging with the Riverscapes PBR community.
-
-## Organizations Tab
-
-To learn more about the organizations involved in process-based restoration, click on the Organizations tab. Here, you will find details on PBR organizations, their associated restoration projects, and as-built statistics including: 
-
-- Total Number of Projects 
-- Total Treatment Length 
-- Number of Structures 
-
-Use the search bar to filter organizations by name, or sort the list by organization name (alphabetical), number of projects, total length treated, or number of structures.
-Click on any organization to access in-depth information about their mission, track their as-built statistics over time, or learn about detailed project specifics.
-
-## Regions Tab
-
-Navigate to the Regions tab for a geographic overview of completed restoration projects, categorized by continent, country, and state/province. Click on any continent, country, or state/province to access as-built statistics and specific projects for that region. 
-
-## Projects Tab
-
-The Projects tab features an interactive map for exploring restoration projects across the world. To pinpoint a specific project, simply zoom in using your scroll wheel or click on the cluster blocks until you reach your desired location.   
+ - **Search Bar** (1): Find restoration projects or organizations by name. Start typing (minimum *three characters*) to filter results.
+ 
+ - [**About**](https://pbr.riverscapes.net/about) (2): *Learn more* about process-based restoration, the Riverscapes Consortium, or to *get assistance*.
+ 
+ - [**Organizations**](https://pbr.riverscapes.net/organizations) (3): Discover organizations driving process-based restoration. Click on any organization card to see their *mission, restoration work, or as-built statistics* (project total, structure count, and aggregated length).
+ 
+ - [**Regions**](https://pbr.riverscapes.net/regions) (4): Get a *geographic overview* of completed projects, sorted by continent, country, and state/province. Click on any region to access its as-built statistics and specific project details.
+ 
+ - [**Projects**](https://pbr.riverscapes.net/projects) (5): Use an *interactive map* to explore restoration projects worldwide. Zoom in with your scroll wheel or click cluster blocks to pinpoint specific projects.
+ 
+ - [**Add a Project**](https://pbr.riverscapes.net/add-project) (6): To submit a new restoration project, but only visible when **signed in** with Riverscapes Consortium account.    
+ 
+ - **Unit Bar** (7): Toggle unit display between *imperial* (miles) and *metric* (kilometers). 
+ 
+ - [**User Profile**](https://pbr.riverscapes.net/profile) (8): To view all *organizations* (9) and *restoration projects* (10) linked with your Rivercapes Consortium account. Also where to *sign out* (11).
+ 
 
 ## Adding a New Project
-To add a new project in PBR Explorer, first sign in with your Riverscapes Consortium account. If you don’t already have one, simply create an account using a username and password, or sign in with your Google or Apple account. Once signed in, click on the  Add A Project tab to begin. 
 
-### Project Details  
+**Once signed into your Riverscapes Consortium account, you can add a new project in the Explorer**. If you don’t have an account, create one using a username and password, or sign in with your Google or Apple account. 
 
-Project Details includes relevant information about the project including its name (required), an optional URL link (e.g., design report, as-built map, YouTube video, website etc.), and the administrator (entity that owns the project; required). Project name and URL have to be entered manually, while the project administrator can be selected from a dropdown list including your personal profile and Data Exchange organizations (same as those in the Organizations tab). 
+### Project Page Overview 
 
-### Organizations 
+ - **Project Name** (1): Distinct project title. Must include at *least three characters* to complete. **Required**. 
 
-The Organizations section details all groups involved with your restoration project, including the project administrator and all other contributors (optional). You can add organizations by selecting one from the Data Exchange list, or if it’s not listed, manually entering its name and associated URL link. 
+ - **URL** (2): Optional. Provides links to *supplementary resources and supporting material* such as design reports, as-built maps, websites, YouTube videos and more.
+   - **Website Requirement**: URLs must begin with `https://` and include domain suffix (`.com `, `.gov` , etc.). 
 
-### Location
+ - **Administrator** (3): *Organization* (from Data Exchange) or *individual* with permissions to edit project information. You can only enter your individual profile or Data Exchange organizations you're affiliated with. **Required**. 
 
-The Location section contains geographic information about your project. You can enter coordinates by typing them into the Latitude and Longitude boxes (required), or selecting a location on the interactive map. In addition, you can define your project extent by uploading a GeoJSON file (optional). Finally, type in the Stream Name and Watershed Name (both required) into the provided text boxes.  
+   - **Individual Ownership**: If an individual owns the project, only they can make changes to the project. 
 
-### Project Progress
+   - **Organization Ownership**: If an organization owns the project, only members with administrative privileges (for that organization) can make changes to the project.   
 
-The Project Progress section requires you to provide project-specific timelines and important milestones. For each applicable category below, provide the month, day, and year. At least one date is required to submit your project to the Explorer. 
+   *Note*: However, the administrator of a PBR project doesn’t mean they were involved with the project itself.
 
-- Project Proposed
-- Project Funded
-- Project Designed
-- Project Permitted
-- Project Shovel-Ready (Designed and permitted, ready for implementation)
-- Project Anticipated Implementation
-- Project Implemented
+ - **Organizations** (4): Identify all organizations involved in your project. Optional. 
+
+   - **How to Add**: Select an organization from the Data Exchange dropdown menu or manually enter the organization's name and URL if not listed.  Multiple organizations are allowed to be entered. 
+
+   - **Roles**: For each organization, assign a specific role based on their involvement. You can assign multiple roles to multiple organizations. For example, one organization could be the *Project Manager*, *Field Implementation Crew*, and *Project Designer*. Another might be the *Project Owner* and *Funder*, while a third serves solely as a *Project Manager*. 
+
+ - **Location** (5): **Required**. You can enter the project’s location by: 
+
+   - Typing the latitude and longitude into the associated text boxes.  
+
+   - Clicking on a location from the interactive map.
+
+   - Uploading a GeoJSON polygon with the project extent. 
+
+   To provide more contextual information, you can also: 
+
+   - Specify the channel or tributary where restoration occurred under *Stream Name*.
  
-### Project Actions 
+   - Enter the encompassing watershed or its HUC code under *Watershed Name*. 
 
-The Project Actions section is where you detail specific restoration actions implemented as part of your project (listed below). At least one action is required to submit your project to the Explorer. 
+  - **Project Progress** (6): **Required**. Timeline of your project’s *important milestones*, providing viewers with a general understanding of its progression. 
 
-- Area of Floodplain Treatment (acres)
-- Area Planted (acres)
-- Number of Beavers Translocated/Introduced 
-- Number of Impoundments Removed
-- Number of Levees or Bank Protections Removed
-- Number of Structures Built
-- Number of Structures Removed
-- Number of Trees Felled
-- Number of Wood Added Project Implemented
+    Each milestone must be entered with a **complete month, day, and year** (in that order), which can be exact dates or close approximations. Dates don't need to appear in chronological order as shown in the Explorer (e.g., your permitting date might precede your funding date), but at **least one milestone date** must be entered. 
+ 
+  - **Project Actions** (7): Different restoration activities that occurred in your project. Multiple entries are allowed but at **least one** must be entered. **Required**. 
 
-### Treatment Length
+  - **Treatment Length** (8): Total length of treatment in *miles or kilometers*. Values have to be greater than zero for submission. **Required**. 
 
-Treatment Length is where you input the total treatment length of your project in miles or kilometers. It is required to submit your project to the Explorer. 
+  - **Restoration Goals Narrative** (9): Brief description of the specific *goals and/or objectives* associated with your project. This should ideally be kept between 1-2 paragraphs. **Required**. 
 
-### Restoration Goals Narrative
+  - **Description of Construction Elements** (10): Brief description of *restoration activities* (design, as-built construction, etc.) undertaken in your project. For example, if low-tech structures (e.g., BDAs, PALS) were built, describe the types of structures, materials used, construction methods, etc. This should ideally be kept between 1-2 paragraphs. Optional.  
+  - **Budget** (11): Detailed breakdown of your project’s *costs and expenditures*. You can enter estimates for typical project expenses such as planning, labor, maintenance, etc. organized by pre-project, implementation, and post-project phases. Optional. 
 
-In the Restoration Goals Narrative section, you will articulate the specific goals and/or objectives of your restoration project. This should ideally be kept between 1-2 paragraphs. It is required to submit your project to the Explorer. 
+  - **Photos** (12): Project photos can be uploaded **after your project is created** and submitted to the Explorer. Each photo must be **100 MB or smaller**. If you upload multiple photos, you can select one to be the cover photo, which will be featured on the project card. Optional. 
 
-### Description of Construction Elements 
+  - **Related Projects** (13): *Link existing projects* to your own to highlight shared funding, different treatment phases, or geographical proximity. Type into the search bar to start filtering results. Optional. 
 
-The Description of Construction Elements section allows you to elaborate on the restoration actions undertaken in your project. For example, if low-tech structures (e.g., BDAs, PALS) were built, describe the types of structures, materials used, construction methods, and so on. This field should ideally be kept between 1-2 paragraphs and is optional to the user.  
-
-### Budget
-
-The Budget section (optional) provides a detailed breakdown of your restoration project's costs and expenditures. The user can input budget items for the following categories:  
-
-- Pre-Project
-- Permitting
-- Planning/Feasibility 
-- Design
-- Pre-project Monitoring 
-- Implementation
-- Materials 
-- Labor/Services
-- As-Built Monitoring 
-- Post Project 
-- Post-Project Monitoring 
-- Maintenance 
-
-### Photos
-
-You can upload project photos to the Photo section after your project is created and submitted to the Explorer. While this is optional (though recommended), each photo uploaded must be 100 MB or smaller. 
-
-### Related Projects 
-
-You can use the Related Projects section to link other existing projects to your restoration project, such as those with shared funding, different phase treatments, or close proximity. Simply use the search bar to locate those projects and click on the + Add to link them. This is an optional field.  
-
-### Publishing & Accessibility 
-
-Finally, under the Publishing & Accessibility section, you can choose to list your project as a draft or a private project (optional). Refer to the following for more details:  
-
-#### Draft Project:
-
-Visible only to the user or members of the owning organization (e.g., administrators)  
-Ideal for partially completed restoration projects that will be made public upon completion
-Excluded from public search, region, and organization tabs, but listed on the profile page 
-Not included in as-built statistics or charts 
-
-### Private Project: 
-
-Visible only to individual administrators or members of the owning organization 
-Not publicly viewable (ideal if restoration took place on undisclosed private property)
-Included in as-built statistics and charts 
-
-## User Profile & Settings
-
-To view all restoration projects associated with your Rivercapes Consortium account and all PBR organizations you're involved with, simply select your user profile in the upper right-hand corner of the Explorer. You can also easily switch the Explorer's units between metric (kilometers) and imperial (miles) in the adjacent (left of profile) button .
+  - **Publishing and Accessibility** (14): Can list your project as a *draft* or make it *private*. Refer to the following table for more details. Optional. 
 
 ## Video Demonstration
+
+## FAQ
+
+Q: Why should I enter my project to the PBR Explorer?
+
+Q: When should I create a new project?  
+
+Q: How should I enter a project with multiple treatments? **For each phase, you should enter a new project**. 
+
+Q: My project occurred on private property and the landowner doesn’t want to disclose its location to the public. Can I still enter it into the Explorer? **Yes you can. Under Publishing & Accessibility, you can make a project private. This means that the project will only be visible to the administrator and involved organizations**.  
+
+Q: How can I display my organization under the [Organizations](https://pbr.riverscapes.net/organizations) tab? 
+A: **An organization has to be created in the [Data Exchange](https://data.riverscapes.net/) and be associated with at least one project (owner or affiliate) to display in the `Organizations` tab**.  
