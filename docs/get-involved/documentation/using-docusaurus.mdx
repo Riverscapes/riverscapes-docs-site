@@ -54,6 +54,7 @@ Use this syntax:
 Use `ToolsWrapper` in your `.mdx` page to display a grid of tool cards.
 
 **Component props:**
+
 * **sectionTitle** (optional): Adds a heading above the card grid, e.g., `sectionTitle="Featured Tools"`.
 * **cardsize** (optional): Sets the card size; can be `"sm"`, `"md"`, or `"lg"`. If not mentioned, the default is `"md"`.
 
@@ -65,7 +66,7 @@ Use `ToolsWrapper` in your `.mdx` page to display a grid of tool cards.
 * **imageUrl** (optional): Main image shown on the card.
 * **imageLink** (optional): Link opened when the image is clicked (overrides card link for the image only).
 
----
+
 ```tsx
 <ToolsWrapper
   sectionTitle="Example Cards"
@@ -73,7 +74,7 @@ Use `ToolsWrapper` in your `.mdx` page to display a grid of tool cards.
     {
       title: "Card 1",
       description: "Card with title, description, logo, toolUrl, imageUrl, and imageLink.",
-      logoUrl: "/img/logo.png",
+      logoUrl: "/img/logo-md.png",
       toolUrl: "https://example.com/tool",
       imageUrl: "/img/card-image.jpg",
       imageLink: "/img/card-image.jpg",
@@ -81,7 +82,7 @@ Use `ToolsWrapper` in your `.mdx` page to display a grid of tool cards.
     {
       title: "Card 2",
       description: "Card with title, description, logo, toolUrl, imageUrl, and imageLink.",
-      logoUrl: "/img/logo.png",
+      logoUrl: "/img/logo-md.png",
       toolUrl: "https://example.com/tool",
       imageUrl: "/img/card-image.jpg",
       imageLink: "/img/card-image.jpg",
@@ -89,7 +90,7 @@ Use `ToolsWrapper` in your `.mdx` page to display a grid of tool cards.
     {
     title: "Card 3",
     description: "Card with title, description, logo, toolUrl, imageUrl, and imageLink.",
-    logoUrl: "/img/logo.png",
+    logoUrl: "/img/logo-md.png",
     toolUrl: "[https://example.com/tool](https://example.com/tool)",
     imageUrl: "/img/card-image.jpg",
     imageLink: "/img/card-image.jpg",
@@ -104,7 +105,7 @@ cards={[
 {
 title: "Card 1",
 description: "Card with title, description, logo, toolUrl, imageUrl, and imageLink.",
-logoUrl: "/img/logo.png",
+logoUrl: "/img/logo-md.png",
 toolUrl: "[https://example.com/tool](https://example.com/tool)",
 imageUrl: "/img/card-image.jpg",
 imageLink: "/img/card-image.jpg",
@@ -112,7 +113,7 @@ imageLink: "/img/card-image.jpg",
 {
 title: "Card 2",
 description: "Card with title, description, logo, toolUrl, imageUrl, and imageLink.",
-logoUrl: "/img/logo.png",
+logoUrl: "/img/logo-md.png",
 toolUrl: "[https://example.com/tool](https://example.com/tool)",
 imageUrl: "/img/card-image.jpg",
 imageLink: "/img/card-image.jpg",
@@ -120,7 +121,7 @@ imageLink: "/img/card-image.jpg",
 {
 title: "Card 3",
 description: "Card with title, description, logo, toolUrl, imageUrl, and imageLink.",
-logoUrl: "/img/logo.png",
+logoUrl: "/img/logo-md.png",
 toolUrl: "[https://example.com/tool](https://example.com/tool)",
 imageUrl: "/img/card-image.jpg",
 imageLink: "/img/card-image.jpg",
@@ -129,7 +130,89 @@ imageLink: "/img/card-image.jpg",
 />
 
 ---
+## Using the LogoWrapper Component
+Use `LogoWrapper` in your `.mdx` page to display a row of logos.
 
+**Component props:**
+* **logos** (required): An array of logo objects to display.
+* **size** (optional): Sets logo size; can be `"sm"`, `"md"`, or `"lg"`. If not mentioned, the default is `"md"`.
+
+**Available fields for each logo:**
+* **imageUrl** (required): Path to the logo image.
+* **name** (optional): Name or label shown below the logo.
+* **url** (optional): Link opened when the logo is clicked (opens in a new tab).
+
+
+```tsx
+<LogoWrapper
+  size="sm"
+  logos={[
+    {
+      imageUrl: "/img/logo1.png",
+      name: "Logo One",
+      url: "https://example.com/one"
+    },
+    {
+      imageUrl: "/img/logo2.png",
+      name: "Logo Two",
+      url: "https://example.com/two"
+    },
+    {
+      imageUrl: "/img/logo3.png",
+      name: "Logo Three"
+    }
+  ]}
+/>
+```
+
+
+<LogoWrapper
+size="sm"
+logos={[
+{
+imageUrl: "/img/logo-md.png",
+name: "Logo One",
+url: "[https://example.com/one](https://example.com/one)"
+},
+{
+imageUrl: "/img/logo-md.png",
+name: "Logo Two",
+url: "[https://example.com/two](https://example.com/two)"
+},
+{
+imageUrl: "/img/logo-md.png",
+name: "Logo Three"
+}
+]}
+/>
+---
+## Using the GoogleSlides Component
+Use `GoogleSlides` in your `.mdx` page to embed a Google Slides presentation.
+
+**Component props:**
+
+* **src** (required): The *embed* URL for your Google Slides presentation.
+* **width** (optional): Width of the embedded slides in pixels. Default is `960`.
+* **height** (optional): Height of the embedded slides in pixels. Default is `749`.
+
+
+```tsx
+<GoogleSlides
+  src="https://docs.google.com/presentation/d/e/2PACX-1vRvfFoZVdGcOsb9jSfj7TYPOcmn85yTBkvp1Y0fkOtZXlINTDkt_tcYmPr-Z9rGGyaXlsp8984ElPB-/embed?start=true&loop=true&delayms=3000"
+  width={800}
+  height={600}
+/>
+```
+
+
+<GoogleSlides
+src="https://docs.google.com/presentation/d/e/2PACX-1vRvfFoZVdGcOsb9jSfj7TYPOcmn85yTBkvp1Y0fkOtZXlINTDkt_tcYmPr-Z9rGGyaXlsp8984ElPB-/embed?start=true&loop=true&delayms=3000"
+width={800}
+height={600}
+/>
+
+
+---
 ## Common theme repository
 
 We have a [private GitHub repository](https://github.com/Riverscapes/riverscapes-docusaurus-theme) for the theme and a demo site at 
