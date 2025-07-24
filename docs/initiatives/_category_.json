@@ -1,4 +1,8 @@
 {
   "label": "Initiatives",
-  "position": 4
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Initatives using and producing Riverscapes data."
+  }
 }

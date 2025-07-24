@@ -1,4 +1,8 @@
 {
   "label": "Get Involved",
-  "position": 2
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Resources focused around working with Riverscapes tools, code and products."
+  }
 }
