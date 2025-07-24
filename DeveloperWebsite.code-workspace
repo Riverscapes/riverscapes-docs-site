@@ -37,7 +37,10 @@
     "files.exclude": {
       "**/node_modules/**": true
     },
-    "terminal.integrated.defaultProfile.linux": "zsh"
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "files.associations": {
+      "*.mdx": "markdown"
+    }
   },
   "extensions": {
     "recommendations": ["unifiedjs.vscode-mdx"]
