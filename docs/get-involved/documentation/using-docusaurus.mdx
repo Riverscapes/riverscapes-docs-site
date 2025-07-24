@@ -1,12 +1,13 @@
 ---
-title: Using Docusaurus for Riverscapes documentation
-page-status: stub
+title: Using Docusaurus
+page-status: messy
 page-priority: medium
+sidebar_position: 4
 ---
 
 ## Create a new page
 
-A new page is written in markdown and should have .md or .mdx extension. (Use .mdx if you are including a react component.)
+A new page is written in markdown and should have an .mdx extension, as that allows you to use react components described below (e.g. Youtube video, ToolsWrapper).
 
 ### Front matter
 
@@ -18,13 +19,16 @@ Suggested front matter for Riverscapes docs:
 ---
 title: Friendly Page Title
 description: A description of the page
+sidebar_position: 1
 page-status: stub,messy,mature,protected,generated
 page-priority: low,medium,high
 ---
-
-The `page-status` and `page-priority` tags are proposed for internal use and have no impact on how the page is displayed. 
-
 ```
+
+* `sidebar_position` Pages within the section are ordered by this value, and then alphabetically. 
+* `page-status` and `page-priority` tags are proposed for internal use and have no impact on how the page is displayed. 
+
+
 
 ### How to embed a Youtube Video
 
@@ -78,7 +82,7 @@ Use `ToolsWrapper` in your `.mdx` page to display a grid of tool cards.
     },
     {
       title: "Card 2",
-      description: "Card with title, description, logo, toolUrl, imageUrl, and imageLink.",
+      description: "Second card with title, description, logo, toolUrl, imageUrl, and imageLink.",
       logoUrl: "/img/logo-md.png",
       toolUrl: "https://example.com/tool",
       imageUrl: "/img/card-image.jpg",
