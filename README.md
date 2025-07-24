@@ -34,19 +34,19 @@ yar
 
 1. **Install dependencies:**
 
-```bash
+```sh
 yarn install
 ```
 
 Start the local development server:
 
-```bash
+```sh
 yarn start
 ```
 
-Build the static site:
+Build the static site (normally you don't need to run this):
 
-```bash
+```sh
 yarn build
 ```
 

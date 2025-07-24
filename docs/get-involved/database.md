@@ -22,10 +22,10 @@ There are several popular brands of databases, some of which you might have hear
 ## For Movie Lovers
 
 ### PostGIS
-[Introduction to PostGIS](https://youtu.be/g4DgAVCmiDE) (a geospatial extension to postgres)
-<div class="responsive-embed">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/g4DgAVCmiDE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+
+[Introduction to PostGIS](https://youtu.be/g4DgAVCmiDE) (a geospatial extension to postgres). 
+
+<YouTubeEmbed videoId="g4DgAVCmiDE" />
 
 ### SQL
 [Introduction to SQL](https://youtu.be/7S_tz1z_5bA) (this 3hr video course uses MySQL but I like Mosh, the presenter)
