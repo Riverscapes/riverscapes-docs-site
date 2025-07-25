@@ -1,11 +1,9 @@
 ---
 title: Visual Identity
 description: Assets and rules for using the Riverscapes Visual Identity
-sidebar_position: 1
+sidebar_position: 4
 ---
-
 # Visual Identity
-
 
 ![Riverscapes Visual Identity Banner](/img/background-hero.jpg)
 
@@ -14,14 +12,34 @@ sidebar_position: 1
 > Explore and download graphics, digital assets, templates, and guidelines for the RC brand to create visual consistency across various channels.
 
 ## Visual identity guide & logo
+
+import ToolsWrapper from '@site/src/components/ToolsWrapper/ToolsWrapper';
+import CopyButtonWrapper from '@site/src/components/CopyButtonWrapper/CopyButtonWrapper';
+
+
 <ToolsWrapper
   cardsize="lg"
   cards={[
     {
-      title: "Visual identity guide",
+     title: (
+        <>
+          Visual identity guide{' '}
+          <CopyButtonWrapper
+            copyText="Visual identity guide"
+          />
+        </>
+      ),
       imageUrl: "/img/visual-identity/Visual_Identity_Guide.jpg",
       toolUrl: "https://drive.google.com/file/d/1pOrOYZAClBOlu_aItwcrWLeHpJytdQlB/view?usp=sharing",
-      description: "Your first stop to logo guidelines, typography sets, color codes, and more."
+      description: (
+        <>
+        Your first stop to logo guidelines, typography sets, color codes, and more.{' '}
+        <CopyButtonWrapper
+            copyText="Your first stop to logo guidelines, typography sets, color codes, and more."
+          />
+        </>
+      ),
+    
     },
     {
       title: "RC main logo",
@@ -33,6 +51,7 @@ sidebar_position: 1
 />
 
 ## Typefaces & color palette
+
 <ToolsWrapper
 
   cardsize="lg"
@@ -52,12 +71,11 @@ sidebar_position: 1
     {
       title: "Color palettes",
       imageUrl: "/img/visual-identity/colors.jpg",
-      toolUrl: "https://drive.google.com/file/d/1xB66r5qwr8hul6EAKjZQvpbETmQHZUiO/view?usp=drive_link",
+      toolUrl: "/get-involved/documentation/visual-identity/color-palettes",
       description: "Main blue #004793 | Main teal #21BFD4 | Main green #BBCD3. View all color codes for various use cases. MUI light/dark modes."
     }
   ]}
 />
-
 
 <ToolsWrapper
   sectionTitle="App & model logos & templates"
@@ -131,7 +149,6 @@ sidebar_position: 1
     }
   ]}
 />
-
 
 <ToolsWrapper
   sectionTitle="MUI templates & banner images"
