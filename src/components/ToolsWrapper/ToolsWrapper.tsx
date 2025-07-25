@@ -70,14 +70,15 @@ export const ToolCard: React.FC<ToolCardProps> = ({ title, description, logoUrl,
     <div {...cardProps}>
       {imageUrl && (
         <div className={styles.cardImageWrapper}>
-          {imageLink || toolUrl ? (
+          {imageLink ? (
             <a
-              href={imageLink || toolUrl}
+              href={useBaseUrl(imageLink)}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
               tabIndex={0}
               aria-label={`${title} image`}
+              className={styles.cardImageLink}
             >
               <img src={imageUrl} alt={title + ' image'} className={styles.cardImage} />
             </a>
