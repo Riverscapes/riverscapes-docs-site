@@ -35,9 +35,9 @@ const ToolsWrapper: React.FC<ToolsWrapperProps> = ({
             title={card.title}
             description={card.description}
             logoUrl={card.logoUrl ? useBaseUrl(card.logoUrl) : undefined}
-            toolUrl={card.toolUrl ? useBaseUrl(card.toolUrl) : undefined}
-            imageUrl={card.imageUrl ? useBaseUrl(card.imageUrl) : undefined}
-            imageLink={card.imageLink ? useBaseUrl(card.imageLink) : undefined}
+            toolUrl={getUrl(card.toolUrl)}
+            imageUrl={getUrl(card.imageUrl)}
+            imageLink={getUrl(card.imageLink)}
           />
         ))}
       </div>
@@ -47,8 +47,58 @@ const ToolsWrapper: React.FC<ToolsWrapperProps> = ({
 
 export const ToolCard: React.FC<ToolCardProps> = ({ title, description, logoUrl, toolUrl, imageUrl, imageLink }) => {
   const history = useHistory()
-  // using a <div> for the card to avoid nested <a> tags
-  const toolsUrl = toolUrl ? useBaseUrl(toolUrl) : undefined
+  // Only use useBaseUrl for relative URLs
+  const getUrl = (url?: string) =>
+    url && (url.startsWith('http://') || url.startsWith('https://')) ? url : useBaseUrl(url || '')
+
+  const toolsUrl = getUrl(toolUrl)
+  const isExternal = toolUrl && (toolUrl.startsWith('http://') || toolUrl.startsWith('https://'))
+
+  if (isExternal) {
+    // Render external card as an anchor
+    return (
+      <a
+        href={toolUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.card}
+        tabIndex={0}
+        aria-label={typeof title === 'string' ? title : undefined}
+        style={{ cursor: 'pointer', textDecoration: 'none' }}
+      >
+        {imageUrl && (
+          <div className={styles.cardImageWrapper}>
+            {imageLink ? (
+              <a
+                href={getUrl(imageLink)}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                tabIndex={0}
+                aria-label={`${title} image`}
+                className={styles.cardImageLink}
+              >
+                <img src={imageUrl} alt={title + ' image'} className={styles.cardImage} />
+              </a>
+            ) : (
+              <img src={imageUrl} alt={title + ' image'} className={styles.cardImage} />
+            )}
+          </div>
+        )}
+        <div className={styles.cardHeader}>
+          {logoUrl && (
+            <div className={styles.logoRowWrapper}>
+              <img src={logoUrl} className={styles.logoRow} />
+            </div>
+          )}
+          <h3 className={styles.cardTitle}>{title}</h3>
+        </div>
+        <div className={styles.cardContent}>{description && <p>{description}</p>}</div>
+      </a>
+    )
+  }
+
+  // Internal link: use div and router
   const cardProps = toolUrl
     ? {
         role: 'link',
@@ -59,7 +109,7 @@ export const ToolCard: React.FC<ToolCardProps> = ({ title, description, logoUrl,
           history.push(toolsUrl)
         },
         onKeyDown: (e: React.KeyboardEvent) => {
-          if ((e.key === 'Enter' || e.key === ' ') && toolUrl && typeof window !== 'undefined') {
+          if ((e.key === 'Enter' || e.key === ' ') && toolUrl) {
             history.push(toolsUrl)
           }
         },
@@ -72,7 +122,7 @@ export const ToolCard: React.FC<ToolCardProps> = ({ title, description, logoUrl,
         <div className={styles.cardImageWrapper}>
           {imageLink ? (
             <a
-              href={useBaseUrl(imageLink)}
+              href={getUrl(imageLink)}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
@@ -99,5 +149,8 @@ export const ToolCard: React.FC<ToolCardProps> = ({ title, description, logoUrl,
     </div>
   )
 }
+
+const getUrl = (url?: string) =>
+  url && (url.startsWith('http://') || url.startsWith('https://')) ? url : useBaseUrl(url || '')
 
 export default ToolsWrapper
