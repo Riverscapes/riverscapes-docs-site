@@ -1,0 +1,45 @@
+{
+  "folders": [
+    {
+      "name": "📜 Riverscapes Docs",
+      "path": "."
+    },
+  ],
+  "settings": {
+    // TODO: Add your own site name here. Replace "GATSBYDOCS" with your site name or "QRiS Docs -" or whatever you want to see in the window title.
+    "window.title": "Riverscapes Docs${separator}${activeEditorShort}${separator}${rootName}",
+    "[mdx]": {
+      "editor.wordWrap": "bounded",
+      "editor.wordWrapColumn": 80
+    },
+    "css.lint.validProperties": ["composes"],
+    "workbench.colorCustomizations": {
+      "titleBar.activeBackground": "#001768",
+      "sideBar.background": "#242132",
+      "editor.background": "#1e1c2c"
+    },
+    "editor.tabSize": 2,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "files.watcherExclude": {
+      "**/node_modules/**": true,
+      "**/.cache/**": true
+    },
+    "search.exclude": {
+      "**/node_modules/**": true,
+      "**/.cache/**": true,
+      "**/.docusaurus/**": true,
+      "**/build/**": true,
+      "**/public/**": true,
+      "**/dist/**": true
+    },
+    "files.exclude": {
+      "**/node_modules/**": true
+    },
+    "terminal.integrated.defaultProfile.linux": "zsh"
+  },
+  "extensions": {
+    "recommendations": ["unifiedjs.vscode-mdx"]
+  }
+}
