@@ -27,24 +27,21 @@ RC tools are deployed to users thorugh a variety of interfaces. Most tools have 
 
 We classify the grade of our tools along a continuum of growth from innovative research [ideas](#concept), through to [operational](#operational-grade) tools in development that (with a little love and patience) can be run by someone other than the developer, on through to more broadly deployable [professional](#professional-grade) tools that are robust and usable by any user in very different settings. Tools that have the potential to be efficiently run with greater repetition and/or across greater spatial extents or at greater resolution may be upgraded to [production-grade](#production-grade) tools whereas those that can then be deployed to much broader audiences in the most accessible platforms (e.g. Mobile Aps, Web Aps) and with ease of sharing maybe ultimately be launched as [commercial-grade](#commercial-grade) tools.
 
-Our [RC Technical Committee](\About\) ranks a **tool's grade** status using the following criteria:
+The Riverscapes Consortium Technical Committee ranks tool grade status using the following criteria:
 
-| [Technology<br>Readiness Level](#technological-readiness-levels) | Tool Status |Badge | Vetted in <br>Peer-Reviewed <br>Literature | Source Code <br>Documentation | Open Source | User <br>Documentation | Easy User <br>Interface | Scalability |
-|:-----------------------------:|------------------------|:------------------------------------------------------:|:--------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------:|
-| TR1 -TR2 |[**Concept**](#concept)|<img src="/images/tools/grade/TRL_1_32p.png"> | <i class="fa fa-battery-empty" aria-hidden="true"></i> | <i class="fa fa-battery-empty" aria-hidden="true"></i> | <i class="fa fa-battery-empty" aria-hidden="true"></i> | <i class="fa fa-battery-empty" aria-hidden="true"></i> | <i class="fa fa-battery-empty" aria-hidden="true"></i> | <i class="fa fa-battery-empty" aria-hidden="true"></i> |
-| TR3 |[**Proof of Concept**](#proof-of-concept)| <img src="/images/tools/grade/TRL_2_32p.png">  | <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-empty" aria-hidden="true"></i> | <i class="fa fa-battery-empty" aria-hidden="true"></i><br>to<br><i class="fa fa-battery-quarter" aria-hidden="true"></i> | <i class="fa fa-battery-empty" aria-hidden="true"></i> | <i class="fa fa-battery-empty" aria-hidden="true"></i> | <i class="fa fa-battery-empty" aria-hidden="true"></i> |
-| TR4 |[**Research Grade**](#research-grade)|<img src="/images/tools/grade/TRL_3_32p.png">  | <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-quarter" aria-hidden="true"></i> | <i class="fa fa-battery-quarter" aria-hidden="true"></i> | <i class="fa fa-battery-quarter" aria-hidden="true"></i> | <i class="fa fa-battery-quarter" aria-hidden="true"></i> <br>to<br> <i class="fa fa-battery-half" aria-hidden="true"></i> | <i class="fa fa-battery-empty" aria-hidden="true"></i><br>to<br> <i class="fa fa-battery-quarter" aria-hidden="true"></i> |
-| TR5-6 | [**Operational Grade**](#operational-grade)|<img src="/images/tools/grade/TRL_4_32p.png">| <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-half" aria-hidden="true"></i> | <i class="fa fa-battery-half" aria-hidden="true"></i> | <i class="fa fa-battery-quarter" aria-hidden="true"></i> |
-| TR7-8 |[**Professional Grade**](#professional-grade)| <img src="/images/tools/grade/TRL_5_32p.png"> | <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-full" aria-hidden="true"> | <i class="fa fa-battery-full" aria-hidden="true"> | <i class="fa fa-battery-half" aria-hidden="true"></i> |
-| TR8-9 |[**Production Grade**](#production-grade)|<img src="/images/tools/grade/TRL_6_32p.png">   | <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-full" aria-hidden="true"> | <i class="fa fa-battery-quarter" aria-hidden="true"></i> <br>to<br><i class="fa fa-battery-full" aria-hidden="true"> | <i class="fa fa-battery-full" aria-hidden="true"> |
-| TR9 | [**Commercial Grade**](#commercial-grade)|<img src="/images/tools/grade/TRL_7_32p.png">  | <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-full" aria-hidden="true"></i> | <i class="fa fa-battery-full" aria-hidden="true"> | <i class="fa fa-battery-full" aria-hidden="true"> | <i class="fa fa-battery-full" aria-hidden="true"> |
+|[Technological Readiness Levels](#technological-readiness-levels)|Tool Status|Vetted in Peer-Reviewed Literature|Source Code Documentation|Open Source|User Documentation|Easy User Interface|Scalability|
+|--|--|:--:|:--:|:--:|:--:|:--:|:--:|
+|TR1-2|Concept|🟥|🟥|🟥|🟥|🟥|🟥|
+|TR3|Proof of Concept|🟩|🟥|🟨|🟥|🟥|🟥|
+|TR4|Research Grade|🟩|🟨|🟨|🟨|🟨|🟩|
+|TR5-6|Operational Grade|🟩|🟩|🟩|🟨|🟨|🟨|
+|TR7-8|Professional Grade|🟩|🟩|🟩|🟩|🟩|🟨|
+|TR8-9|Production Grade|🟩|🟩|🟩|🟩|🟨|🟩|
+|TR9|Commercial Grade|🟩|🟩|🟩|🟩|🟩|🟩|
 
-None or Not Applicable: <i class="fa fa-battery-empty" aria-hidden="true"></i> •
-Minimal or In Progress: <i class="fa fa-battery-quarter" aria-hidden="true"></i> •
-Functional: <i class="fa fa-battery-half" aria-hidden="true"></i> •
-Fully Developed: <i class="fa fa-battery-full" aria-hidden="true"></i>   -->
-
-**NOTE** - The RC does not track concepts or proof of concept tools in its listing. 
+- 🟥 criteria not fulfilled
+- 🟨 criteria partially or completely fulfilled
+- 🟩 criteria completely fulfilled
 
 ### Tool Grades Explained
 
