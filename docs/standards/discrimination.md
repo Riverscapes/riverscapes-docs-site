@@ -31,17 +31,17 @@ The Riverscapes Consortium Technical Committee ranks tool grade status using the
 
 |[Technological Readiness Levels](#technological-readiness-levels)|Tool Status|Vetted in Peer-Reviewed Literature|Source Code Documentation|Open Source|User Documentation|Easy User Interface|Scalability|
 |--|--|:--:|:--:|:--:|:--:|:--:|:--:|
-|TR1-2|Concept|🟥|🟥|🟥|🟥|🟥|🟥|
-|TR3|Proof of Concept|🟩|🟥|🟨|🟥|🟥|🟥|
-|TR4|Research Grade|🟩|🟨|🟨|🟨|🟨|🟩|
-|TR5-6|Operational Grade|🟩|🟩|🟩|🟨|🟨|🟨|
-|TR7-8|Professional Grade|🟩|🟩|🟩|🟩|🟩|🟨|
-|TR8-9|Production Grade|🟩|🟩|🟩|🟩|🟨|🟩|
-|TR9|Commercial Grade|🟩|🟩|🟩|🟩|🟩|🟩|
+|TR1-2|Concept|❌|❌|❌|❌|❌|❌|
+|TR3|Proof of Concept|🟢|❌|🟨|❌|❌|❌|
+|TR4|Research Grade|🟢|🟨|🟨|🟨|🟨|🟢|
+|TR5-6|Operational Grade|🟢|🟢|🟢|🟨|🟨|🟨|
+|TR7-8|Professional Grade|🟢|🟢|🟢|🟢|🟢|🟨|
+|TR8-9|Production Grade|🟢|🟢|🟢|🟢|🟨|🟢|
+|TR9|Commercial Grade|🟢|🟢|🟢|🟢|🟢|🟢|
 
-- 🟥 criteria not fulfilled
+- ❌ criteria not fulfilled
 - 🟨 criteria partially or completely fulfilled
-- 🟩 criteria completely fulfilled
+- 🟢 criteria completely fulfilled
 
 ### Tool Grades Explained
 
