@@ -11,7 +11,7 @@ For a live demonstration of how to use the website, be sure to watch the video a
 ## How to Use the Menu Bar
 The `Menu Bar` is the primary tool for navigating the Explorer.
 
-![PBR Menu](/static/img/products/pbr/PBR_Explorer_Image_01.png)
+![PBR Menu](/img/products/pbr/PBR_Explorer_Image_01.png)
 
  - **Search Bar** (1): Find restoration projects or organizations by name. Start typing (minimum *three characters*) to filter results.
  
@@ -34,7 +34,7 @@ The `Menu Bar` is the primary tool for navigating the Explorer.
 
 **Once signed into your Riverscapes Consortium account, you can add a new project in the Explorer**. If you don’t have an account, create one using a username and password, or sign in with your Google or Apple account. 
 
-![PBR Project](/static/img/products/pbr/PBR_Explorer_Image_02.png)
+![PBR Project](/img/products/pbr/PBR_Explorer_Image_02.png)
 
 ### Project Page Overview 
 
