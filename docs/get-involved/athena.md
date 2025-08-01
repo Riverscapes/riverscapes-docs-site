@@ -9,7 +9,7 @@ The amazing thing about Athena is that you simply add files or update files in t
 ## Resources
 
 - [Athena Data Types](https://docs.aws.amazon.com/athena/latest/ug/data-types.html)
-- [Athena Geospatial Functions](https://docs.google.com/document/d/1x_pjrizBQfN34K3DoAKa-qedLHuuFOHV2FxG-Rn4W7E/edit?usp=sharing)
+- [Athena Geospatial Functions](https://trino.io/docs/current/functions/geospatial.html)
 - [Athena SQL Syntax](https://docs.aws.amazon.com/athena/latest/ug/dml-queries-functions-operators.html)
 
 # Add a Geospatial Layer to Athena
