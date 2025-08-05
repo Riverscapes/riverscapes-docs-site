@@ -47,12 +47,12 @@ rscli download <local_empty_folder> --id <project_guid>
 You can obtain this GUID from the URL when viewing the project details in the Data Exchange and copy it using the copy button.
 ![](/img/data-exchange/DE_Copy_ProjectID.gif) 
 
-Often, for projects that are too large to
+Often, for projects that are too large (e.g. > 1.5 to 2 GB) the Data Exchange strugles zipping this file up. Because the RSCLI does not download a zip file, but instead downloads individual files, it can be used as an alternative for downloading large projects. 
 
 ### Requirements
-You must have read permissions to access the project before you can download it. If you can see the project details and download in the [Data Exchange](https://data.riverscapes.net) then you can download the project. Unlike downloading projects from the Data Exchange that will result in a zip file, rscli will download the project as raw individual uncompressed files.
+You must have read permissions to access the project before you can download it. If you can see the project details and download it in the [Data Exchange](https://data.riverscapes.net) then you should e able to download the project from RSCLI. Unlike downloading projects from the Data Exchange that will result in a zip file, rscli will download the project as raw individual uncompressed files to the specified root project directory.
 
-#### Downloading a project to your machine that does not exist - from the command line 
+#### Downloading a project to your machine that does not already exist locally - from the command line 
 
 If you want to download a project to your machine in folder that does not exist, you need to:
 1. Navigate to the path where you wish to download and create a project folder, (you can only download a new project to a completely empty folder). This folder and path can have other files and folders in it, but when you type the command prompt, you will append to the end of it the name of the folder you wish to create that will be empty.
@@ -72,7 +72,7 @@ rscli download C:\0_RS\BRAT\SpokaneBRAT --id 9f771a97-41d8-4edf-876f-de64d47ec7b
 See illusrtation of this example in this video:
 <YouTubeEmbed videoId="L-JiHwZh2SE" />
 
-#### Downloading and updating a project that already exists on your machine
+#### Using download to update a project that already exists on your machine
 
 The download command can also be used to smartly update an existing project that you have already downloaded but was changed (locally) or remotely, so that the downloaded copy matches that on that data exchange.
 
