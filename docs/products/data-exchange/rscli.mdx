@@ -38,19 +38,69 @@ rscli upload --help
 
 ## Downloading Projects
 
-The most common rscli use case is to download projects from the [Riverscapes Data Exchange](https://data.riverscapes.net). In the following command, replace the `<local_empty_folder>` with a path on your computer to an empty folder where the project will be downloaded. Replace the `<project_guid>` with the GUID of a project. You can obtain this GUID from the URL when viewing the project details in the Data Exchange.
+The most common rscli use case is to download projects from the [Riverscapes Data Exchange](https://data.riverscapes.net). The synatax for the `download` command is below, replace the `<local_empty_folder>` with a path on your computer to folder where the project will be downloaded or updated. Replace the `<project_guid>` with the GUID of a project. 
+
 
 ```sh
 rscli download <local_empty_folder> --id <project_guid>
 ```
+You can obtain this GUID from the URL when viewing the project details in the Data Exchange and copy it using the copy button.
+![](img/data-exchange/DE_Copy_ProjectID.gif) 
 
-You must have read permissions to access the project before you can download it. A good rule of thumb is that if you can see the project details in the Data Exchange then you can download the project. Unlike downloading projects from the Data Exchange that will result in a zip file, rscli will download the project as raw individual uncompressed files.
+Often, for projects that are too large to
 
+### Requirements
+You must have read permissions to access the project before you can download it. If you can see the project details and download in the [Data Exchange](https://data.riverscapes.net) then you can download the project. Unlike downloading projects from the Data Exchange that will result in a zip file, rscli will download the project as raw individual uncompressed files.
+
+#### Downloading a project to your machine that does not exist - from the command line 
+
+If you want to download a project to your machine in folder that does not exist, you need to:
+1. Navigate to the path where you wish to download and create a project folder, (you can only download a new project to a completely empty folder). This folder and path can have other files and folders in it, but when you type the command prompt, you will append to the end of it the name of the folder you wish to create that will be empty.
+2. Copy the path of this folder (case-sensitive)
+3. Obtain Project GUID for project you wish to download
+4. Start a command line (e.g. in windows typoe in the search bar `cmd`) 
+5. Navigate to the drive (folder position does not matter) you wish to download to. For example if you are at a command prompt in the c:\ and wish to download to d:\ type `d:\`at command prompt. Or if you started your CLI in `C:\Users\YourName`, type `cd\` at command prompt to return to root drive. 
+6. Type the download command and follow the prompts.
+
+It is sensitive to case, if the folder you specify to download to exists (it will not work), and command prompt path from which the command is invoked.
+
+For example, to download [this BRAT project](https://data.riverscapes.net/p/9f771a97-41d8-4edf-876f-de64d47ec7b4/overview) with Project ID `9f771a97-41d8-4edf-876f-de64d47ec7b4` to an empty folder you created at: `C:\0_RS\BRAT\Spokane_BRAT`, you would type (note that the subfloder `SpokaneBRAT` **does not** exist and will get created by this commmand):
+
+```sh
+rscli download C:\0_RS\BRAT\SpokaneBRAT --id 9f771a97-41d8-4edf-876f-de64d47ec7b4
+```
+See illusrtation of this example in this video:
+<YouTubeEmbed videoId="L-JiHwZh2SE" />
+
+#### Downloading and updating a project that already exists on your machine
+
+The download command can also be used to smartly update an existing project that you have already downloaded but was changed (locally) or remotely, so that the downloaded copy matches that on that data exchange.
+
+1. Navigate to the path of the root folder for the existing riverscapes project. **This folder must at least contain the correct `project.rs.xml` project file in it**!
+2. Copy the path of this folder (case-sensitive)
+3. Obtain Project GUID for project you wish to download (you can do this by opening the `project.rs.xml` and 
+4. Start a command line (e.g. in windows typoe in the search bar `cmd`) 
+5. Navigate to the drive (folder position does not matter) you wish to download to. For example if you are at a command prompt in the c:\ and wish to download to d:\ type `d:\`at command prompt. Or if you started your CLI in `C:\Users\YourName`, type `cd\` at command prompt to return to root drive. 
+6. Type the download command and follow the prompts.
+
+As with above, the RSCLI is sensitive to case, whether or not folder is empty, and command prompt path from which the command is invoked.
+
+For example, to update locally [this existing BRAT project downloaded to my mahcine](https://data.riverscapes.net/p/9f771a97-41d8-4edf-876f-de64d47ec7b4/overview) with Project ID `9f771a97-41d8-4edf-876f-de64d47ec7b4` to an existing folder at: `C:\0_RS\BRAT\Spokane_BRAT`, you would type:
+
+```sh
+rscli download C:\0_RS\BRAT\SpokaneBRAT --id 9f771a97-41d8-4edf-876f-de64d47ec7b4
+```
+See illusrtation of this example in this video:
+<YouTubeEmbed videoId="UCrYbZ8vaaw" />
+
+
+#### Command line help downloading
 For help downloading data, run the following command:
 
 ```sh
 rscli download --help
 ```
+
 
 ### Downloading specific files from a project
 
