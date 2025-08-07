@@ -3,7 +3,7 @@ title: How to Merge Riverscapes Projects
 description: Merging riverscapes projects together
 ---
 
-The merge tool is an experimental tool that allows you to merge multiple Riverscapes projects together. This is useful when you have multiple projects that cover an area of interest and you want to combine them into a single project. 
+The merge tool is an experimental tool that allows you to merge multiple Riverscapes projects together. This is useful when you have multiple projects that cover an area of interest and you want to combine them into a single project.
 
 The merge tool can only merge projects of the same type. For example, you can merge multiple RSContext projects together, but you cannot merge an RSContext project with a VBET project.
 
@@ -13,7 +13,7 @@ Note that the output merged project is of the same type as all the input project
 
 ## Considerations
 
-The merge process downloads each individual project from the Data Exchange, merges them together. You need sufficient disk space on the code space to store all the projects that you are merging together, as well as the merged output. Big project types, such as tauDEM, might need a large code space. 
+The merge process downloads each individual project from the Data Exchange, merges them together. You need sufficient disk space on the code space to store all the projects that you are merging together, as well as the merged output. Big project types, such as tauDEM, might need a large code space.
 
 ## Preparation
 
@@ -21,13 +21,9 @@ Create a collection within the Riverscapes Data Exchange and add all the project
 
 You can add projects of different types (e.g. RSContext and VBET), but when it comes to merging you will only be able to merge together projects of the same type. In other words, you can add all the projects any type for your area of interest to the collection. Then run the merge tool multiple times, once for each type of project.
 
-Note down the collection GUID. The easiest way to do this is to open the collection in the Data Exchange and copy the GUID from the URL. The URL will look something like this:
+Copy the collection ID from the collection page using the Copy to clipboard button on the Collection page, as shown:
 
-```
-https://data.riverscapes.net/c/fc198d51-c154-497e-9972-38929a047544/
-```
-
-You just want the GUID that comes after the `/c/` in the URL. Remove the trailing `/` if it is there.
+![Copy Collection ID from Data Exchange UI](/img/data-exchange/dataex_copy_collectionID_screenshot.png)
 
 ## Merging Projects
 
@@ -42,6 +38,6 @@ You just want the GUID that comes after the `/c/` in the URL. Remove the trailin
 
 ## Upload to Data Exchange
 
-Once you have merged the projects, you can upload the merged project to the Data Exchange. You can do this using the [rscli](https://developer.riverscapes.net/dev-tools/rscli/) command line interface. Be sure to use the correct owning organization.
+Once you have merged the projects, you can upload the merged project to the Data Exchange. You can do this using the [rscli](rscli/) command line interface. Be sure to use the correct owning organization.
 
-**WARNING**: Onced the merged project is uploaded, it's tempting to add it to the same collection as the input projects (after all, it's the same area of interest). However, this will cause the merge tool to try to merge the merged project with the input projects should you need to re-run the merge tool! It's better to create a new collection for the merged project(s).
+**WARNING**: Once the merged project is uploaded, it's tempting to add it to the same collection as the input projects (after all, it's the same area of interest). However, this will cause the merge tool to try to merge the merged project with the input projects should you need to re-run the merge tool! It's better to create a new collection for the merged project(s).
