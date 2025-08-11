@@ -39,6 +39,7 @@ const config: Config = {
           routeBasePath: '/', // Serve docs at site root
           editUrl: 'https://github.com/Riverscapes/riverscapes-docs-site/tree/main/', // "Edit this page" link
           showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
         },
       } satisfies Preset.Options,
     ],
