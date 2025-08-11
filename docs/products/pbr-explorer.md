@@ -98,6 +98,8 @@ The `Menu Bar` is the primary tool for navigating the Explorer.
 
 ## Video Demonstration
 
+<YouTubeEmbed videoId="Ztvf9Qk6BCQ" />
+
 ## FAQ
 
 Q: Why should I enter my project to the PBR Explorer? **You should enter your project into the Explorer to showcase it to the Riverscapes community, monitor as-built progression (i.e., as-built statistics) over time, and acknowledge involved organizations for their contribution.**  
