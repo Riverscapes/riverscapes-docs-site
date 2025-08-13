@@ -212,9 +212,103 @@ width={800}
 height={600}
 />
 
-
 ---
+
 ## Common theme repository
 
 We have a [private GitHub repository](https://github.com/Riverscapes/riverscapes-docusaurus-theme) for the theme and a demo site at 
 https://riverscapes.github.io/riverscapes-docusaurus-theme/ 
+
+
+
+### Customizing the Footer
+
+Use `docusaurus.config.ts` to customize the footer. The theme reads `themeConfig.footer.links` and **prepends** the items into matching columns.
+
+### Column titles provided by the theme
+
+* `Support & Contact`
+* `Connect with Us`
+
+> Titles must match **exactly** (including capitalization) to merge into an existing column.
+> If the title doesn’t match, a **new column** is added.
+
+---
+
+### 1. Add a link to an existing column
+
+**`docusaurus.config.ts`**
+
+```ts
+themeConfig: {
+  footer: {
+    links: [
+      {
+        // Must match an existing column title to merge
+        title: 'Support & Contact',
+        items: [
+          {
+            label: 'Knowledge Base',
+            href: 'https://riverscapes.freshdesk.com/support/solutions/153000297758',
+          },
+        ],
+      },
+    ],
+  },
+}
+```
+
+**Result:** “Knowledge Base” appears **at the top** of the “Support & Contact” column, followed by the theme’s default links.
+
+---
+
+### 2. Create a new column
+
+**`docusaurus.config.ts`**
+
+```ts
+themeConfig: {
+  footer: {
+    links: [
+      {
+        title: 'Projects & Data',
+        items: [
+          { label: 'Riverscapes Data Portal', href: 'https://data.riverscapes.net/' },
+          { label: 'BRAT Overview', href: 'https://www.riverscapes.net/documentation/brat' },
+        ],
+      },
+    ],
+  },
+}
+```
+
+**Result:** A new “Projects & Data” column is appended **after** the default columns.
+
+---
+
+### 3. Multiple columns at once
+
+**`docusaurus.config.ts`**
+
+```ts
+themeConfig: {
+  footer: {
+    links: [
+      {
+        title: 'Support & Contact',
+        items: [
+          { label: 'Knowledge Base', href: 'https://riverscapes.freshdesk.com/support/solutions/153000297758' },
+          { label: 'Email Support', href: 'mailto:support@riverscapes.freshdesk.com' },
+        ],
+      },
+      {
+        title: 'Community',
+        items: [
+          { label: 'Forum', href: 'https://www.riverscapes.net/topics?category_id=6901' },
+          { label: 'Announcements', href: 'https://www.riverscapes.net/topics/34422/feed' },
+        ],
+      },
+    ],
+  },
+}
+```
