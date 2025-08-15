@@ -1,1 +1,5 @@
+EPSG
+GeoPackage
+GeoPackages
+QGIS
 rscli

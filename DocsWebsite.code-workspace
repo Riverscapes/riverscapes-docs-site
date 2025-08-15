@@ -64,8 +64,10 @@
     ],
     "markdownlint.config": {
       "MD013": false,
-    }
-  },
+      "MD033": {
+        "allowed_elements":["YouTubeEmbed","GoogleSlides"]
+      }
+    },
   },
   "extensions": {
     "recommendations": ["unifiedjs.vscode-mdx"],
