@@ -5,7 +5,7 @@ weight: 1
 
 Riverscapes tools are public and intended to be used by a broad variety of users. Therefore it is vital that the source code is logically organized and well documented.
 
-Riverscapes tool source code is hosted using the free and public [GitHub](TODO) service. Generally speaking, each tool source code resides in its own git repository. These repositories are collected within a Riverscapes [organization on GitHub](https://github.com/orgs/Riverscapes/dashboard). Contact [North Arrow Research](mailto:info@northarrowresearch.com) should you wish to have your tool included within this Riverscapes organization.
+Riverscapes tool source code is hosted using the free and public [GitHub](https://github.com/Riverscapes/) service. Generally speaking, each tool source code resides in its own git repository. These repositories are collected within a Riverscapes [organization on GitHub](https://github.com/orgs/Riverscapes/dashboard). Contact [North Arrow Research](mailto:info@northarrowresearch.com) should you wish to have your tool included within this Riverscapes organization.
 
 The following guidelines are intended for riverscapes tool developers to consistency and thoroughly document their source code.
 
@@ -19,13 +19,11 @@ Here are some things to remember before uploading your source code onto the inte
 * Remove all references to local file or folder paths. Any such references should be passed to your tool as command line parameters and not as literals in code files. See video below.
 * Avoid putting binary files in your repo (databases, DLLs, compiled items etc). Again, use a [.gitignore](https://help.github.com/articles/ignoring-files/) file to exclude these.
 
-<div class="responsive-embed">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ltx8pdD1NlU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-
+<YouTubeEmbed videoId="ltx8pdD1NlU" />
 
 ## Source code in Riverscapes GitHub
 
-Your source code should be stored in a git repository and uploaded into the [Riverscapes ](https://github.com/orgs/Riverscapes/dashboard) organization on GitHub. If you're new to GitHub, the default is to upload repositories under the umbrella of your own user account, so it's important that you understand how to upload the repo under the riverscapes organization.
+Your source code should be stored in a git repository and uploaded into the [Riverscapes](https://github.com/orgs/Riverscapes/dashboard) organization on GitHub. If you're new to GitHub, the default is to upload repositories under the umbrella of your own user account, so it's important that you understand how to upload the repo under the riverscapes organization.
 
 You should learn and understand how to use [git](https://git-scm.com/) first! Certainly research any of the terms below that are not readily obvious to you. But, at a high level, starting from a folder of non-version controlled source code on your computer, the steps are:
 
@@ -46,12 +44,9 @@ You should learn and understand how to use [git](https://git-scm.com/) first! Ce
 * [Source Tree](https://www.sourcetreeapp.com/)
 * [GitHub Desktop Client](https://desktop.github.com/)
 
-
 ## Tag your releases
 
 Review the commit history and create git [tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) at each official release using a systematic numbering system. Remember to **push** your tags to origin (or they will only reside on your local git repo).
-
-
 
 ## Read Me File
 
