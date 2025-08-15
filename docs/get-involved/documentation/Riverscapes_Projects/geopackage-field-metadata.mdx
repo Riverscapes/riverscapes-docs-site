@@ -1,0 +1,33 @@
+# Providing Field (column) level Metadata via Geopackages & QGIS
+
+The GeoPackage specification includes the _Schema_ extension as "a means to describe the columns of tables in a GeoPackage with more detail than can be captured by the SQL table definition directly" - see [schema extension guidance](https://www.geopackage.org/guidance/extensions/schema.html).
+
+The specification defines a table, `gpkg_data_columns` to hold information about table (and view) columns. They provide the [SQL code to create the table](https://www.geopackage.org/spec140/index.html#gpkg_data_columns_sql).
+
+## QGIS support for field-level metadata
+
+QGIS supports the GeoPackage schema functionality. It allows users to read and write an _Alias_ and _Comment_ for each field in a spatial table. For spatial views, it allows read but not write.
+
+This simple SQL table makes it easy to add metadata to our GeoPackages. For example, we can [transform the RME metrics table to column descriptions](https://gist.github.com/weblorin/b54ab2740d366b700d0b19d76598d7d6) and we can [copy metadata from one layer to another](https://github.com/Riverscapes/riverscapes-tools/blob/ec7b920e174a8456f78d4580b5536c4f3454bb6a/packages/rscontext_it/rscontextit/rs_context_it.py#L128) during our processing.
+
+### Illustrations
+
+#### QGIS interface to add a comment (description) to a field
+
+![QGIS set comment](https://github.com/user-attachments/assets/a4a97312-86b9-4ef6-944c-43b63fe61f22)
+
+### Showing the alias and comments for a spatial view in the identify pane
+
+![alias and description for spatial view, in QGIS identify pane](https://github.com/user-attachments/assets/86f63cfe-e6c9-4d09-87cc-6dccc501ad73)
+
+#### Description of the HYP column shown in attribute table on hover
+
+![description of the HYP column shown in attribute table on hover](https://github.com/user-attachments/assets/ba7ec487-7a76-428b-a1bc-4ec738156cde)
+
+### In the layer properties, under fields
+
+![in layer properties under fields](https://github.com/user-attachments/assets/cd16b563-4774-4b63-9ad5-295f3cde3bd1)
+
+#### Although QGIS will display the comments for views, it won't let you set them
+
+![error message failed to set comment for view](https://github.com/user-attachments/assets/817618e6-4d72-4ec8-9656-b39880f5cf7d)
