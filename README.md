@@ -7,7 +7,7 @@ This project is the the new Docusaurus Riverscapes Docs site.
 ## How It Works
 
 - **Write Content:**  
-  Add your documentation as Markdown (`.md`) or MDX (`.mdx`) files in the `docs` directory. See [Contributing to Riverscapes Documentation](https://docs.riverscapes.net/get-involved/documentation/) for more information. 
+  Add your documentation as Markdown (`.md`) or MDX (`.mdx`) files in the `docs` directory. See [Contributing to Riverscapes Documentation](https://docs.riverscapes.net/get-involved/documentation/) for more information.
 
 - **Add Images:**  
   Place any images you want to use in your docs inside the `docs\static\img` folder.
