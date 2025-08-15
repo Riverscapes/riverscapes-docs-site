@@ -11,9 +11,13 @@ A new page is written in markdown and should have an .mdx extension, as that all
 
 ### Front matter
 
-Front matter is a section at the very top of the file beginning with three dashes and containing key:value pairs. 
-See https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter for Docusaurus supported fields. 
-Suggested front matter for Riverscapes docs: 
+Front matter is a section at the very top of the file beginning with three dashes and containing key:value pairs.
+See the [official documentation](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter) for Docusaurus supported fields that allow you to do things such as:
+
+* over-ride the default heading levels shown in the table of contents (`toc_min_heading_level` and `toc_max_heading_level` default to 2 and 3 respectively)
+* add description and keywords that will be placed in meta tags and used by search engines (`description`, `keywords`)
+
+Suggested front matter for Riverscapes docs:
 
 ```text
 ---
@@ -25,15 +29,12 @@ page-priority: low,medium,high
 ---
 ```
 
-* `sidebar_position` Pages within the section are ordered by this value, and then alphabetically. 
-* `page-status` and `page-priority` tags are proposed for internal use and have no impact on how the page is displayed. 
-
-
+* `sidebar_position` Pages within the section are ordered by this value, and then alphabetically.
+* `page-status` and `page-priority` tags are proposed for internal use and have no impact on how the page is displayed.
 
 ### How to embed a Youtube Video
 
-Use this syntax: 
-
+Use this syntax:
 
 #### Individual Video
 
@@ -43,7 +44,7 @@ Use this syntax:
 
 #### Playlists
 
-```ts
+```md
 <YouTubeEmbed videoId="videoseries?si=ShLyh1OooBaksIn1&amp;list=PLbpi6ZahtOH4sXk8IP-z9gW9oDz5XjQwA" />
 ```
 
@@ -52,6 +53,7 @@ Use this syntax:
 ---
 
 ## Using the ToolsWrapper Component
+
 Use `ToolsWrapper` in your `.mdx` page to display a grid of tool cards.
 
 **Component props:**
@@ -60,6 +62,7 @@ Use `ToolsWrapper` in your `.mdx` page to display a grid of tool cards.
 * **cardsize** (optional): Sets the card size; can be `"sm"`, `"md"`, or `"lg"`. If not mentioned, the default is `"md"`.
 
 **Available fields for each card:**
+
 * **title** (required): The main heading for the card.
 * **description** (optional): Brief summary or details about the tool.
 * **logoUrl** (optional): Path to a small logo displayed on the card.
@@ -67,8 +70,7 @@ Use `ToolsWrapper` in your `.mdx` page to display a grid of tool cards.
 * **imageUrl** (optional): Main image shown on the card.
 * **imageLink** (optional): Link opened when the image is clicked (overrides card link for the image only).
 
-
-```tsx
+```md
 <ToolsWrapper
   sectionTitle="Example Cards"
   cards={[
@@ -99,6 +101,7 @@ Use `ToolsWrapper` in your `.mdx` page to display a grid of tool cards.
   ]}
 />
 ```
+
 <ToolsWrapper
 sectionTitle="Example Cards"
 cardsize="sm"
@@ -130,21 +133,22 @@ imageLink: "/img/card-image.jpg",
 ]}
 />
 
----
 ## Using the LogoWrapper Component
+
 Use `LogoWrapper` in your `.mdx` page to display a row of logos.
 
 **Component props:**
+
 * **logos** (required): An array of logo objects to display.
 * **size** (optional): Sets logo size; can be `"sm"`, `"md"`, or `"lg"`. If not mentioned, the default is `"md"`.
 
 **Available fields for each logo:**
+
 * **imageUrl** (required): Path to the logo image.
 * **name** (optional): Name or label shown below the logo.
 * **url** (optional): Link opened when the logo is clicked (opens in a new tab).
 
-
-```tsx
+```md
 <LogoWrapper
   size="sm"
   logos={[
@@ -166,7 +170,6 @@ Use `LogoWrapper` in your `.mdx` page to display a row of logos.
 />
 ```
 
-
 <LogoWrapper
 size="sm"
 logos={[
@@ -186,8 +189,9 @@ name: "Logo Three"
 }
 ]}
 />
----
+
 ## Using the GoogleSlides Component
+
 Use `GoogleSlides` in your `.mdx` page to embed a Google Slides presentation.
 
 **Component props:**
@@ -196,8 +200,7 @@ Use `GoogleSlides` in your `.mdx` page to embed a Google Slides presentation.
 * **width** (optional): Width of the embedded slides in pixels. Default is `960`.
 * **height** (optional): Height of the embedded slides in pixels. Default is `749`.
 
-
-```tsx
+```md
 <GoogleSlides
   src="https://docs.google.com/presentation/d/e/2PACX-1vRvfFoZVdGcOsb9jSfj7TYPOcmn85yTBkvp1Y0fkOtZXlINTDkt_tcYmPr-Z9rGGyaXlsp8984ElPB-/embed?start=true&loop=true&delayms=3000"
   width={800}
@@ -205,14 +208,11 @@ Use `GoogleSlides` in your `.mdx` page to embed a Google Slides presentation.
 />
 ```
 
-
 <GoogleSlides
 src="https://docs.google.com/presentation/d/e/2PACX-1vRvfFoZVdGcOsb9jSfj7TYPOcmn85yTBkvp1Y0fkOtZXlINTDkt_tcYmPr-Z9rGGyaXlsp8984ElPB-/embed?start=true&loop=true&delayms=3000"
 width={800}
 height={600}
 />
-
----
 
 ## Common theme repository
 
@@ -312,3 +312,39 @@ themeConfig: {
   },
 }
 ```
+
+
+## Documentation Workflow
+
+There are different approaches to creating or editing documentation in one of our Docusaurus sites depending on the site, the nature of the change, and your role within the Riverscapes GitHub project.
+
+For small edits (e.g. fixing typos, adding a few sentences, etc.), 'in-place' editing of a file on the main branch using GitHub web UI may be appropriate. For anything more substantial, you should use a development environment that provides allows you to preview how the changes will look, and check for errors using tools such as MarkdownLint and spell check.
+
+### In-browser with GitHub
+
+From the bottom of any page is a link to "Edit this page" which takes you to the source document in GitHub. There, if you have permission to the repository, you will see a pencil icon allowing you to edit in place.
+
+### Forking, Branches, pull requests and approvals
+
+For larger changes, or if you don't have permission to the live branch or repository you may need to Fork the repository or create a branch then submit a pull request to have your changes integrated. <!-- TODO WRITE MORE INSTRUCTION -->
+
+### Build and preview documentation in a development environment
+
+One way to do this is with [codespaces](../code-spaces). Or you can clone the repository to your local computer.
+
+#### To start the local development server
+
+You will need yarn, which in turn requires Node.js. Once installed, run these commands in your terminal of choice.
+
+```sh
+yarn install
+yarn start
+```
+
+🔍 View Your Site
+
+Once the dev server is running, visit
+
+http://localhost:3000
+
+This will display your live documentation site with hot reloading enabled.
