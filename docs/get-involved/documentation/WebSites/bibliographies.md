@@ -1,12 +1,13 @@
 ---
 title: Automated Bibliographies
+/* spellchecker: ignore Zotero, pyzotero */
 ---
 
 These instructions describe how to automate a bibliography within your website using the free [Zotero](https://www.zotero.org) bibliographic software. It is possible to maintain a private or shared library within Zotero and then use the Python script on this page to export the citations to a text file for inclusion in your web site.
 
-Riverscapes web sites are written as palin text markdown files, stored in git repositories and served over the internet using GitHub Pages. The script described in the following instructions will output a single, formatted markdown page containing all the citations for a single Zotero library. You can include this markdown page in your web site and GitHub Pages will generate the corresponding web page. Here's our [beaver restoration example](http://brat.riverscapes.net/references.html) that was generated using this script.
+Riverscapes web sites are written as plain text markdown files, stored in git repositories and served over the internet using GitHub Pages. The script described in the following instructions will output a single, formatted markdown page containing all the citations for a single Zotero library. You can include this markdown page in your web site and GitHub Pages will generate the corresponding web page. Here's our [beaver restoration example](http://brat.riverscapes.net/references.html) that was generated using this script.
 
-## Step 1 - Prereqisites
+## Step 1 - Prerequisites
 
 You will need a [Zotero](https://www.zotero.org) account with access to a library containing citations. You will also need [Python](https://www.python.org/) with [PIP](https://pypi.org/project/pip/) installed.
 
@@ -24,9 +25,7 @@ Note down the numeric portion of the library URL:
 
 ## Step 3 - Create Script Workspace
 
-You will need a folder where you can save and run a Python script. This should **not** be inside your web site folder structure. Download and save the following Python script into this folder.
-
-<script src="https://gist.github.com/philipbaileynar/304397c0aa36d414cee5bb899dc374f7.js"></script>
+You will need a folder where you can save and run a Python script. This should **not** be inside your web site folder structure. Download and save the Python script into this folder.
 
 ## Step 3 Install Script Prerequisites
 
@@ -42,21 +41,18 @@ Open a command prompt and navigate to the folder where you saved the Python scri
 
 `python zotero.py LIBRARY_ID group|user YOUR_API_KEY BIBLIOGRAPHY_PATH`
 
-The LIBRARY_ID should be the numeric part of the zotero library URL noted down above. The next argument depends on whether your library is a personal **user** library or a **group** library shared among several people. Remove the one you aren't using. YOUR_API_KEY is the API key from the earlier step. And finally the BIBLIOGRAPHY_PATH is the location where you want the output bibliography to be generated.
+The LIBRARY_ID should be the numeric part of the Zotero library URL noted down above. The next argument depends on whether your library is a personal **user** library or a **group** library shared among several people. Remove the one you aren't using. YOUR_API_KEY is the API key from the earlier step. And finally the BIBLIOGRAPHY_PATH is the location where you want the output bibliography to be generated.
 
-Note that the script generates an entirely new markdown file each time that it is run. It will **overwrite the existing file** if one exists. If you don't want this behaviour then edit the script to append the bibliography to the existing output markdown file. 
+Note that the script generates an entirely new markdown file each time that it is run. It will **overwrite the existing file** if one exists. If you don't want this behaviour, then edit the script to append the bibliography to the existing output markdown file.
 
-Type return to run the script. Review the markdown output before publishing. If you're publishing to a GitHub Pages web site (i.e. any riverscapes web site) then it's strongly recommended that you test your bibliography by [serving Jekyll locally]({{site.baseurl}}/Tools/Technical_Reference/Documentation_Standards/WebSites/testing_locally.html) before committing and pushing the output markdown file.
+Type return to run the script. Review the markdown output before publishing. It's strongly recommended that you test your bibliography by locally before committing and pushing the output markdown file.
 
 You can tweak the output markdown as necessary. Just remember that each time you run the script it will overwrite your changes with the new markdown. This is especially important if you write any introductory text at the top of the file. Copy and paste it to a temporary location as a backup while you iterate running the script.
 
 ## Script
 
+Here is a [direct link to the raw Python script on GitHub](https://gist.github.com/philipbaileynar/304397c0aa36d414cee5bb899dc374f7/raw/9bedacbc005a65df6c381d3977d0239c0aa09102/zotero_citations.py).
 
 ## Video Demonstration
 
-<div class="responsive-embed">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/K-GBbzYSERo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-
+<YouTubeEmbed videoId="K-GBbzYSERo" />
