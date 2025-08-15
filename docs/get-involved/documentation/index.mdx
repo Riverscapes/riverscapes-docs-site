@@ -4,9 +4,9 @@ description: How to build and document a Riverscapes asset
 sidebar_position: 1
 ---
 
-The Riverscapes Consortium publishes documentation for our tools, methods, and standards using this website and a few others listed below. These websites are all produced using [Docusaurus](https://docusaurus.io/)which is software that converts Markdown files into an interactive web site. 
+The Riverscapes Consortium (RC) publishes documentation for our tools, methods, and standards using this website and a few others listed below. These websites are all produced using [Docusaurus](https://docusaurus.io/), software that converts Markdown files into an interactive web site.
 
-* [learn more about Markdown](https://commonmark.org/), a convention for human-readable plain text files that includes basic formatting such as headings and links. 
+* [Learn more about Markdown](https://commonmark.org/), a convention for human-readable plain text files that includes basic formatting such as headings and links.
 
 ## The Riverscapes documentation ecosystem
 
@@ -14,4 +14,31 @@ The Riverscapes Consortium publishes documentation for our tools, methods, and s
 * [Tool web sites](WebSites) for end users to discover, download and run the tools
 * [Riverscapes Projects](Riverscapes_Projects) metadata to accompany the outputs of each tool
 
-The above resources are intended as a reference and guide for  RC developers and website contributors. 
+The above resources are intended as a reference and guide for RC developers and website contributors.
+
+### Riverscapes Projects
+
+Riverscapes projects are stored in the Riverscapes Data Exchange. Documentation can be included at various levels:
+
+#### Project level metadata
+
+The following can be entered and edited in the Data Exchange by the project owner:
+
+* Project summary
+* Project description
+* User metadata fields (if not locked*)
+* Tags
+
+Summary, description and user metadata can also be entered via the project.rs.xml file. There, a user metadata field can be designed as locked, meaning it will not be editable in the data exchange.  
+
+#### Project reports
+
+A project can include any type of document. A PDF or html file can provide more structured documentation for end users. Many Riverscapes tools generate an html report that is packaged with the output project and can be viewed in the browser via the Data Exchange Datasets page.
+
+#### Dataset and layer level metadata
+
+Within a dataset (for example, a GeoPackage), there can be one or more layers. These also can have a description and additional custom metadata.
+
+#### Field level metadata
+
+Description of individual fields (columns) can be included in various ways depending on the format of the data. For Geopackages, see [[providing field-level metadata via Geopackages]].
