@@ -41,7 +41,6 @@ There are several popular brands of databases, some of which you might have hear
 
 ## Software
 
-
 The two types of open source database that we use are:
 
 - [SQLite](https://sqlite.org/about.html) - useful when you just want to store data on your computer and use it yourself.
@@ -51,15 +50,15 @@ If you're just starting out then I recommend SQLite and the O'Reilly book above.
 
 ## What about GIS?
 
-Basic SQL is not geospatial. I recommend learning the SQL language before delving further into geospatial databases. But if you're keen then you should know that we are using the open source [geopackage](https://www.geopackage.org/) to store GIS data on desktop computers (no more ShapeFiles!) and the [PostGIS](https://postgis.net/) extension to serve GIS data from online servers.
+Basic SQL is not geospatial. I recommend learning the SQL language before delving further into geospatial databases. But if you're keen then you should know that we are using the open source [GeoPackage](https://www.geopackage.org/) to store GIS data on desktop computers (no more ShapeFiles!) and the [PostGIS](https://postgis.net/) extension to serve GIS data from online servers.
 
-Not convinced? As of November 2020 the outputs of the following tools are already geopackage SQLite databases:
+Not convinced? As of November 2020 the outputs of the following tools are already GeoPackage SQLite databases:
 
 - [VBET](http://vbet.riverscapes.net)
 - [Confinement](http://confinement.riverscapes.net)
 - [RVD](http://rcat.riverscapes.net)
 
-We will soon migrate [BRAT](http://brat.riverscapes.net) to output a SQLite geopackage and stop using ShapeFiles. The new reach typing tool for the Mississippi, as well as [GNAT](http://gnat.riverscapes.net/) will also use databases. Our reporting technology also relies on SQLite.
+We will soon migrate [BRAT](http://brat.riverscapes.net) to output a SQLite GeoPackage and stop using ShapeFiles. The new reach typing tool for the Mississippi, as well as [GNAT](http://gnat.riverscapes.net/) will also use databases. Our reporting technology also relies on SQLite.
 
 -----------
 # Summary
