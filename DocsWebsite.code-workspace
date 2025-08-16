@@ -70,8 +70,10 @@
     },
   },
   "extensions": {
-    "recommendations": ["unifiedjs.vscode-mdx"],
-    "streetsidesoftware.code-spell-checker",
-    "DavidAnson.vscode-markdownlint"
+    "recommendations": [
+      "unifiedjs.vscode-mdx",
+      "streetsidesoftware.code-spell-checker",
+      "DavidAnson.vscode-markdownlint",
+    ],
   }
 }
