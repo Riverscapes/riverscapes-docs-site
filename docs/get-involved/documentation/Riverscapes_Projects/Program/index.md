@@ -2,6 +2,8 @@
 title: Program XML
 ---
 
+## DEPRECATED
+
 ### Quick Link:
 
 Validating your `program.xml` file can be done using the following URL:

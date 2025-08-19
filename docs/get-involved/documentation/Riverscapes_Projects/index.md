@@ -4,7 +4,7 @@ weight: 3
 ---
 ## The Problem
 
-One of the most significant barriers to effective collaboration and leveraging of past work is being able to access and share any tool or model output or analysis, within the transparent context of the inputs and methods from which it was produced (Wilkinson et al. 2016).  "Just send me the data", is rarely actually that simple. Plus, one of the hallmarks of scientific rigor is *reproducibility*. 
+One of the most significant barriers to effective collaboration and leveraging of past work is being able to access and share any tool or model output or analysis, within the transparent context of the inputs and methods from which it was produced (Wilkinson et al. 2016).  "Just send me the data", is rarely actually that simple. Plus, one of the hallmarks of scientific rigor is *reproducibility*.
 
 ### Sharing is Expected... and Easier Today
 
@@ -37,9 +37,7 @@ There are many other platforms and warehouses where full or partial **F**-**A**-
 Note the **F**-**A**-**I**-**R**, correspond to the **f**indable, **a**ccessible, **i**nteroperable and **r**e-useable [Principles](https://force11.org/info/the-fair-data-principles/) (Wilkinson et al. [2016](https://www.nature.com/articles/sdata201618)), which the RC strives towards and helps facilitate the riverscapes community follow. 
  -->
 
-
-
-## Riverscapes Projects 
+## Riverscapes Projects
 <!-- TODO <img class="float-right" src="/images/data/ProjectTree_VBET.png"> -->
 <!-- TODO We developed a data standard for packaging up riverscapes analyses (i.e. outputs of any [RC compliant tool](/Tools) into **riverscapes projects** <img  src="/images/data/RiverscapesProject_24.png">.  The project data can be navigated through a project tree like shown at right. -->
 <!-- TODO 
@@ -64,12 +62,12 @@ Sharing and opening any project in the [RV](http://rave.riverscapes.net/) (River
 
 * Helps you achieve  [**A**](https://force11.org/info/the-fair-data-principles/#elementor-toc__heading-anchor-3)ccessiblity and [**R**](https://force11.org/info/the-fair-data-principles/#elementor-toc__heading-anchor-5)e-useability principles.
 
-
 ### Easier to Share with Metadata
-<!-- TODO <div align="center">
-<img align="center" src="/images/data/RV_LayerMetaData.png">
-<br><i>All layers have easily viewed Metadata from the Project Tree, which allows tracing back individual layers to their original sources or externally referenced projects.</i>
-</div> -->
+
+![riverscapes viewer metadata](/img/data/RV_LayerMetaData.png)
+
+All layers have easily viewed Metadata from the Project Tree, which allows tracing back individual layers to their original sources or externally referenced projects.
+
 <!-- TODO <img class="float-right" src="/images/data/Project_VBET_ProjectInfo.png"> The packaging of data into a folder or zip file that can be easily shared, and then opened in any [RV app](http://rave.riverscapes.net) is handy. It ensures that your audience will see the data organized as you want it to be, with the right context, and correct symbology. -->
 
 Riverscapes projects can be stored in the [Riverscapes Data Exchange](/products/data-exchange) and made publicly available. Documentation can be included at various levels:
@@ -85,16 +83,15 @@ The following can be entered and edited in the Data Exchange by the project owne
 
 Summary, description and user metadata can also be entered via the project.rs.xml file. There, a user metadata field can be designed as locked, meaning it will not be editable in the data exchange.  
 
-
 Moreover, Riverscapes Projects facilitate automated metadata production and housekeeping. An example of the automatically generated metadata for a [production-grade, network tool](http://tools.riverscapes.net) is shown at left.
 
-- Helps you achieve [**F**](https://force11.org/info/the-fair-data-principles/#elementor-toc__heading-anchor-2)indability,   [**A**](https://force11.org/info/the-fair-data-principles/#elementor-toc__heading-anchor-3)ccessibility, and [**R**](https://force11.org/info/the-fair-data-principles/#elementor-toc__heading-anchor-5)e-useability principles.
+* Helps you achieve [**F**](https://force11.org/info/the-fair-data-principles/#elementor-toc__heading-anchor-2)indability,   [**A**](https://force11.org/info/the-fair-data-principles/#elementor-toc__heading-anchor-3)ccessibility, and [**R**](https://force11.org/info/the-fair-data-principles/#elementor-toc__heading-anchor-5)e-useability principles.
 
 ### Scalable Analysis & Interoperability
 
-Riverscapes projects can be accessed, modified and populated with cloud computing because querying, and batching operations are possible with a consistent data standard and storage. Plus, other riverscape-compliant projects can easily reference each other. 
+Riverscapes projects can be accessed, modified and populated with cloud computing because querying, and batching operations are possible with a consistent data standard and storage. Plus, other riverscape-compliant projects can easily reference each other.
 
-- Helps you achieve [**I**](https://force11.org/info/the-fair-data-principles/#elementor-toc__heading-anchor-4)nteroperability and  [**R**](https://force11.org/info/the-fair-data-principles/#elementor-toc__heading-anchor-5)e-useability principles. 
+- Helps you achieve [**I**](https://force11.org/info/the-fair-data-principles/#elementor-toc__heading-anchor-4)nteroperability and  [**R**](https://force11.org/info/the-fair-data-principles/#elementor-toc__heading-anchor-5)e-useability principles.
 
 -----------
 
