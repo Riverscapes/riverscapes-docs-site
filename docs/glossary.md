@@ -18,4 +18,4 @@ The Riverscapes Data Exchange treats the HUC identifier as a special attribute o
 
 ## rscli
 
-The command-line interface for the Data Exchange. See [rscli documentation](/products/data-exchange/rscli).
+The command-line interface for the Data Exchange. See [rscli documentation](/products/rscli).
