@@ -3,21 +3,19 @@ title: Command Line Interface
 description: Riverscapes Command Line Interface (rscli)
 ---
 
-The Riverscapes Command Line Interface (rscli) is a small, lightweight application for interacting with the [Riverscapes Data Exchange](https://data.riverscapes.net) and the associated [API](../). Using rscli simplifies the process of uploading and downloading data from the Riverscapes Data Exchange. It handles authenticating your user account and validating data uploads.
+The Riverscapes Command Line Interface (rscli) is a small, lightweight application for interacting with the [Riverscapes Data Exchange](https://data.riverscapes.net) and the associated [API](/products/data-exchange/advanced/data-exchange-api). Using rscli simplifies the process of uploading and downloading data from the Riverscapes Data Exchange. It handles authenticating your user account and validating data uploads.
 
 ## Prerequisites
 
-You must have Node.js version 18 installed on your computer to use rscli. You can download the latest version of Node.js from the [official website](https://nodejs.org/). At the time of writing, it must be version 18, preferably the Long Term Support (LTS).
+You must have Node.js version 18 installed on your computer to use rscli. You can download the latest version of Node.js from the [official website](https://nodejs.org/). At the time of writing, it must be version 18, preferably the Long Term Support (LTS) version.
 
 ## Installing and Updating rscli
 
-Open a command-line terminal (such as Windows Terminal, macOS Terminal, or a Linux terminal) and run the following command:
+Open a command-line terminal (such as Windows Terminal, macOS Terminal, or a Linux terminal) and run the following command. Follow the instructions on the official Node.js web site for the steps specific to your operating system. To update Node.js to latest version, use the same command as for installation. 
 
 ```sh
 npm install -g @riverscapes/cli
 ```
-
-**To update** to latest version, use the same command as for installation. 
 
 ## Using rscli
 
@@ -35,6 +33,26 @@ For help uploading data, run the following command:
 rscli upload --help
 ```
 
+When uploading a riverscapes project you should have a folder on your local computer that contains the project itself. You will also need to know the entity that will own the project once it is uploaded. This is typically a Riverscapes Data Exchange **organizations**, but might also be a single user account. Optionally you might also want to provide some **tags** to associate with the project. You can change both the owner and tags after the upload, it's just easier if you provide them at the time of upload.
+
+In the following example the operator is attempting to upload a project. They have already navigated their command terminal so that the prompt is *inside* the folder where the `project.rs.xml` resides. This allows the upload to refer to the project location using a single period, i.e. the current folder. The uploaded project will be owned by an organization, in this case the Utah State University RAM laboratory, identified by the GUID. Two tags are also specified, delineated by commas.
+
+```sh
+rscli upload --org a52b8094-7a1d-4171-955c-ad30ae935296 --tags tag1,tag2 .
+```
+
+Running this command will pop open a browser to authenticate your Riverscapes Data Exchange account. It will check that you have contributor (or higher) permissions for the specified organization. It will then validate the project to be uploaded, checking that all files mentioned in the `project.rs.xml` file are indeed present on the local file system. It will also validate that the project.rs.xml XML syntax is valid. Only then will the upload begin, after prompting you one last time whether to proceed. Progress bars will appear for each file uploaded.
+
+After the command has finished the command line will show the URL of the uploaded project. Copy this URL and paste it into a web browser to view the project in the Riverscapes Data Exchange.
+
+![upload](/img/data-exchange/rscli_terminal.png)
+
+Note that rscli can also be used to update projects that already exist on the Riverscapes Data Exchange. You cannot specify a new owner when doing this, but it is a useful mechanism if you have made changes to a project on your computer and want to synchronize them to the Data Exchange.
+
+:::warning
+Use caution when updating existing projects. Your local copy of the project will overwrite any changes that have been made in the Data Exchange (e.g. project description or metadata) since you downloaded the project.
+:::
+
 ## Downloading Projects
 
 The most common rscli use case is to download projects from the [Riverscapes Data Exchange](https://data.riverscapes.net). The syntax for the `download` command is below; replace `<local_empty_folder>` with a path on your computer to folder where the project will be downloaded or updated. Replace the `<project_guid>` with the GUID of a project.
@@ -43,10 +61,11 @@ The most common rscli use case is to download projects from the [Riverscapes Dat
 rscli download <local_empty_folder> --id <project_guid>
 ```
 
-You can obtain this GUID from the URL when viewing the project details in the Data Exchange and copy it using the copy button.
-![copying GUID from data exchange](/img/data-exchange/DE_Copy_ProjectID.gif)
+You can obtain this GUID from the URL when viewing the project details in the Data Exchange and copy it using the copy buttons that are available in several places throughout the data exchange.
 
-Often, for projects that are too large (e.g. > 1.5 to 2 GB) the Data Exchange struggles zipping this file up. Because rscli does not download a zip file, but instead downloads individual files, it can be used as an alternative for downloading large projects.
+![copying GUID from data exchange](/img/data-exchange/project_copy_button.png)
+
+The Data Exchange can sometimes struggle to zip very large projects ( > 1.5 GB). Because rscli does not download a zip file, but instead downloads individual files, it can be used as an alternative for downloading large projects. rscli also works with file regex making it useful if you only want to download one or two known files within a project and not the whole project itself (see below).
 
 ### Requirements
 
