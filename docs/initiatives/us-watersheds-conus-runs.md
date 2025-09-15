@@ -17,9 +17,11 @@ The following describes in more detail the filtering and processing required to 
 
 The geopackage for each Vector Processing Unit (VPU) (corresponding to HUC4) was downloaded from the "**Current**" [folder](https://prd-tnm.s3.amazonaws.com/index.html?prefix=StagedProducts/Hydrography/NHDPlusHR/VPU/Current/GPKG/) of staged products of The National Map on Amazon AWS. USGS has a page on ways to [access national hydrography products](https://www.usgs.gov/national-hydrography/access-national-hydrography-products).
 
+Only the VPUs up to 18XX were downloaded. This excludes watersheds in Alaska, Hawaii, and the territories.
+
 The features from the HUC10 layer in each were merged into one new layer.
 
-This merged layer had 17,999 features and 17 fields. The coordinate reference system is EPSG:4269 (units of degrees).
+This merged layer had 17,999 features and 17 fields. The coordinate reference system is EPSG:4269 which has units of degrees.
 
 ### Watershed types filter
 
@@ -38,13 +40,13 @@ An exception was made for the 12 HUC10s along Lake Sakakawea in North Dakota tha
 
 ### Geographic filter
 
-Along the international border between the USA and Canada, some watersheds have been split at the border, while others have not. While NHDPlus HR provides hydrographic data for these watersheds, other data needed for some models are not available. For our purposes we keep only those watersheds that where ...
+Along the international border between the USA and Canada, some watersheds have been split at the border, while others have not. While NHDPlus HR provides hydrographic data for these watersheds, other data needed for some models are not available. For our purposes we keep only those watersheds that where at least 90% of the area is inside the USA. The states layer from __ was used 
 
 ### Cleaning
 
-There were some 1008 watersheds with duplicate records in the source. These were removed.
+There were some 1008 watersheds with duplicate records in the source. That is all fields, These were removed.
 
-Some watersheds overlap. For example, in Vermont the 0430 VPU has areas that overlap with 0415.
+Some watersheds overlap. For example, in Vermont the 0430 VPU has areas that overlap with 0415 VPU. As neither the [National Release 2](#national-release-2), nor our previous Riverscapes model runs include 0415 we 
 
 Some watersheds were found in two VPUs: the 
 
