@@ -1,5 +1,5 @@
 ---
-spellchecker: ignore Sakakawea
+spellchecker: ignore Sakakawea, USGS
 ---
 # Watersheds used for the 2025 CONUS run
 
@@ -21,11 +21,25 @@ Only the VPUs up to 18XX were downloaded. This excludes watersheds in Alaska, Ha
 
 The features from the HUC10 layer in each were merged into one new layer.
 
-This merged layer had 17,999 features and 17 fields. The coordinate reference system is EPSG:4269 which has units of degrees.
+This merged layer has 17,999 features and 19 fields including the geometry. The coordinate reference system is EPSG:4269 which has units of degrees.
+
+### Cleaning: Duplicate Removal
+
+There were some 1008 watersheds with completely duplicated records in the source. That is all fields were identical other than the fid. These were removed.
+
+Some watersheds overlap. For example, in Vermont the `0430` VPU has areas that overlap with 0415 VPU. As all 0415 HUCs are duplicated and neither the [National Release 2](#national-release-2), nor our previous Riverscapes model runs include `0415` we removed it entirely.
+
+Some watersheds were found in two VPUs: the geopackage for VPU `0804` includes watersheds from the `1111` and `1114` VPUs. The records from the 0804 geopackage were removed from our final layer.
+
+Some (9 HUC IDs) were found to have duplicate records with insignificant differences between them: for some only the LoadDate differed, for others it was a rounding error difference in AreaSqKm. We kept the record with the earlier load date and the cleaner AreaSqKm.
+
+One HUC10, `0414030204`, a frontal-type HU, had two records each corresponding to a separate but adjacent polygon. These were merged into one multi-polygon record consistent with other frontal HUs.
+
+After this cleaning we had 16,113 HUC10s.
 
 ### Watershed types filter
 
-Generally we include only these watershed types:
+For our analysis, generally we include only these watershed types:
 
 * Standard
 * Closed
@@ -40,17 +54,11 @@ An exception was made for the 12 HUC10s along Lake Sakakawea in North Dakota tha
 
 ### Geographic filter
 
-Along the international border between the USA and Canada, some watersheds have been split at the border, while others have not. While NHDPlus HR provides hydrographic data for these watersheds, other data needed for some models are not available. For our purposes we keep only those watersheds that where at least 90% of the area is inside the USA. The states layer from __ was used 
-
-### Cleaning
-
-There were some 1008 watersheds with duplicate records in the source. That is all fields, These were removed.
-
-Some watersheds overlap. For example, in Vermont the 0430 VPU has areas that overlap with 0415 VPU. As neither the [National Release 2](#national-release-2), nor our previous Riverscapes model runs include 0415 we 
-
-Some watersheds were found in two VPUs: the 
+Along the international border between the USA and Canada, some watersheds have been split at the border, while others have not. While NHDPlus HR provides hydrographic data for these watersheds, other data needed for some models are not available. For our purposes we keep only those watersheds that where more than 90% of the area is inside the USA. The states layer `GU_StateOrTerritory` from [USGS National Boundary Dataset](https://www.sciencebase.gov/catalog/item/6477c7cad34e3ac335bed077) was used. We select all states where FCode is `State` and Not (Hawaii or Alaska). We then dissolved this and calculated the area of overlap with each HUC.
 
 ## Simplified cartographic representation
+
+For the purposes of quickly rendering national-scale maps, we created a geographically simplified version of the layer using __.
 
 ## Comparison to other versions
 
