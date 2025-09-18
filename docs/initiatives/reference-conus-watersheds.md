@@ -1,17 +1,22 @@
 ---
+title: Reference CONUS Watersheds
 spellchecker: ignore Sakakawea, USGS
 ---
-# Watersheds used for the 2025 CONUS run
 
-The intention of the [initiative](2025-CONUS-runs) is to apply production-grade Riverscapes tools to all rivers in the entire conterminous USA, ie excluding Alaska, Hawaii and the territories. This page documents the watersheds chosen for analysis, in other words the "universe" for the run.
+The [Riverscapes Consortium](https://riverscapes.net) has undertaken several initiatives to run the waterfall of [production grade riverscapes tools](https://tools.riverscapes.net) for various parts of the conterminous United States. To help organize these efforts we need a reference list of which watersheds to run. 
 
-The scale used for model runs is the HUC10 sized watersheds. See [glossary - HUC](glossary#HUC) for more on "HUCs".
+The [USGS](https://usgs.gov) provides the nested Hydrologic Unit Code ([HUC](glossary#HUC)) watershed classification system, from which we have selected the ten digit level (HUC10) for running riverscapes models. Regrettably, there are several versions of this national HUC10 dataset and the goal of this page is to clarify how we arrived at the official reference list that we use for running riverscapes models.
 
-The ultimate source for the watershed boundaries, as well as much of the base hydrographic data, is the [NHD Plus High Resolution](https://www.usgs.gov/national-hydrography/nhdplus-high-resolution) (NHDPlus HR). However not every watershed is considered suitable for our purposes. Furthermore USGS does not make available a single layer with all HUC10 watersheds, so we had to prepare it.
 
-## Details of watershed boundary dataset built
+## Source Data
 
-The following describes in more detail the filtering and processing required to create our watersheds layer.
+The ultimate source for the watershed boundaries, as well as much of the base hydrographic data, is the [NHD Plus High Resolution](https://www.usgs.gov/national-hydrography/nhdplus-high-resolution) (NHDPlus HR). However not every watershed is considered suitable for our purposes. Some HUC10 watersheds represent 100% water or oceanic frontier watersheds while others are simply "undefined". Furthermore USGS does not make available a single layer with all HUC10 watersheds, so we had to prepare it.
+
+:::warning
+In the past we have used the National Watershed Boundary Dataset (WBD) as the reference for running CONUS riverscapes model runs. However, as of September 2025 we switched to using the NHD Plus HR HUC10 as our reference. The two have some discrepencies, particularly along the US/Canadian border in Montana, Idaho and Washington. We switched to using NHD HUC10 because it is consistent with the way we search for  and download data from the National Map API.
+:::
+
+The following describes in more detail the filtering and processing required to create our CONUS watersheds reference layer.
 
 ### Generate combined dataset
 
