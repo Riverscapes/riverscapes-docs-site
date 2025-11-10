@@ -5,6 +5,98 @@ page-priority: medium
 sidebar_position: 4
 /* spellchecker: ignore cardsize */
 ---
+## Build a New Docusaurus Site from Scratch
+
+This guide walks through creating a **new Riverscapes documentation site** from the ground up, using macOS as the base system.
+
+### Step 1. Start with an Empty Folder
+
+Create a new directory for your site and open it in Visual Studio Code.
+
+```bash
+mkdir riverscapes-mynewsite
+cd riverscapes-mynewsite
+code .
+```
+
+### Step 2. Clone the Riverscapes Theme Monorepo
+
+Clone the Riverscapes Docusaurus Theme
+ to access the shared theme and Clean Template site.
+
+```bash
+git clone git@github.com:Riverscapes/riverscapes-docusaurus-theme.git
+```
+
+Open **DocusaurusDeveloper.code-workspace**. You’ll see the following structure:
+
+```cpp
+riverscapes-docusaurus-theme/
+│   ├── Docusaurus Theme
+│   ├── Developer Site
+│   └── Clean Template Site
+```
+
+#### Step 3. Copy everything from the Clean Template site into your new folder.
+ This gives you a complete starter Docusaurus setup following Riverscapes conventions.
+
+#### Step 4. Use the Standard Node Version (via NVM). 
+The Clean Template includes a .nvmrc file that pins the correct Node version.
+From your new site folder, simply run:
+
+```bash
+nvm use
+```
+
+### Step 5. Install Dependencies
+
+From inside your new project folder, install all dependencies:
+
+```bash
+yarn install
+yarn add loglevel
+```
+
+This installs Docusaurus, the Riverscapes Theme, and other required packages defined in the Clean Template’s package.json.
+
+### Step 6. Update Site Configuration
+
+Open docusaurus.config.ts and update the key details to match your new site:
+
+```ts
+export default {
+  title: 'My New Riverscapes Site',
+  url: 'https://riverscapes.github.io',
+  baseUrl: '/mynewsite/',
+  organizationName: 'Riverscapes',
+  projectName: 'mynewsite',
+  favicon: 'img/favicon.ico',
+
+  themeConfig: {
+    navbar: {
+      title: 'My New Site',
+      items: [{ to: '/docs/intro', label: 'Docs', position: 'left' }],
+    },
+    footer: {
+      copyright: `Copyright © ${new Date().getFullYear()} Riverscapes Consortium`,
+    },
+  },
+};
+
+```
+
+💡 The baseUrl should match your GitHub repository name — this determines the deployed site path (e.g., /mynewsite/).
+
+### Step 7. Run the Dev Server
+
+Start your new site locally:
+
+```bash
+yarn start
+```
+
+Then open your browser to http://localhost:3000.
+You should see your new site running with the Riverscapes theme applied.
 
 ## Create a new page
 
