@@ -6,14 +6,15 @@ sidebar_position: 4
 /* spellchecker: ignore cardsize */
 ---
 
+The Riverscapes Consortium uses the free and popular [Docusaurus](https://docusaurus.io/) software to publish documentation websites. Below you will find information about how to work with Docusaurus, add content and even how to build a new site from scratch.
+
 ## Create a new page
 
-A new page is written in markdown and should have an .mdx extension, as that allows you to use react components described below (e.g. Youtube video, ToolsWrapper).
+A new page is written in [markdown](https://www.markdownguide.org/) and should have an .mdx extension, as that allows you to use react components described below (e.g. Youtube video, ToolsWrapper).
 
-### Front matter
+## Front matter
 
-Front matter is a section at the very top of the file beginning with three dashes and containing key:value pairs.
-See the [official documentation](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter) for Docusaurus supported fields that allow you to do things such as:
+Front matter is a section at the very top of each file beginning with three dashes and containing key:value pairs. See the [official documentation](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter) for Docusaurus supported fields that allow you to do things such as:
 
 * over-ride the default heading levels shown in the table of contents (`toc_min_heading_level` and `toc_max_heading_level` default to 2 and 3 respectively)
 * add description and keywords that will be placed in meta tags and used by search engines (`description`, `keywords`)
@@ -30,20 +31,18 @@ page-priority: low,medium,high
 ---
 ```
 
-* `sidebar_position` Pages within the section are ordered by this value, and then alphabetically.
+* Pages within each section are ordered by the `sidebar_position` value. Pages without a value are then ordered alphabetically.
 * `page-status` and `page-priority` tags are proposed for internal use and have no impact on how the page is displayed.
 
-### How to embed a Youtube Video
+## YouTube Videos
 
-Use this syntax:
-
-#### Individual Video
+Use this syntax for individual videos:
 
 ```md
 <YouTubeEmbed videoId="mfyhjVfECf4" />
 ```
 
-#### Playlists
+And use this for playlists:
 
 ```md
 <YouTubeEmbed videoId="videoseries?si=ShLyh1OooBaksIn1&amp;list=PLbpi6ZahtOH4sXk8IP-z9gW9oDz5XjQwA" />
@@ -51,18 +50,16 @@ Use this syntax:
 
 <YouTubeEmbed videoId="videoseries?si=ShLyh1OooBaksIn1&amp;list=PLbpi6ZahtOH4sXk8IP-z9gW9oDz5XjQwA" />
 
----
+## ToolsWrapper Component
 
-## Using the ToolsWrapper Component
+Use the `ToolsWrapper` in your `.mdx` page to display a grid of tool cards. This component is written and maintained in the Riverscapes Docusaurus Theme.
 
-Use `ToolsWrapper` in your `.mdx` page to display a grid of tool cards.
-
-**Component props:**
+Component props:
 
 * **sectionTitle** (optional): Adds a heading above the card grid, e.g., `sectionTitle="Featured Tools"`.
 * **cardsize** (optional): Sets the card size; can be `"sm"`, `"md"`, or `"lg"`. If not mentioned, the default is `"md"`.
 
-**Available fields for each card:**
+Available fields for each card:
 
 * **title** (required): The main heading for the card.
 * **description** (optional): Brief summary or details about the tool.
@@ -71,9 +68,11 @@ Use `ToolsWrapper` in your `.mdx` page to display a grid of tool cards.
 * **imageUrl** (optional): Main image shown on the card.
 * **imageLink** (optional): Link opened when the image is clicked (overrides card link for the image only).
 
+Here's an example use of the ToolsWrapper:
+
 ```md
 <ToolsWrapper
-  sectionTitle="Example Cards"
+  sectionTitle="Example ToolsWrapper Cards"
   cards={[
     {
       title: "Card 1",
@@ -104,7 +103,7 @@ Use `ToolsWrapper` in your `.mdx` page to display a grid of tool cards.
 ```
 
 <ToolsWrapper
-sectionTitle="Example Cards"
+sectionTitle="Example Tools Wrapper Cards"
 cardsize="sm"
 cards={[
 {
@@ -134,20 +133,22 @@ imageLink: "/img/card-image.jpg",
 ]}
 />
 
-## Using the LogoWrapper Component
+## LogoWrapper Component
 
 Use `LogoWrapper` in your `.mdx` page to display a row of logos.
 
-**Component props:**
+Component props:
 
 * **logos** (required): An array of logo objects to display.
 * **size** (optional): Sets logo size; can be `"sm"`, `"md"`, or `"lg"`. If not mentioned, the default is `"md"`.
 
-**Available fields for each logo:**
+Available fields for each logo:
 
 * **imageUrl** (required): Path to the logo image.
 * **name** (optional): Name or label shown below the logo.
 * **url** (optional): Link opened when the logo is clicked (opens in a new tab).
+
+Here's an example use of the LogoWrapper
 
 ```md
 <LogoWrapper
@@ -215,9 +216,9 @@ width={800}
 height={600}
 />
 
-## Common theme repository
+## Common Theme Repository
 
-We have a [private GitHub repository](https://github.com/Riverscapes/riverscapes-docusaurus-theme) for the theme and a [demo site](https://riverscapes.github.io/riverscapes-docusaurus-theme/).
+The Riverscapes Docusaurus theme is stored in a [private GitHub repository](https://github.com/Riverscapes/riverscapes-docusaurus-theme) and includes a [demo site](https://riverscapes.github.io/riverscapes-docusaurus-theme/) that shows off different examples, as well as an empty template for starting new sites.
 
 ### Customizing the Footer
 
@@ -319,7 +320,7 @@ For small edits (e.g. fixing typos, adding a few sentences, etc.), 'in-place' ed
 
 ### In-browser with GitHub
 
-From the bottom of any page is a link to "Edit this page" which takes you to the source document in GitHub. There, if you have permission to the repository, you will see a pencil icon allowing you to edit in place.
+From the bottom of any page is a link to "Edit this page" which takes you to the source document in GitHub. There, if you have permission to the repository, you will see a pencil icon allowing you to edit in place. Make your changes and then commit them, all within a web browser session. No desktop software is needed.
 
 ### Forking, Branches, pull requests and approvals
 
