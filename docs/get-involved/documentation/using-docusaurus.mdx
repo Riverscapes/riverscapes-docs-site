@@ -36,19 +36,23 @@ page-priority: low,medium,high
 
 ## YouTube Videos
 
-Use this syntax for individual videos:
+### Embedding Individual videos
+Use the `videoId=` syntax for individual videos:
 
 ```md
 <YouTubeEmbed videoId="mfyhjVfECf4" />
 ```
+You get the videoID from a YouTube URL aver the `v=`. For example, in the url: 'https://www.youtube.com/watch?v=mfyhjVfECf4' you copy over `mfyhjVfECf4`.
 
-And use this for playlists:
+### Embedding Playlists
+Use this `videoId="videoseries?list=` syntax for playlists:
 
 ```md
-<YouTubeEmbed videoId="videoseries?si=ShLyh1OooBaksIn1&amp;list=PLbpi6ZahtOH4sXk8IP-z9gW9oDz5XjQwA" />
+<YouTubeEmbed videoId="videoseries?list=PLbpi6ZahtOH4sXk8IP-z9gW9oDz5XjQwA" />
 ```
+In YouTube, playlist URLs have syntax of `https://www.youtube.com/playlist?list=PL0ZiZg4rilzL_JtW9FRZG90DIdqe9sqMh` where `PL0ZiZg4rilzL_JtW9FRZG90DIdqe9sqMh` is the list id.
 
-<YouTubeEmbed videoId="videoseries?si=ShLyh1OooBaksIn1&amp;list=PLbpi6ZahtOH4sXk8IP-z9gW9oDz5XjQwA" />
+<YouTubeEmbed videoId="videoseries?list=PLbpi6ZahtOH4sXk8IP-z9gW9oDz5XjQwA" />
 
 ## ToolsWrapper Component
 
