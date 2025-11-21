@@ -3,23 +3,65 @@ title: Reports
 description: Describes the package of information required to define a new riverscapes report
 ---
 
-## Background
-
 The [Riverscapes Reports Platform](https://reports.riverscapes.net) is a flexible and scalable system for summarizing riverscapes data into professional reports. The system currently uses data from the [2025 conterminous United States model run](/initiatives/2025-CONUS-runs.md) that includes metrics for over 54,000,000 riverscapes.
 
 The following information is intended for people who want to develop new reports. It describes the information that must be provided for the development team to be able to incorporate new reports. It also defines the limitations of the system - what data are currently available to reports. In other words, what's easy to include in a new report as opposed to contents that might require more effort to include.
 
-![Report Elements](/img/standards/report_elements.svg)
+Defining a new report consists of providing two things: 
 
-## Report Definition
+1. **Report content** - this is a sample layout of a report, including all the boilerplate text and sketches of the tables and graphics.
+2. **Report properies** - metadata describing the report that are used to include it in the reporting platform user interface.
+
+## Step 1 - Report Content
+
+You need to provide a sample report. This can be in Word, Google Doc or PDF format, but in essence we need a complete layout of the new report from beginning to end. This should include the actual boilerplate text that will appear in every report (e.g. introduction, explanations, appendices etc) as well as examples of charts and tables. The charts can be hand drawn sketches, photographed and dropped into the document. If charts are described in words they must be specified in great detail, including which data are represented on each axes, the labels, units etc, as well as what to show when there are no data etc.
+
+It's a good idea to annotate the sample report and explain your intent to the developers. This will help them make layout and contents decisions that invariably crop up when writing the code that will generate the report.
+
+Do not rush this step! This process is hard and requires thinking hard and making important decisions. Failing to spend the necessary time will delay the report by causing the need to iterate over several drafts to get it right.
+
+### Report Data
+
+The Riverscapes reports platform uses data produced by the [2025 run of the riverscapes network models](/initiatives/2025-CONUS-runs.md). More specifically, it uses a database of RME metrics for approximately 54,000,000 DGOs across North America.
+
+For report authors, this means that you have access to approximately 150 RME metrics for every riverscape in North Ammerica! Reports can include individual or aggregate calculations for any of these metrics, combining them into derived values as needed.
+
+### Charts and Tables
+
+The riverscapes reports use the free and open source [Plotly](https://plotly.com/) library for charting. Report authors can specify any chart types that Plotly supports.
+
+The reports load riverscapes data into [GeoPandas](https://geopandas.org/en/stable/) data frames and can reduce these into summary tables.
+
+### Images
+
+Provide image files for any logos, pictures or illustrations that are needed in the report or appendices.
+
+### Units
+
+Report authors can choose how they want units to be handled within a report. They have the option of letting the user choose between US Customary (impeerial) or metric units. Alternatively they can choose to skip this choice and simply force units to be handled within the report generation itself.
+
+### Maps
+
+All reports can choose to include an overview map that has layers for the report's area of interest (AOI), together with DGO polygons.
+
+At this time, no other maps are possible within the standard reporting technology. The reports do not have access to GIS or to a library of GIS layers. They literally on have access to the AOI polygon and DGO polygons.
+
+### Custom Components
+
+With several caveats, reports can include custom components available via PyPi Python packages. The best example is the riverscapes report word cloud that uses a custom package to produce the visualization.
+
+![word cloud](/img/standards/word_cloud.png)
+
+## Step 2 - Report Properties
 
 The following items are needed to define a new report. Included are some considerations and things to avoid when deciding on the relevant item.
 
+![Report Elements](/img/standards/report_elements.svg)
+
+
 ### Report Type Title
 
-We need a name for your new type of report. Existing examples are "Rivers Need Space" and "Riverscapes Inventory". 
-
-Obviously this title should clearly communicate the meaning of the report. It should be as short as possible (because report consumers will append other information when they generate the reports, such as the location). It should also be unique among the other report types that are available.
+We need a name for your new type of report. Existing examples are "Rivers Need Space" and "Riverscapes Inventory". Obviously this title should clearly communicate the meaning of the report. It should be as short as possible (because report consumers will append other information when they generate the reports, such as the location). It should also be unique among the other report types that are available.
 
 ### Short Title
 
@@ -31,7 +73,7 @@ One sentence summarizing the report goal. This is used on the report details scr
 
 ### Version
 
-A [semantic version number](https://semver.org/) (major.minor.revision) that is associated with each report that is generated. The version number appears inside the report and is useful for consumers to distinguish between older copies of the report.
+A [semantic version number](https://semver.org/) (`major.minor.revision`) that is associated with each report that is generated. The version number appears inside the report and is useful for consumers to distinguish between older copies of reports.
 
 ```
 Example: 1.0.2
@@ -48,9 +90,7 @@ You can limit where users are able to generate a specific type of report.Typical
 
 ### Mimimum and Maximum Area
 
-You can specify the lower and upper permissable area that each report type can use. This is used to validate the polygons that the consumer picks, draws or uploads in the user interface. Consumers will be prevented from creating reports outside of the specified range.
-
-These limits can be useful for extremely detailed reports that are only intended for smaller areas.
+You can specify the lower and upper permissable area that each report type can use. This is used to validate the polygons that the consumer picks, draws or uploads in the user interface. Consumers will be prevented from creating reports outside of the specified range. These limits can be useful for extremely detailed reports that are only intended for smaller areas.
 
 Area limits are specified in square kilometers.
 
@@ -59,18 +99,26 @@ maxAreaKm2: 1_000_000,
 minAreaKm2: 0.25,
 ```
 
+### Initial Map Location
+
+The report author can specify the initial location and zoom level of the map on which the user specifies their area of interest. This is useful if a map is relevant to a very specific location. The map centroid is defined as decimal latitude and longitude, while the zoom is specified as a web map zoom level between 1 and 20 (1 being the globe and 20 being zoomed in).  This parameter is optional. 
+
+```
+[-110, 40, 4], // [lng, lat, zoom]
+```
+
 ### Area Definition Methods
 
 You can specify the methods by which report consumers are permitted to define the area of interest for the report. You can pick one or more of the following:
 
-- Pick List - provides a dropdown of polygon layers with predefined shapes for the report consumers to pick from (e.g. National Parks or watersheds).
-- Upload - report consumers can upload a polygon layer from their computer in either [GeoPackage](https://www.geopackage.org/) or [GeoJSON](https://geojson.io) format.
-- Draw - report consumers can hand digitize the polygon that represents the area of interest for their report.
-- DGO Picker (Not Yet Available) - report consumers can pick a riverscape level path to be area of interest for their report. They can control the downstream and upstream level path extents. This excludes tributories.
+- **Pick List** - provides a dropdown of polygon layers with predefined shapes for the report consumers to pick from (e.g. National Parks or watersheds).
+- **Upload** - report consumers can upload a polygon layer from their computer in either [GeoPackage](https://www.geopackage.org/) or [GeoJSON](https://geojson.io) format.
+- **Draw** - report consumers can hand digitize the polygon that represents the area of interest for their report.
+- **DGO Picker** (Not Yet Available) - report consumers can pick a riverscape level path to be area of interest for their report. They can control the downstream and upstream level path extents. This excludes tributories.
 
 ### Picker Layers
 
-If you choose the pick list option in the Area Definition Methods above, then you can pick which polygon layers are available in the dropdown list. You can choose one or more from the following list of currently available layers, or alternatively provide a new GIS polygon dataset.
+If you choose the pick list option in the Area Definition Methods above, then you can pick which polygon layers are available in the dropdown list. You can choose one or more from the following list of currently available layers, or alternatively provide a new GIS polygon dataset to be added to the pick list.
 
 - BLM District Offices
 - BLM State Offices
@@ -81,9 +129,9 @@ If you choose the pick list option in the Area Definition Methods above, then yo
 - HUC 6
 - HUC 4
 
-To provide a new layer to this list requires that you prepare a single part polygon GIS dataset in WGS84 (EPSG:4326). The layer should have a unique identifier field as well as a text "name" field (for display on the map).
+To provide a new layer to this list requires that you prepare a single part polygon GIS dataset in WGS84 (EPSG:4326). The layer should have a unique identifier field as well as a text "name" field (for labeling polygons on the map).
 
-The layer should be carefully curated. Run simplification to reduce unnecessary vertices and run repair geometry to remove problems such as self-intersecting geometries, null geometries etc. We can advise on this process, but will reject layers that exhibit these problems.
+The layer should be carefully curated. Simplfy geometries to reduce unnecessary vertices and repair geometries to remove problems such as self-intersecting geometries, null geometries etc. We can advise on this process, but will reject layers that exhibit these problems.
 
 ### Graphic
 
@@ -97,36 +145,10 @@ The image file should be in JPEG format and 600 pixels wide by 400 pixels tall. 
 
 #### Detailed Description
 
-A long form description of the report contents, its motivation, contents and limitations. 
+A long form description of the report contents, its motivation, contents and limitations. As well as richly formatted text, this can also include images (either linked or provided with the content).
 
-As well as richly formatted text, this can also include images (either linked or provided with the content).
+## Submitting a New Report
 
-## Report Contents
+Gather all the information desribed above and email it to support@riverscapes.freshdesk.com with the title "New Report" as the subject line.
 
-The Riverscapes reports platform uses data produced by the [2025 run of the riverscapes network models](/initiatives/2025-CONUS-runs.md). More specifically, it uses a database of RME metrics for approximately 54,000,000 DGOs across North America.
-
-### Riverscapes Data
-
-For report authors, this means that you have access to approximately 150 RME metrics for every riverscape in North Ammerica! Reports can include individual or aggregate calculations for any of these metrics, combining them into derived values as needed.
-
-### Charts and Tables
-
-The riverscapes reports use the free and open source [Plotly](https://plotly.com/) library for charting. Report authors can specify any chart types that Plotly supports.
-
-The reports load riverscapes data into [GeoPandas](https://geopandas.org/en/stable/) data frames and can reduce these into summary tables.
-
-### Units
-
-The popular [Pint](https://pypi.org/project/Pint/) package is used to convert data between units. Typically, a report will use either metric or US customary (imperial) units, but authors can pick and choose or even combine both unit systems in a single report. It's also possible to include a units picker within the report creation wizzard that lets users pick between units and have this passed to the report generation code.
-
-### Maps
-
-All reports can choose to include an overview map that has layers for the report's area of interest (AOI), together with DGO polygons.
-
-At this time, no other maps are possible within the standard reporting technology. The reports do not have access to GIS or to a library of GIS layers. They literally on have access to the AOI polygon and DGO polygons.
-
-### Custom Components
-
-With several caveats, reports can include custom components available via PyPi Python packages. The best example is the riverscapes report word cloud that uses a custom package to produce the visualization.
-
-![word cloud](/img/standards/word_cloud.png)
+The turnaround time for the new report depends on the complexity of the report contents, as well as how much overlap it has with existing reports. Someone from the development team will respond to submissions to discuss the level of effort and cost involved.
