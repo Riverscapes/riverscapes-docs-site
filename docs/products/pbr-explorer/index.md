@@ -1,5 +1,6 @@
 ---
 title: PBR Explorer
+title_icon: /img/logos/apps/PBR.svg
 ---
 
 ## What is PBR Explorer
