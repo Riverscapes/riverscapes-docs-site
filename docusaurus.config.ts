@@ -7,8 +7,17 @@ import type * as Preset from '@docusaurus/preset-classic'
 const config: Config = {
   title: 'Riverscapes Docs', // Site title displayed in the browser tab
   tagline: 'This is a template for a riverscapes site.', // Short description shown in meta tags
-  favicon: 'favicon.ico', // Path to site favicon
-
+  favicon: '/img/favicon.svg', // Path to site favicon
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'alternate icon',
+        href: '/img/favicon-32.png',
+        sizes: '32x32',
+      },
+    },
+  ],
   future: {
     v4: true, // Enables compatibility with upcoming Docusaurus v4 features
   },
