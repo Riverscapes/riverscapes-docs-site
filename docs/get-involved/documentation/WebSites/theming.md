@@ -46,14 +46,61 @@ You can extend the styling of a site by creating a file called `custom.css` at t
 * [Foundation](https://foundation.zurb.com/)
 * [Font Awesome 4.7](https://fontawesome.com/v4.7.0/) (note the version number)
 
-
 ## Updating your favicon
 
 Favicons are little graphics that web browsers display on the browser tab beside the site title:
 
+1. Place your favicon SVG file here:
+
+```bash
+your-project/
+  static/
+    img/
+    favicon.svg
+```
+
+2. Update your docusaurus.config.ts
+
+Inside themeConfig, set the favicon field to the SVG path.
+
+Example:
+
+```ts
+// docusaurus.config.ts
+const config = {
+  // ...
+  themeConfig: {
+    // ...
+    favicon: '/img/favicon.svg',
+  },
+};
+```
+
+3. PNG fallback
+
+Older Safari doesn’t always like SVG favicons.
+Add a PNG version in the same folder:
+
+static/img/favicon-32.png
+
+Then add custom tags to head like this:
+
+```ts
+headTags: [
+  {
+    tagName: 'link',
+    attributes: {
+      rel: 'alternate icon',
+      href: '/img/favicon-32.png',
+      sizes: '32x32',
+    },
+  },
+],
+```
+
 <!-- TODO ![favicon](img/favicon_demo.png) -->
 
-Favicons used to be simple. Things have gotten more complicated, what with all the various devices and resolutions on which people could be viewing your site. Here's how you generate your own:
+<!-- Favicons used to be simple. Things have gotten more complicated, what with all the various devices and resolutions on which people could be viewing your site. Here's how you generate your own: -->
 
 <!-- TODO 1. Find a nice sized copy of your logo that is square. A high quality image is most important, but also try to avoid images greater than 500 pixels across to avoid image distortion.
 1. Go to a service like <http://www.favicon-generator.org> and upload your icon. It will generate lots images in various sizes. Use all 27 of these files in the folder to overwrite the files in `assets/images/favicons`. Make a comit and push to master.  -->
