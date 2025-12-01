@@ -5,6 +5,35 @@ description: Columbia Habitat Monitoring Program
 
 ## Topo Data
 
+<!--
+
+SELECT name,
+       '[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_' ||
+       replace(name, ' ', '') || '%2CCHAMP_Year_2011)' as "2011",
+    '[Surveys](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_' ||
+       replace(name, ' ', '') || '%2CCHAMP_Year_2012)' as "2012",
+    '[Surveys](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_' ||
+       replace(name, ' ', '') || '%2CCHAMP_Year_2013)' as "2013",
+    '[Surveys](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_' ||
+       replace(name, ' ', '') || '%2CCHAMP_Year_2014)' as "2014",
+    '[Surveys](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_' ||
+       replace(name, ' ', '') || '%2CCHAMP_Year_2015)' as "2015",
+    '[Surveys](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_' ||
+       replace(name, ' ', '') || '%2CCHAMP_Year_2016)' as "2016",
+    '[Surveys](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_' ||
+       replace(name, ' ', '') || '%2CCHAMP_Year_2017)' as "2017",
+    '[Surveys](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_' ||
+       replace(name, ' ', '') || '%2CCHAMP_Year_2018)' as "2018",
+    '[Surveys](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_' ||
+       replace(name, ' ', '') || '%2CCHAMP_Year_2019)' as "2019",
+    '[Surveys](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_' ||
+       replace(name, ' ', '') || '%2CCHAMP_Year_2020)' as "2020"
+FROM watersheds
+where is_champ <> 0
+order by name;
+
+-->
+
 | Watershed | 2011 | 2012 | 2013 | 2014 | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [Asotin](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2011) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2012) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2017) | - | - | -|
