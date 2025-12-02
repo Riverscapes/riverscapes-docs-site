@@ -3,7 +3,24 @@ title: CHaMP
 description: Columbia Habitat Monitoring Program
 ---
 
-## Topo Data
+The Columbia Habitat Monitoring Program (CHaMP) ran from 2011 to 2017 with the goal of collecting status and trend monitoring of salmonid habitat within the Columbia River basin in the pacific northwestern United States. In 2024, long after the end of CHaMP an effort was funded by NOAA to track down as much CHaMP data as possible and upload it to the Riverscapes Data Exchange. The goal was to make the rich CHaMP data live on and remain accessible for researchers. 
+
+This page describes the outcome of this renewed push to publish CHaMP data on the [Riverscapes Data Exchange](https://data.riverscapes.net). While not exhaustive, those familiar will recognize many of the terms and data and find what they are looking for.
+
+## Survey Data
+
+CHaMP collected many types of data, centered around both a high resolution topographic river survey and a series of non-spatial "auxilliary measurements". These "topo" and "aux" data have been combined into a single project for each survey and placed on the exchange. The data are owned by the [CHaMP Organization](https://data.riverscapes.net/o/c7d8c487-c377-42b0-a5b6-4c16db18fb41/) and carefully tagged by watershed, site, field season and visit ID using the following system:
+
+Organizational Concept|Tag Format|Example|Notes
+---|---|---|---
+Watershed|`CHAMP_Watershed_XXXXXXXX`|[CHaMP_Watershed_JohnDay](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_JohnDay)|Spaces removed
+Site|`CHAMP_Site_XXXXXXXXXX`|[CHAMP_Site_YFI00001-000133](https://data.riverscapes.net/s?type=Project&tags=CHAMP_Site_YFI00001-000133)|
+Field Season|`CHAMP_Year_XXXX`|[CHAMP_Year_2011](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2011)|
+Visit|`CHaMP_Visit_XXXX`|[CHAMP_Visit_5238](https://data.riverscapes.net/s?type=Project&tags=CHAMP_Visit_5238&view=map)|Zero padded to 4 digits
+
+In the table below click on the row headings to discover all projects for a particular watershed. Click on the column headings for all projects of a certain year. The cells in the table link to the specific watersheds and years. These links will take you to the Data Exchange where you can you the project data in a web map or view the metadata.
+
+You can use the [Riverscapes Commandline Interface](https://docs.riverscapes.net/products/rscli) to download the data, or you can write Python scripts to perform custom searches and batch download many projects in a single operation.
 
 <!--
 
@@ -32,9 +49,11 @@ FROM watersheds
 where is_champ <> 0
 order by name;
 
--->
 
 | Watershed | 2011 | 2012 | 2013 | 2014 | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 |
+-->
+
+Watershed|[2011](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2011)|[2012](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2012)|[2013](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2013)|[2014](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2014)|[2015](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2015)|[2016](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2016)|[2017](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2017)|[2018](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2018)|[2019](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2019)|[2020](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2020)
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [Asotin](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2011) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2012) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Asotin%2CCHAMP_Year_2017) | - | - | -|
 | [Entiat](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Entiat)  | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Entiat%2CCHAMP_Year_2011) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Entiat%2CCHAMP_Year_2012) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Entiat%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Entiat%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Entiat%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Entiat%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Entiat%2CCHAMP_Year_2017)  | - | - | -|
@@ -47,4 +66,19 @@ order by name;
 | [Upper Grande Ronde](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_UpperGrandeRonde)  | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_UpperGrandeRonde%2CCHAMP_Year_2011) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_UpperGrandeRonde%2CCHAMP_Year_2012) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_UpperGrandeRonde%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_UpperGrandeRonde%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_UpperGrandeRonde%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_UpperGrandeRonde%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_UpperGrandeRonde%2CCHAMP_Year_2017)  | - | - | -|
 | [Wenatchee](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee)  | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2011) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2012) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2017)  | - | - | -|
 | [Yankee Fork](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_YankeeFork) | - | - | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2017) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2018) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2019) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2020) |
+
+<!--
 _All Watersheds_|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2011)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2012)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2013)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2014)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2015)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2016)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2017)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2018)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2019)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2020)
+-->
+
+## Stream Temperature Data
+
+CHaMP stream temperature measurements are available as a [single project for all watersheds, sites and years](https://data.riverscapes.net/s?type=Project&projectTypeId=champstreamtemp&view=map). Ther project contains both a SQLite and Microsoft Access copy of the data.
+
+Chris McNeiset developed stream temperature predictions for portions of the Columbia River Basin. These data are available by prediction type:
+
+- [Potential Maximum Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtemppotmax&view=map)
+- [Potential Mean Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtemppotmean&view=map)
+- [Potential Minimum Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtemppotmin&view=map)
+- [Max Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtempmax&view=map)
+- [Mean Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtempmean&view=map)
