@@ -12,7 +12,13 @@ This workflow outlines the process of generating riverscapes using only a high-r
 
 The motivation is to be able to build a stream network that can be used within the [Riverscapes tools waterfall](https://tools.riverscapes.net/#the-waterfall) for generating riverscapes polygons. With nothing more than a DEM, this workflow is the first step to running the Channel Area, tauDEM and VBET portion of the tools waterfall.
 
-# Preparation
+## Preparation
+
+:::tip
+To accurately extract channels from high resolution DEMs, some pre-processing of the DEM is often necessary. Bridges and culverts can create discontinuities in flow paths and cause innacurate network extraction. For best results, the video below walks through the process of 'burning' culverts into the DEM.
+:::
+
+<YouTubeEmbed videoId="8duUdsbtjQk"/>
 
 1. Launch a GitHub CodeSpace in the [Riverscapes Tools](https://github.com/Riverscapes/riverscapes-tools) repository. Experiment with different CodeSpace sizes to find the best performance. This workflow was developed using the largest size available and all tools ran in under 1 minute on 350Mb rasters.
 1. Create a data processing folder at `/workspace/data` and open a new Visual Studio Code window in that folder.
@@ -125,3 +131,9 @@ echo "Step 8: Converting VRT to raster"
 The output stream network can have several issues. The most common is that the stream network is not continuous, but almost as common are small tributaries in flat areas (see below). The network features are also extremely fragmented with lots of small geometries. These issues can be addressed by manually editing the stream network in a GIS. Additional research is needed to determine if these issues can be addressed in tauDEM itself.
 
 ![stream network issues](/img/get-involved/taudem_netorks/cole_creek_network_problems.png)
+
+:::note
+The video below shows an alternative pathway for using TauDEM to extract a channel network using the command line rather than a script in Codespaces. It is a continuation of the video above demonstrating how to deal with road crossings.
+:::
+
+<YouTubeEmbed videoId="SLypxKmgqvg"/>
