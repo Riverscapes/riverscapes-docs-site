@@ -31,145 +31,149 @@ import CopyButtonWrapper from '@site/src/components/CopyButtonWrapper/CopyButton
 
 ### Light mode
 
-#### Primary
 
-<div style={{
-  display: "flex",
-  flexDirection: "row",
-  gap: "1em",
-  margin: "1.5em 0"
-}}>
-  <div style={{
-    background: "#004793",
-    color: "#fff",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    fontWeight: 500,
-    fontSize: "1em",
-    boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
-  }}>
-    <span>Main</span>
-    <span>#004793</span>
-    <span>0 71 147</span>
-    <CopyButtonWrapper copyText="#004793" buttonLabel="📋" copiedMessage="Copied!" />
+<div style={{ display: 'flex', flexDirection: 'row', gap: '2em', width: '100%' }}>
+  <div style={{ flex: 1 }}>
+    <h4 style={{ marginTop: 0 }}>Primary</h4>
+    <div style={{
+      display: "flex",
+      flexDirection: "row",
+      gap: "1em",
+      margin: "1.5em 0"
+    }}>
+      <div style={{
+        background: "#004793",
+        color: "#fff",
+        width: "90px",
+        height: "90px",
+        borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        fontWeight: 500,
+        fontSize: "1em",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
+      }}>
+        <span>Main</span>
+        <span>#004793</span>
+        <span>0 71 147</span>
+        <CopyButtonWrapper copyText="#004793" buttonLabel="📋" copiedMessage="Copied!" />
+      </div>
+      <div style={{
+        background: "#0661C1",
+        color: "#fff",
+        width: "90px",
+        height: "90px",
+        borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        fontWeight: 500,
+        fontSize: "1em",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
+      }}>
+        <span>Light</span>
+        <span>#0661C1</span>
+        <span>6 97 193</span>
+        <CopyButtonWrapper copyText="#0661C1" buttonLabel="📋" copiedMessage="Copied!" />
+      </div>
+      <div style={{
+        background: "#003166",
+        color: "#fff",
+        width: "90px",
+        height: "90px",
+        borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        fontWeight: 500,
+        fontSize: "1em",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.08)",
+        border: "1px solid #ddd"
+      }}>
+        <span>Dark</span>
+        <span>#003166</span>
+        <span>0 49 102</span>
+        <CopyButtonWrapper copyText="#003166" buttonLabel="📋" copiedMessage="Copied!" />
+      </div>
+    </div>
   </div>
-  <div style={{
-    background: "#0661C1",
-    color: "#fff",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    fontWeight: 500,
-    fontSize: "1em",
-    boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
-  }}>
-    <span>Light</span>
-    <span>#0661C1</span>
-    <span>6 97 193</span>
-    <CopyButtonWrapper copyText="#0661C1" buttonLabel="📋" copiedMessage="Copied!" />
-  </div>
-  <div style={{
-    background: "#003166",
-    color: "#fff",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    fontWeight: 500,
-    fontSize: "1em",
-    boxShadow: "0 1px 6px rgba(0,0,0,0.08)",
-    border: "1px solid #ddd"
-  }}>
-    <span>Dark</span>
-    <span>#003166</span>
-    <span>0 49 102</span>
-    <CopyButtonWrapper copyText="#003166" buttonLabel="📋" copiedMessage="Copied!" />
-  </div>
-</div>
-
-#### Secondary
-
-<div style={{
-  display: "flex",
-  flexDirection: "row",
-  gap: "1em",
-  margin: "1.5em 0"
-}}>
-  <div style={{
-    background: " #21BFD4",
-    color: "#fff",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    fontWeight: 500,
-    fontSize: "1em",
-    boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
-  }}>
-    <span>Main</span>
-    <span> #21BFD4</span>
-    <span>33 191 212</span>
-    <CopyButtonWrapper copyText="#21BFD4" buttonLabel="📋" copiedMessage="Copied!" />
-  </div>
-  <div style={{
-    background: " #4DCBDC",
-    color: "#fff",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    fontWeight: 500,
-    fontSize: "1em",
-    boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
-  }}>
-   <span>Light</span>
-    <span> #4DCBDC</span>
-    <span>77 203 220</span>
-    <CopyButtonWrapper copyText="#4DCBDC" buttonLabel="📋" copiedMessage="Copied!" />
-  </div>
-  <div style={{
-    background: " #178594",
-    color: "#fff",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    fontWeight: 500,
-    fontSize: "1em",
-    boxShadow: "0 1px 6px rgba(0,0,0,0.08)",
-    border: "1px solid #ddd"
-  }}>
-    <span>Dark</span>
-    <span> #178594</span>
-    <span>23 133 148</span>
-    <CopyButtonWrapper copyText="#178594" buttonLabel="📋" copiedMessage="Copied!" />
+  <div style={{ flex: 1 }}>
+    <h4 style={{ marginTop: 0 }}>Secondary</h4>
+    <div style={{
+      display: "flex",
+      flexDirection: "row",
+      gap: "1em",
+      margin: "1.5em 0"
+    }}>
+      <div style={{
+        background: "#21BFD4",
+        color: "#fff",
+        width: "90px",
+        height: "90px",
+        borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        fontWeight: 500,
+        fontSize: "1em",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
+      }}>
+        <span>Main</span>
+        <span> #21BFD4</span>
+        <span>33 191 212</span>
+        <CopyButtonWrapper copyText="#21BFD4" buttonLabel="📋" copiedMessage="Copied!" />
+      </div>
+      <div style={{
+        background: "#4DCBDC",
+        color: "#fff",
+        width: "90px",
+        height: "90px",
+        borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        fontWeight: 500,
+        fontSize: "1em",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
+      }}>
+        <span>Light</span>
+        <span> #4DCBDC</span>
+        <span>77 203 220</span>
+        <CopyButtonWrapper copyText="#4DCBDC" buttonLabel="📋" copiedMessage="Copied!" />
+      </div>
+      <div style={{
+        background: "#178594",
+        color: "#fff",
+        width: "90px",
+        height: "90px",
+        borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        fontWeight: 500,
+        fontSize: "1em",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.08)",
+        border: "1px solid #ddd"
+      }}>
+        <span>Dark</span>
+        <span> #178594</span>
+        <span>23 133 148</span>
+        <CopyButtonWrapper copyText="#178594" buttonLabel="📋" copiedMessage="Copied!" />
+      </div>
+    </div>
   </div>
 </div>
 
@@ -184,9 +188,9 @@ import CopyButtonWrapper from '@site/src/components/CopyButtonWrapper/CopyButton
   <div style={{
     background: " #BBCD3F",
     color: "#222",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
+       width: "90px",
+        height: "90px",
+     borderRadius: "8px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -204,174 +208,149 @@ import CopyButtonWrapper from '@site/src/components/CopyButtonWrapper/CopyButton
 
 ### Dark mode
 
-#### Primary
 
-<div style={{
-  display: "flex",
-  flexDirection: "row",
-  gap: "1em",
-  margin: "1.5em 0"
-}}>
-  <div style={{
-    background: " #21BFD4",
-    color: "#fff",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    fontWeight: 500,
-    fontSize: "1em",
-    boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
-  }}>
-    <span>Main</span>
-    <span>  #21BFD4</span>
-    <span>33 191 212</span>
-    <CopyButtonWrapper copyText="#21BFD4" buttonLabel="📋" copiedMessage="Copied!" />
+<div style={{ display: 'flex', flexDirection: 'row', gap: '2em', width: '100%' }}>
+  <div style={{ flex: 1 }}>
+    <h4 style={{ marginTop: 0 }}>Primary</h4>
+    <div style={{
+      display: "flex",
+      flexDirection: "row",
+      gap: "1em",
+      margin: "1.5em 0"
+    }}>
+      <div style={{
+        background: "#21BFD4",
+        color: "#fff",
+        width: "90px",
+        height: "90px",
+        borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        fontWeight: 500,
+        fontSize: "1em",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
+      }}>
+        <span>Main</span>
+        <span>  #21BFD4</span>
+        <span>33 191 212</span>
+        <CopyButtonWrapper copyText="#21BFD4" buttonLabel="📋" copiedMessage="Copied!" />
+      </div>
+      <div style={{
+        background: "#4DCBDC",
+        color: "#fff",
+       width: "90px",
+        height: "90px",
+         borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        fontWeight: 500,
+        fontSize: "1em",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
+      }}>
+        <span>Light</span>
+        <span>  #4DCBDC</span>
+        <span>77 203 220</span>
+        <CopyButtonWrapper copyText="#4DCBDC" buttonLabel="📋" copiedMessage="Copied!" />
+      </div>
+      <div style={{
+        background: "#178594",
+        color: "#fff",
+        width: "90px",
+        height: "90px",
+         borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        fontWeight: 500,
+        fontSize: "1em",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.08)",
+        border: "1px solid #ddd"
+      }}>
+        <span>Dark</span>
+        <span>  #178594</span>
+        <span>23 133 148</span>
+        <CopyButtonWrapper copyText="#178594" buttonLabel="📋" copiedMessage="Copied!" />
+      </div>
+    </div>
   </div>
-  <div style={{
-    background: " #4DCBDC",
-    color: "#fff",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    fontWeight: 500,
-    fontSize: "1em",
-    boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
-  }}>
-   <span>Light</span>
-    <span>  #4DCBDC</span>
-    <span>77 203 220</span>
-    <CopyButtonWrapper copyText="#4DCBDC" buttonLabel="📋" copiedMessage="Copied!" />
-  </div>
-  <div style={{
-    background: "  #178594",
-    color: "#fff",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    fontWeight: 500,
-    fontSize: "1em",
-    boxShadow: "0 1px 6px rgba(0,0,0,0.08)",
-    border: "1px solid #ddd"
-  }}>
-    <span>Dark</span>
-    <span>  #178594</span>
-    <span>23 133 148</span>
-    <CopyButtonWrapper copyText="#178594" buttonLabel="📋" copiedMessage="Copied!" />
-  </div>
-</div>
-
-#### Secondary
-
-<div style={{
-  display: "flex",
-  flexDirection: "row",
-  gap: "1em",
-  margin: "1.5em 0"
-}}>
-  <div style={{
-    background: " #BBCD3F",
-    color: "#fff",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    fontWeight: 500,
-    fontSize: "1em",
-    boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
-  }}>
-    <span>Main</span>
-    <span>  #BBCD3F</span>
-    <span>187 205 63</span>
-    <CopyButtonWrapper copyText="#BBCD3F" buttonLabel="📋" copiedMessage="Copied!" />
-  </div>
-  <div style={{
-    background: " #C8D765",
-    color: "#fff",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    fontWeight: 500,
-    fontSize: "1em",
-    boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
-  }}>
-    <span>Light</span>
-    <span>  #C8D765</span>
-    <span>200 215 101</span>
-    <CopyButtonWrapper copyText="#C8D765" buttonLabel="📋" copiedMessage="Copied!" />
-  </div>
-  <div style={{
-    background: " #828F2C",
-    color: "#fff",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    fontWeight: 500,
-    fontSize: "1em",
-    boxShadow: "0 1px 6px rgba(0,0,0,0.08)",
-    border: "1px solid #ddd"
-  }}>
-    <span>Dark</span>
-    <span>  #828F2C</span>
-    <span>130 143 44</span>
-    <CopyButtonWrapper copyText="#828F2C" buttonLabel="📋" copiedMessage="Copied!" />
-  </div>
-</div>
-
-#### Divider
-
-<div style={{
-  display: "flex",
-  flexDirection: "row",
-  gap: "1em",
-  margin: "1.5em 0"
-}}>
-  <div style={{
-    background: "  #BBCD3F",
-    color: "#222",
-    width: "150px",
-    height: "110px",
-    borderRadius: "8px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    fontWeight: 500,
-    fontSize: "1em",
-    boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
-  }}>
-    <span>  #BBCD3F</span>
-    <span>187 205 63</span>
-    <CopyButtonWrapper copyText="#BBCD3F" buttonLabel="📋" copiedMessage="Copied!" />
+  <div style={{ flex: 1 }}>
+    <h4 style={{ marginTop: 0 }}>Secondary</h4>
+    <div style={{
+      display: "flex",
+      flexDirection: "row",
+      gap: "1em",
+      margin: "1.5em 0"
+    }}>
+      <div style={{
+        background: "#BBCD3F",
+        color: "#fff",
+       width: "90px",
+        height: "90px",
+         borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        fontWeight: 500,
+        fontSize: "1em",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
+      }}>
+        <span>Main</span>
+        <span>  #BBCD3F</span>
+        <span>187 205 63</span>
+        <CopyButtonWrapper copyText="#BBCD3F" buttonLabel="📋" copiedMessage="Copied!" />
+      </div>
+      <div style={{
+        background: "#C8D765",
+        color: "#fff",
+       width: "90px",
+        height: "90px",
+         borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        fontWeight: 500,
+        fontSize: "1em",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.08)"
+      }}>
+        <span>Light</span>
+        <span>  #C8D765</span>
+        <span>200 215 101</span>
+        <CopyButtonWrapper copyText="#C8D765" buttonLabel="📋" copiedMessage="Copied!" />
+      </div>
+      <div style={{
+        background: "#828F2C",
+        color: "#fff",
+       width: "90px",
+        height: "90px",
+         borderRadius: "8px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        fontWeight: 500,
+        fontSize: "1em",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.08)",
+        border: "1px solid #ddd"
+      }}>
+        <span>Dark</span>
+        <span>  #828F2C</span>
+        <span>130 143 44</span>
+        <CopyButtonWrapper copyText="#828F2C" buttonLabel="📋" copiedMessage="Copied!" />
+      </div>
+    </div>
   </div>
 </div>
 
