@@ -1,6 +1,7 @@
 ---
 title: CHaMP
 description: Columbia Habitat Monitoring Program
+title_icon: /img/logos/CHaMP_Logo_128.png
 ---
 
 The Columbia Habitat Monitoring Program (CHaMP) ran from 2011 to 2017 with the goal of collecting status and trend monitoring of salmonid habitat within the Columbia River basin in the pacific northwestern United States. In 2024, long after the end of CHaMP an effort was funded by NOAA to track down as much CHaMP data as possible and upload it to the Riverscapes Data Exchange. The goal was to make the rich CHaMP data live on and remain accessible for researchers. 
