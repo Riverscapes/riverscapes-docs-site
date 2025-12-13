@@ -73,7 +73,7 @@ const config: Config = {
       title: 'Riverscapes Docs', // Navbar title
       logo: {
         alt: 'Riverscapes Studio Logo', // Logo alt text
-        src: 'img/logos/rc_logo.png', // Logo image path
+        src: 'img/logos/apps/Consortium.svg', // Logo image path
       },
       items: [
         //   {
