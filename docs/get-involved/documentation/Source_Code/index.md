@@ -60,6 +60,6 @@ For now, simply put one or two sentences in the read me that provide a high leve
 
 Create and a plain text file in the root of your repository simply called `LICENSE` (no file suffix). [Choose an appropriate license](https://choosealicense.com/) and put the text in this file. Most Riverscapes models use the [GNU 3.0 license](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
-## Documentation Web Site
+## Documentation Web Sites
 
-<!-- TODO Each tool should have its own documentation web site that explains how the tool works as well as how to obtain, install and run the tool itself. See the separate section on [Riverscapes Tool Web Sites]({{ site.baseurl}}/Technical_Reference/Documentation_Standards/WebSites/) for more information. Any peer-reviewed publications that vet the methods implemented in the tool or code should be cited. -->
+Each tool should have its own documentation web site that explains how the tool works as well as how to obtain, install and run the tool itself. We use Docusauras as the default for deloying these sites on the GitHub hosted repository (see the [Using Docusauras](https://docs.riverscapes.net/get-involved/documentation/using-docusaurus) for more information. Any peer-reviewed publications that vet the methods implemented in the tool or code should be cited and listed.
