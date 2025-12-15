@@ -222,7 +222,7 @@ src="https://docs.google.com/presentation/d/e/2PACX-1vRvfFoZVdGcOsb9jSfj7TYPOcmn
 width={800}
 height={600}
 />
-
+-----
 ## Common Theme Repository
 
 The Riverscapes Docusaurus theme is stored in a [private GitHub repository](https://github.com/Riverscapes/riverscapes-docusaurus-theme) and includes a [demo site](https://riverscapes.github.io/riverscapes-docusaurus-theme/) that shows off different examples, as well as an empty template for starting new sites.
@@ -231,7 +231,7 @@ The Riverscapes Docusaurus theme is stored in a [private GitHub repository](http
 
 Use `docusaurus.config.ts` to customize the footer. The theme reads `themeConfig.footer.links` and **prepends** the items into matching columns.
 
-### Column titles provided by the theme
+#### Column titles provided by the theme
 
 * `Support & Contact`
 * `Connect with Us`
@@ -241,7 +241,7 @@ Use `docusaurus.config.ts` to customize the footer. The theme reads `themeConfig
 
 ---
 
-### 1. Add a link to an existing column
+#### 1. Add a link to an existing column
 
 **`docusaurus.config.ts`**
 
@@ -268,7 +268,7 @@ themeConfig: {
 
 ---
 
-### 2. Create a new column
+#### 2. Create a new column
 
 **`docusaurus.config.ts`**
 
@@ -292,7 +292,7 @@ themeConfig: {
 
 ---
 
-### 3. Multiple columns at once
+#### 3. Multiple columns at once
 
 **`docusaurus.config.ts`**
 
@@ -416,27 +416,46 @@ Open `docusaurus.config.ts` file and update the key details to match your new si
 
 ```ts
 export default {
-  title: 'My New Riverscapes Site',
-  url: 'https://riverscapes.github.io',
-  baseUrl: '/mynewsite/',
-  organizationName: 'Riverscapes',
+  title: 'My New Riverscapes Site', // site title displayed in browser tab
+  url: 'https://riverscapes.github.io', // site url
+  baseUrl: '/mynewsite/',  // optional baseurl
+  organizationName: 'Riverscapes', 
   projectName: 'mynewsite',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.ico', // path to favicon for display on browswer tab
 
   themeConfig: {
-    navbar: {
-      title: 'My New Site',
-      items: [{ to: '/docs/intro', label: 'Docs', position: 'left' }],
+      navbar: {
+        title: 'RIM - Riverscapes Innundation Mapper', // this controls the site title that appears on all pages at the navigation bar
+        // The logo/icon that appears to left of navigation bar title
+        logo: {  
+          alt: 'Riverscapes Studio Logo', // Logo alt text
+          src: 'img/RIM.svg', // Logo image path
+          },
+        // Optional navigation bar menu items (make one for each menu item)
+        items: [
+          // {
+          //   type: 'docSidebar',
+          //   sidebarId: 'tutorialSidebar', // ID of the sidebar defined in sidebars.ts
+          //   position: 'left',
+          //   label: 'MENU1', // Label in the navbar
+          // },
+        {
+          href: 'https://github.com/Riverscapes/repository', // External GitHub link
+          label: 'GitHub',
+          position: 'right',
+          },
+        ],
+      },
+      footer: {
+        copyright: `Copyright © ${new Date().getFullYear()} Riverscapes Consortium`,
+      },
     },
-    footer: {
-      copyright: `Copyright © ${new Date().getFullYear()} Riverscapes Consortium`,
-    },
-  },
 };
 
 ```
 
 💡 The baseUrl should match your GitHub repository name — this determines the deployed site path (e.g., /mynewsite/).
+- Note the 
 
 ### Step 7. Run the Dev Server
 
