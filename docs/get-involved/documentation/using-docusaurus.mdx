@@ -19,20 +19,23 @@ Front matter is a section at the very top of each file beginning with three dash
 * over-ride the default heading levels shown in the table of contents (`toc_min_heading_level` and `toc_max_heading_level` default to 2 and 3 respectively)
 * add description and keywords that will be placed in meta tags and used by search engines (`description`, `keywords`)
 
-Suggested front matter for Riverscapes docs:
+Suggested front matter for Riverscapes docs files:
 
 ```text
 ---
 title: Friendly Page Title
+title_icon: /img/logo.svg
 description: A description of the page
 sidebar_position: 1
+sidebar_label: Label for the sidebar in site navigation
 page-status: stub,messy,mature,protected,generated
 page-priority: low,medium,high
 ---
 ```
-
-* Pages within each section are ordered by the `sidebar_position` value. Pages without a value are then ordered alphabetically.
-* `page-status` and `page-priority` tags are proposed for internal use and have no impact on how the page is displayed.
+- `title: ` is the only required frontmatter field (controls how page shows up in site navigation)
+- `title_icon` is an optoinal field that places an icon to the left of the page title at top of page (and below breadcrumb navigation)
+- Pages within each section are ordered by the `sidebar_position` value. Pages without a value are then ordered alphabetically.
+- `page-status` and `page-priority` tags are proposed for internal use and have no impact on how the page is displayed.
 
 ## YouTube Videos
 
