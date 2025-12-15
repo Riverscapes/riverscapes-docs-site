@@ -3,6 +3,7 @@ import tseslint from '@typescript-eslint/eslint-plugin'
 import tsparser from '@typescript-eslint/parser'
 import reactPlugin from 'eslint-plugin-react'
 import prettierPlugin from 'eslint-plugin-prettier'
+import globals from 'globals'
 
 export default [
   js.configs.recommended,
@@ -14,6 +15,10 @@ export default [
         ecmaVersion: 2018,
         sourceType: 'module',
         ecmaFeatures: { jsx: true },
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.node,
       },
     },
     plugins: {
