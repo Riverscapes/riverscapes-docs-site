@@ -1,0 +1,127 @@
+---
+title: Riverscapes Metadata Standards
+---
+
+Riverscapes Projects and the Riverscapes Data Exchange have several ways of describing the data, ie of providing metadata. See for example, the [Riverscapes documentation ecosystem](get-involved/documentation/#the-riverscapes-documentation-ecosystem). 
+
+To provide a structured way of sharing metadata between the tools that produce the data and consumers of that data - whether those consumers are other tools, or users who may be working with the data in one of the Riverscapes Viewers, a desktop GIS system or via our reports interface, we have developed a new Riverscapes Metadata schema and protocol. It is simple and flexible, providing the ability to describe the wide variety of data used in Riverscapes projects and reports.
+
+## Source of Truth - `layer_definitions.json`
+
+We take a 'metadata as code' approach and expect tools that generate or manipulate data to define the metadata for that data in a text file stored in the source code repository. This file, usually named `layer_definitions.json` follows a prescribed format, described below. By following that format we can combine and work with all definitions in the same way.
+
+## The Metadata Schema Rules (json-schema)
+
+The format of the layer definitions is published as a json schema, publicly available at [xml.riverscapes.net/riverscapes_metadata/schema/layer_definitions.schema.json](https://xml.riverscapes.net/riverscapes_metadata/schema/layer_definitions.schema.json). 
+
+## Hierarchical Organization
+
+The Riverscapes metadata has the following namespace organization:
+
+1. The code repository within which the code lives. We refer to this as the **Schema Authority**
+2. The tool (usually a python package). We currently refer to as the **authority name** but plan to rename to **Tool schema name**
+3. The **tool schema version**. If the structure of the data a tool produces changes significantly - and this would include a change in the units of measure reported - then a new version can be published.
+4. The data **layer**. See [What is a layer?](#what-is-a-layer) below.
+5. **Columns** within the layer.
+
+Within each level all names must be unique. For example, a tool can't have two layers with the same id; a layer can't have two columns with the same name.
+
+### What is a 'layer'?
+
+It can essentially be any data container that fits the rules, but typically will be a database table or spatial layer. Examples could include a Geopackage spatial table or spatial view, a ShapeFile, a table or view in any database, or a raster file such as a Geotiff file.
+
+For backwards compatibility with layer lists in riverscapes `project.rs.xml`, we allow 'containers' such as GeoPackages or Databases to be considered layers. This allows a reference to the container to exist absent any reference to its contents.
+
+Except for container types, a layer contains structured data (columns).
+
+## Column-level metadata
+
+At the column level, there are several valuable metadata items available.
+
+For a raster layer, individual bands can be described as columns.
+
+### Data Units
+
+A critical piece of information for data consumers is the unit of measure or data unit used.
+
+We are using the [python Pint library](https://pint.readthedocs.io/en/stable/) for unit handling. Units in the `data_unit` field must validate using Pint and the comprehensive list of units distributed with that library.
+
+Additionally, we accept `NA` as a unit meaning "do not parse this as a Quantity". This is appropriate for most text fields, or numeric fields such as ID fields, a telephone number, etc.
+
+This is separate from `dimensionless`, which is a valid Pint Unit, and should be used for Quantities that have no unit. A ratio such as  "metres per metre" or "m/m" will evaluate to dimensionless.
+
+Another valid Pint unit is `count`.
+
+#### Caution: units are case-sensitive
+
+Units are **case-sensitive**. For example, `mm`, `Mm` and `mM` and `MM` are four *different* and *valid* units! Likewise `na` (nanoyear) is **not** equivalent to `NA` (Not Applicable).
+
+#### Conventions and commonly used units in Riverscapes
+
+The Pint parsing engine is powerful and will accept many variations for units, including abbreviations, plurals, commonly used alternate spellings and modifiers. For example, all of the following are valid *and equivalent* units! 
+
+* `m^2`, `m*m`, `square meter`, `m ** 2`, `m²` , `metre * meter`, `metres^2`
+
+However, we recommend sticking with the following commonly used format conventions: 
+
+* For non-quantities (Not Applicable): `NA`
+* For ratios and other quantities without a unit: `dimensionless`
+* For counts: `count`
+* For standard SI units - use the standard abbreviation: e.g. `m` or `km`
+* For non-SI units - use the full name e.g. `mile`
+* For area (square) units: `m^2`
+* For volume (cubic) units: `m^3`
+* For reciprocal units (e.g. beaver dams expressed as 'per mile') : `mile^-1` (or `count/mile` if appropriate)
+
+### Unit Systems
+
+While the metric (SI) system is preferred for recording and storage of scientific and commercial data globally, including in the United States, when data are collected in U.S. customary units, then they should be stored that way as well. There is no need to store data in multiple unit systems or to convert between units as our system will do this upon outputting or reporting, to accommodate user preferences.
+
+### Data Types (`dtype`)
+
+The purpose of this element is to declare a data type. When data are transmitted using a format that does not have data types, such as comma separated values (CSV) files, this allows proper 'rehydration' to the correct data type when loaded into a system that does (e.g. Python, Database/SQL systems including GeoPackages).
+
+The `dtype` is also used in the IGO builder report to identify and handle the geometry column.
+
+We can include special Athena types like ARRAY, MAP and STRUCT.
+
+#### Describing nested data types
+
+Some columns contain structured data, for example data types like ARRAY, MAP and STRUCT , which often arise by parsing JSON data sources that have internal hierarchies. Such types can be nested within each other. 
+
+In an ARRAY type, all values must be of the same data type. Suggest to use the `dtype` ARRAY(int) but not then just define the repeating element within the list.
+
+STRUCT sub-elements can be described using layer definitions files using dot notation, where a period (.) separates each level of nesting.
+
+A MAP element always has two parts, and they can be identified by `column[key]` and `column[value]` 
+
+For example, `dem_bins` in the `rs_context_huc10` table is a STRUCT, and within that, `bins` is an ARRAY of STRUCT. 
+
+```text
+struct < 
+  min:double,
+  max:double,
+  geotransform:array<double>,
+  proj:string,
+  nodata:double,
+  value_count:bigint,
+  hist_type:string,
+  bin_size:int,
+  bins:array<struct<
+    bin:int,
+    cell_count:bigint
+    >>
+  >
+```
+
+| name                                      | friendly_name            | data_unit  | dtype
+| ------------------------ | ------------------- | --------- | ----
+| dem_bins                              | Data  from DEM          | NA             |  STRUCT
+| dem_bins.min                       | Lowest Elevation        | m               |  real 
+| dem_bins.geotransform      | Transformations         |  ?                | ARRAY(double)
+| dem_bins.bin_size               | Bin Size                        | m               | int
+| dem_bins.bins                      |                                       | NA             | ARRAY(STRUCT)
+| dem_bins.bins.bin                | Elevation Bin Value     | m               | int
+| dem_bins.bins.cell_count   | Cell Count                   | count        | int
+
+If a `VARCHAR` column contains structured data (such as XML or JSON) it could be described using **XPath** (for XML) or **JSONPath** (for JSON) syntax.
