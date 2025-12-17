@@ -353,8 +353,9 @@ const IconBrowser: React.FC = () => {
                                 >
                                   {(byteSize / 1024).toFixed(1)} KB
                                 </div>
-                                <OpenInNewTabButton url={fileUrl} />
+                                <CopyButton text={fileUrl} />
                                 <DownloadButton url={fileUrl} filename={fileName} onDownload={handleDownload} />
+                                <OpenInNewTabButton url={fileUrl} />
                               </div>
                             </li>
                           )
@@ -389,7 +390,7 @@ const OpenInNewTabButton: React.FC<OpenInNewTabButtonProps> = ({ url }) => {
         display: 'flex',
         alignItems: 'center',
         color: 'var(--ifm-color-primary)',
-        marginRight: '0.5rem',
+        marginLeft: '0.5rem',
       }}
     >
       <svg
@@ -428,6 +429,7 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({ url, filename, onDownlo
       }}
       title="Download"
       style={{
+        marginLeft: '0.5rem',
         background: 'none',
         border: 'none',
         cursor: 'pointer',
@@ -456,3 +458,48 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({ url, filename, onDownlo
 }
 
 export default IconBrowser
+
+const CopyButton: React.FC<{ text: string }> = ({ text }) => {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy text: ', err)
+    }
+  }
+
+  return (
+    <button
+      onClick={handleCopy}
+      title={copied ? 'Copied!' : 'Copy to clipboard'}
+      style={{
+        marginLeft: '0.5rem',
+        background: 'none',
+        border: 'none',
+        cursor: 'pointer',
+        padding: 0,
+        display: 'flex',
+        alignItems: 'center',
+        color: 'var(--ifm-color-primary)',
+      }}
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width="16"
+        height="16"
+        stroke="currentColor"
+        strokeWidth="2"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+    </button>
+  )
+}

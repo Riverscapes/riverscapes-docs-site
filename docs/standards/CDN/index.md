@@ -1,5 +1,5 @@
 ---
-title: Riverscapes Content Delivery Network (CDN)
+title: Content Delivery Network (CDN)
 ---
 
 Riverscapes serves its icons from a Content Delivery Network (CDN) to ensure fast and reliable access to these resources globally. The CDN caches the icons on servers located in various geographic locations, reducing latency and improving load times for users regardless of their location.
