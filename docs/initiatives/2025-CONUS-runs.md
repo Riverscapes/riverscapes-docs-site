@@ -9,7 +9,7 @@ With the financial support of the Bureau of Land Management we are currently re-
 
 There are approximately 18,000 HUC10 watersheds in the United States, of which we intend to run the aforementioned tools for just under 15,000. This excludes territories, Alaska, islands, as well as watersheds that straddle Canada and Mexico. The blue, filled polygons in the images below are places where the models have completed. The data themselves are available in the [Riverscapes Data Exchange](https://data.riverscapes.net). The following saved search will return just the [projects for this 2025CONUS run](https://data.riverscapes.net/d/2f96cfb0-8895-4d0a-8137-85f4496b9f3e/).
 
-For more information about the definition and selection of the watersheds for analysis, see [Watersheds used for 2025 CONUS run](us-watersheds-conus-runs).
+For more information about the definition and selection of the watersheds for analysis, see [Watersheds used for 2025 CONUS run](reference-conus-watersheds).
 
 ## Riverscapes Context
 
@@ -27,7 +27,7 @@ For more information about the definition and selection of the watersheds for an
 
 ![VBET](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/images/2025_conus_model_run_status_maps/status_map_vbet.png)
 
-## Anthro 
+## Anthro
 
 ![Anthro](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/images/2025_conus_model_run_status_maps/status_map_anthro.png)
 
