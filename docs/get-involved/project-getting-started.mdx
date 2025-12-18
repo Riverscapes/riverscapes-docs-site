@@ -23,54 +23,13 @@ First, consider the data that you are trying to define. Think broadly and deeply
 
 If you are creating a new project type, you will need to define the following:
 
+- **machineName** - This is a short, unique identifier for the project type. It should be less than 20 characters long and must not include spaces or special characters. It's best, but not required, to be all lowercase. This identifier will be used in the `project.rs.xml` file for every project of this type. 
 - **Name** - A short name for the project type. It's best if this name is less than 50 characters long. It can include spaces, but try to avoid special characters. Review the existing names and choose something unique.
-- **Summary** - A brief description of the project type. This should be less than 200 characters long.
+- **Summary** - A brief description of the project type. This should be less than 200 characters long. 
+- **Website** - Link to an external documentation web site or a place where users can find more information about the project type. 
 - **Description** - A longer, plain text, description that can include information about the data included in projects of this type, as well as the purpose of the project type, and any other information that you think is relevant. Markdown syntax is supported in the description.
-- **Metadata** - list of key value pairs. Useful values are:
-  - **Resolution** - For example, whether the individual data records represent reaches, sub-catchments, or some other unit of analysis.
-  - **Extent** - the geographic extent of the data in the project type. For example, whether the data are limited to a specific reach, watershed, region, or whether it is global.
-  - **Model Status** - see Riverscapes Data Exchange [Model Statuses](TODO) for more information.
-  - **Riverscapes Project Class**.
-- **URL** - a URL to an external documentation web site or a place where users can find more information about the project type.
-- **machineName** - This is a short, unique identifier for the project type. It should be less than 20 characters long and must not include spaces or special characters. It's best, but not required, to be all lowercase.
-- **State** - Whether the project type is ACTIVE or INACTIVE.
 
-Below is an example for the Anthropogenic Context project type:
-
-```json
-{
-    "name": "Anthro",
-    "summary": "Anthropogenic Context Project",
-    "description": "The Anthropogenic Context Project summarizes anthropogenic impacts to riverscapes and channels. It uses roads, railroads, canals, land cover and land use as inputs from a [Riverscapes Context Project](https://tools.riverscapes.net/rscontext/) to look at infrastructure intersecting riverscape and channel networks, as well as land uses within and adjacent to the riverscape. The Anthropogenic Context Tool adds attributes to stream network reaches and to points along the riverscape (valley bottom) center line that help to contextualize potential anthropogenic impacts to the riverscape. These attributes are used in portions of the [BRAT](https://tools.riverscapes.net/brat) and [RCAT](https://tools.riverscapes.net/rcat) models./n Anthro is a [production-grade, hybrid channel network and riverscape network model](https://tools.riverscapes.net/).",
-    "meta": [
-        {
-          "key": "Resolution",
-          "value": "Reach"
-        },
-        {
-          "key": "Extent",
-          "value": "Network"
-        },
-        {
-          "key": "Model Status",
-          "value": "Production Grade"
-        },
-        {
-          "key": "Riverscapes Project Class",
-          "value": "Model Output"
-        }
-       ],
-    "url": "https://tools.riverscapes.net/anthro",
-    "machineName": "anthro",
-    "state": "ACTIVE"
-  },
-```
-
-Once you have determined the values for these fields, edit the file called [project_types.json](https://github.com/Riverscapes/riverscapes-tools/blob/dev/lib/riverscapes/riverscapes/projectTypeTool/projectTypes.json) in the Riverscapes Tools repository. Clone the repository, create a new branch for your changes, and then submit a pull request to the dev branch.
-
-Consider waiting to submit your pull request until you have completed at least a draft of all the steps on this page. This will help you to understand the full scope of the project type and ensure that you have included all the necessary information.
-
-Once you have submitted your pull request, the Riverscapes Development team will review your changes and provide feedback. Once your changes are approved, the Riverscapes Development team will integrate this project type and it will be available for use in the Riverscapes Data Exchange.
+Once you have determined the values for these fields, contact an administrator for the Data Exchange to create the project type for you. 
 
 ## Data Preparation
 
