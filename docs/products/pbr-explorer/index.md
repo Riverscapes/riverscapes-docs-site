@@ -1,6 +1,6 @@
 ---
 title: PBR Explorer
-title_icon: /img/logos/apps/PBR.svg
+title_icon: https://cdn.riverscapes.net/icons/products/pbr/pbr.svg
 ---
 
 ## What is PBR Explorer

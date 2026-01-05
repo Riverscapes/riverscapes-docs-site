@@ -7,14 +7,14 @@ import type * as Preset from '@docusaurus/preset-classic'
 const config: Config = {
   title: 'Riverscapes Docs', // Site title displayed in the browser tab
   tagline: 'This is a template for a riverscapes site.', // Short description shown in meta tags
-  favicon: '/img/favicon.svg', // Path to site favicon
+  favicon: 'https://cdn.riverscapes.net/icons/consortium/consortium.svg', // Path to site favicon
   headTags: [
     {
       tagName: 'link',
       attributes: {
         rel: 'alternate icon',
-        href: '/img/favicon-32.png',
-        sizes: '32x32',
+        href: 'https://cdn.riverscapes.net/icons/consortium/consortium_128.png',
+        sizes: '128x128',
       },
     },
   ],
@@ -73,7 +73,7 @@ const config: Config = {
       title: 'Riverscapes Docs', // Navbar title
       logo: {
         alt: 'Riverscapes Studio Logo', // Logo alt text
-        src: 'img/logos/apps/Consortium.svg', // Logo image path
+        src: 'https://cdn.riverscapes.net/icons/consortium/consortium.svg', // Logo image path
       },
       items: [
         //   {
