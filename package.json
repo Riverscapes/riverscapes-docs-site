@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
+    "start": "yarn gen-assets && docusaurus start",
+    "build": "yarn gen-assets && docusaurus build",
+    "gen-assets": "node scripts/generate-asset-manifest.mjs",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -15,33 +16,33 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "3.8.1",
-    "@docusaurus/preset-classic": "3.8.1",
-    "@docusaurus/theme-search-algolia": "^3.8.1",
-    "@mdx-js/react": "^3.1.0",
+    "@docusaurus/core": "3.9.2",
+    "@docusaurus/preset-classic": "3.9.2",
+    "@docusaurus/theme-search-algolia": "^3.9.2",
+    "@mdx-js/react": "^3.1.1",
     "@riverscapes/docusaurus-theme": "1.2.0",
     "clsx": "^2.1.1",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.8.1",
-    "@docusaurus/tsconfig": "3.8.1",
-    "@docusaurus/types": "3.8.1",
-    "@typescript-eslint/eslint-plugin": "8.38.0",
-    "@typescript-eslint/parser": "8.38.0",
-    "eslint": "9.32.0",
+    "@docusaurus/module-type-aliases": "3.9.2",
+    "@docusaurus/tsconfig": "3.9.2",
+    "@docusaurus/types": "3.9.2",
+    "@typescript-eslint/eslint-plugin": "8.52.0",
+    "@typescript-eslint/parser": "8.52.0",
+    "eslint": "9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^5.5.3",
+    "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-standard": "^5.0.0",
-    "prettier": "^3.6.2",
-    "typescript": "~5.8.3"
+    "prettier": "^3.7.4",
+    "typescript": "~5.9.3"
   },
   "browserslist": {
     "production": [
