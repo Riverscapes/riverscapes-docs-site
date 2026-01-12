@@ -32,10 +32,10 @@ https://docs.riverscapes.net/images/people/Joe_Cartoon_KellyStanford_Round200.pn
 You can reference it in markdown like this from anywhere else on the internet including our other docusaurus sites:
 
 ```markdown
-![Joe's Avatar](https://docs.riverscapes.net/img/people/JoeWheaton_Circle.png)
+![Joe's Avatar](https://docs.riverscapes.net/img/people/joe_wheaton.png)
 ```
 
-<img src="/img/people/JoeWheaton_Circle.png" alt="Joe's Avatar" />
+<img src="/img/people/joe_wheaton.png" alt="Joe's Avatar" />
 
 
 ## Notes and Best Practices
