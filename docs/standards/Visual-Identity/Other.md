@@ -3,7 +3,7 @@ title: Other Shared Assets
 description: Assets and rules for using the Riverscapes Visual Identity
 sidebar_position: 3
 ---
-*[Jump to → Asset Browser](#asset-browser)*
+
 # Sharing Images via the `static` Folder
 
 The Riverscapes Docs Website (this website) allows you to share images and other assets by placing them in the `static` folder of this repository. This works much like a simpler version of our [CDN](/standards/Visual-Identity/CDN) (Content Delivery Network), making it easy to reference and share images across documentation, websites, and external resources.
