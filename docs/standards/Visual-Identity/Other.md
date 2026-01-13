@@ -3,10 +3,10 @@ title: Other Shared Assets
 description: Assets and rules for using the Riverscapes Visual Identity
 sidebar_position: 3
 ---
-
+[*Jump to → Asset Browser*](#asset-browser)
 # Sharing Images via the `static` Folder
 
-The Riverscapes Docs Website (this website) allows you to share images and other assets by placing them in the `static` folder of this repository. This works much like a simple CDN (Content Delivery Network), making it easy to reference and share images across documentation, websites, and external resources.
+The Riverscapes Docs Website (this website) allows you to share images and other assets by placing them in the `static` folder of this repository. This works much like a simpler version of our [CDN](/standards/Visual-Identity/CDN) (Content Delivery Network), making it easy to reference and share images across documentation, websites, and external resources.
 
 
 ## How It Works
@@ -20,22 +20,22 @@ The site is built and deployed automatically when the main branch of the repo is
 Suppose you add an image to the [riverscapes docs site repo](https://github.com/Riverscapes/riverscapes-docs-site) at:
 
 ```
-static/images/people/Joe_Cartoon_KellyStanford_Round200.png
+static/images/people/joe_wheaton_cartoon.png
 ```
 
 The image will be available at:
 
 ```
-https://docs.riverscapes.net/images/people/Joe_Cartoon_KellyStanford_Round200.png
+https://docs.riverscapes.net/images/people/joe_wheaton_cartoon.png
 ```
 
 You can reference it in markdown like this from anywhere else on the internet including our other docusaurus sites:
 
 ```markdown
-![Joe's Avatar](https://docs.riverscapes.net/img/people/joe_wheaton.png)
+![Joe's Avatar](https://docs.riverscapes.net/img/people/joe_wheaton_cartoon.png)
 ```
 
-<img src="/img/people/joe_wheaton.png" alt="Joe's Avatar" />
+<img src="/img/people/joe_wheaton_cartoon.png" alt="Joe's Avatar" />
 
 
 ## Notes and Best Practices
