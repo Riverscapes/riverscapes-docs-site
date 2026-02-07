@@ -15,19 +15,76 @@ You can run one or more of these models for your area of interest using your own
 
 This page describes the various options and provides a brief overview of the tradeoffs between them. If you have questions or want to discuss either running the Riverscapes Consortium's network models or your own code using any of these strategies then contact <strong>support@riverscapes.freshdesk.com</strong>.
 
-Strategy|Description|Advantages|Disadvantages
----|---|---|---
-Local Install|Clone the [model code](https://github.com/Riverscapes/riverscapes-tools) to your own computer and install the [necessary Python dependencies](https://github.com/Riverscapes/riverscapes-tools/blob/master/pyproject.toml).|Maximum control. Good when the data are too large for the other strategies.|Extremely complex configuration.
-[GitHub Codespaces](https://github.com/features/codespaces)|GitHub's virtual computing environment.|Pre-configured Python environment.|There are costs associated with Codespaces. Processor and storage limitations.|
-[Cybercastor](https://docs.riverscapes.net/products/cyber-castor)|The Riverscapes Consortium's own cloud computing platform.|Designed specifically for this purpose. Tight integration with the [Riverscapes Data Exchange](https://data.riverscapes.net).|There are costs associated with Cybercastor.
+
+| Strategy                                                                             | Description                                                                                                                                                                                                                 | Advantages                                                                                                                                                                                                   | Disadvantages                                                                                                                                                                                                             |
+| ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Local Install                                                                        | Clone the [model code](https://github.com/Riverscapes/riverscapes-tools) to your own computer and install the [necessary Python dependencies](https://github.com/Riverscapes/riverscapes-tools/blob/master/pyproject.toml). | Maximum control. Good when the data are too large for the other strategies. Good when you need to make changes to the code.                                                                                  | More complex configuration. Running the correct version of python and provisioning a compatible environment can be challenging, especially with IT-restricted machines.                                                   |
+| [VSCode Dev containers](https://code.visualstudio.com/docs/devcontainers/containers) | Clone the model code to your local machine and run a docker environment locally.                                                                                                                                            | Sidesteps some of the configuration problems associated with python environment configuration on an individual machine. Will run in linux mode, even on windows machines.                                    | Requires Docker to be installed locally. Initial build can be slow, especially on older hardware. Some graphical or OS-level features may not be available                                                      |
+| [GitHub Codespaces](https://github.com/features/codespaces)                          | GitHub's virtual computing environment.                                                                                                                                                                                     | Consistent environment for all contributors. Easy onboarding—just open in VS Code and build. Isolated from host machine, avoiding dependency conflicts. Supports custom tooling and extensions | There are costs associated with Codespaces. Processor and storage limitations. Codespaces are ephemeral and are automatically cleaned up if they are not used. Basic linux and git command-line knowledge is recommended. |
+| [Cybercastor](https://docs.riverscapes.net/products/cyber-castor)                    | The Riverscapes Consortium's own cloud computing platform.                                                                                                                                                                  | Designed specifically for this purpose. Tight integration with the [Riverscapes Data Exchange](https://data.riverscapes.net). Good for large numbers of jobs running simultaneously.                         | There are costs associated with Cybercastor.                                                                                                                                                                              |
+
 
 ## Local Install
 
-Installing Python and running the network models on your local computer is unfortunately the most difficult of the three options. The network models [depend on several Python packages](https://github.com/Riverscapes/riverscapes-tools/blob/master/pyproject.toml), some of which involve nuanced install steps that vary based on what type of Python install you have. More than one of the dependencies include binary files that cannot be installed with `pip` and need [wheel files](https://pythonwheels.com/) specific to your operating system.
+Installing Python and running the network models on your local computer is likely the most difficult of the three options. The network models [depend on several Python packages](https://github.com/Riverscapes/riverscapes-tools/blob/master/pyproject.toml), some of which involve nuanced install steps that vary based on your Python environment and operating system. Several dependencies include binary files that cannot be installed with `uv` or `pip` and require [wheel files](https://pythonwheels.com/) specific to your OS.
 
-Riverscapes Consortium developers almost never choose to install the models locally. If we do its typically on MacOS or Linux. We have found configuring Windows computers with the dependencies to be inconsistent, unreliable and time-consuming.
+Riverscapes Consortium developers almost never choose to install the models locally. If we do, it’s typically on macOS or Linux. Configuring Windows computers with the dependencies has proven inconsistent, unreliable, and time-consuming.
 
-The Python requirements for the network models, including the version of Python needed, are stored in the [pyproject.toml](https://github.com/Riverscapes/riverscapes-tools/blob/master/pyproject.toml) and configuring the environment uses a mixture of pip, uv and manual installation steps.
+### Step-by-Step Instructions
+
+1. **Install Python**
+   - Use Python 3.12 or newer (check the required version in [pyproject.toml](https://github.com/Riverscapes/riverscapes-tools/blob/master/pyproject.toml)).
+   - On macOS/Linux, use `brew`  for installation.
+   - On Windows, use the official installer, but expect additional troubleshooting.
+
+2. **Upgrade pip and Install uv**
+   - Run:  
+     ```
+     pip install --upgrade pip
+     pip install uv
+     ```
+
+4. **Install Python Dependencies**
+   - Use `uv` or `pip` to install dependencies from `pyproject.toml`:
+     ```
+     uv sync
+     ```
+
+4. **Manual Steps for Problematic Packages**
+   - Some packages (e.g., GDAL, numpy, scipy) may require system-level libraries. Install these using your OS package manager:
+     - macOS: `brew install gdal`
+     - Ubuntu: `sudo apt-get install libgdal-dev`
+   - Then retry installing the Python package.
+### Tips
+
+- Always consult the [pyproject.toml](https://github.com/Riverscapes/riverscapes-tools/blob/master/pyproject.toml) for exact package versions.
+- If you run into issues, search for pre-built wheels or consult package documentation for OS-specific instructions.
+- Consider using Docker or Dev Containers for a more reliable setup.
+
+# VS Code Dev Container
+
+Dev Containers use Docker to create a reproducible development environment inside VS Code. The [Dockerfile](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html) defines all dependencies, tools, and settings, so every developer gets the same setup regardless of their host OS.
+
+### Prerequisites
+
+- Install [Docker](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html)
+- Install [Visual Studio Code](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html)
+- Install the [Dev Containers extension](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html)
+
+### Steps
+
+1. **Open the Project in VS Code**
+    - Launch VS Code.
+    - Open the `riverscapes-tools` folder.
+2. **Reopen in Container**
+    - Press `F1` (or `Cmd+Shift+P`) to open the Command Palette.
+    - Search for `Dev Containers: Reopen in Container` and select it.
+3. **Wait for Build**
+    - VS Code will build the container using [Dockerfile](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html).
+    - The environment will be set up automatically.
+4. **Start Developing**
+    - Once the container is ready, you can use the integrated terminal and editor as usual.
+    - All dependencies and tools will be available inside the container.
 
 ## GitHub Codespaces
 
