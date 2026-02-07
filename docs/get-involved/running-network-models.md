@@ -11,7 +11,6 @@ title: How to Run Network Models
 
 The [Riverscapes network models](https://tools.riverscapes.net) consist of ten or more geospatial models for analysing different aspects of riverscapes. The models can be chained together into a "waterfall" that starts by collecting together relevant datasets in the [Riverscapes Context](https://tools.riverscapes.net/rscontext/) model and culminates in the [Metric Engine](https://tools.riverscapes.net/rme/) (RME).
 
-You can run one or more of these models for your area of interest using your own data. There are several strategies for doing this that range in complexity. Which one is right for your needs depends on your appetite for confinguring software as well as the scale of your data.
 
 This page describes the various options and provides a brief overview of the tradeoffs between them. If you have questions or want to discuss either running the Riverscapes Consortium's network models or your own code using any of these strategies then contact <strong>support@riverscapes.freshdesk.com</strong>.
 
@@ -55,13 +54,14 @@ Riverscapes Consortium developers almost never choose to install the models loca
      - macOS: `brew install gdal`
      - Ubuntu: `sudo apt-get install libgdal-dev`
    - Then retry installing the Python package.
+
 ### Tips
 
 - Always consult the [pyproject.toml](https://github.com/Riverscapes/riverscapes-tools/blob/master/pyproject.toml) for exact package versions.
 - If you run into issues, search for pre-built wheels or consult package documentation for OS-specific instructions.
 - Consider using Docker or Dev Containers for a more reliable setup.
 
-# VS Code Dev Container
+## VS Code Dev Container
 
 Dev Containers use Docker to create a reproducible development environment inside VS Code. The [Dockerfile](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html) defines all dependencies, tools, and settings, so every developer gets the same setup regardless of their host OS.
 
