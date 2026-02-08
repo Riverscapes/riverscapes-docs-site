@@ -84,8 +84,8 @@ Chris McNeiset developed stream temperature predictions for portions of the Colu
 - [Max Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtempmax&view=map)
 - [Mean Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtempmean&view=map)
 
-## MacroInvertebrates
+## Macroinvertebrates
 
-CHaMP macro invertebrate data were provided by NOAA and uploaded into the Data Exchange here:
+CHaMP macroinvertebrate data were provided by NOAA and uploaded into the Data Exchange here:
 
-- [CHaMP Macro Invertebrate Data](https://data.riverscapes.net/p/88c52a36-334d-4474-b79a-6f4ad39dec54/overview)
+- [CHaMP Macroinvertebrate Data](https://data.riverscapes.net/p/88c52a36-334d-4474-b79a-6f4ad39dec54/overview)
