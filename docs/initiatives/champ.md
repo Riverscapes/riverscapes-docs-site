@@ -8,7 +8,7 @@ The Columbia Habitat Monitoring Program (CHaMP) ran from 2011 to 2017 with the g
 
 This page describes the outcome of this renewed push to publish CHaMP data on the [Riverscapes Data Exchange](https://data.riverscapes.net). While not exhaustive, those familiar will recognize many of the terms and data and find what they are looking for.
 
-## Survey Data
+## Topographic and Aux Data
 
 CHaMP collected many types of data, centered around both a high resolution topographic river survey and a series of non-spatial "auxilliary measurements". These "topo" and "aux" data have been combined into a single project for each survey and placed on the exchange. The data are owned by the [CHaMP Organization](https://data.riverscapes.net/o/c7d8c487-c377-42b0-a5b6-4c16db18fb41/) and carefully tagged by watershed, site, field season and visit ID using the following system:
 
@@ -83,3 +83,9 @@ Chris McNeiset developed stream temperature predictions for portions of the Colu
 - [Potential Minimum Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtemppotmin&view=map)
 - [Max Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtempmax&view=map)
 - [Mean Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtempmean&view=map)
+
+## MacroInvertebrates
+
+CHaMP macro invertebrate data were provided by NOAA and uploaded into the Data Exchange here:
+
+- [CHaMP Macro Invertebrate Data](https://data.riverscapes.net/p/88c52a36-334d-4474-b79a-6f4ad39dec54/overview)
