@@ -2,7 +2,7 @@
 title: Riverscapes Metadata Standards
 ---
 
-Riverscapes Projects and the Riverscapes Data Exchange have several ways of describing the data, ie of providing metadata. See for example, the [Riverscapes documentation ecosystem](get-involved/documentation/#the-riverscapes-documentation-ecosystem). 
+Riverscapes Projects and the Riverscapes Data Exchange have several ways of describing the data, ie of providing metadata. See for example, the [Riverscapes documentation ecosystem](get-involved/documentation/#the-riverscapes-documentation-ecosystem).
 
 To provide a structured way of sharing metadata between the tools that produce the data and consumers of that data - whether those consumers are other tools, or users who may be working with the data in one of the Riverscapes Viewers, a desktop GIS system or via our reports interface, we have developed a new Riverscapes Metadata schema and protocol. It is simple and flexible, providing the ability to describe the wide variety of data used in Riverscapes projects and reports.
 
@@ -12,14 +12,14 @@ We take a 'metadata as code' approach and expect tools that generate or manipula
 
 ## The Metadata Schema Rules (json-schema)
 
-The format of the layer definitions is published as a json schema, publicly available at [xml.riverscapes.net/riverscapes_metadata/schema/layer_definitions.schema.json](https://xml.riverscapes.net/riverscapes_metadata/schema/layer_definitions.schema.json). 
+The format of the layer definitions is published as a json schema, publicly available at [xml.riverscapes.net/riverscapes_metadata/schema/layer_definitions.schema.json](https://xml.riverscapes.net/riverscapes_metadata/schema/layer_definitions.schema.json).
 
 ## Hierarchical Organization
 
 The Riverscapes metadata has the following namespace organization:
 
 1. The code repository within which the code lives. We refer to this as the **Schema Authority**
-2. The tool (usually a python package). We currently refer to as the **authority name** but plan to rename to **Tool schema name**
+2. The tool (usually a python package). We currently refer to as the **Tool schema name**
 3. The **tool schema version**. If the structure of the data a tool produces changes significantly - and this would include a change in the units of measure reported - then a new version can be published.
 4. The data **layer**. See [What is a layer?](#what-is-a-layer) below.
 5. **Columns** within the layer.
@@ -81,21 +81,39 @@ While the metric (SI) system is preferred for recording and storage of scientifi
 
 The purpose of this element is to declare a data type. When data are transmitted using a format that does not have data types, such as comma separated values (CSV) files, this allows proper 'rehydration' to the correct data type when loaded into a system that does (e.g. Python, Database/SQL systems including GeoPackages).
 
-The `dtype` is also used in the IGO builder report to identify and handle the geometry column.
+The `dtype` element value must be one of the enumerated list of logical data types:
 
-We can include special Athena types like ARRAY, MAP and STRUCT.
+* INTEGER - ie numbers without a decimal place. Typically counts. e.g. 410
+* FLOAT - floating point numbers, ie numbers that may have a decimal place e.g. 12.75
+* STRING - text or character values of any length, e.g. RED RIVER
+* BOOLEAN - 0 or 1, true or false values
+* DECIMAL - specialized datatype for fixed precision values, often used in accounting
+* GEOMETRY - geo-spatial values
+* STRUCTURED - value is a structured combination of other individual data types. Could be a list, array, map, json, etc.
+* BINARY - e.g. images stored in a database column
 
-#### Describing nested data types
+#### `dtype_parameters`
 
-Some columns contain structured data, for example data types like ARRAY, MAP and STRUCT , which often arise by parsing JSON data sources that have internal hierarchies. Such types can be nested within each other. 
+To provide additional detail about the data type, the element `dtype_parameters` can be used. The expected implementation is as JSON dictionary of key:value pairs. Examples:
 
-In an ARRAY type, all values must be of the same data type. Suggest to use the `dtype` ARRAY(int) but not then just define the repeating element within the list.
+* for INTEGER: `{"bit_depth":8}`
+* for GEOMETRY: `{"srid":4326, "geometry_type":"POINT"}`
+* for DECIMAL: `{"precision":10, "scale":2}`
+* for STRUCTURED: `{"contains":"list", "item_dtype":"STRING"}`
 
-STRUCT sub-elements can be described using layer definitions files using dot notation, where a period (.) separates each level of nesting.
+#### Describing nested data types (`dtype` = `STRUCTURED`)
+
+Some columns contain structured data, for example Trino data types ARRAY, MAP and STRUCT, which often arise by parsing JSON data sources that have internal hierarchies. Such types can be nested within each other.
+
+In an ARRAY type, all values must be of the same data type. Suggest to use the `dtype_parameters` ARRAY(int) but not then just define the repeating element within the list.
+
+STRUCT sub-elements can be described as columns in layer definitions files using dot notation, where a period (.) separates each level of nesting.
 
 A MAP element always has two parts, and they can be identified by `column[key]` and `column[value]` 
 
 For example, `dem_bins` in the `rs_context_huc10` table is a STRUCT, and within that, `bins` is an ARRAY of STRUCT. 
+
+# todo: give example of same data in JSON (with the data) & Athena DDL and how it would be described in layer definition 
 
 ```text
 struct < 
@@ -114,14 +132,18 @@ struct <
   >
 ```
 
-| name                                      | friendly_name            | data_unit  | dtype
-| ------------------------ | ------------------- | --------- | ----
-| dem_bins                              | Data  from DEM          | NA             |  STRUCT
-| dem_bins.min                       | Lowest Elevation        | m               |  real 
-| dem_bins.geotransform      | Transformations         |  ?                | ARRAY(double)
-| dem_bins.bin_size               | Bin Size                        | m               | int
-| dem_bins.bins                      |                                       | NA             | ARRAY(STRUCT)
-| dem_bins.bins.bin                | Elevation Bin Value     | m               | int
-| dem_bins.bins.cell_count   | Cell Count                   | count        | int
+| name                     | friendly_name       | data_unit | dtype      | dtype_parameters
+| ------------------------ | ------------------- | --------- | ---------- | ----------------
+| dem_bins                 | Data from DEM       | NA        | STRUCTURED | 
+| dem_bins.min             | Lowest Elevation    | m         | FLOAT      | 
+| dem_bins.geotransform    | Transformations     | NA        | STRUCTURED | ARRAY(double)
+| dem_bins.bin_size        | Bin Size            | m         | INTEGER    | 
+| dem_bins.bins            | Elevation bins      | NA        | STRUCTURED |  ARRAY(STRUCT)
+| dem_bins.bins.bin        | Elevation Bin Value | m         | INTEGER    |
+| dem_bins.bins.cell_count | Cell Count          | count     | INTEGER    | 
 
 If a `VARCHAR` column contains structured data (such as XML or JSON) it could be described using **XPath** (for XML) or **JSONPath** (for JSON) syntax.
+
+## preferred_format
+
+This attribute is intended for the data producer to provide a suggested formatting for the values. It uses the python mini-language. 
