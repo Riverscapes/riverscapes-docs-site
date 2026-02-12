@@ -107,13 +107,13 @@ Some columns contain structured data, for example Trino data types ARRAY, MAP an
 
 In an ARRAY type, all values must be of the same data type. Suggest to use the `dtype_parameters` ARRAY(int) but not then just define the repeating element within the list.
 
+# todo: FIX. give example of same data in JSON (with the data) & Athena DDL and how it would be described in layer definition 
 STRUCT sub-elements can be described as columns in layer definitions files using dot notation, where a period (.) separates each level of nesting.
 
 A MAP element always has two parts, and they can be identified by `column[key]` and `column[value]` 
 
 For example, `dem_bins` in the `rs_context_huc10` table is a STRUCT, and within that, `bins` is an ARRAY of STRUCT. 
 
-# todo: give example of same data in JSON (with the data) & Athena DDL and how it would be described in layer definition 
 
 ```text
 struct < 
@@ -147,3 +147,5 @@ If a `VARCHAR` column contains structured data (such as XML or JSON) it could be
 ## preferred_format
 
 This attribute is intended for the data producer to provide a suggested formatting for the values. It uses the python mini-language. 
+
+# TODO: add table of sample formatting
