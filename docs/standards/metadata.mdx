@@ -18,9 +18,9 @@ The format of the layer definitions is published as a json schema, publicly avai
 
 The Riverscapes metadata has the following namespace organization:
 
-1. The code repository within which the code lives. We refer to this as the **Schema Authority**
-2. The tool (usually a python package). We currently refer to as the **Tool schema name**
-3. The **tool schema version**. If the structure of the data a tool produces changes significantly - and this would include a change in the units of measure reported - then a new version can be published.
+1. The **Schema Authority** - the code repository within which the code lives
+2. The tool (usually a python package). We refer to this as the **Tool schema name**
+3. The **Tool schema version**. If the structure of the data a tool produces changes significantly - and this would include a change in the units of measure reported - then a new version can be published.
 4. The data **layer**. See [What is a layer?](#what-is-a-layer) below.
 5. **Columns** within the layer.
 
@@ -101,51 +101,106 @@ To provide additional detail about the data type, the element `dtype_parameters`
 * for DECIMAL: `{"precision":10, "scale":2}`
 * for STRUCTURED: `{"contains":"list", "item_dtype":"STRING"}`
 
-#### Describing nested data types (`dtype` = `STRUCTURED`)
+### Documenting Nested & Structured Data
 
-Some columns contain structured data, for example Trino data types ARRAY, MAP and STRUCT, which often arise by parsing JSON data sources that have internal hierarchies. Such types can be nested within each other.
+We sometimes encounter data that isn't purely "flat". Examples include JSON-based data-sources, nested structures in Parquet, or specialized types in Athena (Trino) like `STRUCT`, `ARRAY`, and `MAP`.
 
-In an ARRAY type, all values must be of the same data type. Suggest to use the `dtype_parameters` ARRAY(int) but not then just define the repeating element within the list.
+To ensure these are accurately described for data consumers, we can use the STRUCTURED logical type combined with a clear naming convention.
 
-# todo: FIX. give example of same data in JSON (with the data) & Athena DDL and how it would be described in layer definition 
-STRUCT sub-elements can be described as columns in layer definitions files using dot notation, where a period (.) separates each level of nesting.
+#### The structured data bridge
 
-A MAP element always has two parts, and they can be identified by `column[key]` and `column[value]` 
+When documenting these types, we map three distinct representations:
 
-For example, `dem_bins` in the `rs_context_huc10` table is a STRUCT, and within that, `bins` is an ARRAY of STRUCT. 
+1. Source JSON: The raw semi-structured data.
+2. Physical Schema (Athena/SQL): The strict type definition (e.g., `STRUCT<...>`).
+3. Metadata Definition: The human-readable entry in layer_definitions.json.
 
+#### Mapping Nested Elements (Dot Notation)
 
-```text
-struct < 
-  min:double,
-  max:double,
-  geotransform:array<double>,
-  proj:string,
-  nodata:double,
-  value_count:bigint,
-  hist_type:string,
-  bin_size:int,
-  bins:array<struct<
-    bin:int,
-    cell_count:bigint
-    >>
-  >
+To document nested sub-elements, use dot notation in the name field. This allows consumers to understand the hierarchy of the data without requiring the metadata repository itself to be nested.
+
+##### Example: Digital Elevation Model (DEM) Bins
+
+Given the following structure from the rs_context_huc10 dataset
+
+Source JSON Data:
+
+```json
+"dem_bins": {
+    "min": 282.80,
+    "bin_size": 100,
+    "bins": [
+        {"bin": 200, "cell_count": 1512621},
+        {"bin": 300, "cell_count": 3746684}
+    ]
+}
 ```
+
+Athena DDL Representation:
+
+```SQL
+dem_bins struct<
+    min:double,
+    bin_size:int,
+    bins:array<struct<bin:int, cell_count:bigint>>
+>
+```
+
+Riverscapes Metadata Mapping:
 
 | name                     | friendly_name       | data_unit | dtype      | dtype_parameters
 | ------------------------ | ------------------- | --------- | ---------- | ----------------
-| dem_bins                 | Data from DEM       | NA        | STRUCTURED | 
+| dem_bins                 | Data from DEM       | NA        | STRUCTURED | `{"container":"record"}`
 | dem_bins.min             | Lowest Elevation    | m         | FLOAT      | 
-| dem_bins.geotransform    | Transformations     | NA        | STRUCTURED | ARRAY(double)
+| dem_bins.geotransform    | Transformations     | NA        | STRUCTURED | ????
 | dem_bins.bin_size        | Bin Size            | m         | INTEGER    | 
-| dem_bins.bins            | Elevation bins      | NA        | STRUCTURED |  ARRAY(STRUCT)
-| dem_bins.bins.bin        | Elevation Bin Value | m         | INTEGER    |
-| dem_bins.bins.cell_count | Cell Count          | count     | INTEGER    | 
+| dem_bins.bins            | Elevation bins      | NA        | STRUCTURED | `{"container":"list", "item_dtype": "STRUCTURED"}`
+| dem_bins.bins.bin        | Elevation Bin Value | m         | INTEGER    | 
+| dem_bins.bins.cell_count | Cell Count          | count     | INTEGER    | `{"bit_depth":64}`
+
+#### Handling Specialized Containers
+
+Use the `dtype_parameters` field to provide the "recipe" for rehydrating the structure in consumer tools.
+
+##### The `ARRAY` (List)
+
+An ARRAY type contains multiple items of the **same** data type. 
+
+* `dtype`: `STRUCTURED`
+* `dtype_parameters`: `{"container":"list", "item"_dtype":"STRING"}` 
+
+#### The MAP (Key-Value Pairs)
+
+A MAP is a collection of unique keys associated with values.
+
+* `dtype`: `STRUCTURED`
+* `dtype_parameters`: `{"container": "map", "key_dtype": "STRING", "val_dtype": "FLOAT"}`
+* Athena Mapping: `MAP<VARCHAR, DOUBLE>`
+
+Documentation Hint: Use column[key] and column[value] to describe the components of the map specifically.
+
+#### The STRUCT (Record)
+
+A STRUCT is a fixed set of named fields (essentially a row within a cell).
+
+* `dtype`: `STRUCTURED`
+* `dtype_parameters`: `{"container": "record"}`
+* Athena Mapping: `ROW(...)` or `STRUCT<...>`
+
+Documentation Hint: Use Dot Notation (e.g., parent.child) for every member of the record.
+
+### Guidelines for Data Producers
+
+Flatten where possible: If a nested value is high-priority for filtering (like huc_id), consider promoting it to a top-level column.
+
+Be Specific with Units: Even if a parent column is STRUCTURED with a unit of NA, the nested children (like dem_bins.min) should have their specific data_unit defined.
+
+Recursive Definitions: If an array contains records, define the array with `item_dtype: STRUCTURED`, and then define the record's children using the dot notation.
 
 If a `VARCHAR` column contains structured data (such as XML or JSON) it could be described using **XPath** (for XML) or **JSONPath** (for JSON) syntax.
 
-## preferred_format
+## Providing a Preferred Format
 
-This attribute is intended for the data producer to provide a suggested formatting for the values. It uses the python mini-language. 
+The `preferred_format` attribute is intended for the data producer to provide a suggested formatting for the values. It uses the python mini-language.
 
 # TODO: add table of sample formatting
