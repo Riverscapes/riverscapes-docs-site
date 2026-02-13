@@ -223,6 +223,80 @@ width={800}
 height={600}
 />
 -----
+
+## Tabs 
+Use the code syntax below to add a tab bar.  
+
+```
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="layer1" label="Layer 1 Details">
+Type|Metrics|Description
+---|---|---
+Point|`Count`|*Layer 1 Description*
+  </TabItem>
+<TabItem value="layer2" label="Layer 2 Details">
+Type|Metrics|Description
+---|---|---
+Line|`Length`|*Layer 2 Description*
+  </TabItem>
+  <TabItem value="layer3" label="Layer 3 Details">
+Type|Metrics|Description
+---|---|---
+Polygon|`Area`|*Layer 3 Description*
+    </TabItem>
+</Tabs>
+
+``` 
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="layer1" label="Layer 1 Details">
+Type|Metrics|Description
+---|---|---
+Point|`Count`|*Layer 1 Description*
+  </TabItem>
+<TabItem value="layer2" label="Layer 2 Details">
+Type|Metrics|Description
+---|---|---
+Line|`Length`|*Layer 2 Description*
+  </TabItem>
+  <TabItem value="layer3" label="Layer 3 Details">
+Type|Metrics|Description
+---|---|---
+Polygon|`Area`|*Layer 3 Description*
+    </TabItem>
+</Tabs>
+
+## Details 
+
+To add a detail section, use the following code syntax.
+
+```
+<details open>
+<summary>*How to Use This Protocol*</summary>
+
+This describes how to use this protocol in detail.  
+
+- *Layers*: Points, Lines, Polygons 
+- *Metrics*: Counts, Lengths, Area 
+</details>
+
+``` 
+
+<details open>
+<summary>*How to Use This Protocol*</summary>
+
+This describes how to use this protocol in detail.  
+
+- *Layers*: Points, Lines, Polygons 
+- *Metrics*: Counts, Lengths, Area 
+</details>
+
 ## Common Theme Repository
 
 The Riverscapes Docusaurus theme is stored in a [private GitHub repository](https://github.com/Riverscapes/riverscapes-docusaurus-theme) and includes a [demo site](https://riverscapes.github.io/riverscapes-docusaurus-theme/) that shows off different examples, as well as an empty template for starting new sites.
