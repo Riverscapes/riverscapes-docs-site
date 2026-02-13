@@ -101,25 +101,17 @@ To provide additional detail about the data type, the element `dtype_parameters`
 * for DECIMAL: `{"precision":10, "scale":2}`
 * for STRUCTURED: `{"contains":"list", "item_dtype":"STRING"}`
 
-### Documenting Nested & Structured Data
+## Documenting Nested & Structured Data
 
 We sometimes encounter data that isn't purely "flat". Examples include JSON-based data-sources, nested structures in Parquet, or specialized types in Athena (Trino) like `STRUCT`, `ARRAY`, and `MAP`.
 
-To ensure these are accurately described for data consumers, we can use the STRUCTURED logical type combined with a clear naming convention.
+To ensure these are accurately described for data consumers, we can use the STRUCTURED logical type combined with a clear naming convention. This provides a human-readable description of the data that bridges both its raw, semi-structured form in the source JSON or its strictly-typed form in a database system.
 
-#### The structured data bridge
-
-When documenting these types, we map three distinct representations:
-
-1. Source JSON: The raw semi-structured data.
-2. Physical Schema (Athena/SQL): The strict type definition (e.g., `STRUCT<...>`).
-3. Metadata Definition: The human-readable entry in layer_definitions.json.
-
-#### Mapping Nested Elements (Dot Notation)
+### Mapping Nested Elements (Dot Notation)
 
 To document nested sub-elements, use dot notation in the name field. This allows consumers to understand the hierarchy of the data without requiring the metadata repository itself to be nested.
 
-##### Example: Digital Elevation Model (DEM) Bins
+#### Example: Digital Elevation Model (DEM) Bins
 
 Given the following structure from the rs_context_huc10 dataset
 
@@ -152,17 +144,16 @@ Riverscapes Metadata Mapping:
 | ------------------------ | ------------------- | --------- | ---------- | ----------------
 | dem_bins                 | Data from DEM       | NA        | STRUCTURED | `{"container":"record"}`
 | dem_bins.min             | Lowest Elevation    | m         | FLOAT      | 
-| dem_bins.geotransform    | Transformations     | NA        | STRUCTURED | ????
 | dem_bins.bin_size        | Bin Size            | m         | INTEGER    | 
 | dem_bins.bins            | Elevation bins      | NA        | STRUCTURED | `{"container":"list", "item_dtype": "STRUCTURED"}`
 | dem_bins.bins.bin        | Elevation Bin Value | m         | INTEGER    | 
 | dem_bins.bins.cell_count | Cell Count          | count     | INTEGER    | `{"bit_depth":64}`
 
-#### Handling Specialized Containers
+### Handling Specialized Containers
 
 Use the `dtype_parameters` field to provide the "recipe" for rehydrating the structure in consumer tools.
 
-##### The `ARRAY` (List)
+#### The `ARRAY` (List)
 
 An ARRAY type contains multiple items of the **same** data type. 
 
@@ -201,6 +192,29 @@ If a `VARCHAR` column contains structured data (such as XML or JSON) it could be
 
 ## Providing a Preferred Format
 
-The `preferred_format` attribute is intended for the data producer to provide a suggested formatting for the values. It uses the python mini-language.
+The `preferred_format` attribute is intended for the data producer to provide a suggested formatting for the values. We use Python's [Format Specification Mini-Language](https://docs.python.org/3/library/string.html#formatspec).
 
-# TODO: add table of sample formatting
+### Format String Reference Table
+
+| Format String | Interpretation | Example Quantity | Output (No Units) | Output (With Units) |
+| --- | --- | --- | --- | --- |
+| `{:,.1f}` | Fixed-point with 1 decimal digit and thousands separator | `248.745 kilometer` | `248.7` | `248.7 km` |
+| `{:,.1f}` | Fixed-point with 1 decimal digit and thousands separator | `1234567.89 meter` | `1,234,567.9` | `1,234,567.9 m` |
+| `{:.2f}` | Standard fixed-point, 2 decimals | `3.14159 meter` | `3.14` | `3.14 m` |
+| `{:.2f}` | Standard fixed-point, 2 decimals | `0.009 kilometer` | `0.01` | `0.01 km` |
+| `{:.2f}` | Standard fixed-point, 2 decimals | `12.321 count / kilometer ** 2` | `12.32` | `12.32 /km²` |
+| `{:.3g}` | General format (3 significant digits, drops trailing zeros) | `12345 meter` | `1.23e+04` | `1.23e+04 m` |
+| `{:.3g}` | General format (3 significant digits, drops trailing zeros) | `0.00012345 meter` | `0.000123` | `0.000123 m` |
+| `{value:.0f} projects` | Integer with injected static text suffix | `19` | `19 projects` | `19 projects` |
+| `{value:.0f} projects` | Integer with injected static text suffix | `42` | `42 projects` | `42 projects` |
+| `{value:.0f} projects` | Integer with injected static text suffix | `1322 count` | `1322 projects` | `1322 projects` |
+| `{value:.1f}` | Explicit `value` placeholder (same as `{:.1f}`) | `87.31 percent` | `87.3` | `87.3 %` |
+| `{value:.1f}` | Explicit `value` placeholder (same as `{:.1f}`) | `12.55 degree` | `12.6` | `12.6 deg` |
+| *None* | No format (Uses `format_scalar` defaults, e.g. `decimals=0`) | `28.64 meter` | `29` | `29 m` |
+| *None* | No format (Uses `format_scalar` defaults, e.g. `decimals=0`) | `100.123 foot` | `31` | `31 m` |
+| `{:.3~#P}` | Pint specific: Compact notation (auto-scaling units) | `12000000 meter ** 2` | `12.0 km²` | `12.0 km²` |
+| `{:.3~#P}` | Pint specific: Compact notation (auto-scaling units) | `0.005 kilometer` | `5.0 m` | `5.0 m` |
+| `{:.3~P}` | Pint specific: Pretty notation w/o autoscale | `12000000 meter ** 2` | `12,000,000` | `12,000,000 m²` |
+| `{:.3~P}` | Pint specific: Pretty notation w/o autoscale | `0.005 kilometer` | `0.005 km` | `0.005 km` |
+| `{:.3~P}` | Pint specific: Pretty notation w/o autoscale | `0.5515761984704346 / kilometer` | `0.552 1/km` | `0.552 1/km` |
+| `{:.3~P}` | Pint specific: Pretty notation w/o autoscale | `0.5375628311370737 / kilometer` | `0.538 1/km` | `0.538 1/km` |
