@@ -15,6 +15,24 @@ The videos below document the workflow for running VBET from lidar DEMs. The vid
 2. Using TauDEM tools to extract a drainage network from the DEM.
 3. Editing and attributing the network with the necessary fields and associated information.
 4. Incorporating the high resolution data into a Riverscapes Context project.
-5. Running VBET in a codespace.
+5. Running VBET in a codespace and uploading to the data exchange.
 
-<YouTubeEmbed videoId="" />
+### 1
+<YouTubeEmbed videoId="Pv1Dyxj4LMM" />
+
+### 2
+<YouTubeEmbed videoId="6VtUeSPOJKQ" />
+
+[Documentation](https://docs.riverscapes.net/get-involved/taudem_networks) for extracting networks.
+
+#### 2.1
+<YouTubeEmbed videoId="jpUQ3wUoJmc" />
+
+### 3
+<YouTubeEmbed videoId="2r3N0qO13yQ" />
+
+### 4
+<YouTubeEmbed videoId="QpI7W6hm-QI" />
+
+### 5
+<YouTubeEmbed videoId="7JOktf75ms4" />
