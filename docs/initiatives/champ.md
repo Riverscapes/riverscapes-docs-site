@@ -4,9 +4,39 @@ description: Columbia Habitat Monitoring Program
 title_icon: /img/logos/CHaMP_Logo_128.png
 ---
 
-The Columbia Habitat Monitoring Program (CHaMP) ran from 2011 to 2017 with the goal of collecting status and trend monitoring of salmonid habitat within the Columbia River basin in the pacific northwestern United States. In 2024, long after the end of CHaMP an effort was funded by NOAA to track down as much CHaMP data as possible and upload it to the Riverscapes Data Exchange. The goal was to make the rich CHaMP data live on and remain accessible for researchers. 
+The Columbia Habitat Monitoring Program (CHaMP; BPA Project No. 2011- 006-00) was designed to collect information on tributary habitat attributes that can be used to predict the freshwater productivity of anadromous salmonids reliably. The Integrated Status and Effectiveness Monitoring Program (ISEMP; BPA Project No. 2009-f ) began development of the CHaMP pilot in 2010 and it was implemented in 2011. The CHaMP sampling design called for nine-years of data collection, in watersheds that represent a range of environmental conditions in the Columbia River Basin (CRB) to produce traditional and novel habitat metrics that can be “rolled-up”, that is, used to describe fish-habitat relationships relevant to three key management questions (KMQs) posed by BPA:  
 
-This page describes the outcome of this renewed push to publish CHaMP data on the [Riverscapes Data Exchange](https://data.riverscapes.net). While not exhaustive, those familiar will recognize many of the terms and data and find what they are looking for.
+- KMQ 1: What are the tributary habitat limiting factors or threats preventing the achievement of desired tributary habitat performance objectives? 
+
+- KMQ 2: What are the relationships between tributary habitat actions and fish survival or productivity improvements, and what actions are potentially most effective? Which actions are most cost-effective to address habitat impairments? 
+
+- KMQ 3: Are tributary actions achieving the expected biological and environmental improvements in habitat [and improving survival of specific fish life-stages through species growth or habitat capacity]?
+
+CHaMP was discontinued by BPA in 2017. This page describes the outcome of a renewed push to publish CHaMP data on the [Riverscapes Data Exchange](https://data.riverscapes.net). While not exhaustive, those familiar will recognize many of the terms and data and find what they are looking for.
+
+![watersheds](/img/initiatives/champ/champ_watersheds.png)
+
+## Acknowledgements
+
+The work to collate and publish the CHaMP data to the Riverscapes Data Exchange was funded by NOAA and performed by Watershed Solutions and North Arrow Research.
+
+<LogoWrapper
+  size="sm"
+  logos={[
+    {
+      imageUrl: "/img/sponsors/NOAA_FISHERIES_logoH.png",
+      url: "https://www.fisheries.noaa.gov/"
+    },
+    {
+      imageUrl: "img/logos/Watershed_Solutions.jpg",
+    },
+    {
+      imageUrl: "img/logos/NA_Logo_150pxTall.png",
+      url: "https://northarrowresearch.com"
+    }
+  ]}
+/>
+
 
 ## Topographic and Aux Data
 
@@ -120,7 +150,7 @@ CHaMP funded the development of a fish habitat model that used both habitat suit
 
 ## CAD Export
 
-Near the end of CHaMP, the topographic survey data were requested in CAD format. These data are available in the Data Exchange as [2,735 CAD Export projects](https://data.riverscapes.net/s?type=Project&projectTypeId=cad_export&view=map).
+Towards the end of CHaMP, the topographic survey data were requested in CAD format by [BPA](https://www.bpa.gov/). These data are available in the Data Exchange as [2,735 CAD Export projects](https://data.riverscapes.net/s?type=Project&projectTypeId=cad_export&view=map).
 
 ## Predicted Conductivity
 
@@ -137,3 +167,7 @@ The ETAL also ran the Riparian Vegetation Departure for the same locations where
 ## Solar
 
 [25 CHaMP solar projects](https://data.riverscapes.net/s?type=Project&projectTypeId=solar&view=table) are available in the Data Exchange.
+
+## Documents
+
+- [CHaMP Lessons Learned]()
