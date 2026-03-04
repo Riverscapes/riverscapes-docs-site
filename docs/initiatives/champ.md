@@ -170,4 +170,11 @@ The ETAL also ran the Riparian Vegetation Departure for the same locations where
 
 ## Documents
 
-- [CHaMP Lessons Learned]()
+- [CHaMP Final Report](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/CHaMP2013LLReport_FinalForPISCES_20150213.pdf)
+- 2015 Protocol
+   - [Field Version](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/2015_CHaMProtocol_FieldVersion_20150615.pdf)
+   - [Pocket Size](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/2015_CHaMProtocol_FieldVersion_20150615_PocketSize.pdf)
+- Total Station Manuals
+   - [Nikon](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/Nikon_2015_UserManual_FieldVersion_20150520_PocketSize.pdf)
+   - [TopCon](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/Topcon_2015_UserManual_FieldVersion_20150601_PocketSize.pdf)
+- [Topo Processing Workflow](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/2014_CHaMP_Topo_Toolbar_Workflow_V3_Final.pdf)
