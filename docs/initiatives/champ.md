@@ -168,8 +168,14 @@ The ETAL also ran the Riparian Vegetation Departure for the same locations where
 
 [25 CHaMP solar projects](https://data.riverscapes.net/s?type=Project&projectTypeId=solar&view=table) are available in the Data Exchange.
 
+## GRTS Master Sample
+
+CHaMP sites were selected from a master sample generated using the Environmental Protection Agency (EPA) [Generalized Randon Tessellation Stratified](https://archive.epa.gov/nheerl/arm/web/pdf/grts_ss.pdf) (GTRS) process. [Master samples are available in the Data Exchange](https://data.riverscapes.net/s?type=Project&projectTypeId=grts&view=map) for each of the US States in which CHaMP was performed.
+
+
 ## Documents
 
+- [Columbia Basin Master Sample Documentation](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/Columbia+Basin+Master+Sample+Documentation+20100409.pdf)
 - [CHaMP Final Report](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/CHaMP2013LLReport_FinalForPISCES_20150213.pdf)
 - 2015 Protocol
    - [Field Version](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/2015_CHaMProtocol_FieldVersion_20150615.pdf)
