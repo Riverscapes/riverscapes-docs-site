@@ -90,8 +90,6 @@ Watershed|[2011](https://data.riverscapes.net/s?type=Project&projectTypeId=champ
 | [Wenatchee](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee)  | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2011) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2012) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2017)  | - | - | -|
 | [Yankee Fork](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_YankeeFork) | - | - | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2017) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_YankeeFork%2CCHAMP_Year_2018) | - | - |
 
-
-
 ## Stream Temperature Data
 
 CHaMP stream temperature measurements are available as a [single project for all watersheds, sites and years](https://data.riverscapes.net/s?type=Project&projectTypeId=champstreamtemp&view=map). Ther project contains both a SQLite and Microsoft Access copy of the data.
@@ -109,3 +107,33 @@ Chris McNeiset developed stream temperature predictions for portions of the Colu
 CHaMP macroinvertebrate data were provided by NOAA and uploaded into the Data Exchange here:
 
 - [CHaMP Macroinvertebrate Data](https://data.riverscapes.net/p/88c52a36-334d-4474-b79a-6f4ad39dec54/overview)
+
+## Hydraulic Modeling
+
+CHaMP developed a semi-automated technique for running the [Delft3D](https://oss.deltares.nl/web/delft3d) hydraulic model on the high resolution topographic data. The models were run at both observed and simulated discharges for a subset of the CHaMP surveys. 
+
+[369 Hydraulic Model](https://data.riverscapes.net/s?type=Project&projectTypeId=hydro&view=table) projects are in the Riverscapes Data Exchange. 
+
+## Fish Habitat Modelling
+
+CHaMP funded the development of a fish habitat model that used both habitat suitability curves and a fuzzy inference system (FIS) to estimate fish habitat. These models were run at various flow stages and salmonid life stages.
+
+## CAD Export
+
+Near the end of CHaMP, the topographic survey data were requested in CAD format. These data are available in the Data Exchange as [2,735 CAD Export projects](https://data.riverscapes.net/s?type=Project&projectTypeId=cad_export&view=map).
+
+## Predicted Conductivity
+
+There are [3 predicted electric conductivity](https://data.riverscapes.net/s?type=Project&projectTypeId=ec&view=map) projects developed by Carl Saunders at Utah State University. These extrapolated CHaMP survey conductivity measurements for the purpose of validating the gross primary productivity (GPP) modeling efforts within CHaMP.
+
+## Riparian Condition Assessment (RCA)
+
+The Ecogeomorphology and Topographic Analysis laboratory (ETAL) at Utah State University produced [11 Riparian Condition Assessment](https://data.riverscapes.net/s?type=Project&projectTypeId=rca&view=table) projects for various parts of the Columbia River Basin. The RCA model has continued to evolve and is now called The [River Condition Assessment Tool](https://tools.riverscapes.net/rcat/). In 2025, the [Riverscapes Consortium](https://riverscapes.net) has run RCAT for over 99% of the conterminous United States, the outputs of which are available in the Data Exchange as [over 14,000 RCAT projects](https://data.riverscapes.net/s?type=Project&tags=2025conus&projectTypeId=rcat&view=map).
+
+## Riparian Vegetation Depature (RVD)
+
+The ETAL also ran the Riparian Vegetation Departure for the same locations where they ran RCA. This produced [23 RVD projects](https://data.riverscapes.net/s?type=Project&projectTypeId=rvd&view=table). RVD has since been incorporated into RCAT and is available as part of the aforementioned 2025 CONUS effort.
+
+## Solar
+
+[25 CHaMP solar projects](https://data.riverscapes.net/s?type=Project&projectTypeId=solar&view=table) are available in the Data Exchange.
