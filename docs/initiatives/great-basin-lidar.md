@@ -56,3 +56,7 @@ Keep the Riverscapes Context projects saved in your codespace data directory so 
 
 ### 5
 <YouTubeEmbed videoId="7JOktf75ms4" />
+
+:::note
+In addition to updating the `ProjectBounds` in the project.rs.xml file, you should update the project `Name` and Realization `Name` from `VBET for huc ...` to `VBET for <Watershed Name>`
+:::
