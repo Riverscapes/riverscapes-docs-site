@@ -151,9 +151,7 @@ CHaMP macroinvertebrate data were provided by NOAA and uploaded into the Data Ex
 
 ## Hydraulic Modeling
 
-CHaMP developed a semi-automated technique for running the [Delft3D](https://oss.deltares.nl/web/delft3d) hydraulic model on the high resolution topographic data. The models were run at both observed and simulated discharges for a subset of the CHaMP surveys. 
-
-[369 Hydraulic Model](https://data.riverscapes.net/s?type=Project&projectTypeId=hydro&view=table) projects are in the Riverscapes Data Exchange. 
+CHaMP developed a semi-automated workflow for running the [Delft3D](https://oss.deltares.nl/web/delft3d) hydraulic model on the CHaMP high resolution topographic data. The models were run at both observed and simulated discharges for a subset of the CHaMP surveys. [369 Hydraulic Model](https://data.riverscapes.net/s?type=Project&projectTypeId=hydro&view=table) projects are in the Riverscapes Data Exchange. Each project represents one CHaMP survey modelled at one or more discharges.
 
 ## Fish Habitat Modelling
 
@@ -161,7 +159,7 @@ CHaMP funded the development of a fish habitat model that used both habitat suit
 
 ## CAD Export
 
-Towards the end of CHaMP, the topographic survey data were requested in CAD format by [BPA](https://www.bpa.gov/). These data are available in the Data Exchange as [2,735 CAD Export projects](https://data.riverscapes.net/s?type=Project&projectTypeId=cad_export&view=map).
+Towards the end of CHaMP, the topographic survey data were requested in CAD format by [BPA](https://www.bpa.gov/). This bulk export is available in the Data Exchange as [2,735 CAD Export projects](https://data.riverscapes.net/s?type=Project&projectTypeId=cad_export&view=map).
 
 ## Predicted Conductivity
 
@@ -169,7 +167,7 @@ There are [3 predicted electric conductivity](https://data.riverscapes.net/s?typ
 
 ## Riparian Condition Assessment (RCA)
 
-The Ecogeomorphology and Topographic Analysis laboratory (ETAL) at Utah State University produced [11 Riparian Condition Assessment](https://data.riverscapes.net/s?type=Project&projectTypeId=rca&view=table) projects for various parts of the Columbia River Basin. The RCA model has continued to evolve and is now called The [River Condition Assessment Tool](https://tools.riverscapes.net/rcat/). In 2025, the [Riverscapes Consortium](https://riverscapes.net) has run RCAT for over 99% of the conterminous United States, the outputs of which are available in the Data Exchange as [over 14,000 RCAT projects](https://data.riverscapes.net/s?type=Project&tags=2025conus&projectTypeId=rcat&view=map).
+The Ecogeomorphology and Topographic Analysis laboratory (ETAL; now called USU Riverscapes Assessment Monitoring Lab - RAM) at Utah State University produced [11 Riparian Condition Assessment](https://data.riverscapes.net/s?type=Project&projectTypeId=rca&view=table) projects for various parts of the Columbia River Basin. The RCA model has continued to evolve and is now called The [River Condition Assessment Tool](https://tools.riverscapes.net/rcat/) (RCAT). In 2025, the [Riverscapes Consortium](https://riverscapes.net) has run RCAT for over 99% of the conterminous United States, the outputs of which are available in the Data Exchange as [over 14,000 RCAT projects](https://data.riverscapes.net/s?type=Project&tags=2025conus&projectTypeId=rcat&view=map).
 
 ## Riparian Vegetation Depature (RVD)
 
