@@ -6,11 +6,23 @@ title_icon: /img/logos/CHaMP_Logo_128.png
 
 The Columbia Habitat Monitoring Program (CHaMP; BPA Project No. 2011- 006-00) was designed to collect information on tributary habitat attributes that can be used to predict the freshwater productivity of anadromous salmonids reliably. The Integrated Status and Effectiveness Monitoring Program (ISEMP; BPA Project No. 2009-f ) began development of the CHaMP pilot in 2010 and it was implemented in 2011. The CHaMP sampling design called for nine-years of data collection, in watersheds that represent a range of environmental conditions in the Columbia River Basin (CRB) to produce traditional and novel habitat metrics that can be “rolled-up”, that is, used to describe fish-habitat relationships relevant to three key management questions (KMQs) posed by BPA:  
 
-- KMQ 1: What are the tributary habitat limiting factors or threats preventing the achievement of desired tributary habitat performance objectives? 
-
-- KMQ 2: What are the relationships between tributary habitat actions and fish survival or productivity improvements, and what actions are potentially most effective? Which actions are most cost-effective to address habitat impairments? 
-
-- KMQ 3: Are tributary actions achieving the expected biological and environmental improvements in habitat [and improving survival of specific fish life-stages through species growth or habitat capacity]?
+<AdvertizingWrapper
+  cardsize="sm"
+  cards={[
+    {
+      "title": "KMQ 1",
+      "description": "What are the tributary habitat limiting factors or threats preventing the achievement of desired tributary habitat performance objectives?",
+    },
+   {
+      "title": "KMQ 2",
+      "description": "What are the relationships between tributary habitat actions and fish survival or productivity improvements, and what actions are potentially most effective? Which actions are most cost-effective to address habitat impairments?",
+    },
+        {
+      "title": "KMQ 3",
+      "description": "Are tributary actions achieving the expected biological and environmental improvements in habitat [and improving survival of specific fish life-stages through species growth or habitat capacity?",
+    },
+  ]}
+/>
 
 CHaMP was discontinued by BPA in 2017. This page describes the outcome of a renewed push to publish CHaMP data on the [Riverscapes Data Exchange](https://data.riverscapes.net). While not exhaustive, those familiar will recognize many of the terms and data and find what they are looking for.
 
@@ -18,7 +30,7 @@ CHaMP was discontinued by BPA in 2017. This page describes the outcome of a rene
 
 ## Acknowledgements
 
-The work to collate and publish the CHaMP data to the Riverscapes Data Exchange was funded by NOAA and performed by Watershed Solutions and North Arrow Research.
+The work to collate and publish these CHaMP data to the Riverscapes Data Exchange was funded by NOAA and performed by Watershed Solutions and North Arrow Research.
 
 <LogoWrapper
   size="sm"
@@ -36,7 +48,6 @@ The work to collate and publish the CHaMP data to the Riverscapes Data Exchange 
     }
   ]}
 />
-
 
 ## Topographic and Aux Data
 
