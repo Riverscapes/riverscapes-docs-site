@@ -146,7 +146,7 @@ CHaMP developed a semi-automated technique for running the [Delft3D](https://oss
 
 ## Fish Habitat Modelling
 
-CHaMP funded the development of a fish habitat model that used both habitat suitability curves and a fuzzy inference system (FIS) to estimate fish habitat. These models were run at various flow stages and salmonid life stages.
+CHaMP funded the development of a fish habitat model that used both habitat suitability curves and a fuzzy inference system (FIS) to estimate fish habitat. These models were run at various flow stages and salmonid life stages. [51 fish habitat model projects](https://data.riverscapes.net/s?type=Project&projectTypeId=fhm&view=map) are available in the Riverscapes Data Exchange.
 
 ## CAD Export
 
@@ -175,6 +175,7 @@ CHaMP sites were selected from a master sample generated using the Environmental
 
 ## Documents
 
+- [CHaMP Study Design](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/CHaMP_Study_Design.pdf)
 - [Columbia Basin Master Sample Documentation](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/Columbia+Basin+Master+Sample+Documentation+20100409.pdf)
 - [CHaMP Final Report](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/CHaMP2013LLReport_FinalForPISCES_20150213.pdf)
 - 2015 Protocol
