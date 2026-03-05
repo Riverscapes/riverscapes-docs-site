@@ -189,9 +189,12 @@ CHaMP sites were selected from a master sample generated using the Environmental
 - [CHaMP Study Design](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/CHaMP_Study_Design.pdf)
 - [Columbia Basin Master Sample Documentation](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/Columbia+Basin+Master+Sample+Documentation+20100409.pdf)
 - [CHaMP Final Report](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/CHaMP2013LLReport_FinalForPISCES_20150213.pdf)
-- 2015 Protocol
-   - [Field Version](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/2015_CHaMProtocol_FieldVersion_20150615.pdf)
-   - [Pocket Size](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/2015_CHaMProtocol_FieldVersion_20150615_PocketSize.pdf)
+- [Scouting Protocol](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/2013_CHaMP_Scouting_protocol_06042013.pdf)
+- Protocol
+   - [2011 CHaMP Protocol](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/CHaMPHabitatProtocol_Final_mastercopy_20110601.pdf)
+   - [2014 CHaMP Supervisor Manual](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/2014_CHaMP_SupervisorManual_Final_20140522.pdf)
+   - [2015 Field Version](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/2015_CHaMProtocol_FieldVersion_20150615.pdf)
+   - [2015 Pocket Size](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/2015_CHaMProtocol_FieldVersion_20150615_PocketSize.pdf)
 - Total Station Manuals
    - [Nikon](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/Nikon_2015_UserManual_FieldVersion_20150520_PocketSize.pdf)
    - [TopCon](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/Topcon_2015_UserManual_FieldVersion_20150601_PocketSize.pdf)
