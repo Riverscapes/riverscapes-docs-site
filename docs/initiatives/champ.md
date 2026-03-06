@@ -49,6 +49,10 @@ The work to collate and publish these CHaMP data to the Riverscapes Data Exchang
   ]}
 />
 
+## CHaMP Metrics
+
+Arguably the primary focus of CHaMP was the production of metrics in support of the key management questions above. At the conclusion of the program in 2017, CHaMP produced a final set of metrics that are available as a single [CHaMP Metrics project](https://data.riverscapes.net/p/588f6710-3c51-4a69-a856-acc678c531f2/overview) within the Riverscapes Data Exchange. This dataset also includes a list of all watersheds, sites and visits. There is also a table defining each metric, it's units and calculation method.
+
 ## Topographic and Aux Data
 
 CHaMP collected many types of data, centered around both a high resolution topographic river survey and a series of non-spatial "auxilliary measurements". These "topo" and "aux" data have been combined into a single project for each survey and placed on the exchange. The data are owned by the [CHaMP Organization](https://data.riverscapes.net/o/c7d8c487-c377-42b0-a5b6-4c16db18fb41/) and carefully tagged by watershed, site, field season and visit ID using the following system:
@@ -151,7 +155,7 @@ CHaMP macroinvertebrate data were provided by NOAA and uploaded into the Data Ex
 
 ## Hydraulic Modeling
 
-CHaMP developed a semi-automated workflow for running the [Delft3D](https://oss.deltares.nl/web/delft3d) hydraulic model on the CHaMP high resolution topographic data. The models were run at both observed and simulated discharges for a subset of the CHaMP surveys. [369 Hydraulic Model](https://data.riverscapes.net/s?type=Project&projectTypeId=hydro&view=table) projects are in the Riverscapes Data Exchange. Each project represents one CHaMP survey modelled at one or more discharges.
+Matt Nahorniak, with South Fork Research, developed a [semi-automated workflow](https://github.com/SouthForkResearch/Hydraulic-Modeling/wiki) for running the [Delft3D](https://oss.deltares.nl/web/delft3d) hydraulic model on the CHaMP high resolution topographic data. The models were run at both observed and simulated discharges for a subset of the CHaMP surveys. [369 Hydraulic Model](https://data.riverscapes.net/s?type=Project&projectTypeId=hydro&view=table) projects are in the Riverscapes Data Exchange. Each project represents one CHaMP survey modelled at one or more discharges.
 
 ## Fish Habitat Modelling
 
@@ -163,7 +167,7 @@ Towards the end of CHaMP, the topographic survey data were requested in CAD form
 
 ## Predicted Conductivity
 
-There are [3 predicted electric conductivity](https://data.riverscapes.net/s?type=Project&projectTypeId=ec&view=map) projects developed by Carl Saunders at Utah State University. These extrapolated CHaMP survey conductivity measurements for the purpose of validating the gross primary productivity (GPP) modeling efforts within CHaMP.
+There are [3 predicted electric conductivity](https://data.riverscapes.net/s?type=Project&projectTypeId=ec&view=map) projects developed by Jesse Langdon at South Fork Research. These extrapolated CHaMP survey conductivity measurements for the purpose of validating the gross primary productivity (GPP) modeling efforts within CHaMP. See the [Conductivity Tools](https://riverscapes.github.io/Conductivity/) code on GitHub.
 
 ## Riparian Condition Assessment (RCA)
 
@@ -175,7 +179,11 @@ The ETAL also ran the Riparian Vegetation Departure for the same locations where
 
 ## Solar
 
-[25 CHaMP solar projects](https://data.riverscapes.net/s?type=Project&projectTypeId=solar&view=table) are available in the Data Exchange.
+[25 CHaMP solar modelling projects](https://data.riverscapes.net/s?type=Project&projectTypeId=solar&view=table) are available in the Data Exchange. The [Solar Stream Tools](https://riverscapes.github.io/SolarStream/) model, leveraging CHaMP Suneye measurements, was developed by South Fork Research.
+
+## QRF
+
+
 
 ## GRTS Master Sample
 
