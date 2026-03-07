@@ -183,6 +183,8 @@ The ETAL also ran the Riparian Vegetation Departure for the same locations where
 
 ## QRF
 
+A [single project](https://data.riverscapes.net/p/fbc21e27-2008-4541-afcc-81b4c5dd013a/) contains the final QRF analysis produced by CHaMP. These data were obtained from C. Volk CHaMP files archive provided to North Arrow Research and placed on Amazon S3.
+
 
 
 ## GRTS Master Sample
