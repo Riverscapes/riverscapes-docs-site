@@ -1,6 +1,6 @@
 ---
 title: Database Driven Tools
-weight: 2
+sidebar_displayed: false
 ---
 
 Post from [@philpbaileynar](https://github.com/orgs/Riverscapes/people/philipbaileynar) <i class="fa fa-github" aria-hidden="true"></i>
