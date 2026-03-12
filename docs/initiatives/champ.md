@@ -49,6 +49,80 @@ The work to collate and publish these CHaMP data to the Riverscapes Data Exchang
   ]}
 />
 
+CHaMP was performed by a collection of consultants and agency personnel from the Pacific Northwest. 
+
+<LogoWrapper
+  size="sm"
+  logos={[
+    {
+      imageUrl: "/img/logos/CDFW-Logo.webp",
+      url: "https://wildlife.ca.gov/"
+    },
+    {
+      imageUrl: "/img/logos/CRITFC-logo.png",
+      url: "https://critfc.org/"
+    },
+    {
+      imageUrl:"/img/logos/ctuir.webp",
+      url: "https://ctuir.org/"
+    },
+    {
+      imageUrl: "/img/logos/cramer.png",
+      url: "https://www.fishsciences.net"
+    },
+    {
+      imageUrl: "/img/logos/ELR.png",
+    },
+    {
+         imageUrl: "/img/logos/NSD_horiz_color.png",
+         url: "https://naturaldes.com/"
+    },
+    {
+      imageUrl: "/img/sponsors/NOAA_FISHERIES_logoH.png",
+      url: "https://www.fisheries.noaa.gov/"
+    },
+    {
+      imageUrl: "/img/logos/nez_perce.png",
+      url: "https://nezperce.org/"
+    },
+    {
+       imageUrl: "/img/logos/odfw-logo.webp",
+       url: "https://www.dfw.state.or.us/"
+    },
+    {
+      imageUrl: "/img/logos/sitka_technology_group_logo.jpeg",
+      url: "https://esassoc.com/news-and-ideas/2022/01/sitka-technology-group-joins-environmental-science-associates/"
+    },
+    {
+      imageUrl: "/img/logos/SouthForkResearch.png",
+    },
+    {
+      imageUrl: "/img/logos/terraqua.avif",
+      url: "https://www.terraqua.biz"
+    },
+    {
+         imageUrl: "/img/logos/tetra-tech-logo.svg",
+         url: "https://www.tetratech.com/solutions/environment/"
+    },
+    {
+         imageUrl: "/img/logos/USU_125pxTall.png",
+         url: "https://qanr.usu.edu/wats/"
+    },
+    {
+      imageUrl: "/img/logos/warm_springs.png",
+      url: "https://warmsprings-nsn.gov/"
+    },
+        {
+      imageUrl: "img/logos/Watershed_Solutions.jpg",
+    },
+    {
+      imageUrl: "img/logos/NA_Logo_150pxTall.png",
+      url: "https://northarrowresearch.com"
+    }
+  ]}
+/>
+
+
 ## How to Find CHaMP Data
 
 CHaMP data within the [Riverscapes Data Exchange](https://data.riverscapes.net) and can be found in several different ways. First, all official CHaMP data are owned by the data exchange [CHaMP Organization](https://data.riverscapes.net/o/c7d8c487-c377-42b0-a5b6-4c16db18fb41/). Clicking on this link provides quick access to all CHaMP datasets.
