@@ -130,7 +130,7 @@ CHaMP data within the [Riverscapes Data Exchange](https://data.riverscapes.net) 
 Organizational Concept|Tag Format|Example|Notes
 ---|---|---|---
 Program|[CHAMP_Program_Level_Outputs](https://data.riverscapes.net/s?type=Project&tags=CHAMP_Program_Level_Outputs)|[CHAMP_Program_Level_Outputs](https://data.riverscapes.net/s?type=Project&tags=CHAMP_Program_Level_Outputs)
-Watershed|`CHAMP_Watershed_XXXXXXXX`|[CHAMP_Watershed_John_Day](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_John_Day)|Spaces removed
+Watershed|`CHAMP_Watershed_XXXXXXXX`|[CHAMP_Watershed_John_Day](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_John_Day)|Spaces replaced with underscores.
 Site|`CHAMP_Site_XXXXXXXXXX`|[CHAMP_Site_YFI00001-000133](https://data.riverscapes.net/s?type=Project&tags=CHAMP_Site_YFI00001-000133)|
 Field Season|`CHAMP_Year_XXXX`|[CHAMP_Year_2011](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2011)|
 Visit|`CHaMP_Visit_XXXX`|[CHAMP_Visit_5238](https://data.riverscapes.net/s?type=Project&tags=CHAMP_Visit_5238&view=map)|Zero padded to 4 digits
