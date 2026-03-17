@@ -6,7 +6,7 @@ page-priority: medium
 ---
 
 <a href="https://tools.riverscapes.net/"><img
-  src="https://tools.riverscapes.net/assets/images/waterfall-74b966570b344ad6af3a29ca5e690ecb.svg"
+  src="https://tools.riverscapes.net/img/waterfall.svg"
   alt="waterfall"
   style={{ float: "right", width: "350px", margin: "0 0 1em 1em" }}
 /></a>
