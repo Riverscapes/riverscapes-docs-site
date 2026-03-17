@@ -1,5 +1,6 @@
 ---
 title: Lidar-based VBET for Lahontan Cutthroat Trout Occupied Streams
+title_icon: /img/logos/usu_ram_transparent_logo_only.svg
 ---
 
 Utah State University project index: TBD
