@@ -234,7 +234,7 @@ Watershed|[2011](https://data.riverscapes.net/s?type=Project&projectTypeId=champ
 
 CHaMP stream temperature measurements are available as a [single project for all watersheds, sites and years](https://data.riverscapes.net/s?type=Project&projectTypeId=champstreamtemp&view=map). Ther project contains both a SQLite and Microsoft Access copy of the data.
 
-Chris McNeiset developed stream temperature predictions for portions of the Columbia River Basin. These data are available by prediction type:
+Chris McNyset developed stream temperature predictions for portions of the Columbia River Basin. These data are available by prediction type:
 
 - [Potential Maximum Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtemppotmax&view=map)
 - [Potential Mean Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtemppotmean&view=map)
