@@ -151,11 +151,13 @@ Watershed|[2011](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP
 | [Wenatchee](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Wenatchee) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2011) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2012) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2017) | - | - | - |
 | [Yankee Fork](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Yankee_Fork) | - | - | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2017) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2018) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2019) | [Data](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2020) |
 
-## CHaMP Metrics
+## Data
+
+### CHaMP Metrics
 
 Arguably the primary focus of CHaMP was the production of metrics in support of the key management questions above. At the conclusion of the program in 2017, CHaMP produced a final set of metrics that are available as a single [CHaMP Metrics project](https://data.riverscapes.net/p/588f6710-3c51-4a69-a856-acc678c531f2/overview) within the Riverscapes Data Exchange. This dataset also includes a list of all watersheds, sites and visits. There is also a table defining each metric, it's units and calculation method.
 
-## Topographic and Aux Data
+### Topographic and Aux Data
 
 CHaMP collected many types of data, centered around both a high resolution topographic river survey and a series of non-spatial "auxilliary measurements". These "topo" and "aux" data have been combined into a single project for each survey and placed on the exchange.
 
@@ -212,7 +214,7 @@ Watershed|[2011](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&
 _All Watersheds_|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2011)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2012)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2013)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2014)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2015)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2016)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2017)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2018)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2019)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2020)
 -->
 
-## Photos
+### Photos
 
 Photos were taken at the same time as the topographic surveys. The photos span a variety of purposes; some are meant to capture individual channel units, while others were associated with the survey setup (benchmarks, control points etc). The photos were taken with a variety of equipment including point-and-shoot cameras and tablets.
 
@@ -230,7 +232,7 @@ Watershed|[2011](https://data.riverscapes.net/s?type=Project&projectTypeId=champ
 | [Wenatchee](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee)  | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2011) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2012) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2017)  | - | - | -|
 | [Yankee Fork](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Yankee_Fork) | - | - | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2017) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=champphotos&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2018) | - | - |
 
-## Stream Temperature Data
+### Stream Temperature Data
 
 CHaMP stream temperature measurements are available as a [single project for all watersheds, sites and years](https://data.riverscapes.net/s?type=Project&projectTypeId=champstreamtemp&view=map). Ther project contains both a SQLite and Microsoft Access copy of the data.
 
@@ -242,50 +244,47 @@ Chris McNyset developed stream temperature predictions for portions of the Colum
 - [Max Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtempmax&view=map)
 - [Mean Temperature](https://data.riverscapes.net/s?type=Project&projectTypeId=streamtempmean&view=map)
 
-## Macroinvertebrates
+### Macroinvertebrates
 
 CHaMP macroinvertebrate data were provided by NOAA and uploaded into the Data Exchange here:
 
 - [CHaMP Macroinvertebrate Data](https://data.riverscapes.net/p/88c52a36-334d-4474-b79a-6f4ad39dec54/overview)
 
-## Hydraulic Modeling
+### Hydraulic Modeling
 
 Matt Nahorniak, with South Fork Research, developed a [semi-automated workflow](https://github.com/SouthForkResearch/Hydraulic-Modeling/wiki) for running the [Delft3D](https://oss.deltares.nl/web/delft3d) hydraulic model on the CHaMP high resolution topographic data. The models were run at both observed and simulated discharges for a subset of the CHaMP surveys. [369 Hydraulic Model](https://data.riverscapes.net/s?type=Project&projectTypeId=hydro&view=table) projects are in the Riverscapes Data Exchange. Each project represents one CHaMP survey modelled at one or more discharges.
 
-## Fish Habitat Modelling
+### Fish Habitat Modelling
 
 CHaMP funded the development of a fish habitat model that used both habitat suitability curves and a fuzzy inference system (FIS) to estimate fish habitat. These models were run at various flow stages and salmonid life stages. [51 fish habitat model projects](https://data.riverscapes.net/s?type=Project&projectTypeId=fhm&view=map) are available in the Riverscapes Data Exchange.
 
-## CAD Export
+### CAD Export
 
 Towards the end of CHaMP, the topographic survey data were requested in CAD format by [BPA](https://www.bpa.gov/). This bulk export is available in the Data Exchange as [2,735 CAD Export projects](https://data.riverscapes.net/s?type=Project&projectTypeId=cad_export&view=map).
 
-## Predicted Conductivity
+### Predicted Conductivity
 
 There are [3 predicted electric conductivity](https://data.riverscapes.net/s?type=Project&projectTypeId=ec&view=map) projects developed by Jesse Langdon at South Fork Research. These extrapolated CHaMP survey conductivity measurements for the purpose of validating the gross primary productivity (GPP) modeling efforts within CHaMP. See the [Conductivity Tools](https://riverscapes.github.io/Conductivity/) code on GitHub.
 
-## Riparian Condition Assessment (RCA)
+### Riparian Condition Assessment (RCA)
 
 The Ecogeomorphology and Topographic Analysis laboratory (ETAL; now called USU Riverscapes Assessment Monitoring Lab - RAM) at Utah State University produced [11 Riparian Condition Assessment](https://data.riverscapes.net/s?type=Project&projectTypeId=rca&view=table) projects for various parts of the Columbia River Basin. The RCA model has continued to evolve and is now called The [River Condition Assessment Tool](https://tools.riverscapes.net/rcat/) (RCAT). In 2025, the [Riverscapes Consortium](https://riverscapes.net) has run RCAT for over 99% of the conterminous United States, the outputs of which are available in the Data Exchange as [over 14,000 RCAT projects](https://data.riverscapes.net/s?type=Project&tags=2025conus&projectTypeId=rcat&view=map).
 
-## Riparian Vegetation Depature (RVD)
+### Riparian Vegetation Depature (RVD)
 
 The ETAL also ran the Riparian Vegetation Departure for the same locations where they ran RCA. This produced [23 RVD projects](https://data.riverscapes.net/s?type=Project&projectTypeId=rvd&view=table). RVD has since been incorporated into RCAT and is available as part of the aforementioned 2025 CONUS effort.
 
-## Solar
+### Solar
 
 [25 CHaMP solar modelling projects](https://data.riverscapes.net/s?type=Project&projectTypeId=solar&view=table) are available in the Data Exchange. The [Solar Stream Tools](https://riverscapes.github.io/SolarStream/) model, leveraging CHaMP Suneye measurements, was developed by South Fork Research.
 
-## QRF
+### QRF
 
 A [single project](https://data.riverscapes.net/p/fbc21e27-2008-4541-afcc-81b4c5dd013a/) contains the final QRF analysis produced by CHaMP. These data were obtained from C. Volk CHaMP files archive provided to North Arrow Research and placed on Amazon S3.
 
-
-
-## GRTS Master Sample
+### GRTS Master Sample
 
 CHaMP sites were selected from a master sample generated using the Environmental Protection Agency (EPA) [Generalized Randon Tessellation Stratified](https://archive.epa.gov/nheerl/arm/web/pdf/grts_ss.pdf) (GTRS) process. [Master samples are available in the Data Exchange](https://data.riverscapes.net/s?type=Project&projectTypeId=grts&view=map) for each of the US States in which CHaMP was performed.
-
 
 ## Documents
 
@@ -302,3 +301,5 @@ CHaMP sites were selected from a master sample generated using the Environmental
    - [Nikon](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/Nikon_2015_UserManual_FieldVersion_20150520_PocketSize.pdf)
    - [TopCon](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/Topcon_2015_UserManual_FieldVersion_20150601_PocketSize.pdf)
 - [Topo Processing Workflow](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/2014_CHaMP_Topo_Toolbar_Workflow_V3_Final.pdf)
+
+## Sofware and Code
