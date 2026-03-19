@@ -282,6 +282,8 @@ The ETAL also ran the Riparian Vegetation Departure for the same locations where
 
 A [single project](https://data.riverscapes.net/p/fbc21e27-2008-4541-afcc-81b4c5dd013a/) contains the final QRF analysis produced by CHaMP. These data were obtained from C. Volk CHaMP files archive provided to North Arrow Research and placed on Amazon S3.
 
+Kevin E., Michael W. Ackerman, Richard A. Carmichael, Sarah Hoffman, and Chris Beasley (2021). Estimating Carrying Capacity for Juvenile Salmon using Quantile Random Forest Models. Ecosphere [http://doi.org/10.1002/ecs2.3404](http://doi.org/10.1002/ecs2.3404)
+
 ### GRTS Master Sample
 
 CHaMP sites were selected from a master sample generated using the Environmental Protection Agency (EPA) [Generalized Randon Tessellation Stratified](https://archive.epa.gov/nheerl/arm/web/pdf/grts_ss.pdf) (GTRS) process. [Master samples are available in the Data Exchange](https://data.riverscapes.net/s?type=Project&projectTypeId=grts&view=map) for each of the US States in which CHaMP was performed.
@@ -303,3 +305,134 @@ CHaMP sites were selected from a master sample generated using the Environmental
 - [Topo Processing Workflow](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/2014_CHaMP_Topo_Toolbar_Workflow_V3_Final.pdf)
 
 ## Sofware and Code
+
+The following software tools and scripts were developed during CHaMP. While several have now been deprecated, a larger number have continued to be developed and have blossomed into production grade tools.
+
+<ToolsWrapper
+  cardsize="md"
+  cards={[
+    {
+      title: "Riverscapes Data Exchange",
+      description: "This grew out of the warehouse that was built to host CHaMP data for running metrics.",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/data-exchange/data-exchange.svg",
+      toolUrl: "https://data.riverscapes.net"
+    },
+    {
+      title: "BRAT",
+      description: "Beaver Restoration Assessement Toolbox",
+      logoUrl: "https://cdn.riverscapes.net/icons/network-models/brat/brat.svg",
+      toolUrl: "https://tools.riverscapes.net/brat"
+    },
+    {
+      title: "RCAT",
+      description: "Riparian Corridor Assessment Tool, that grew out of the RCA and RVD tools development during CHaMP.",
+      logoUrl: "https://cdn.riverscapes.net/icons/network-models/rcat/rcat.svg",
+      toolUrl: "https://tools.riverscapes.net/rcat",
+    },
+    {
+      title: "GCD",
+      description: "Geomorphic Change Detection",
+      toolUrl: "https://gcd.riverscapes.net",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/gcd/gcd.svg"
+    },
+    {
+      title: "Riverscapes Studio (QRiS)",
+      description: "QRiS grew out of the CHaMP Topo Toolbar that was used to process high resolution topographic surveys.",
+      toolUrl: "https://qris.riverscapes.net",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/qris/qris.svg"
+    },
+    {
+      title: "VBET",
+      description: "Valley Bottom Extraction Tool (VBET)",
+      toolUrl: "https://tools.riverscapes.net/vbet/",
+      logoUrl: "https://cdn.riverscapes.net/icons/network-models/vbet/vbet.svg"
+    }
+  ]}
+/>
+
+### Unsupported and Deprecated Software
+
+
+<ToolsWrapper
+  cardsize="md"
+  cards={[
+    {
+      title: "CHaMP Metrics",
+      description: "Finalversion of the code that calculates topo, aux and topo+aux metrics.",
+      toolUrl: "https://github.com/Riverscapes/riverscapes-tools/tree/master/packages/champ_metrics",
+    },
+    {
+      title: "CHaMP Transformation Toolkit",
+      description: "The CTT was developed by Joe Wheaton and Chris Gerrard at USU to apply coordinate transformations to CHaMP topographic surveys.",
+      toolUrl: "https://ctt.riverscapes.net/"
+    },
+    {
+      title: "Solar Stream Tool",
+      description: "Gross Primary Productivity toolkit developed by South Fork Research under ISEMP.",
+      toolUrl: "https://riverscapes.github.io/SolarStream/"
+    },
+    {
+      title: "Tributart Impact Tool",
+      description: "The Tributary Impact Tool is a Python script for ArcGIS which finds intersections in a stream network and calculates the percent chance of the tributary creating a large fan in the mainstem when the tributary dumps its sediment load. The equation used to find this percentage is based on the one found in the paper Tributary Connectivity, Confluence Aggradation and Network Biodiversity by Stephen P. Rice. A full citation for the paper can be found at the bottom of the page.",
+      toolUrl: "https://tributaryimpact.riverscapes.net/"
+    },
+    {
+      title: "PNET",
+      description: "Point Network Extraction Tool",
+      toolUrl: "https://pnet.riverscapes.net/"
+    },
+    {
+      title: "GUT",
+      description: "Geomorphic Unit Tool developed by Joe Wheaton and Sara Bangen at Utah State University.",
+      toolUrl: "https://gut.riverscapes.net/"
+    },
+    {
+      title: "Conductivity Tools",
+      description: "",
+      toolUrl: "https://riverscapes.github.io/Conductivity/"
+    },
+    {
+      title: "CHaMP Workbench",
+      description: "Finalversion of the code that calculates topo, aux and topo+aux metrics.",
+      toolUrl: "https://github.com/Riverscapes/riverscapes-tools/tree/master/packages/champ_metrics",
+    },
+    {
+      title: "Fish Habitat Model",
+      description: "Desktop software, written in C# for running fish habitat models.",
+      toolUrl: "https://github.com/NorthArrowResearch/habitatmodel"
+    },
+    {
+      title: "PyGNAT",
+      description: "Geomorphic Network Attribute Tool",
+      toolUrl: "https://github.com/SouthForkResearch/pyGNAT"
+    },
+    {
+      title: "Hydraulic Modelling",
+      description: "R Code to parameterize and orchestrate running the Delft3D model.",
+      toolUrl: "https://github.com/SouthForkResearch/Hydraulic-Modeling"
+    },
+    {
+      title: "Stream Temperature Modelling",
+      description: "R Code for modelling stream temperature predictions.",
+      toolUrl: "https://github.com/SouthForkResearch/StreamTemperature"
+    },
+    {
+      title: "Status and Trend Rollups",
+      description: "Provide design based status and trend estimates for CHaMP metrics, by watershed and (opionally) other subgroups. Estimate the components of variance for CHaMP metrics, including measurement noise.",
+      toolUrl: "https://github.com/SouthForkResearch/CHaMP-Status-and-Trend-Roll-Ups"
+    },
+    {
+      title: "Bioenergetics Model",
+      toolUrl: "https://github.com/SouthForkResearch/Bioenergetic-Model"
+    },
+    {
+      title: "Lifecycle Modelling",
+      toolUrl: "https://github.com/SouthForkResearch/CHaMP-ISEMP-Life-Cycle-Model"
+    },
+    {
+      title: "NREI",
+      description: "Net Rate of Energy Intake",
+      toolUrl: "https://github.com/Riverscapes/NREI"
+    }
+  ]}
+/>
