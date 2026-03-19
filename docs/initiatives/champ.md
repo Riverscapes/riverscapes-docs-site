@@ -28,6 +28,43 @@ CHaMP was discontinued by BPA in 2017. This page describes the outcome of a rene
 
 ![watersheds](/img/initiatives/champ/champ_watersheds.png)
 
+## Disclaimer
+
+The CHaMP program concluded in 2017. The data and links provided on this page were collated in 2026 as part of a preservation effort to ensure the ongoing availability of the data collected during the program. 
+
+**NO WARRANTY AND LIMITATION OF LIABILITY**
+
+These data are provided "as is" and "as available" without warranty of any kind, either express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. 
+
+The data presented represents the state of the archive at the time of the program's termination by the Bonneville Power Administration (BPA). No additional quality control, processing, or validation has been performed on these datasets subsequent to the program's conclusion. Users should be aware that the data may contain gaps, errors, or inconsistencies inherent to large-scale monitoring initiatives.
+
+By accessing or using these data, you acknowledge and agree that:
+1. The use of the data is at your sole risk.
+2. The providers of this data make no guarantee regarding its accuracy, completeness, or suitability for any specific analysis or purpose.
+3. In no event shall the providers be liable for any direct, indirect, incidental, special, exemplary, or consequential damages arising in any way out of the use of this data.
+
+## Support
+
+Given that the CHaMP program is no longer active, there is no official suport for these data. However, the following consultants continue to operate in the Pacific Northwest and can be contracted to support you within inquires or work on the data.
+
+
+<LogoWrapper
+  size="sm"
+  logos={[
+    {
+      imageUrl: "img/logos/Watershed_Solutions.jpg",
+    },
+    {
+      imageUrl: "img/logos/NA_Logo_150pxTall.png",
+      url: "https://northarrowresearch.com"
+    },
+    {
+      imageUrl: "https://docs.riverscapes.net/img/logos/usu_ram_transparent_logo_only.svg",
+      url: "https://data.riverscapes.net/o/a52b8094-7a1d-4171-955c-ad30ae935296/"
+    }
+  ]}
+/>
+
 ## Acknowledgements
 
 The work to collate and publish these CHaMP data to the Riverscapes Data Exchange was funded by NOAA and performed by Watershed Solutions and North Arrow Research.
