@@ -306,44 +306,44 @@ CHaMP sites were selected from a master sample generated using the Environmental
 
 ## Sofware and Code
 
-The following software tools and scripts were developed during CHaMP. While several have now been deprecated, a larger number have continued to be developed and have blossomed into production grade tools.
+The following software tools and code were either used by CHaMP or developed by the program. While several have now been deprecated, some have continued to be developed and evolved into production grade tools.
 
 <ToolsWrapper
   cardsize="md"
   cards={[
     {
       title: "Riverscapes Data Exchange",
-      description: "This grew out of the warehouse that was built to host CHaMP data for running metrics.",
+      description: "The data exchange is the latest iteration of a warehouse that was built to host CHaMP data for running metrics.",
       logoUrl: "https://cdn.riverscapes.net/icons/products/data-exchange/data-exchange.svg",
       toolUrl: "https://data.riverscapes.net"
     },
     {
       title: "BRAT",
-      description: "Beaver Restoration Assessement Toolbox",
+      description: "The Beaver Restoration Assessment Toolbox was first being developed around the same time as CHaMP.",
       logoUrl: "https://cdn.riverscapes.net/icons/network-models/brat/brat.svg",
       toolUrl: "https://tools.riverscapes.net/brat"
     },
     {
       title: "RCAT",
-      description: "Riparian Corridor Assessment Tool, that grew out of the RCA and RVD tools development during CHaMP.",
+      description: "The Riparian Corridor Assessment Tool grew out of the RCA and RVD tools development during CHaMP.",
       logoUrl: "https://cdn.riverscapes.net/icons/network-models/rcat/rcat.svg",
       toolUrl: "https://tools.riverscapes.net/rcat",
     },
     {
       title: "GCD",
-      description: "Geomorphic Change Detection",
+      description: "Geomorphic Change Detection was performed on CHaMP topographic surveys to measure change between surveys.",
       toolUrl: "https://gcd.riverscapes.net",
       logoUrl: "https://cdn.riverscapes.net/icons/products/gcd/gcd.svg"
     },
     {
       title: "Riverscapes Studio (QRiS)",
-      description: "QRiS grew out of the CHaMP Topo Toolbar that was used to process high resolution topographic surveys.",
+      description: "QRiS is the latest product focused on processing project scale geospatial data, related to the CHaMP Topo Toolbar that was used to process high resolution topographic surveys.",
       toolUrl: "https://qris.riverscapes.net",
       logoUrl: "https://cdn.riverscapes.net/icons/products/qris/qris.svg"
     },
     {
       title: "VBET",
-      description: "Valley Bottom Extraction Tool (VBET)",
+      description: "The Valley Bottom Extraction Tool (VBET) was developed by Joe Wheaton and Jordan Gilbert during the CHaMP program.",
       toolUrl: "https://tools.riverscapes.net/vbet/",
       logoUrl: "https://cdn.riverscapes.net/icons/network-models/vbet/vbet.svg"
     }
@@ -358,7 +358,7 @@ The following software tools and scripts were developed during CHaMP. While seve
   cards={[
     {
       title: "CHaMP Metrics",
-      description: "Finalversion of the code that calculates topo, aux and topo+aux metrics.",
+      description: "The final version of the code that calculates topo, aux and topo+aux metrics. This code was migrated from South Fork Research and turned into a Riverscapes Tool.",
       toolUrl: "https://github.com/Riverscapes/riverscapes-tools/tree/master/packages/champ_metrics",
     },
     {
@@ -368,12 +368,12 @@ The following software tools and scripts were developed during CHaMP. While seve
     },
     {
       title: "Solar Stream Tool",
-      description: "Gross Primary Productivity toolkit developed by South Fork Research under ISEMP.",
+      description: "Gross Primary Productivity toolkit developed by South Fork Research under CHaMP and ISEMP.",
       toolUrl: "https://riverscapes.github.io/SolarStream/"
     },
     {
       title: "Tributart Impact Tool",
-      description: "The Tributary Impact Tool is a Python script for ArcGIS which finds intersections in a stream network and calculates the percent chance of the tributary creating a large fan in the mainstem when the tributary dumps its sediment load. The equation used to find this percentage is based on the one found in the paper Tributary Connectivity, Confluence Aggradation and Network Biodiversity by Stephen P. Rice. A full citation for the paper can be found at the bottom of the page.",
+      description: "The Tributary Impact Tool which finds intersections in a stream network and calculates the percent chance of the tributary creating a large fan in the mainstem.",
       toolUrl: "https://tributaryimpact.riverscapes.net/"
     },
     {
@@ -393,7 +393,7 @@ The following software tools and scripts were developed during CHaMP. While seve
     },
     {
       title: "CHaMP Workbench",
-      description: "Finalversion of the code that calculates topo, aux and topo+aux metrics.",
+      description: "Desktop software for housekeeping tasks such as viewing CHaMP metrics and running miscellaneous tasks.",
       toolUrl: "https://github.com/Riverscapes/riverscapes-tools/tree/master/packages/champ_metrics",
     },
     {
@@ -403,12 +403,12 @@ The following software tools and scripts were developed during CHaMP. While seve
     },
     {
       title: "PyGNAT",
-      description: "Geomorphic Network Attribute Tool",
+      description: "Geomorphic Network Attribute Tool.",
       toolUrl: "https://github.com/SouthForkResearch/pyGNAT"
     },
     {
       title: "Hydraulic Modelling",
-      description: "R Code to parameterize and orchestrate running the Delft3D model.",
+      description: "R Code to parameterize and orchestrate running the Delft3D hydraulic model.",
       toolUrl: "https://github.com/SouthForkResearch/Hydraulic-Modeling"
     },
     {
@@ -431,7 +431,7 @@ The following software tools and scripts were developed during CHaMP. While seve
     },
     {
       title: "NREI",
-      description: "Net Rate of Energy Intake",
+      description: "Net Rate of Energy Intake model developed by Eric Wall and Nick Bouwes.",
       toolUrl: "https://github.com/Riverscapes/NREI"
     }
   ]}
