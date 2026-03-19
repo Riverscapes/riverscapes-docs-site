@@ -45,8 +45,7 @@ By accessing or using these data, you acknowledge and agree that:
 
 ## Support
 
-Given that the CHaMP program is no longer active, there is no official suport for these data. However, the following consultants continue to operate in the Pacific Northwest and can be contracted to support you within inquires or work on the data.
-
+Given that the CHaMP program is no longer active, there is no official suport for these data. However, the following consultants continue to operate in the Pacific Northwest and can be contracted to support you with inquires or to work on the data.
 
 <LogoWrapper
   size="sm"
@@ -409,7 +408,7 @@ The following software tools and code were either used by CHaMP or developed by 
       toolUrl: "https://riverscapes.github.io/SolarStream/"
     },
     {
-      title: "Tributart Impact Tool",
+      title: "Tributary Impact Tool",
       description: "The Tributary Impact Tool which finds intersections in a stream network and calculates the percent chance of the tributary creating a large fan in the mainstem.",
       toolUrl: "https://tributaryimpact.riverscapes.net/"
     },
