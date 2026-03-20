@@ -4,7 +4,7 @@ description: Columbia Habitat Monitoring Program
 title_icon: /img/logos/CHaMP_Logo_128.png
 ---
 
-The Columbia Habitat Monitoring Program (CHaMP; BPA Project No. 2011- 006-00) was designed to collect information on tributary habitat attributes that can be used to predict the freshwater productivity of anadromous salmonids reliably. The Integrated Status and Effectiveness Monitoring Program (ISEMP; BPA Project No. 2009-f ) began development of the CHaMP pilot in 2010 and it was implemented in 2011. The CHaMP sampling design called for nine-years of data collection, in watersheds that represent a range of environmental conditions in the Columbia River Basin (CRB) to produce traditional and novel habitat metrics that can be “rolled-up”, that is, used to describe fish-habitat relationships relevant to three key management questions (KMQs) posed by BPA:  
+The Columbia Habitat Monitoring Program (CHaMP; BPA Project No. 2011- 006-00) was designed to collect information on tributary habitat attributes that can be used to predict the freshwater productivity of anadromous salmonids reliably. The Integrated Status and Effectiveness Monitoring Program (ISEMP; BPA Project No. 2009-f) began development of the CHaMP pilot in 2010 and it was implemented in 2011. The CHaMP sampling design called for nine-years of data collection, in watersheds that represent a range of environmental conditions in the Columbia River Basin (CRB) to produce traditional and novel habitat metrics that can be “rolled-up”, that is, used to describe fish-habitat relationships relevant to three key management questions (KMQs) posed by BPA:  
 
 <AdvertizingWrapper
   cardsize="sm"
@@ -45,7 +45,7 @@ By accessing or using these data, you acknowledge and agree that:
 
 ## Support
 
-Given that the CHaMP program is no longer active, there is no official suport for these data. However, the following consultants continue to operate in the Pacific Northwest and can be contracted to support you with inquires or to work on the data.
+Given that the CHaMP program is no longer active, there is no official support for these data. However, the following consultants continue to operate in the Pacific Northwest and can be contracted to support you within inquires or work on the data.
 
 <LogoWrapper
   size="sm"
@@ -66,7 +66,7 @@ Given that the CHaMP program is no longer active, there is no official suport fo
 
 ## Acknowledgements
 
-The work to collate and publish these CHaMP data to the Riverscapes Data Exchange was funded by NOAA and performed by Watershed Solutions and North Arrow Research.
+The work to collate and publish these CHaMP data to the Riverscapes Data Exchange was funded by NOAA and performed in 2026 by Watershed Solutions and North Arrow Research.
 
 <LogoWrapper
   size="sm"
@@ -161,7 +161,7 @@ CHaMP was performed by a collection of consultants and agency personnel from the
 
 ## How to Find CHaMP Data
 
-CHaMP data within the [Riverscapes Data Exchange](https://data.riverscapes.net) and can be found in several different ways. First, all official CHaMP data are owned by the data exchange [CHaMP Organization](https://data.riverscapes.net/o/c7d8c487-c377-42b0-a5b6-4c16db18fb41/). Clicking on this link provides quick access to all CHaMP datasets.
+CHaMP data within the [Riverscapes Data Exchange](https://data.riverscapes.net) and can be found in several different ways. First, all official CHaMP data are owned by the data exchange [CHaMP Organization](https://data.riverscapes.net/o/c7d8c487-c377-42b0-a5b6-4c16db18fb41/). This link provides quick access to all CHaMP datasets.
 
 Organizational Concept|Tag Format|Example|Notes
 ---|---|---|---
@@ -171,7 +171,7 @@ Site|`CHAMP_Site_XXXXXXXXXX`|[CHAMP_Site_YFI00001-000133](https://data.riverscap
 Field Season|`CHAMP_Year_XXXX`|[CHAMP_Year_2011](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2011)|
 Visit|`CHaMP_Visit_XXXX`|[CHAMP_Visit_5238](https://data.riverscapes.net/s?type=Project&tags=CHAMP_Visit_5238&view=map)|Zero padded to 4 digits
 
-Data for individual watersheds and field seasons can be found using the table below. Click on the column headers for all data associated with a particular field season. Click on row headers for all data associated with a particular watershed. Use the links inside the table for watershed and field season combinations. More focused versions of this table are available further down this page for specific types of data.
+Data for individual watersheds and field seasons can be found using the table below. Click on column headers for all data associated with a particular field season. Click on row headers for all data associated with a particular watershed. Use the links inside the table for watershed and field season combinations. More focused versions of this table are available further down this page for specific types of data.
 
 Watershed|[2011](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Year_2011)|[2012](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Year_2012)|[2013](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Year_2013)|[2014](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Year_2014)|[2015](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Year_2015)|[2016](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Year_2016)|[2017](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Year_2017)|[2018](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Year_2018)|[2019](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Year_2019)|[2020](https://data.riverscapes.net/s?type=Project&view=map&tags=CHAMP_Year_2020)
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -195,7 +195,7 @@ Arguably the primary focus of CHaMP was the production of metrics in support of 
 
 ### Topographic and Aux Data
 
-CHaMP collected many types of data, centered around both a high resolution topographic river survey and a series of non-spatial "auxilliary measurements". These "topo" and "aux" data have been combined into a single project for each survey and placed on the exchange.
+CHaMP collected many types of data, centered around both a high resolution topographic river survey and a series of non-spatial "auxiliary measurements". These "topo" and "aux" data have been combined into a single project for each survey and placed on the exchange.
 
 In the table below click on the row headings to discover all projects for a particular watershed. Click on the column headings for all projects of a certain year. The cells in the table link to the specific watersheds and years. These links will take you to the Data Exchange where you can you the project data in a web map or view the metadata.
 
@@ -270,7 +270,7 @@ Watershed|[2011](https://data.riverscapes.net/s?type=Project&projectTypeId=champ
 
 ### Stream Temperature Data
 
-CHaMP stream temperature measurements are available as a [single project for all watersheds, sites and years](https://data.riverscapes.net/s?type=Project&projectTypeId=champstreamtemp&view=map). Ther project contains both a SQLite and Microsoft Access copy of the data.
+CHaMP stream temperature measurements are available as a [single project for all watersheds, sites and years](https://data.riverscapes.net/s?type=Project&projectTypeId=champstreamtemp&view=map). The project contains both a SQLite and Microsoft Access copy of the data.
 
 Chris McNyset developed stream temperature predictions for portions of the Columbia River Basin. These data are available by prediction type:
 
@@ -306,7 +306,7 @@ There are [3 predicted electric conductivity](https://data.riverscapes.net/s?typ
 
 The Ecogeomorphology and Topographic Analysis laboratory (ETAL; now called USU Riverscapes Assessment Monitoring Lab - RAM) at Utah State University produced [11 Riparian Condition Assessment](https://data.riverscapes.net/s?type=Project&projectTypeId=rca&view=table) projects for various parts of the Columbia River Basin. The RCA model has continued to evolve and is now called The [River Condition Assessment Tool](https://tools.riverscapes.net/rcat/) (RCAT). In 2025, the [Riverscapes Consortium](https://riverscapes.net) has run RCAT for over 99% of the conterminous United States, the outputs of which are available in the Data Exchange as [over 14,000 RCAT projects](https://data.riverscapes.net/s?type=Project&tags=2025conus&projectTypeId=rcat&view=map).
 
-### Riparian Vegetation Depature (RVD)
+### Riparian Vegetation Departure (RVD)
 
 The ETAL also ran the Riparian Vegetation Departure for the same locations where they ran RCA. This produced [23 RVD projects](https://data.riverscapes.net/s?type=Project&projectTypeId=rvd&view=table). RVD has since been incorporated into RCAT and is available as part of the aforementioned 2025 CONUS effort.
 
@@ -322,7 +322,7 @@ Kevin E., Michael W. Ackerman, Richard A. Carmichael, Sarah Hoffman, and Chris B
 
 ### GRTS Master Sample
 
-CHaMP sites were selected from a master sample generated using the Environmental Protection Agency (EPA) [Generalized Randon Tessellation Stratified](https://archive.epa.gov/nheerl/arm/web/pdf/grts_ss.pdf) (GTRS) process. [Master samples are available in the Data Exchange](https://data.riverscapes.net/s?type=Project&projectTypeId=grts&view=map) for each of the US States in which CHaMP was performed.
+CHaMP sites were selected from a master sample generated using the Environmental Protection Agency (EPA) [Generalized Random Tessellation Stratified](https://archive.epa.gov/nheerl/arm/web/pdf/grts_ss.pdf) (GTRS) process. [Master samples are available in the Data Exchange](https://data.riverscapes.net/s?type=Project&projectTypeId=grts&view=map) for each of the US States in which CHaMP was performed.
 
 ## Documents
 
@@ -340,7 +340,7 @@ CHaMP sites were selected from a master sample generated using the Environmental
    - [TopCon](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/Topcon_2015_UserManual_FieldVersion_20150601_PocketSize.pdf)
 - [Topo Processing Workflow](https://s3.us-west-2.amazonaws.com/releases.northarrowresearch.com/CHaMPDocs/2014_CHaMP_Topo_Toolbar_Workflow_V3_Final.pdf)
 
-## Sofware and Code
+## Software and Code
 
 The following software tools and code were either used by CHaMP or developed by the program. While several have now been deprecated, some have continued to be developed and evolved into production grade tools.
 
@@ -386,7 +386,7 @@ The following software tools and code were either used by CHaMP or developed by 
   ]}
 />
 
-### Unsupported and Deprecated Software
+### Deprecated Software
 
 
 <ToolsWrapper
