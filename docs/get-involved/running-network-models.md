@@ -4,9 +4,9 @@ title: How to Run Network Models
 <!-- ![waterfall](https://tools.riverscapes.net/assets/images/waterfall-74b966570b344ad6af3a29ca5e690ecb.svg) -->
 
 <a href="https://tools.riverscapes.net/"><img
-  src="https://tools.riverscapes.net/assets/images/waterfall-74b966570b344ad6af3a29ca5e690ecb.svg"
+  src="https://tools.riverscapes.net/img/waterfall.svg"
   alt="waterfall"
-  style={{ float: "right", width: "400px", margin: "0 0 1em 1em" }}
+  style={{ float: "right", width: "300px", margin: "0 0 1em 1em" }}
 /></a>
 
 The [Riverscapes network models](https://tools.riverscapes.net) consist of ten or more geospatial models for analysing different aspects of riverscapes. The models can be chained together into a "waterfall" that starts by collecting together relevant datasets in the [Riverscapes Context](https://tools.riverscapes.net/rscontext/) model and culminates in the [Metric Engine](https://tools.riverscapes.net/rme/) (RME).
