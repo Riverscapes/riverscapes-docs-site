@@ -14,7 +14,7 @@ The goal was to commercialize Phlux by the end of the NASA-funded project in 202
 
 ## Is the Phlux App Still Available?
 
-Since the project ended, both the iOS and Android app stores have continued to evolve. Without additional funding, which was expected to come through commercialization, we have been unable to maintain Phlux and keep it available in those stores. As a result, Phlux as a mobile app is no longer available in either app store.
+Both the iOS and Android apps have been discontinued. Without additional funding, which was expected to come through commercialization, we have been unable to maintain Phlux and stay to date with the constantly evolving requirements to stay active in these stores. As a result, Phlux as a mobile app is no longer available in either app store.
 
 ## Phlux on the Web
 
