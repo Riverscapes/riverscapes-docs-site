@@ -24,3 +24,5 @@ Administrator|✅|✅|✅|✅|✅|✅||
 Owner|✅|✅|✅|✅|✅|✅|✅|
 
 These permissions not only apply to the Riverscapes Data Exchange web application, but they are also enforced when using the API via other means, such as from programmatic code (e.g. Python) or the command line interface ([rscli](/products/rscli)).
+
+Roles are controlled on the settings tab for each organization. Use the search box at the top of the Data Exchange to find a particular organization by name (be sure to select the _in organizations_ search option), or click on the organization link from various places through the web application. From the settings tab you can invite users to an organization or adjust their role within an organization.
