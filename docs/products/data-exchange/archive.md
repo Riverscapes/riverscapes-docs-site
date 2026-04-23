@@ -21,6 +21,8 @@ For most projects, all these files are stored in high performance, accessible st
 
 Two things happen when a project is archived: 1) The main project files are moved to deep storage. This reduces storage costs, and make these files temporarily inaccessible via the Data Exchange, and 2) Web map tiles and the downloadable ZIP file are removed. Project metadata always stays available, so the project can still be discovered in Data Exchange. But because the web mapping tiles and the ZIP are removed, archived projects cannot be viewed on web maps or downloaded.
 
+In order to archive a project, you must have "contributer" status or higher to the organization that owns a project.
+
 ![archive](/img/products/data-exchange/archived-projects.excalidraw.svg)
 
 ## Restoring Projects
