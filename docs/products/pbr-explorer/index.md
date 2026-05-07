@@ -1,13 +1,12 @@
 ---
 title: PBR Explorer
 title_icon: https://cdn.riverscapes.net/icons/products/pbr/pbr.svg
+description: A portal for discovering process based restoration initiatives around the World
 ---
-
-## What is PBR Explorer
 
 [PBR Explorer](https://pbr.riverscapes.net/) is an interactive web platform that **shares and promotes process-based restoration (PBR) projects**. Users can easily **upload** detailed project information, **acknowledge** collaborating partners, and **publicly showcase** their work to clientele, stakeholders, and broader restoration community. The Explorer **supports a diverse range of restoration actions** including riparian plantings, structural as-builts, beaver translocations, and more, while providing statistical summaries of completed work. 
 
-For a live demonstration of how to use the website, be sure to watch the video at the bottom of this page.
+For a live demonstration of how to use the website, be sure to watch the [video at the bottom of this page](#video-demonstration).
 
 ## How to Use the Menu Bar
 The `Menu Bar` is the primary tool for navigating the Explorer.
