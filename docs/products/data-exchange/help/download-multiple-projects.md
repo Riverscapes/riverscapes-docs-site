@@ -34,15 +34,16 @@ An incremental improvement on this approach is to store the GUIDs in a CSV file 
 
 ```python
 import csv
+import subprocess
 
 # Read project GUIDs from a CSV file
-with open(‘project_guids.csv’, mode=‘r’) as file:
+with open('project_guids.csv', mode='r') as file:
     reader = csv.reader(file)
     project_guids = [row[0] for row in reader]
 
 # Download files for each project
-for projectguid in projectguids:
-    rscli download —no-input —id projectguid ./projectguid
+for projectguid in project_guids:
+    subprocess.run(['rscli', 'download', '--no-input', '--id', projectguid, f'./{projectguid}'], check=True)
 ```
 
 ## Python Scripting
