@@ -1,55 +1,68 @@
 ---
 title: Downloading Multiple Projects
-description: How to download several Data Exchange projects at a time
+description: Learn how to download several Data Exchange projects simultaneously.
 ---
 
-A common need when using the [Data Exchange](https://data.riverscapes.net) is to be able to download multiple projects at a time. This might mean several projects of the same type ("I want all BRAT projects in Idaho") or it might mean gathering all the projects for a particular area ("Give me all the different themes of data for my project area").
+When using the [Data Exchange](https://data.riverscapes.net) platform, you might find yourself needing to download multiple projects at once. This could involve downloading several projects of the same type, like all BRAT projects in Idaho, or gathering all the projects for a specific area, such as different data themes for your project region.
 
-The are several approaches available, depending on the technology you have available and your comfort level scripting an automated solution.
+There are several approaches available, depending on your technology setup and comfort level with scripting an automated solution.
 
 ## Brute Force
 
-Small numbers of projects can be downloaded by hand from the Data Exchange website itself (click on the download arrow available next to every project), the [QViewer downloader feature](https://viewer.riverscapes.net/software-help/help-qgis/qgis-downloader) or using the [Riverscapes Command Line Interface (rscli)](/products/rscli).
+For small numbers of projects, you can download them manually from the Data Exchange website (click the download arrow next to each project), use the [QViewer downloader feature](https://viewer.riverscapes.net/software-help/help-qgis/qgis-downloader), or utilize the [Riverscapes Command Line Interface (rscli)](/products/rscli).
 
-Obviously, this is only practical for small numbers of projects, but it shouldn't be overlooked as a transparent approach that requires minimal technical skill.
+While this method is only practical for small numbers of projects, it’s worth considering as a straightforward approach that requires minimal technical expertise.
 
 ## Command Line
 
-The [Riverscapes Command Line Interface (rscli)](/products/rscli) is excellent for downloading data exchange projects. It has several advantages over other approaches; It downloads the project files directly, avoiding the need to unzip a download file, and it also allows for limiting which files are downloaded using filter expressions.
+The [Riverscapes Command Line Interface (rscli)](/products/rscli) is an excellent tool for downloading data exchange projects. It offers several advantages over other methods. First, it downloads project files directly, eliminating the need to unzip downloaded files. Second, it allows you to filter which files are downloaded using filter expressions.
 
-rscli  download commands can be concatenated together into a batch file (on Windows, or shell script on MacOS or Linux) to download multiple projects.
+You can combine rscli download commands into a batch file (on Windows) or a shell script (on MacOS or Linux) to download multiple projects efficiently.
 
-The following example demonstrates this approach for three projects. Note the use of the `--no-input` option. Running this script will open a seaparate web browser tab to authenticate for each project, but it will not pause and wait for user input each time. Also note how each project is downloaded to its own folder named with the project unique identifier (GUID). Expanding this approach to hundreds of projects will open a lot of browser tabs, but it works.
+The following example demonstrates this approach for three projects.  Note the use of the `—no-input` option.  Running this script opens a separate web browser tab for each project to authenticate, but it doesn’t pause for user input.  Each project is also downloaded to its own folder named with the project’s unique identifier (GUID).  While expanding this approach to hundreds of projects will open many browser tabs, it still works.
 
-See the section at the bottom of this page describing how to obtain these project GUID identifiers.
+See the section at the bottom of this page for instructions on obtaining project GUID identifiers.
 
 ```sh
-rscli download --no-input --id b313f426-87cd-4b78-886f-86a9ec8c02ca ./b313f426-87cd-4b78-886f-86a9ec8c02ca
-rscli download --no-input --id e56612d8-9332-42eb-9f93-6b8f05467462 ./e56612d8-9332-42eb-9f93-6b8f05467462
-rscli download --no-input --id 614ce6bf-5fd8-4b38-bdfd-37fcb63b7b9a ./614ce6bf-5fd8-4b38-bdfd-37fcb63b7b9a
+rscli download —no-input —id b313f426-87cd-4b78-886f-86a9ec8c02ca ./b313f426-87cd-4b78-886f-86a9ec8c02ca
+rscli download —no-input —id e56612d8-9332-42eb-9f93-6b8f05467462 ./e56612d8-9332-42eb-9f93-6b8f05467462
+rscli download —no-input —id 614ce6bf-5fd8-4b38-bdfd-37fcb63b7b9a ./614ce6bf-5fd8-4b38-bdfd-37fcb63b7b9a
 etc etc
 ```
 
-## Python Script
+An incremental improvement on this approach is to store the GUIDs in a CSV file and use Python to loop over each row and run the `rscli` command:
 
-The Riverscapes consortium has Python scripts that demonstrate how to loop over multiple projects and download the individual files. This obviously requires some knowledge of scripting, but much of the work involves configuring a Python environment as the core scripts are already available.
+```python
+import csv
 
-The following script loops over a set of project GUIDs listed in a CSV text file and downloads all the files for each project. See the section at the bottom of this page describing how to obtain these project GUID identifiers.
+# Read project GUIDs from a CSV file
+with open(‘project_guids.csv’, mode=‘r’) as file:
+    reader = csv.reader(file)
+    project_guids = [row[0] for row in reader]
 
-[Multiple Project Download By CSV Python Script](https://github.com/Riverscapes/data-exchange-scripts/blob/main/scripts/scrapers/download_project_files_by_csv.py)
+# Download files for each project
+for projectguid in projectguids:
+    rscli download —no-input —id projectguid ./projectguid
+```
 
-The best strategy for running this script involves forking the git repository and then using `uv` to create a Python venv to run the code in [Visual Studio Code](https://code.visualstudio.com/).
+## Python Scripting
+
+The Riverscapes consortium provides Python scripts that demonstrate how to loop over multiple projects and download all the individual files. While this requires some scripting knowledge, much of the work involves configuring a Python environment, as the core scripts are already available.
+
+[Multiple Project Download by CSV Python Script](https://github.com/Riverscapes/data-exchange-scripts/blob/main/scripts/scrapers/download_project_files_by_csv.py)
+
+To run this script effectively, fork the [data-exchange-scripts repository](https://github.com/Riverscapes/data-exchange-scripts) and use `uv` to create a Python virtual environment. Then, run the code in Visual Studio Code.
 
 ## Reports
 
-The [Riverscapes Reports](https://reports.riverscapes.net) platform lets you specify an AOI and download key metrics from the riverscapes network models that have been run for 99% of the conterminous United States (CONUS). You can draw the AOI, upload a polygon or pick from one of the existing boundary layers.
+The [Riverscapes Reports](https://reports.riverscapes.net) platform allows you to specify an AOI and download key metrics from the riverscapes network models run for 99% of the contiguous United States (CONUS). You can draw the AOI, upload a polygon, or select from existing boundary layers.
 
-The IGO scrape report provides riverscape centroid points together with a [rich suite of metrics](https://tools.riverscapes.net/rme/data#output-attributes) from the [Riverscapes Metric Engine (RME)](https://tools.riverscapes.net/rme/). 
+The [IGO scraper report](https://reports.riverscapes.net/report/igo-scraper) provides riverscape centroid points along with a rich suite of metrics from the [Riverscapes Metric Engine (RME)](https://tools.riverscapes.net/rme/).
 
-This approach of course presumes that the information your are interested in already exists in RME and that you want the only latest model run for each CONUS watershed.
+This approach assumes that the information you’re interested in is already available in RME and that you want the most recent model run for each CONUS watershed.
 
 ## Custom Merged Project
 
-The Riverscapes Consortium developers can run a custom project union to merge the geospatial data for multiple projects and package into a single project. This is only possible for individual riverscape project types (e.g. RS Context, VBET, RCAT) and is only really practical for less than 100 projects.
+The Riverscapes Consortium developers can create a custom project union to merge geospatial data from multiple projects into a single project. This is only feasible for individual riverscape project types (e.g., RS Context, VBET, RCAT) and has a practical limit of around 100 projects or less.
 
-Contact support@riverscapes.freshdesk.com if this is something that you are interested in.
+If you’re interested in this option, contact support@riverscapes.freshdesk.com.
