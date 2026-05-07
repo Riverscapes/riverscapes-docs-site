@@ -66,3 +66,17 @@ This approach assumes that the information you’re interested in is already ava
 The Riverscapes Consortium developers can create a custom project union to merge geospatial data from multiple projects into a single project. This is only feasible for individual riverscape project types (e.g., RS Context, VBET, RCAT) and has a practical limit of around 100 projects or less.
 
 If you’re interested in this option, contact support@riverscapes.freshdesk.com.
+
+## How to Obtain a List of Projects
+
+Several of the approaches above rely on having a list of projects to download. Use the following steps to obtain a list of project identifiers (GUIDs) for the projects that you wish to download:
+
+1. Log into the [Riverscapes Data Exchange](https://data.riverscapes.net)
+2. Click the "Explore our Project Map" in the top centre of the dashboard, or click the map icon top right.
+3. On the project map, click the "Modify Search" button top right.
+4. Enter your search criteria and then click "Search".
+5. On the top left of the search results click the icon with three horizontal lines to view the results as a "Table".
+6. On the top right click the Copy icon and choose "Copy Project IDs".
+7. Open a text editor and paste the project IDs, saving them to a text file.
+
+![search](/img/products/data-exchange/multi-download.svg)
