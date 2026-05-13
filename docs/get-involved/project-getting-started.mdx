@@ -47,7 +47,9 @@ If you are creating a new project type, you will need to prepare your data by or
 
 Fundamental to each project is the `project.rs.xml` file. This plain text XML file lists the data within the project located in the root of the project folder. It is used by the Riverscapes Data Exchange to understand the contents of the project and to display the project to users.
 
-It's easiest to copy an existing `project.rs.xml` file and then modify it to suit your project type. You can start from scratch and use Intellisense in a powerful text editor like [Visual Studio Code](https://code.visualstudio.com) to lear and understand the structure of the XML file. Alternatively, if you have code that generates your projects, you can use the [rsxml](http://localhost:8000/dev-tools/rsxml) PIP module to generate the XML file, which ensures that the output is valid.
+It's easiest to copy an existing `project.rs.xml` file and then modify it to suit your project type. You can start from scratch and use Intellisense in a powerful text editor like [Visual Studio Code](https://code.visualstudio.com) to learn and understand the structure of the XML file. Alternatively, if you have code that generates your projects, you can use the [rsxml Python package](/products/rsxml) to generate the XML file, which ensures that the output is valid.
+
+For a complete reference of the XML structure, see the [project.rs.xml V2 Reference](/get-involved/documentation/Riverscapes_Projects/Project/project-xml-v2-reference).
 
 :::warning
 If you are starting from an existing `project.rs.xml` file, be sure to **REMOVE** the warehouse XML tag near the top of the file. New projects should not possess a warehouse tag until they are uploaded to the Riverscapes Data Exchange.
@@ -72,7 +74,7 @@ Digitize a crude polygon around your data and then export it to GeoJSON and stor
 
 Business logic is used by [Riverscapes Viewers](https://viewer.riverscapes.net) to determine how to present the project contents to users. Each project type has its own business logic file.
 
-Business logic files are stored in the [RiverscapesXML repository](https://spatialreference.org/ref/epsg/4326/). If you are developing a new project type then follow the [instructions to develop new business logic](https://viewer.riverscapes.net/technical-reference/business-logic).
+Business logic files are stored in the [RiverscapesXML repository](https://github.com/Riverscapes/RiverscapesXML). If you are developing a new project type then follow the [instructions to develop new business logic](https://viewer.riverscapes.net/technical-reference/business-logic).
 
 :::info
   A tip for developing business logic files is to start by saving the new business logic file directly inside your

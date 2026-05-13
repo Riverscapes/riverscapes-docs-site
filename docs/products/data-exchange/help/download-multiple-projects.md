@@ -11,7 +11,7 @@ There are several approaches available, depending on your technology setup and c
 
 For small numbers of projects, you can download them manually from the Data Exchange website (click the download arrow next to each project), use the [QViewer downloader feature](https://viewer.riverscapes.net/software-help/help-qgis/qgis-downloader), or utilize the [Riverscapes Command Line Interface (rscli)](/products/rscli).
 
-While this method is only practical for small numbers of projects, it’s worth considering as a straightforward approach that requires minimal technical expertise.
+While this method is only practical for small numbers of projects, it's worth considering as a straightforward approach that requires minimal technical expertise.
 
 ## Command Line
 
@@ -19,14 +19,14 @@ The [Riverscapes Command Line Interface (rscli)](/products/rscli) is an excellen
 
 You can combine rscli download commands into a batch file (on Windows) or a shell script (on MacOS or Linux) to download multiple projects efficiently.
 
-The following example demonstrates this approach for three projects.  Note the use of the `—no-input` option.  Running this script opens a separate web browser tab for each project to authenticate, but it doesn’t pause for user input.  Each project is also downloaded to its own folder named with the project’s unique identifier (GUID).  While expanding this approach to hundreds of projects will open many browser tabs, it still works.
+The following example demonstrates this approach for three projects.  Note the use of the `--no-input` option.  Running this script opens a separate web browser tab for each project to authenticate, but it doesn't pause for user input.  Each project is also downloaded to its own folder named with the project's unique identifier (GUID).  While expanding this approach to hundreds of projects will open many browser tabs, it still works.
 
 See the section at the bottom of this page for instructions on obtaining project GUID identifiers.
 
 ```sh
-rscli download —no-input —id b313f426-87cd-4b78-886f-86a9ec8c02ca ./b313f426-87cd-4b78-886f-86a9ec8c02ca
-rscli download —no-input —id e56612d8-9332-42eb-9f93-6b8f05467462 ./e56612d8-9332-42eb-9f93-6b8f05467462
-rscli download —no-input —id 614ce6bf-5fd8-4b38-bdfd-37fcb63b7b9a ./614ce6bf-5fd8-4b38-bdfd-37fcb63b7b9a
+rscli download --no-input --id b313f426-87cd-4b78-886f-86a9ec8c02ca ./b313f426-87cd-4b78-886f-86a9ec8c02ca
+rscli download --no-input --id e56612d8-9332-42eb-9f93-6b8f05467462 ./e56612d8-9332-42eb-9f93-6b8f05467462
+rscli download --no-input --id 614ce6bf-5fd8-4b38-bdfd-37fcb63b7b9a ./614ce6bf-5fd8-4b38-bdfd-37fcb63b7b9a
 etc etc
 ```
 
@@ -60,13 +60,13 @@ The [Riverscapes Reports](https://reports.riverscapes.net) platform allows you t
 
 The [IGO scraper report](https://reports.riverscapes.net/report/igo-scraper) provides riverscape centroid points along with a rich suite of metrics from the [Riverscapes Metric Engine (RME)](https://tools.riverscapes.net/rme/).
 
-This approach assumes that the information you’re interested in is already available in RME and that you want the most recent model run for each CONUS watershed.
+This approach assumes that the information you're interested in is already available in RME and that you want the most recent model run for each CONUS watershed.
 
 ## Custom Merged Project
 
 The Riverscapes Consortium developers can create a custom project union to merge geospatial data from multiple projects into a single project. This is only feasible for individual riverscape project types (e.g., RS Context, VBET, RCAT) and has a practical limit of around 100 projects or less.
 
-If you’re interested in this option, contact support@riverscapes.freshdesk.com.
+If you're interested in this option, contact support@riverscapes.freshdesk.com.
 
 ## How to Obtain a List of Projects
 

@@ -1,0 +1,139 @@
+---
+title: Writing Content
+---
+
+:::info[Docusaurus site]
+Riverscapes documentation sites use [Docusaurus](https://docusaurus.io/) with MDX. This page summarises key conventions for writing content. For a comprehensive reference to components, front matter options and site configuration, see the [Using Docusaurus](../using-docusaurus) guide.
+:::
+
+Riverscapes documentation pages are written in [Markdown](https://www.markdownguide.org/) with the `.mdx` extension, which allows you to embed React components alongside standard Markdown content.
+
+## Front Matter
+
+Every page should have front matter at the very top of the file:
+
+```md
+---
+title: My Page Title
+description: A brief description used in search results and meta tags
+sidebar_position: 1
+---
+```
+
+- `title` is **required** and controls how the page appears in site navigation and the browser tab.
+- `description` is optional but recommended for search engine optimisation.
+- `sidebar_position` controls the ordering of pages within a section (lower numbers appear first).
+
+## Headings
+
+Use heading levels consistently. The page `title` from front matter renders as the H1, so start your content headings at H2 (`##`):
+
+```md
+## Section Heading
+
+### Subsection Heading
+```
+
+## Links
+
+Use relative links for internal pages wherever possible:
+
+```md
+[Link text](../other-page)
+[Link text](/products/data-exchange)
+```
+
+Use full URLs for external links:
+
+```md
+[Data Exchange](https://data.riverscapes.net)
+```
+
+## Images
+
+Store images in `static/img/` and reference them with an absolute path:
+
+```md
+![Alt text](/img/products/my-screenshot.png)
+```
+
+Use descriptive alt text to support accessibility and screen readers.
+
+## YouTube Videos
+
+Use the `YouTubeEmbed` component — do **not** use raw `<iframe>` tags:
+
+```md
+<YouTubeEmbed videoId="mfyhjVfECf4" />
+```
+
+Find the video ID at the end of a YouTube URL: `https://www.youtube.com/watch?v=mfyhjVfECf4` → ID is `mfyhjVfECf4`.
+
+## Callouts (Admonitions)
+
+Use Docusaurus admonitions to highlight important information:
+
+```md
+:::tip
+A helpful tip for users.
+:::
+
+:::warning
+Something users should be cautious about.
+:::
+
+:::info
+Supplementary information.
+:::
+
+:::note
+A neutral note or aside.
+:::
+```
+
+## Tool Cards Grid
+
+Use the `ToolsWrapper` component to display a grid of cards linking to products or resources. See [Using Docusaurus](../using-docusaurus#toolswrapper-component) for full options.
+
+```tsx
+<ToolsWrapper
+  cardsize="md"
+  cards={[
+    {
+      title: "Data Exchange",
+      description: "Discover and share riverscapes data.",
+      toolUrl: "https://data.riverscapes.net",
+    }
+  ]}
+/>
+```
+
+## Code Blocks
+
+Wrap code in triple backticks with an optional language identifier for syntax highlighting:
+
+````md
+```python
+import rsxml
+```
+
+```sh
+rscli download --id <project_guid> ./output
+```
+````
+
+## Tables
+
+Standard Markdown table syntax works well:
+
+```md
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Value A  | Value B  | Value C  |
+```
+
+## Further Reading
+
+- [Using Docusaurus](../using-docusaurus) — Components, site configuration, building new sites
+- [Docusaurus official docs](https://docusaurus.io/docs) — Full reference documentation
+- [Markdown Guide](https://www.markdownguide.org/) — General Markdown reference

@@ -1,7 +1,8 @@
 ---
 title: How to Run Network Models
 ---
-<!-- ![waterfall](https://tools.riverscapes.net/assets/images/waterfall-74b966570b344ad6af3a29ca5e690ecb.svg) -->
+{/* ![waterfall](https://tools.riverscapes.net/assets/images/waterfall-74b966570b344ad6af3a29ca5e690ecb.svg) */}
+
 
 <a href="https://tools.riverscapes.net/"><img
   src="https://tools.riverscapes.net/img/waterfall.svg"
@@ -21,7 +22,7 @@ This page describes the various options and provides a brief overview of the tra
 | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Local Install                                                                        | Clone the [model code](https://github.com/Riverscapes/riverscapes-tools) to your own computer and install the [necessary Python dependencies](https://github.com/Riverscapes/riverscapes-tools/blob/master/pyproject.toml). | Maximum control. Good when the data are too large for the other strategies. Good when you need to make changes to the code.                                                                                  | More complex configuration. Running the correct version of python and provisioning a compatible environment can be challenging, especially with IT-restricted machines.                                                   |
 | [VSCode Dev containers](https://code.visualstudio.com/docs/devcontainers/containers) | Clone the model code to your local machine and run a [docker](https://www.docker.com/) environment locally.                                                                                                                                            | Sidesteps some of the configuration problems associated with Python environment configuration on an individual machine. Will run in Linux mode, even on Windows machines.                                    | Requires Docker to be installed locally. Initial build can be slow, especially on older hardware. Some graphical or OS-level features may not be available                                                      |
-| [GitHub Codespaces](https://github.com/features/codespaces)                          | GitHub's virtual computing environment.                                                                                                                                                                                     | Consistent environment for all contributors. Easy onboarding—just open in VS Code and build. Isolated from host machine, avoiding dependency conflicts. Supports custom tooling and extensions. | There are costs associated with Codespaces. Processor and storage limitations. Codespaces are ephemeral and are automatically cleaned up if they are not used. Basic linux and git command-line knowledge is recommended. |
+| [GitHub Codespaces](https://github.com/features/codespaces)                          | GitHub's virtual computing environment.                                                                                                                                                                                     | Consistent environment for all contributors. Easy onboarding-just open in VS Code and build. Isolated from host machine, avoiding dependency conflicts. Supports custom tooling and extensions. | There are costs associated with Codespaces. Processor and storage limitations. Codespaces are ephemeral and are automatically cleaned up if they are not used. Basic linux and git command-line knowledge is recommended. |
 | [Cybercastor](https://docs.riverscapes.net/products/cyber-castor)                    | The Riverscapes Consortium's own cloud computing platform.                                                                                                                                                                  | Designed specifically for this purpose. Tight integration with the [Riverscapes Data Exchange](https://data.riverscapes.net). Good for large numbers of jobs running simultaneously.                         | There are costs associated with Cybercastor.                                                                                                                                                                              |
 
 
@@ -29,7 +30,7 @@ This page describes the various options and provides a brief overview of the tra
 
 Installing Python and running the network models on your local computer is likely the most difficult of the three options. The network models [depend on several Python packages](https://github.com/Riverscapes/riverscapes-tools/blob/master/pyproject.toml), some of which involve nuanced install steps that vary based on your Python environment and operating system. Several dependencies include binary files that cannot be installed with `uv` or `pip` and require [wheel files](https://pythonwheels.com/) specific to your OS.
 
-Riverscapes Consortium developers almost never choose to install the models locally. If we do, it’s typically on macOS or Linux. Configuring Windows computers with the dependencies has proven inconsistent, unreliable, and time-consuming.
+Riverscapes Consortium developers almost never choose to install the models locally. If we do, it's typically on macOS or Linux. Configuring Windows computers with the dependencies has proven inconsistent, unreliable, and time-consuming.
 
 ### Step-by-Step Instructions
 
@@ -45,7 +46,7 @@ Riverscapes Consortium developers almost never choose to install the models loca
      pip install uv
      ```
 
-4. **Install Python Dependencies**
+3. **Install Python Dependencies**
    - Use `uv` or `pip` to install dependencies from `pyproject.toml`:
      ```
      uv sync
@@ -65,24 +66,24 @@ Riverscapes Consortium developers almost never choose to install the models loca
 
 ## VS Code Dev Container
 
-Dev Containers use Docker to create a reproducible development environment inside VS Code. The [Dockerfile](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html) defines all dependencies, tools, and settings, so every developer gets the same setup regardless of their host OS.
+Dev Containers use Docker to create a reproducible development environment inside VS Code. The [Dockerfile](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html) defines all dependencies, tools, and settings, so every developer gets the same setup regardless of their host OS.
 
 ### Prerequisites
 
-- Install [Docker](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html)
-- Install [Visual Studio Code](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html)
-- Install the [Dev Containers extension](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html)
+- Install [Docker](https://www.docker.com/get-started/)
+- Install [Visual Studio Code](https://code.visualstudio.com/)
+- Install the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
 ### Steps
 
 1. **Open the Project in VS Code**
     - Launch VS Code.
-    - Open the `riverscapes-tools` folder.
+    - Open the `riverscapes-tools` folder.
 2. **Reopen in Container**
-    - Press `F1` (or `Cmd+Shift+P`) to open the Command Palette.
-    - Search for `Dev Containers: Reopen in Container` and select it.
+    - Press `F1` (or `Cmd+Shift+P`) to open the Command Palette.
+    - Search for `Dev Containers: Reopen in Container` and select it.
 3. **Wait for Build**
-    - VS Code will build the container using [Dockerfile](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html).
+    - VS Code will build the container using the project's `Dockerfile`.
     - The environment will be set up automatically.
 4. **Start Developing**
     - Once the container is ready, you can use the integrated terminal and editor as usual.
@@ -90,15 +91,15 @@ Dev Containers use Docker to create a reproducible development environment insid
 
 ## GitHub Codespaces
 
-[GitHub Codespaces](https://github.com/features/codespaces) are virtual computers on which you can run the  network models. Pre-configured Codespaces with all the necessary Python dependencies already exist, making it easy to launch a new virtual machine to run any of the [network models](https://tools.riverscapes.net). 
+[GitHub Codespaces](https://github.com/features/codespaces) are virtual computers on which you can run the  network models. Pre-configured Codespaces with all the necessary Python dependencies already exist, making it easy to launch a new virtual machine to run any of the [network models](https://tools.riverscapes.net).
 
 You pay for the Codespaces through your own GitHub account. See the pricing [here](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces). You are charged for the time that the Codespace is active, as well as the size of the machine that you choose (memory, CPU, disk space etc).
 
 The integration between Codespaces and [Visual Studio Code](https://code.visualstudio.com/) is extremely convenient. If you have Visual Studio Code installed on your local computer (highly recommended) then it connects directly to the Codespace running in the cloud on GitHub. The experience looks and feels like you are developing locally, but the code iteself is running in the cloud. (If you don't have Visual Studio Code then connecting to a Codespace means using a browser-based version of Visual Studio Code, which is surprisingly good experience, but not quite as convenient as using a local version.)
 
 Here are the steps for running Riverscapes network models on Codespaces:
+{/* , followed by a video demonstrating the process. */}
 
-<!-- , followed by a video demonstrating the process. -->
 
 1. Install Visual Studio Code.
 2. Visit the [tools.riverscapes.net](https://tools.riverscapes.net) GitHub repository and fork it into your own GitHub account.
@@ -116,7 +117,7 @@ Pick which network model that you want to run and open the corresponding workspa
 
 You should now be ready to run Riverscapes network models. That said, typically you will want to provide input data for the model and we recommend the following:
 
-1. Open a terminal in Visual Studio Code. 
+1. Open a terminal in Visual Studio Code.
 2. Create a folder called `/Workspaces/data`
 
 Place input data in this folder, organized however you want, and then edit the `launch.json` in the network model that you want to run (here's the link to the [BRAT launch.json](https://github.com/Riverscapes/riverscapes-tools/blob/master/packages/brat/.vscode/launch.json)) and point each input dataset to your corresponding data in the `/Workspaces/data` folder.

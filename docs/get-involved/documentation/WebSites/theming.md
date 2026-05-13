@@ -98,9 +98,10 @@ headTags: [
 ],
 ```
 
-<!-- TODO ![favicon](img/favicon_demo.png) -->
+{/* TODO: ![favicon](img/favicon_demo.png) */}
 
-<!-- Favicons used to be simple. Things have gotten more complicated, what with all the various devices and resolutions on which people could be viewing your site. Here's how you generate your own: -->
+{/* Favicons used to be simple. Things have gotten more complicated, with all the various devices and resolutions. Here's how you generate your own: */}
 
-<!-- TODO 1. Find a nice sized copy of your logo that is square. A high quality image is most important, but also try to avoid images greater than 500 pixels across to avoid image distortion.
-1. Go to a service like <http://www.favicon-generator.org> and upload your icon. It will generate lots images in various sizes. Use all 27 of these files in the folder to overwrite the files in `assets/images/favicons`. Make a comit and push to master.  -->
+{/*
+TODO: 1. Find a nice sized copy of your logo that is square. A high quality image is most important, but also try to avoid images greater than 500 pixels across to avoid image distortion.
+*/}

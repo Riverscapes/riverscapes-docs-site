@@ -33,7 +33,7 @@ page-priority: low,medium,high
 ---
 ```
 - `title: ` is the only required frontmatter field (controls how page shows up in site navigation)
-- `title_icon` is an optoinal field that places an icon to the left of the page title at top of page (and below breadcrumb navigation). Note this is different than the site level icon in the navigation bar controlled in the [`docusauras.config.ts` file](#step-6-update-site-configuration)
+- `title_icon` is an optional field that places an icon to the left of the page title at top of page (and below breadcrumb navigation). Note this is different than the site level icon in the navigation bar controlled in the [`docusauras.config.ts` file](#step-6-update-site-configuration)
 - Pages within each section are ordered by the `sidebar_position` value. Pages without a value are then ordered alphabetically.
 - `page-status` and `page-priority` tags are proposed for internal use and have no impact on how the page is displayed.
 
@@ -405,7 +405,28 @@ From the bottom of any page is a link to "Edit this page" which takes you to the
 
 ### Forking, Branches, pull requests and approvals
 
-For larger changes, or if you don't have permission to the live branch or repository you may need to Fork the repository or create a branch then submit a pull request to have your changes integrated. <!-- TODO WRITE MORE INSTRUCTION -->
+For larger changes, or if you don't have permission to the live branch or repository you may need to Fork the repository or create a branch then submit a pull request to have your changes integrated.
+
+#### Forking (external contributors)
+
+If you do not have write access to the repository:
+
+1. Click **Fork** on the GitHub repository page to create a copy under your own account.
+2. Clone your fork locally: `git clone https://github.com/YOUR_USERNAME/REPO_NAME.git`
+3. Create a descriptive branch: `git checkout -b fix/my-description`
+4. Make your changes, then commit: `git add . && git commit -m "Brief description of change"`
+5. Push to your fork: `git push origin fix/my-description`
+6. Open a **Pull Request** from your fork's branch to the upstream `main` branch on GitHub.
+7. Wait for a reviewer to approve and merge your PR. The site will rebuild automatically on merge.
+
+#### Branching (team members with write access)
+
+If you have write access to the repository, use a branch instead of a fork:
+
+1. Create a branch: `git checkout -b fix/my-description`
+2. Make changes, commit, and push the branch.
+3. Open a Pull Request on GitHub targeting `main`.
+4. Request a review if needed, then merge once approved.
 
 ### Build and preview documentation in a development environment
 

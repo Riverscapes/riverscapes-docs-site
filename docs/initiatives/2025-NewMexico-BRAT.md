@@ -7,8 +7,8 @@ Utah State University project index: A63320
 
 ## Overview
 [Rio Grande Return](https://riograndereturn.org/) funded an effort to run the Beaver Restoration Assessment Tool ([BRAT](https://tools.riverscapes.net/brat))
-for the entire state of New Mexico. This effort complemented another itiative funded by [Defenders of Wildlife](https://defenders.org) to perform a virtual beaver
-dam census across the state (USU project index A60136). These organizations are both Endorsing Organizations for the [New Mexico Beaver Project](htts://nmbeaverproject.org), a group of
+for the entire state of New Mexico. This effort complemented another initiative funded by [Defenders of Wildlife](https://defenders.org) to perform a virtual beaver
+dam census across the state (USU project index A60136). These organizations are both Endorsing Organizations for the [New Mexico Beaver Project](https://nmbeaverproject.org), a group of
 organizations focused on restoration of beavers to New Mexico waterways.
 
 TODO: NM statewide BRAT figure here

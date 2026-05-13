@@ -1,0 +1,278 @@
+---
+title: Python API Guide
+description: Query and download data from the Riverscapes Data Exchange using Python
+sidebar_position: 2
+---
+
+The Riverscapes Data Exchange exposes a [GraphQL API](/products/data-exchange/advanced/data-exchange-api) that can be queried from any language. For Python users, the Riverscapes Consortium provides a reference client library called **pydex** in the [data-exchange-scripts](https://github.com/Riverscapes/data-exchange-scripts) repository. It handles authentication, pagination, and file downloads, so you can focus on your analysis.
+
+:::tip When to use the Python API vs rscli
+Use [rscli](/products/rscli) for downloading a handful of projects interactively. Use the Python API when you need to search across hundreds or thousands of projects, download files selectively, or integrate with a larger data pipeline.
+:::
+
+## Setup
+
+### Install pydex
+
+`pydex` is not published to PyPI. Install it directly from GitHub:
+
+```sh
+pip install git+https://github.com/Riverscapes/data-exchange-scripts.git
+```
+
+Or add it to a `pyproject.toml` using `uv`:
+
+```toml
+[tool.uv.sources]
+pydex = { git = "https://github.com/Riverscapes/data-exchange-scripts.git", branch = "main" }
+```
+
+Then add `pydex` to your dependencies and run `uv sync`.
+
+## Authentication
+
+### Interactive (browser-based)
+
+The default authentication opens a browser window. This is the simplest approach for running scripts locally:
+
+```python
+from pydex.classes.RiverscapesAPI import RiverscapesAPI
+
+with RiverscapesAPI(stage='production') as api:
+    # A browser window will open to log in
+    # The token is automatically refreshed in the background
+    print("Authenticated successfully")
+```
+
+Always use the `with` statement. It handles token refresh and cleans up background threads when done.
+
+
+Set `RS_CLIENT_ID` and `RS_CLIENT_SECRET` as environment variables. Contact [support@riverscapes.freshdesk.com](mailto:support@riverscapes.freshdesk.com) to obtain machine credentials for your organization.
+
+### Staging environment
+
+To work against the staging environment instead of production:
+
+```python
+with RiverscapesAPI(stage='staging') as api:
+    ...
+```
+
+## Searching for Projects
+
+### Basic search
+
+```python
+from pydex.classes.RiverscapesAPI import RiverscapesAPI
+from pydex.classes.riverscapes_helpers import RiverscapesSearchParams
+
+with RiverscapesAPI(stage='production') as api:
+    params = RiverscapesSearchParams({
+        'projectTypeId': 'vbet',       # project type machine code
+        'tags': ['2025CONUS'],         # all tags must match (AND)
+        'excludeArchived': True,       # default; set False to include archived projects
+    })
+
+    for project, stats, total, progress_bar in api.search(params, progress_bar=True):
+        print(f"{project.id}  {project.name}  HUC: {project.huc}")
+```
+
+`api.search()` is a generator — results are streamed one at a time. It automatically handles ElasticSearch's 10,000-result pagination limit by splitting requests into date windows.
+
+### Search parameters
+
+```python
+params = RiverscapesSearchParams({
+    'projectTypeId': 'rs_metric_engine',    # project type ID
+    'tags': ['2025CONUS', 'BLM'],           # AND — all tags must be present
+    'meta': {                               # AND — all key/value pairs must match
+        'Runner': 'Cybercastor',
+        'HUC': '1406',                      # prefix match supported
+    },
+    'createdOn': {
+        'from': '2025-01-01',
+        'to':   '2025-12-31',
+    },
+    'updatedOn': {'from': '2025-06-01'},
+    'excludeArchived': True,
+    'bbox': [-120.0, 37.0, -114.0, 42.0],  # [minLng, minLat, maxLng, maxLat]
+    'ownedBy': {
+        'id':   'a52b8094-7a1d-4171-955c-ad30ae935296',
+        'type': 'ORGANIZATION',             # or 'USER'
+    },
+})
+```
+
+### Quick count
+
+To count matching projects without downloading anything:
+
+```python
+total, stats = api.search_count(params)
+print(f"Found {total} projects")
+```
+
+### Parallel processing
+
+For CPU-bound processing of many projects, use the async variant which runs your callback in a thread pool:
+
+```python
+def process_project(project, stats, total, progress_bar):
+    # This runs in a thread — keep it thread-safe
+    print(f"Processing {project.id}")
+
+api.process_search_results_async(
+    callback=process_project,
+    search_params=params,
+    max_workers=4,
+    progress_bar=True,
+)
+```
+
+## Working with Project Objects
+
+Each result yields a `RiverscapesProject` object:
+
+```python
+project.id              # Data Exchange GUID
+project.name            # project name
+project.project_type    # e.g. 'vbet', 'brat', 'rs_metric_engine'
+project.tags            # list of tag strings
+project.huc             # HUC code extracted from metadata (or None)
+project.model_version   # semver.VersionInfo object (or None)
+project.archived        # bool
+project.visibility      # 'PUBLIC', 'PRIVATE', or 'SECRET'
+project.project_meta    # dict of metadata key→value from project.rs.xml
+```
+
+Accessing metadata values:
+
+```python
+# Case-sensitive
+watershed = project.project_meta.get("Watershed")
+
+# Case-insensitive (strips spaces/dashes/underscores from keys)
+huc = project.project_meta_lwr.get("huc")
+version = project.project_meta_lwr.get("modelversion")
+```
+
+Comparing model versions:
+
+```python
+import semver
+
+if project.model_version and project.model_version >= semver.VersionInfo.parse('4.0.0'):
+    print(f"New model: {project.id}")
+```
+
+## Downloading Files
+
+### Download an entire project
+
+```python
+api.download_files(
+    project_id=project.id,
+    download_dir='/local/data/my_project',
+    force=False,   # skip files that haven't changed (ETag-based)
+)
+```
+
+### Download only matching files
+
+Use a list of regex patterns to download only the files you need:
+
+```python
+# Download only GeoPackages
+api.download_files(
+    project_id=project.id,
+    download_dir='/local/data',
+    re_filter=[r'.*\.gpkg$'],
+)
+
+# Download a specific named file
+api.download_files(
+    project_id=project.id,
+    download_dir='/local/data',
+    re_filter=[r'.*riverscapes_metrics\.gpkg'],
+)
+```
+
+The `project.rs.xml` manifest is always downloaded regardless of the filter. Files that already exist locally and match the server ETag are skipped automatically.
+
+### Get a file listing without downloading
+
+```python
+files = api.get_project_files(project.id)
+for f in files:
+    print(f['localPath'], f['size'])
+```
+
+## Complete Example — Batch Download
+
+The following script downloads specific files from all VBET projects for a given HUC4:
+
+```python
+import os
+from pydex.classes.RiverscapesAPI import RiverscapesAPI
+from pydex.classes.riverscapes_helpers import RiverscapesSearchParams
+
+DOWNLOAD_DIR = "/data/vbet_projects"
+HUC4_PREFIX = "1706"
+
+os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+
+with RiverscapesAPI(stage='production') as api:
+    params = RiverscapesSearchParams({
+        'projectTypeId': 'vbet',
+        'meta': {'HUC': HUC4_PREFIX},
+        'excludeArchived': True,
+    })
+
+    total, _ = api.search_count(params)
+    print(f"Downloading files from {total} VBET projects for HUC4 {HUC4_PREFIX}")
+
+    for project, _, total, progress_bar in api.search(params, progress_bar=True):
+        if not project.huc:
+            continue
+
+        project_dir = os.path.join(DOWNLOAD_DIR, project.huc)
+        os.makedirs(project_dir, exist_ok=True)
+
+        api.download_files(
+            project_id=project.id,
+            download_dir=project_dir,
+            re_filter=[r'.*vbet\.gpkg$'],  # only the main output GeoPackage
+        )
+
+print("Done")
+```
+
+## Handling Multiple Versions
+
+The Data Exchange may contain multiple versions of the same project type for a given watershed. To always get the most recent version, compare `model_version`:
+
+```python
+import semver
+
+# Group projects by HUC
+by_huc = {}
+for project, _, _, _ in api.search(params):
+    if not project.huc or not project.model_version:
+        continue
+    huc = project.huc
+    if huc not in by_huc:
+        by_huc[huc] = project
+    elif project.model_version > by_huc[huc].model_version:
+        by_huc[huc] = project  # keep only the highest version
+
+# Now by_huc contains one project per HUC (the latest version)
+for huc, project in by_huc.items():
+    print(f"{huc}: {project.id} v{project.model_version}")
+```
+
+## Further Reading
+
+- [Data Exchange API reference](/products/data-exchange/advanced/data-exchange-api) — full GraphQL API documentation
+- [rscli](/products/rscli) — command-line interface (simpler, no coding required)
+- [Downloading Multiple Projects](/products/data-exchange/help/download-multiple-projects) — all approaches compared
+- [data-exchange-scripts repository](https://github.com/Riverscapes/data-exchange-scripts) — source code and example scripts

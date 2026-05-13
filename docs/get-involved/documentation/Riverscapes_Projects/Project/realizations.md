@@ -1,8 +1,8 @@
 ---
 title: Realizations
-weight: 4
+sidebar_position: 5
 ---
-Inside the realzations tag you will find a custom tag based on what kind of project this is. These contents of these custom tags have the same structure at the base level however they can be customized inside their Inputs and Analysis tags.
+Inside the **realizations** tag you will find a custom tag based on what kind of project this is. These contents of these custom tags have the same structure at the base level however they can be customized inside their Inputs and Analysis tags.
 
 ***NB: Documenting all possible realizations here would be problematic because they tend to change fairly often. You can use Pycharm's autocomplete to hint at this structure, finding a simimlar XML file to use as a template, or by reading the XSD directly.***
 
@@ -38,10 +38,9 @@ Inside the realzations tag you will find a custom tag based on what kind of proj
 
 #### Elements:
 
-<!-- TODO
-* **Name**: A good name for this realization. 
+* **Name**: A good name for this realization.
 * **Parameters**: Key-Value pairs for any parameters that were used to run this tool and create this realization. (e.g. `<Param Name="cutoff_threshold">0.341</Param>`)
-* **Inputs**: The structure inside inputs is custom to the project type but at inner-most level will use a [Datasource type](/) or a [DataSource Reference](). -->
+* **Inputs**: The structure inside inputs is custom to the project type but at the inner-most level will use a [Datasource type](./datasources) or a [DataSource Reference](./datasources).
 
 **Riverstyles Example:**
 
@@ -95,7 +94,6 @@ Inside the realzations tag you will find a custom tag based on what kind of proj
     </RiverStyles>
 </Realizations>
 ```
-
 
 
 **VBET Example**:

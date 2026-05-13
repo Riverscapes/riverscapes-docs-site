@@ -1,0 +1,403 @@
+---
+title: project.rs.xml Reference (V2)
+description: Complete reference for the V2 Riverscapes project manifest file
+sidebar_position: 1
+---
+
+Every Riverscapes project is described by a plain-text XML file called `project.rs.xml` located at the root of the project folder. This file is the backbone of the Riverscapes ecosystem — it lets the [Data Exchange](https://data.riverscapes.net), the [Riverscapes Viewers](https://viewer.riverscapes.net), and all automated tools understand what a project contains, where the files are, and how it relates to other projects.
+
+This page is a complete reference for the current **V2** schema.
+
+:::info V2 Schema
+The V2 XSD is published at:
+```
+https://xml.riverscapes.net/Projects/XSD/V2/RiverscapesProject.xsd
+```
+Include this URL in the `xsi:noNamespaceSchemaLocation` attribute of your root `<Project>` element. Editors like Visual Studio Code with the XML extension will then validate your file against the schema automatically and highlight errors inline.
+:::
+
+## Complete Structure
+
+```xml
+<?xml version="1.0" ?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://xml.riverscapes.net/Projects/XSD/V2/RiverscapesProject.xsd">
+
+  <!-- Required: human-readable name shown in the Data Exchange and viewers -->
+  <Name>VBET for Big Creek (HUC 1706020406)</Name>
+
+  <!-- Required: machine code identifying the project type. Drives business logic lookup. -->
+  <ProjectType>VBET</ProjectType>
+
+  <!-- Optional: omit from new projects. Added by the Data Exchange after upload. -->
+  <Warehouse id="4dd028c6-3e9f-4b14-a317-fe74903ed279"
+             apiUrl="https://api.data.riverscapes.net"/>
+
+  <!-- Optional -->
+  <Summary>One-line summary shown in search results.</Summary>
+  <Description>Longer multi-paragraph description. Markdown is supported.</Description>
+  <Citation>Bibliographic citation for this dataset.</Citation>
+
+  <!-- Flat list of key-value pairs describing this project run -->
+  <MetaData>
+    <Meta name="ModelVersion">4.3.0</Meta>
+    <Meta name="HUC">1706020406</Meta>
+    <Meta name="Watershed">Big Creek</Meta>
+    <Meta name="Runner">Cybercastor</Meta>
+    <Meta name="DateCreated" type="isodate">2025-09-01T12:00:00</Meta>
+  </MetaData>
+
+  <!-- Optional: history of quality assurance reviews -->
+  <QAQCEvents>
+    <QAQCEvent state="passed" datePerformed="2025-09-05T00:00:00">
+      <Name>Automated Validation</Name>
+      <PerformedBy>Cybercastor</PerformedBy>
+      <Summary>Passed automated QA checks.</Summary>
+    </QAQCEvent>
+  </QAQCEvents>
+
+  <!-- Optional: datasets referenced by multiple realizations -->
+  <CommonDatasets>
+    <Raster id="DEM"><Name>10m DEM</Name><Path>inputs/dem.tif</Path></Raster>
+  </CommonDatasets>
+
+  <!-- Geographic extent of the project -->
+  <ProjectBounds>
+    <Centroid><Lat>44.2</Lat><Lng>-115.5</Lng></Centroid>
+    <BoundingBox>
+      <MinLat>43.8</MinLat><MinLng>-116.0</MinLng>
+      <MaxLat>44.6</MaxLat><MaxLng>-115.0</MaxLng>
+    </BoundingBox>
+    <Path>project_bounds.geojson</Path>
+  </ProjectBounds>
+
+  <!-- One or more analysis runs -->
+  <Realizations>
+    <Realization id="REALIZATION1"
+                 dateCreated="2025-09-01T12:00:00"
+                 productVersion="4.3.0">
+      <Name>VBET Run</Name>
+      <MetaData>
+        <Meta name="ProcTimeS" type="float">342.1</Meta>
+      </MetaData>
+      <Logs>
+        <LogFile id="LOG"><Name>Log</Name><Path>vbet.log</Path></LogFile>
+      </Logs>
+      <Inputs>
+        <CommonDatasetRef ref="DEM"/>
+        <Geopackage id="RSCONTEXT_GPKG">
+          <Name>RS Context Inputs</Name>
+          <Path>inputs/rscontext.gpkg</Path>
+          <Layers>
+            <Vector lyrName="network"><Name>Stream Network</Name></Vector>
+          </Layers>
+        </Geopackage>
+      </Inputs>
+      <Intermediates>
+        <Raster id="EVIDENCE"><Name>VBET Evidence</Name><Path>intermediates/evidence.tif</Path></Raster>
+      </Intermediates>
+      <Outputs>
+        <Geopackage id="VBET_OUTPUTS">
+          <Name>VBET Outputs</Name>
+          <Path>outputs/vbet.gpkg</Path>
+          <Layers>
+            <Vector lyrName="vbet_full"><Name>Valley Bottom</Name></Vector>
+            <Vector lyrName="vbet_centerlines"><Name>Centerlines</Name></Vector>
+            <DataTable lyrName="vbet_metrics"><Name>Metrics</Name></DataTable>
+          </Layers>
+        </Geopackage>
+        <HTMLFile id="REPORT"><Name>Report</Name><Path>outputs/report.html</Path></HTMLFile>
+      </Outputs>
+      <Analyses>
+        <Analysis id="METRICS">
+          <Name>Valley Bottom Metrics</Name>
+          <Metrics>
+            <Metric name="ValleyBottomArea" type="float">12345.6</Metric>
+          </Metrics>
+        </Analysis>
+      </Analyses>
+    </Realization>
+  </Realizations>
+
+</Project>
+```
+
+## Element Reference
+
+### `<Project>` (root)
+
+The root element. The `xsi:noNamespaceSchemaLocation` attribute should reference the V2 XSD.
+
+| Child element | Required | Description |
+|---|---|---|
+| `<Name>` | ✅ | Human-readable project name |
+| `<ProjectType>` | ✅ | Machine code identifying the project type (e.g. `VBET`, `BRAT`) |
+| `<Warehouse>` | | Added automatically after upload — do not include in new projects |
+| `<Summary>` | | One-line description |
+| `<Description>` | | Longer description; Markdown supported |
+| `<Citation>` | | Bibliographic citation |
+| `<MetaData>` | | Project-level key/value metadata |
+| `<QAQCEvents>` | | History of quality reviews |
+| `<CommonDatasets>` | | Datasets shared across multiple realizations |
+| `<ProjectBounds>` | | Geographic extent |
+| `<Realizations>` | | The analysis runs (at least one expected) |
+
+### `<MetaData>` and `<Meta>`
+
+The `<MetaData>` block holds a flat list of key/value pairs. It can appear at the project level, inside a `<Realization>`, inside an `<Analysis>`, and on individual datasets.
+
+```xml
+<MetaData>
+  <Meta name="ModelVersion">4.3.0</Meta>
+  <Meta name="HUC">1706020406</Meta>
+  <Meta name="DateCreated" type="isodate">2025-09-01T12:00:00</Meta>
+  <Meta name="SourceUrl" type="url">https://nhd.usgs.gov/</Meta>
+  <Meta name="AutoGenerated" locked="true">YES</Meta>
+</MetaData>
+```
+
+**`<Meta>` attributes:**
+
+| Attribute | Required | Description |
+|---|---|---|
+| `name` | ✅ | Key string. Must be unique within the block. |
+| `type` | | Display hint. Values: `guid`, `url`, `filepath`, `image`, `video`, `isodate`, `timestamp`, `float`, `boolean`, `int`, `richtext`, `markdown`, `json`, `hidden` |
+| `locked` | | If `true`, the Data Exchange UI will not allow editing this value |
+| `ext` | | Provenance hint: `warehouse`, `project`, or `dataset` |
+
+**Conventional metadata keys** (not enforced by the schema, but expected by the Data Exchange and tooling):
+
+| Key | Description |
+|---|---|
+| `ModelVersion` | Semver version of the tool that produced this project |
+| `HUC` | Hydrologic Unit Code (typically 10 digits) |
+| `Watershed` | Human-readable watershed name |
+| `Runner` | What ran the tool (`Cybercastor`, `VSCode`, etc.) |
+| `DateCreated` | ISO datetime string (type=`isodate`) |
+| `ProcTimeS` | Processing time in seconds (type=`float`) |
+
+### `<ProjectBounds>`
+
+Describes the geographic extent of the project. The bounds GeoJSON file must be in **WGS84 (EPSG:4326)**, under 200 KB, and should be a simple polygon — avoid complex concave hulls.
+
+```xml
+<ProjectBounds>
+  <Centroid>
+    <Lat>44.2</Lat>
+    <Lng>-115.5</Lng>
+  </Centroid>
+  <BoundingBox>
+    <MinLat>43.8</MinLat>
+    <MinLng>-116.0</MinLng>
+    <MaxLat>44.6</MaxLat>
+    <MaxLng>-115.0</MaxLng>
+  </BoundingBox>
+  <Path>project_bounds.geojson</Path>
+</ProjectBounds>
+```
+
+### `<Realization>`
+
+Represents one run of the analysis tool.
+
+**Attributes:**
+
+| Attribute | Required | Description |
+|---|---|---|
+| `id` | ✅ | Unique within the project; 3–64 chars, `[A-Za-z0-9_-]+` |
+| `dateCreated` | ✅ | ISO 8601 datetime (e.g. `2025-09-01T12:00:00`) |
+| `productVersion` | ✅ | Semver string (e.g. `4.3.0`) |
+
+**Child elements:**
+
+| Element | Description |
+|---|---|
+| `<Name>` | Human-readable name |
+| `<MetaData>` | Realization-level metadata |
+| `<Logs>` | Log files produced by the tool |
+| `<Inputs>` | Input data consumed by the tool |
+| `<Intermediates>` | Intermediate products |
+| `<Outputs>` | Final outputs |
+| `<Analyses>` | Analysis results with metrics |
+| `<Datasets>` | General datasets (when input/output distinction isn't needed) |
+
+### Dataset Elements
+
+The following elements represent files on disk. They can appear inside `<Inputs>`, `<Intermediates>`, `<Outputs>`, `<Datasets>`, `<Logs>`, `<CommonDatasets>`, `<Configuration>`, and `<Products>`.
+
+| Element | Use for |
+|---|---|
+| `<Raster>` | GeoTIFF rasters |
+| `<DEM>` | Digital elevation models |
+| `<HillShade>` | Hillshade rasters |
+| `<Vector>` | Shapefiles and standalone vector files |
+| `<Geopackage>` | GeoPackage files (see below) |
+| `<CSV>` | CSV files |
+| `<HTMLFile>` | HTML reports |
+| `<LogFile>` | Tool log files |
+| `<PDF>` | PDF documents |
+| `<SQLiteDB>` | SQLite databases |
+| `<ZipFile>` | ZIP archives |
+| `<Image>` | Image files |
+| `<ConfigFile>` | Configuration files |
+| `<File>` | Catch-all for any other file type |
+
+**Common attributes and child elements for all dataset elements:**
+
+```xml
+<Raster id="DEM" type="context">
+  <Name>10m Digital Elevation Model</Name>
+  <Summary>NED 10m DEM clipped to HUC10 boundary</Summary>
+  <Description>Longer description.</Description>
+  <Citation>USGS National Elevation Dataset, 2023.</Citation>
+  <Path>inputs/dem.tif</Path>
+  <MetaData>
+    <Meta name="SourceUrl" type="url">https://prd-tnm.s3.amazonaws.com/...</Meta>
+    <Meta name="DataProductVersion">2023</Meta>
+  </MetaData>
+</Raster>
+```
+
+**`id` constraints:** 3–64 characters, `[A-Za-z0-9_-]+`, must be unique within the realization.
+
+**`type` attribute:** Optional string for business logic XPath filtering (e.g. `type="slope"` allows `@type='slope'` XPath selectors in the Business Logic XML).
+
+**Path format:** Relative to the project directory, forward slashes only, no leading slash, max 256 characters.
+
+### `<Geopackage>` and its Layers
+
+GeoPackage files contain one or more named layers. Each layer is declared inside a `<Layers>` block.
+
+```xml
+<Geopackage id="OUTPUTS">
+  <Name>VBET Outputs</Name>
+  <Path>outputs/vbet.gpkg</Path>
+  <Layers>
+    <Vector lyrName="vbet_full" type="vbet_igo">
+      <Name>Valley Bottom Polygons</Name>
+      <MetaData>
+        <Meta name="Description">Active valley bottom extent...</Meta>
+        <Meta name="DocsUrl" type="url">https://tools.riverscapes.net/vbet/data/</Meta>
+      </MetaData>
+    </Vector>
+    <Raster lyrName="vbet_ev_raster">
+      <Name>Evidence Raster</Name>
+    </Raster>
+    <DataTable lyrName="reach_attributes">
+      <Name>Reach Attribute Table</Name>
+    </DataTable>
+  </Layers>
+</Geopackage>
+```
+
+- `lyrName` is the actual layer name inside the GeoPackage (the SQLite table name). It must be unique within the GeoPackage.
+- Layers can use the same `type` attribute and `extRef` attribute as standalone dataset elements.
+
+### `<CommonDatasetRef>`
+
+References a dataset defined in `<CommonDatasets>` at the project level, avoiding duplication when the same input is used across multiple realizations.
+
+```xml
+<!-- At the project level: -->
+<CommonDatasets>
+  <Raster id="DEM"><Name>DEM</Name><Path>inputs/dem.tif</Path></Raster>
+</CommonDatasets>
+
+<!-- Inside a realization: -->
+<Inputs>
+  <CommonDatasetRef ref="DEM"/>
+</Inputs>
+```
+
+### `extRef` — Cross-project References
+
+A dataset can be linked to its source in another Data Exchange project using the `extRef` attribute:
+
+```xml
+<Raster id="DEM"
+        extRef="f23b187a-537b-4dd0-8b71-4b7c4a6e9747:
+                Project/Realizations/Realization#REALIZATION1/Inputs/Raster#DEM">
+  <Name>10m DEM from RSContext</Name>
+  <Path>inputs/dem.tif</Path>
+</Raster>
+```
+
+The format is `{project-guid}:{rsXPath}` where the rsXPath uses `#id` notation to select a specific element.
+
+### `<Analysis>`
+
+Analyses appear inside `<Analyses>` and record computed summary metrics alongside the outputs that produced them.
+
+```xml
+<Analyses>
+  <Analysis id="SUMMARY_METRICS">
+    <Name>Valley Bottom Summary</Name>
+    <Metrics>
+      <Metric name="ValleyBottomArea" type="float">12345.6</Metric>
+      <Metric name="ChannelLength" type="float">87654.3</Metric>
+    </Metrics>
+    <Configuration>
+      <File id="PARAMS"><Name>Parameters</Name><Path>config/params.json</Path></File>
+    </Configuration>
+    <Products>
+      <HTMLFile id="REPORT"><Name>Report</Name><Path>outputs/report.html</Path></HTMLFile>
+    </Products>
+  </Analysis>
+</Analyses>
+```
+
+### `<QAQCEvent>`
+
+Records a quality review event on the project.
+
+```xml
+<QAQCEvents>
+  <QAQCEvent state="passed" datePerformed="2025-09-05T00:00:00">
+    <Name>Automated QA Check</Name>
+    <PerformedBy>Cybercastor</PerformedBy>
+    <Summary>All outputs within expected range.</Summary>
+    <Links>
+      <URL text="GitHub Issue">https://github.com/Riverscapes/riverscapes-tools/issues/123</URL>
+    </Links>
+  </QAQCEvent>
+</QAQCEvents>
+```
+
+Valid `state` values: `passed`, `failed`, `provisional`
+
+### `<Warehouse>`
+
+Added automatically by the Data Exchange after a project is uploaded. **Do not include this element in new projects before upload.** If copying an existing `project.rs.xml` as a template, remove the `<Warehouse>` element first.
+
+```xml
+<!-- Added by Data Exchange after upload — do not add manually to new projects -->
+<Warehouse id="4dd028c6-3e9f-4b14-a317-fe74903ed279"
+           apiUrl="https://api.data.riverscapes.net"/>
+```
+
+## Validation
+
+The easiest way to validate your `project.rs.xml` is to open it in **Visual Studio Code** with the [XML extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) installed. Errors are highlighted inline.
+
+You can also validate programmatically using the [rsxml Python package](/products/rsxml):
+
+```python
+from rsxml.validation import validate_project_file
+
+valid, errors = validate_project_file("/path/to/project.rs.xml")
+if not valid:
+    for error in errors:
+        print(error)
+```
+
+Or via rscli:
+
+```sh
+rscli validate /path/to/project/
+```
+
+## Tools for Authoring project.rs.xml
+
+- **[rsxml Python package](/products/rsxml)** — generate valid XML programmatically from Python classes
+- **[rsxml-dotnet](https://github.com/Riverscapes/rsxml-dotnet)** — equivalent C# library
+- **Copy and modify** — download an existing project of the same type from the Data Exchange, and use its `project.rs.xml` as your starting template

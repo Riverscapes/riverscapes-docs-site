@@ -72,7 +72,7 @@ The script below also includes the steps to generate a Height Above Nearest Drai
 CORES=4
 
 # Input DEM file
-DEM="SWANSON_OPANUKU_1m_DEM.tif"
+DEM="input_dem.tif"
 
 # Output files
 FILLED_DEM="dem_filled.tif"
@@ -103,7 +103,7 @@ echo "Step 3b. D8 Contributing Area"
 # Computes the contributing area based on the D8 flow direction.
 mpirun -np $CORES aread8 -p $D8_FLOW -ad8 $D8_CONT_AREA -nc
 
-Manually adjust the threshold value based on inspection.
+# Manually adjust the threshold value based on inspection.
 THRESHOLD=50000
 echo "Step 4. Stream Raster (Thresholding, using threshold=$THRESHOLD)"
 # Generates a binary raster of streams using the selected threshold.

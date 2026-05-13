@@ -1,0 +1,49 @@
+---
+title: Testing Sites Locally
+---
+
+:::warning[Docusaurus site]
+Riverscapes documentation sites use [Docusaurus](https://docusaurus.io/), not Jekyll. If you find references to Jekyll, Ruby, or Bundler elsewhere in this documentation, they are outdated. This page describes the correct Docusaurus approach.
+:::
+
+It's always a good idea to verify changes locally before pushing them to GitHub. This avoids potentially breaking the live site, or having to repeatedly push small commits just to check how content renders. To run a Docusaurus site locally you need Node.js and `yarn` installed on your computer.
+
+For full instructions, see the [Using Docusaurus](../using-docusaurus) guide, which covers local development in detail. The quick start is summarized below.
+
+## Prerequisites
+
+- **Node.js** (v20 LTS or newer) — download from [nodejs.org](https://nodejs.org/)
+- **yarn** — install after Node.js with `npm install -g yarn`
+
+## Running a Site Locally
+
+1. Clone the documentation repository to your computer and open it in a terminal.
+2. Install dependencies (only needed once per clone, or when dependencies change):
+
+```sh
+yarn install
+```
+
+3. Start the local development server:
+
+```sh
+yarn start
+```
+
+4. Open your browser at `http://localhost:3000`
+
+The development server supports **hot reloading** — the browser will update automatically whenever you save a file. The only exception is changes to `docusaurus.config.ts`, which require restarting the server.
+
+Press `Ctrl+C` in the terminal to stop the server.
+
+## Checking for Errors
+
+When the dev server is running, any broken links or MDX syntax errors will appear in the terminal output. Fix these before committing your changes.
+
+You can also run a full production build to catch errors that the dev server might miss:
+
+```sh
+yarn build
+```
+
+This will report any broken internal links and component errors.

@@ -1,6 +1,6 @@
 ---
 title: GUIDs
-weight: 1
+sidebar_position: 6
 ---
 
 [Universally Unique Identifiers (UUID, or GUID)](https://en.wikipedia.org/wiki/Universally_unique_identifier) Are used to track file changes on XML nodes. 
@@ -64,7 +64,6 @@ f0b50bdc-e302-4647-ae04-98f561f90b38
 ```
 
 
-
 ## Code Examples: 
 
 ### Python:
@@ -84,11 +83,9 @@ print getUUID()
 Note that this uses `.upper()` to create windows-like GUIDs that are all uppercase. It shouldn't matter that much whether you create upper or lowercase GUIDs so long as you are consistent.
 
 
-
 ### Fetching Guids
 
 When you're linking projects together you might need to fetch a guid from anothe project. 
 
 The following snippet shows 3 different ways to retrieve a guid from a project:
 
-<!-- <https://github.com/Riverscapes/Program/blob/master/Project/python/guid.py> -->

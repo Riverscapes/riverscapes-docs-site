@@ -1,15 +1,415 @@
 ---
-title: RSXML
-description: A free, public Python package for authoring Riverscapes projects
-banner: true
+title: RSXML Python Package
+title_icon: https://cdn.riverscapes.net/icons/consortium/consortium.svg
+description: A Python package for authoring Riverscapes project.rs.xml files
 ---
 
-The [Riverscapes Consortium](https://riverscapes.net) has developed a standard for packaging data related to riverscapes health so that it can be shared and discovered via the [Riverscapes Data Exchange](https://data.riverscapes.net).
+The [Riverscapes Consortium](https://riverscapes.net) requires all data uploaded to the [Data Exchange](https://data.riverscapes.net) to be accompanied by a `project.rs.xml` metadata file. Writing this XML by hand is error-prone. The `rsxml` Python package provides typed Python classes that generate valid, schema-compliant XML files automatically.
 
-The standard consists of a small, simple XML text file that sits in the root folder of the data being described. This file lists all the datasets, reports, log files etc. It is the backbone of the Riverscapes Data Exchange and is what allows for effective curation and discovery of data. The file is always called `project.rs.xml`. It can be written by hand, but is much easier if you script its generation to avoid mistakes and increase reuse.
+`rsxml` is free, open-source, and available on PyPI:
 
-RSXML is a free, public Python package that allows Riverscapes tool developers to easily author `project.rs.xml` project files. It is available as a pip module from the PyPi online respoitory of Python packages.
+```sh
+pip install rsxml
+```
 
-[https://pypi.org/project/rsxml/](https://pypi.org/project/rsxml/)
+Source code and examples: [github.com/Riverscapes/rsxml-python](https://github.com/Riverscapes/rsxml-python)
 
-RSXML includes documentation on how to use it to author projects, including code examples. Contact a Riverscapes Application Support Specialist (support@riverscapes.freshdesk.com) if you have data that you want to add to the Riverscapes Data Exchange and need help using RSXML to author project files.
+:::info Schema version
+`rsxml` targets the **V2** Riverscapes Project schema. The V2 XSD is published at:
+`https://xml.riverscapes.net/Projects/XSD/V2/RiverscapesProject.xsd`
+:::
+
+## Installation
+
+```sh
+pip install rsxml
+# or with uv:
+uv add rsxml
+```
+
+Requires Python 3.9 or newer.
+
+## Quick Start — Creating a Project
+
+The following example creates a minimal but complete `project.rs.xml` file:
+
+```python
+from datetime import datetime
+from rsxml.project_xml import (
+    BoundingBox, Coords, Dataset, Geopackage, GeoPackageDatasetTypes,
+    GeopackageLayer, Meta, MetaData, Project, ProjectBounds, Realization,
+)
+
+project = Project(
+    name="My VBET Project",
+    proj_path="/data/my_project/project.rs.xml",
+    project_type="VBET",
+    summary="Valley Bottom Extraction for Big Creek HUC10",
+    meta_data=MetaData(values=[
+        Meta("ModelVersion", "1.0.0"),
+        Meta("HUC", "1706020406"),
+        Meta("Watershed", "Big Creek"),
+    ]),
+    bounds=ProjectBounds(
+        centroid=Coords(lng=-115.5, lat=44.2),  # NOTE: lng first
+        bounding_box=BoundingBox(
+            minLng=-116.0, minLat=43.8,
+            maxLng=-115.0, maxLat=44.6,
+        ),
+        filepath="project_bounds.geojson",
+    ),
+    realizations=[
+        Realization(
+            xml_id="REALIZATION1",
+            name="VBET Run",
+            product_version="1.0.0",
+            date_created=datetime.now(),
+            inputs=[
+                Dataset(xml_id="DEM", name="Digital Elevation Model",
+                        path="inputs/dem.tif", ds_type="Raster"),
+                Geopackage(
+                    xml_id="INPUTS_GPKG", name="Inputs",
+                    path="inputs/inputs.gpkg",
+                    layers=[
+                        GeopackageLayer(
+                            lyr_name="network",
+                            name="Stream Network",
+                            ds_type=GeoPackageDatasetTypes.VECTOR,
+                        ),
+                    ],
+                ),
+            ],
+            outputs=[
+                Geopackage(
+                    xml_id="VBET_OUTPUTS", name="VBET Outputs",
+                    path="outputs/vbet.gpkg",
+                    layers=[
+                        GeopackageLayer(
+                            lyr_name="vbet_full",
+                            name="Valley Bottom",
+                            ds_type=GeoPackageDatasetTypes.VECTOR,
+                        ),
+                    ],
+                ),
+            ],
+        )
+    ],
+)
+
+project.write()
+```
+
+## Loading an Existing Project
+
+```python
+from rsxml.project_xml import Project
+
+project = Project.load_project("/data/my_project/project.rs.xml")
+print(project.name)
+print(project.project_type)
+
+# Add new metadata
+if not project.meta_data.find_meta("ProcessedDate"):
+    project.meta_data.add_meta("ProcessedDate", "2026-05-01", type="isodate")
+
+project.write()
+```
+
+## Key Classes
+
+### `Project`
+
+The top-level class, maps to the `<Project>` XML root.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `name` | str | ✅ | Human-readable project name |
+| `proj_path` | str | ✅ | Full path to the output `project.rs.xml` |
+| `project_type` | str | ✅ | Machine code e.g. `VBET`, `BRAT`, `RSContext` |
+| `summary` | str | | One-line description |
+| `description` | str | | Longer description |
+| `bounds` | `ProjectBounds` | | Geographic extent (strongly recommended) |
+| `meta_data` | `MetaData` | | Project-level key/value metadata |
+| `realizations` | `list[Realization]` | | The analysis runs |
+| `common_datasets` | `list[Dataset]` | | Datasets shared across realizations |
+
+:::warning Always set ModelVersion
+The library will emit a warning during `write()` if `ModelVersion` is not present in the project metadata. Always include it:
+```python
+Meta("ModelVersion", "1.0.0")
+```
+:::
+
+### `Realization`
+
+One "run" of your analysis tool. A project should have at least one.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `xml_id` | str | ✅ | Unique identifier within the project (e.g. `REALIZATION1`) |
+| `name` | str | ✅ | Human-readable name |
+| `product_version` | str | ✅ | Tool version string in `X.Y.Z` format |
+| `date_created` | `datetime` | ✅ | Must be a `datetime` object (not a string) |
+| `inputs` | `list` | | Input data consumed by the tool |
+| `intermediates` | `list` | | Intermediate products |
+| `outputs` | `list` | | Final outputs |
+| `analyses` | `list[Analysis]` | | Analysis results with metrics |
+| `meta_data` | `MetaData` | | Realization-level metadata |
+
+### `Dataset`
+
+Represents a single file (raster, vector, CSV, report, etc.).
+
+```python
+Dataset(
+    xml_id="DEM",
+    name="Digital Elevation Model",
+    path="inputs/dem.tif",      # relative path, forward slashes, no leading /
+    ds_type="Raster",           # becomes the XML tag: <Raster id="DEM">
+    ds_type_attr="context",     # optional type="" attribute for business logic filtering
+    summary="10m NED DEM",
+    description="...",
+    url="https://...",          # optional source URL
+    ext_ref="...",              # reference to dataset in another project (see below)
+    meta_data=MetaData(...),
+)
+```
+
+**Common `ds_type` values** (becomes the XML element tag):
+
+| `ds_type` | XML element | Use for |
+|---|---|---|
+| `"Raster"` | `<Raster>` | GeoTIFF, other rasters |
+| `"DEM"` | `<DEM>` | Digital elevation models |
+| `"Vector"` | `<Vector>` | Shapefiles |
+| `"Geopackage"` | `<Geopackage>` | Use the `Geopackage` class instead |
+| `"CSV"` | `<CSV>` | CSV files |
+| `"HTMLFile"` | `<HTMLFile>` | HTML reports |
+| `"LogFile"` | `<LogFile>` | Use the `Log` class instead |
+| `"PDF"` | `<PDF>` | PDF files |
+
+**Path rules:** relative to the project directory, forward slashes, no leading slash, max 256 characters.
+
+### `Geopackage`
+
+Subclass of `Dataset` for GeoPackage files, with an explicit list of layers.
+
+```python
+Geopackage(
+    xml_id="OUTPUTS",
+    name="Outputs GeoPackage",
+    path="outputs/outputs.gpkg",
+    layers=[
+        GeopackageLayer(
+            lyr_name="valley_bottom",   # exact layer name inside the .gpkg
+            name="Valley Bottom",
+            ds_type=GeoPackageDatasetTypes.VECTOR,
+            lyr_type="vbet_full",       # optional: business logic type tag
+        ),
+        GeopackageLayer(
+            lyr_name="channel_area",
+            name="Channel Area",
+            ds_type=GeoPackageDatasetTypes.VECTOR,
+        ),
+        GeopackageLayer(
+            lyr_name="elevation_stats",
+            name="Elevation Statistics",
+            ds_type=GeoPackageDatasetTypes.DATATABLE,
+        ),
+    ],
+)
+```
+
+`GeoPackageDatasetTypes` constants: `.VECTOR`, `.RASTER`, `.DATATABLE`
+
+### `MetaData` and `Meta`
+
+`MetaData` is a container for `Meta` key-value pairs.
+
+```python
+MetaData(values=[
+    Meta("ModelVersion", "1.0.0"),
+    Meta("HUC", "1706020406"),
+    Meta("DateRun", "2026-05-01T12:00:00", type="isodate"),
+    Meta("SourceUrl", "https://nhd.usgs.gov/", type="url"),
+    Meta("LockedKey", "value", locked=True),   # not editable via Data Exchange UI
+])
+```
+
+Valid `type` values: `guid`, `url`, `filepath`, `image`, `video`, `isodate`, `timestamp`, `float`, `boolean`, `int`, `richtext`, `markdown`, `json`, `hidden`
+
+**Important:**
+- `add_meta()` raises `ValueError` if the key already exists — check first with `find_meta()`
+- Keys must be unique within a `MetaData` block
+
+```python
+# Safe pattern for updating metadata
+if not project.meta_data.find_meta("RunDate"):
+    project.meta_data.add_meta("RunDate", "2026-05-01", type="isodate")
+```
+
+### `ProjectBounds`
+
+```python
+ProjectBounds(
+    centroid=Coords(lng=-115.5, lat=44.2),   # longitude FIRST (not lat/lng)
+    bounding_box=BoundingBox(
+        minLng=-116.0, minLat=43.8,
+        maxLng=-115.0, maxLat=44.6,
+    ),
+    filepath="project_bounds.geojson",        # relative path to WGS84 GeoJSON polygon
+)
+```
+
+The `project_bounds.geojson` file must be in WGS84 (EPSG:4326), must be under 200 KB, and should be a simple polygon (avoid complex concave hulls).
+
+### `Analysis`
+
+For including summary metrics alongside your outputs:
+
+```python
+from rsxml.project_xml import Analysis, MetaData, Meta
+
+analysis = Analysis(
+    xml_id="ANALYSIS1",
+    name="Valley Bottom Summary",
+    metrics=MetaData(values=[
+        Meta("ValleyBottomArea", "1234.5", type="float"),
+        Meta("ChannelLength", "5678.9", type="float"),
+    ]),
+    products=[
+        Dataset(xml_id="REPORT", name="Report",
+                path="outputs/report.html", ds_type="HTMLFile"),
+    ],
+)
+```
+
+## Referencing Datasets from Another Project
+
+Use `ext_ref` to indicate that a dataset originated from another project in the Data Exchange:
+
+```python
+Dataset(
+    xml_id="DEM",
+    name="NED 10m DEM",
+    path="inputs/dem.tif",
+    ds_type="Raster",
+    ext_ref="f23b187a-537b-4dd0-8b71-4b7c4a6e9747:"
+             "Project/Realizations/Realization#REALIZATION1/Inputs/Raster#DEM",
+)
+```
+
+The format is `{project-guid}:{rsXPath}` where the XPath uses `#id` notation to select elements.
+
+## Logging and Progress Bars
+
+`rsxml` includes a shared logging utility used throughout the Riverscapes tools ecosystem:
+
+```python
+from rsxml import Logger, ProgressBar
+
+log = Logger("MyTool")
+log.setup(log_path="/data/output/run.log", verbose=True)
+
+log.title("== Starting My Tool ==")
+log.info("Processing watershed 1706020406")
+log.warning("Missing optional input, using defaults")
+log.error("Failed to read DEM", exception=e)
+
+# Progress bar for loops
+total = len(features)
+bar = ProgressBar(total=total, text="Processing features")
+for i, feature in enumerate(features):
+    # ... do work ...
+    bar.update(i + 1)
+bar.finish()
+```
+
+## Validating a Project File
+
+```python
+from rsxml.validation import validate_project_file
+
+valid, errors = validate_project_file("/data/my_project/project.rs.xml")
+if not valid:
+    for error in errors:
+        print(error)
+```
+
+Requires `lxml` to be installed (`pip install lxml`).
+
+## Common Patterns
+
+### Standard tool entry point
+
+```python
+import argparse
+from datetime import datetime
+from rsxml import Logger
+from rsxml.project_xml import Project, MetaData, Meta, Realization, Dataset, ProjectBounds, Coords, BoundingBox
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("project_path", help="Path to output project.rs.xml")
+    parser.add_argument("input_dem", help="Path to input DEM")
+    parser.add_argument("--verbose", action="store_true")
+    args = parser.parse_args()
+
+    log = Logger("MyTool")
+    log.setup(verbose=args.verbose)
+    log.title("My Tool v1.0.0")
+
+    project = Project(
+        name="My Analysis",
+        proj_path=args.project_path,
+        project_type="MYTOOL",
+        meta_data=MetaData(values=[
+            Meta("ModelVersion", "1.0.0"),
+        ]),
+        realizations=[
+            Realization(
+                xml_id="REALIZATION1",
+                name="Run",
+                product_version="1.0.0",
+                date_created=datetime.now(),
+                inputs=[
+                    Dataset(xml_id="DEM", name="Input DEM",
+                            path="inputs/dem.tif", ds_type="Raster"),
+                ],
+                outputs=[
+                    Dataset(xml_id="OUTPUT", name="Output Layer",
+                            path="outputs/result.tif", ds_type="Raster"),
+                ],
+            )
+        ],
+    )
+
+    # ... run your analysis ...
+
+    project.write()
+    log.info(f"Written to: {args.project_path}")
+
+if __name__ == "__main__":
+    main()
+```
+
+### Removing the Warehouse tag before re-uploading
+
+New projects should not have a `<Warehouse>` tag. If copying an existing project as a template, remove it:
+
+```python
+project = Project.load_project(template_path)
+project.warehouse = None   # remove warehouse tag
+project.proj_path = new_path
+project.write()
+```
+
+## Next Steps
+
+Once your `project.rs.xml` is ready:
+
+1. **Validate** it using `rscli validate ./my_project` or the `validate_project_file()` function
+2. **Upload** it to the Data Exchange using the [rscli upload command](/products/rscli#uploading-projects)
+3. **Add Business Logic** so the data displays correctly in the [Riverscapes Viewers](https://viewer.riverscapes.net/technical-reference/business-logic)
+
+For support, contact [support@riverscapes.freshdesk.com](mailto:support@riverscapes.freshdesk.com).

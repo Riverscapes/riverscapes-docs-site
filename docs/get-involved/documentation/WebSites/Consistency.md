@@ -55,10 +55,5 @@ We have good ETAL BRAT Standards We have good [ETAL BRAT Standards](http://brat.
 
 _Our default standard._
 
+{/* TODO: <div align="center"> Add a screenshot or example image of the consistency standard here. </div> */}
 
-------
-<!-- TODO <div align="center">
-	<a class="hollow button" href="/Documentation/Standards"><i class = "fa fa-check-square-o"></i> Back to ETAL Standards</a>
-	<a class="hollow button" href="/Documentation"><i class="fa fa-info-circle"></i> Back to Help </a>
-	<a class="hollow button" href="/"><img src="/images/favicons/favicon-16x16.png">  Back to BRAT Home </a>  
-</div> -->

@@ -19,15 +19,10 @@ Below, I illustrate some edits using  [Typora](https://typora.io/) and my favori
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aIqSoQwi0N4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
-
 ### Spellchecking in Typora
 
 Always, spellcheck your markdown. In  [Typora](https://typora.io/) that is simple:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VAOSId6Cyi4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-------
-<!-- TODO <div align="center">
-	<a class="hollow button" href="/Documentation/Standards"><i class = "fa fa-check-square-o"></i> Back to ETAL Standards</a>
-	<a class="hollow button" href="/Documentation"><i class="fa fa-info-circle"></i> Back to Help </a>
-	<a class="hollow button" href="/"><img src="/images/favicons/favicon-16x16.png">  Back to BRAT Home </a>  
-</div> -->
+{/* TODO: <div align="center"> Add a screenshot or example of a good edit workflow here. </div> */}
+

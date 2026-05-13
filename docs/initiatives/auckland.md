@@ -9,7 +9,7 @@ title: Auckland
 | [TauDEM](https://data.riverscapes.net/s?type=Project&owner=ORGANIZATION%3Ad90a2b33-205a-424b-b77e-4e72741b1783&projectTypeId=taudem&view=map) | [Data](https://data.riverscapes.net/p/2960d5c3-9af9-4a91-91a7-b5a8cc9510ab) | [Data](https://data.riverscapes.net/p/4c37af4e-17f6-4b65-9661-612b7c4e22e2) | [Data](https://data.riverscapes.net/p/eb4daa30-5e8f-4700-bd88-52568eb95f1a) |
 | [VBET](https://data.riverscapes.net/s?type=Project&owner=ORGANIZATION%3Ad90a2b33-205a-424b-b77e-4e72741b1783&projectTypeId=vbet&view=map) | [Data](https://data.riverscapes.net/p/2cff5ccb-6754-4e5a-906c-bf5043b804e6) | [Data](https://data.riverscapes.net/p/9f665dc3-948b-4b03-b715-207b54c9cce2) | [Data](https://data.riverscapes.net/p/45e32135-94a2-4c20-8fc5-c91e38e90c6d) |
 
-<!--
+{/*
 Athena query to get the data for the above table
 
 SELECT
@@ -32,7 +32,8 @@ WHERE contains(tags, 'PineValley')
    OR contains(tags, 'Milldale')
 GROUP BY 1
 ORDER BY 1;
--->
+*/}
+
 
 # Links and Resources
 

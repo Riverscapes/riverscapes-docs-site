@@ -6,7 +6,7 @@ page-status: messy
 page-priority: high
 ---
 
-The Riverscapes Consortium organizes and serves data via the *[Data Exchange](http://data.riverscapes.net)*. The Data Exchange provides access to both the underlying data (packaged in [riverscapes projects](/get-involved/documentation/riverscapes/Technical_Reference/Documentation_Standards/Riverscapes_Projects/)) as well as making these data explorable via an [integrated explorer](/Data_Warehouses/#warehouse-explorer-concept) or [interactive web maps](/Data_Warehouses/#web-maps). We only serve and host data packaged in fully [Riverscapes-Compliant](/Tools) [Riverscapes Projects](/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/).
+The Riverscapes Consortium organizes and serves data via the *[Data Exchange](https://data.riverscapes.net)*. The Data Exchange provides access to both the underlying data (packaged in [riverscapes projects](/get-involved/documentation/Riverscapes_Projects/)) as well as making these data explorable via an integrated explorer or interactive web maps. We only serve and host data packaged in fully [Riverscapes-Compliant](/standards/discrimination#tool-grade) [Riverscapes Projects](/get-involved/documentation/Riverscapes_Projects/).
 
 <ToolsWrapper
   cardsize="lg"
@@ -25,11 +25,11 @@ Make it easier to catalog, share, discover and retrieve the products of riversca
 
 ## Advantages
 
-The advantages of [riverscapes projects](/Tools/Technical_Reference/Documentation_Standards/Riverscapes_Projects/) being hosted in a data warehouse can include:
+The advantages of [riverscapes projects](/get-involved/documentation/Riverscapes_Projects/) being hosted in a data warehouse can include:
 
 - Searchable and queryable catalog
 - Custom web maps
-- Custom field and desktop aApps
+- Custom field and desktop Apps
 - Secure cloud hosting:
   - Easy public sharing
   - Full user access permission control
@@ -38,6 +38,7 @@ The advantages of [riverscapes projects](/Tools/Technical_Reference/Documentatio
 - Ability to mint DOIs to make datasets citable
 - [OGC API](http://www.ogcapi.org/) access to riverscapes projects and warehouse for programmers
 -  [OGC Web Map Tile Services](https://www.opengeospatial.org/standards/wmts) access to your datasets
+- [GraphQL API](/products/data-exchange/advanced/data-exchange-api) and [Python client library](/products/data-exchange/advanced/python-api) for programmatic access
 - Searchable and discoverable in [Riverscapes viewers](http://viewer.riverscapes.net) GIS Toolbars
 
 
@@ -48,7 +49,7 @@ The playlist below contains videos the provide an overview of the Data Exchange 
 <YouTubeEmbed videoId="playlist?list=PL35jXN3ZcZGH-BjHgLMuYqpjAVqm5C4HT" />
 
 :::info
-The video below documented an earlier verion of the Data Exchange. 
+The video below documented an earlier verion of the Data Exchange.
 :::
 In this 8 minute video, we show off what these warehouses buy you in terms of housekeeping and reaching broader audiences.
 
@@ -56,9 +57,9 @@ In this 8 minute video, we show off what these warehouses buy you in terms of ho
 
 ## Dataset Discrimination
 
-We refer to ‘datasets’ as any input(s), output(s) or intermediate(s) used or produced by our various analyses, [tools](/Tools/) and workflows within the Riverscapes Consortium.  Within the warehouse, we assign to each "dataset" node or instance within a Riverscapes Project we use a couple of concepts to differentiate and contextualize that data :
+We refer to 'datasets' as any input(s), output(s) or intermediate(s) used or produced by our various analyses, [tools](/standards/toolStandards) and workflows within the Riverscapes Consortium.  Within the warehouse, we assign to each "dataset" node or instance within a Riverscapes Project we use a couple of concepts to differentiate and contextualize that data :
 - **Dataset Grade** - Describes the rank of dataset curation using an adaptation of  [Bloom's Taxonomy of Educational Objectives](https://cft.vanderbilt.edu/guides-sub-pages/blooms-taxonomy/)
-- **Data Product Status Tags** - Tracks overall status, degree of quality assurance and control, and data generation methods.  
+- **Data Product Status Tags** - Tracks overall status, degree of quality assurance and control, and data generation methods.
 
 As scientists and analysts, we produce a plethora of datasets, some of which go no further than an exploratory analysis and some which are carefully documented, vetted, and validated before being made for external consumption. Not all datasets will proceed sequentially through all stages of dataset status below and some stages are reiterated (e.g. after expert calibration, an output may be requeued for QA/QC assurance. The idea behind dataset discrimination is to keep track of how far, and for what purpose a dataset was
 
@@ -123,5 +124,5 @@ The degree of quality assurance and quality control checks that a dataset has be
 
 How the data datasets were generated
   - **Automated Local**- Generated via batch processing using local [network models](https://tools.riverscapes.net).
-  -  **Automated Cloud -** Generated via cloud processing using [Cybercastor](/products/cyber-castor)
+  -  **Automated Cloud -** Generated via cloud processing using [Cyber Castor](/products/cyber-castor)
   -  **Manual** - Generated via local tools on an individual basis.

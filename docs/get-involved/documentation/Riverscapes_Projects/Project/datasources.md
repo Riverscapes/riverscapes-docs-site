@@ -1,6 +1,6 @@
 ---
 title: DataSources (Inputs/Outputs)
-weight: 3
+sidebar_position: 4
 
 ---
 
@@ -50,7 +50,7 @@ The kind of Datasource tag you choose (e.g. `<Raster>`, `<DEM>` ) is important. 
 **Some rules for using `ref`**
 
 * If you use `ref` you should not use `Id` or `Guid` since these are covered inside the referenced object. Likewise you should not use `<Path>`, `<Project>`, `<Name>` or any other tags.
-* `<MetaData>` can still be used but only if it is refering to information that cannot be shared across all [Realizations](TODO).
+* `<MetaData>` can still be used but only if it is referring to information that cannot be shared across all [Realizations](./realizations).
 
 ``` xml
 <Project>

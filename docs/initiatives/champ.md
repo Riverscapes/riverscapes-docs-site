@@ -201,8 +201,7 @@ In the table below click on the row headings to discover all projects for a part
 
 You can use the [Riverscapes Commandline Interface](https://docs.riverscapes.net/products/rscli) to download the data, or you can write Python scripts to perform custom searches and batch download many projects in a single operation.
 
-<!--
-
+{/*
 SELECT name,
        '[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_' ||
        replace(name, ' ', '') || '%2CCHAMP_Year_2011)' as "2011",
@@ -227,10 +226,8 @@ SELECT name,
 FROM watersheds
 where is_champ <> 0
 order by name;
+*/}
 
-
-| Watershed | 2011 | 2012 | 2013 | 2014 | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 |
--->
 
 Watershed|[2011](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2011)|[2012](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2012)|[2013](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2013)|[2014](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2014)|[2015](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2015)|[2016](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2016)|[2017](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2017)|[2018](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2018)|[2019](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2019)|[2020](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2020)
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -246,11 +243,12 @@ Watershed|[2011](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&
 | [Wenatchee](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee)  | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2011) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2012) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Wenatchee%2CCHAMP_Year_2017)  | - | - | -|
 | [Yankee Fork](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Yankee_Fork) | - | - | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2013) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2014) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2015) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2016) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2017) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2018) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2019) | [Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Watershed_Yankee_Fork%2CCHAMP_Year_2020) |
 
-<!--
-_All Watersheds_|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2011)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2012)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2013)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2014)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2015)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2016)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2017)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2018)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2019)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2020)
--->
 
 ### Photos
+
+{/*
+_All Watersheds_|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2011)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2012)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2013)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2014)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2015)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2016)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2017)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2018)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2019)|[Data](https://data.riverscapes.net/s?type=Project&projectTypeId=topo&view=map&tags=CHAMP_Year_2020)
+*/}
 
 Photos were taken at the same time as the topographic surveys. The photos span a variety of purposes; some are meant to capture individual channel units, while others were associated with the survey setup (benchmarks, control points etc). The photos were taken with a variety of equipment including point-and-shoot cameras and tablets.
 

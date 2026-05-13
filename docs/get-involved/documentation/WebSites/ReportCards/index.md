@@ -2,9 +2,9 @@
 title: Tool Report Card Instructions
 ---
 
-See [here](/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/Tool_ReportCard_0-0-00.html) for a preview of a blank Tool Report Card Template.
+See the [blank Tool Report Card Template](./Tool_ReportCard_0-0-00) for a preview.
 
-A copy of the markdown template can be dowloaded or copied [here](https://github.com/Riverscapes/riverscapes-website/blob/master/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/Tool_ReportCard_0-0-00.md?plain=1)
+A copy of the markdown template can be downloaded or copied [here](https://github.com/Riverscapes/riverscapes-website/blob/master/Tools/Technical_Reference/Documentation_Standards/WebSites/ReportCards/Tool_ReportCard_0-0-00.md?plain=1)
 
 Typically, the Technical Review Committee will be filling out this markdown and these instructions are for 
 

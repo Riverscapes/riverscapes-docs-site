@@ -51,13 +51,14 @@ If you're just starting out then I recommend SQLite and the O'Reilly book above.
 
 Basic SQL is not geospatial. I recommend learning the SQL language before delving further into geospatial databases. But if you're keen then you should know that we are using the open source [GeoPackage](https://www.geopackage.org/) to store GIS data on desktop computers (no more ShapeFiles!) and the [PostGIS](https://postgis.net/) extension to serve GIS data from online servers.
 
-Not convinced? As of November 2020 the outputs of the following tools are already GeoPackage SQLite databases:
+Not convinced? The outputs of all the following tools are GeoPackage SQLite databases:
 
-- [VBET](http://vbet.riverscapes.net)
-- [Confinement](http://confinement.riverscapes.net)
-- [RVD](http://rcat.riverscapes.net)
+- [VBET](https://tools.riverscapes.net/vbet)
+- [BRAT](https://tools.riverscapes.net/brat)
+- [RCAT](https://tools.riverscapes.net/rcat)
+- [Confinement](https://tools.riverscapes.net/confinement)
 
-We will soon migrate [BRAT](http://brat.riverscapes.net) to output a SQLite GeoPackage and stop using ShapeFiles. The new reach typing tool for the Mississippi, as well as [GNAT](http://gnat.riverscapes.net/) will also use databases. Our reporting technology also relies on SQLite.
+Our reporting technology also relies on SQLite.
 
 -----------
 # Summary

@@ -1,5 +1,6 @@
 ---
 title: Linking to other projects
+sidebar_position: 7
 ---
 
 Sometimes you need to grab resources like inputs and reference layers from other projects. You do it like so:

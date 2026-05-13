@@ -34,14 +34,14 @@ Instead of:
 However, for regular markdown there is still an option that includes a preview of the site (this is supported, for example in GitHub issue forums, whereas the iframe is not). It relies on the thumbnails that YouTube automatically generates for every youtube vide on its image server (`https://img.youtube.com/`; see [here](https://www.sitepoint.com/youtube-video-thumbnail-urls/) for more information on how YouTube does this). Thus, if you use the image markdown syntax (`![alt-text](imagepath)`) inside a regular markdown hyperlink (`[text](url)`) you can produce the illusion of an embedded youtube video (it is actually just an image that links to YouTube).
 
 Use the following syntax and substitute in your YouTube video ID for `YTID`:
+
+{/* TODO: For example, using the above id of `4UKe5BkzJEY` for `YTID` would show up as: */}
+
+{/* TODO: Note substituting `1.jpg` for `0.jpg` switches to a thumbnail size. */}
 ``` markdown
 [![Alt-text](https://img.youtube.com/vi/YTID/0.jpg)](https://www.youtu.be/watch?v=YTID)
 ```
-<!-- TODO For example, using the above id of `4UKe5BkzJEY` for `YTID` would show up as: <br>
-[![Alt-text](https://img.youtube.com/vi/4UKe5BkzJEY/0.jpg)](https://www.youtu.be/watch?v=4UKe5BkzJEY) -->
 
-<!-- TODO Note subsituting `1.jpg` for `0.jpg` switches to a thumbnail size. <br>
-[![Alt-text](https://img.youtube.com/vi/4UKe5BkzJEY/1.jpg)](https://www.youtu.be/watch?v=4UKe5BkzJEY) -->
 
 Finally, if you want to make the hyperlink open in a new tab, use:
 ``` markdown
@@ -57,13 +57,6 @@ Of all the things to do in these markdown Git-hosted webpages, embedding an imag
 4. Copy your image to the appropriate folder path (for BRAT, that is [`\docs\assets\images\`](https://github.com/Riverscapes/pyBRAT/tree/master/docs/assets/images) or subfolder and will be referred to by path as `"/img/"`)
 5. Reference the image in your markdown page. This is done with following syntax for the [`BRAT_Logo-wGrayTxt.png`](https://github.com/Riverscapes/pyBRAT/blob/master/docs/assets/img/BRAT_Logo-wGrayTxt.png):
 
-<!-- ``` markdown
-![BRAT_Logo-wGrayTxt](\assets\images\BRAT_Logo-wGrayTxt.png)
-```
-
-And will look like:
-
-![BRAT_Logo-wGrayTxt](\assets\images\BRAT_Logo-wGrayTxt.png) -->
 
 To make that image hyperlinkable (clickable), you enclose it in square brackets `[]` and then put hyperlink in `(TODO)` parentheses.  For example, to make image above clickable and linking to  [http://google.com](http://google.com)
 
@@ -81,7 +74,9 @@ In this video, I illustrate how to do steps 2-5 of this with a screen shot taken
 
 The best places to look for examples of buttons is on the [styleguide template](https://riverscapes.github.io/TemplateDocs/styleguide.html) - and [corresponding markdown](https://github.com/Riverscapes/TemplateDocs/edit/master/styleguide.md) or to copy a button you like from an existing page. Buttons can be:
 - Just text: <a class="hollow button" href="/">  Back to BRAT Home </a>
-<!-- - Image and Text: <a class="hollow button" href="/"><img src="/img/favicons/favicon-16x16.png">  Back to BRAT Home </a> -->
+
+{/* - Image and Text: <a class="hollow button" href="/"><img src="/img/favicons/favicon-16x16.png">  Back to BRAT Home </a> */}
+
 - or Icon and Text: <a class="hollow button" href="/Documentation/Standards"><i class = "fa fa-check-square-o"></i> Back to ETAL Standards</a>
 
 See [Icon Library](https://fontawesome.com/v4.7.0/icons/) for a list of icons that our Riverscapes recognize and you can use.  
@@ -131,8 +126,6 @@ If you need some help on how to upload your content to ResearchGate, see here:
 <div class="responsive-embed">
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/PsTJfCI09SY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-
-
 
 
 #### Hosting a PDF on AWS instead of ResearchGate
@@ -200,7 +193,7 @@ You can customize the look and feel as well.
 -----
 ## Add a DOI with Zenodo for your Website or Tool
 
-[Zedondo](https://zenodo.org/) provides an easy way to make your website citeable, trackable and indexed. You can even make your contribution part of the [Riverscape Consortium Zeondo Community](TODO)
+[Zenodo](https://zenodo.org/) provides an easy way to make your website citeable, trackable and indexed. You can even make your contribution part of the [Riverscapes Consortium Zenodo Community](https://zenodo.org/communities/riverscapes/)
 
 1. Create a Zenodo account (preferably linked you your [ORCID](https://orcid.org))
 2. Link your GitHub account in your profile.
@@ -231,15 +224,5 @@ The Zeondo Entry also then provides a suggested citation!  We've been adding the
     <br>&nbsp;
 </div>
 ```
-<!-- <div class="float-left">
-        To cite content from this site use:<br>  <a href="https://doi.org/10.5281/zenodo.7248344"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7248344.svg" alt="DOI"></a>
 
-</div> -->
 
-<!-- <div class="float-right">
-    The <a href="https://github.com/Riverscapes/GCD">GCD</a> <i class="fa fa-github" aria-hidden="true"></i> site is licensed under a <a href="https://github.com/Riverscapes/gcd/blob/master/LICENSE">GNU General Public License v3.0</a>,<br> and some specific content is licensed with
-      <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-        <img src="{{site.baseurl}}/assets/img/cc-watermarks-riverscapes_orig.png" alt="Picture">
-    </a>
-    <br>&nbsp;
-</div> -->

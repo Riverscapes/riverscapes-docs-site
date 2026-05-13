@@ -8,7 +8,7 @@ The Riverscapes Command Line Interface (rscli) is a small, lightweight applicati
 
 ## Prerequisites
 
-You must have Node.js version 18 installed on your computer to use rscli. You can download the latest version of Node.js from the [official website](https://nodejs.org/). At the time of writing, it must be version 18, preferably the Long Term Support (LTS) version.
+You must have Node.js version 20 or newer installed on your computer to use rscli. We recommend the Long Term Support (LTS) version. You can download Node.js from the [official website](https://nodejs.org/).
 
 ## Installing and Updating rscli
 
@@ -155,3 +155,38 @@ rscli download <your_local_folder> --id <project_guid> --file-filter "(vegetatio
 ```
 
 Explanation: The file filter is a regex pattern, so the `|` character is used to separate the patterns. The `.` in regex means "any character", so if there was a file called dem_hillshade-tif.jpg, that would match as well.
+
+## Advanced Upload Options
+
+The upload command supports several additional flags:
+
+| Flag | Description |
+|---|---|
+| `--new` | Force creation of a brand new project, even if a `<Warehouse>` tag already exists in the XML |
+| `--visibility PUBLIC\|PRIVATE\|SECRET` | Set the project's visibility (default: `PUBLIC`) |
+| `--no-delete` | Do not delete remote files that are absent from your local copy |
+| `--no-wait` | Start the upload and exit without waiting for server processing to complete |
+| `--tags tag1,tag2` | Apply tags to the project (comma-separated) |
+
+```sh
+# Upload as a private project with tags
+rscli upload . --org <org_guid> --visibility PRIVATE --tags "draft,2026"
+
+# Force a new project even if the XML contains a warehouse tag
+rscli upload . --org <org_guid> --new
+```
+
+:::info New vs. Update
+rscli determines whether to create a new project or update an existing one based on the `<Warehouse>` tag in `project.rs.xml`. If the tag is present it performs an update; if absent it creates a new project. After a successful upload, rscli **rewrites `project.rs.xml`** to add the `<Warehouse>` tag with the assigned project GUID — commit this change to capture the ID.
+:::
+
+## Troubleshooting
+
+| Symptom | Likely Cause | Fix |
+|---|---|---|
+| `This script requires Node.js version >=20` | Wrong Node version | Run `nvm use 20` or reinstall Node from [nodejs.org](https://nodejs.org) |
+| CLI opens browser but hangs | Browser auth failed or port in use | Try `--altport` flag to use port 4723 instead of 4721 |
+| `Project not found` | Wrong project GUID or wrong environment | Double-check the GUID and ensure you're on the right environment (staging vs. production) |
+| Upload says "nothing to do" | Files are unchanged (ETag match) | Use `--new` to force a new project, or modify a file |
+| Script hangs waiting for input | `--no-input` not set | Always add `--no-input` in automated scripts |
+| `You cannot use both --org and --user` | Both flags provided | Use only one |
