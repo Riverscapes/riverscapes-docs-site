@@ -1,6 +1,6 @@
 ---
-title: Source Code Documentation
-weight: 1
+title: Source Code
+sidebar_position: 4
 ---
 
 Riverscapes tools are public and intended to be used by a broad variety of users. Therefore it is vital that the source code is logically organized and well documented.

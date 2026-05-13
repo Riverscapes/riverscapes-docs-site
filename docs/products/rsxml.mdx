@@ -14,9 +14,9 @@ pip install rsxml
 
 Source code and examples: [github.com/Riverscapes/rsxml-python](https://github.com/Riverscapes/rsxml-python)
 
-:::info Schema version
-`rsxml` targets the **V2** Riverscapes Project schema. The V2 XSD is published at:
-`https://xml.riverscapes.net/Projects/XSD/V2/RiverscapesProject.xsd`
+:::info
+rsxml targets the **V2** Riverscapes Project schema. The V2 XSD is published at:
+https://xml.riverscapes.net/Projects/XSD/V2/RiverscapesProject.xsd
 :::
 
 ## Installation
@@ -133,7 +133,7 @@ The top-level class, maps to the `<Project>` XML root.
 | `realizations` | `list[Realization]` | | The analysis runs |
 | `common_datasets` | `list[Dataset]` | | Datasets shared across realizations |
 
-:::warning Always set ModelVersion
+:::warning
 The library will emit a warning during `write()` if `ModelVersion` is not present in the project metadata. Always include it:
 ```python
 Meta("ModelVersion", "1.0.0")

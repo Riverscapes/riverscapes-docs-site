@@ -1,6 +1,6 @@
 ---
 title: Tool Web Sites
-weight: 2
+sidebar_position: 2
 ---
 
 Many riverscapes tools (pieces of software) are documented using their own web site, for example:
