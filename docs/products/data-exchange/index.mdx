@@ -1,129 +1,207 @@
 ---
 title: Data Exchange
 title_icon: https://cdn.riverscapes.net/icons/products/data-exchange/data-exchange.svg
+description: Discover, share, and download riverscapes data from a searchable cloud platform holding over 115,000 projects
 banner: true
-page-status: messy
-page-priority: high
 ---
 
-The Riverscapes Consortium organizes and serves data via the *[Data Exchange](https://data.riverscapes.net)*. The Data Exchange provides access to both the underlying data (packaged in [riverscapes projects](/get-involved/documentation/Riverscapes_Projects/)) as well as making these data explorable via an integrated explorer or interactive web maps. We only serve and host data packaged in fully [Riverscapes-Compliant](/standards/discrimination#tool-grade) [Riverscapes Projects](/get-involved/documentation/Riverscapes_Projects/).
+<div>
+	<div style={{ float: 'right', width: '160px', paddingLeft: '24px', paddingBottom: '12px' }}>
+		<img src="https://cdn.riverscapes.net/icons/products/data-exchange/data-exchange.svg" alt="Riverscapes Data Exchange" style={{ width: '100%' }} />
+	</div>
+	<div>
+		The **Riverscapes Data Exchange** is the Riverscapes Consortium's cloud platform for discovering, sharing, and downloading riverscapes data. It is a searchable catalog of over **115,000 projects** — spanning watershed-scale model outputs, reach-scale studies, and custom datasets — all organized consistently, openly licensed, and ready to explore in a browser or download directly into your GIS.
+
+		Every project in the Data Exchange is [Riverscapes-compliant](/standards/discrimination): structured, documented with machine-readable metadata, and displayable with consistent cartography in the [Riverscapes Viewers](https://viewer.riverscapes.net). The Data Exchange is the central hub that connects Riverscapes tools, data, and users.
+	</div>
+</div>
 
 <ToolsWrapper
   cardsize="lg"
   cards={[
     {
-      title: "Get Riverscapes Data Now",
+      title: "Open the Riverscapes Data Exchange",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/data-exchange/data-exchange.svg",
       toolUrl: "https://data.riverscapes.net",
-      description:"Discover and download data from the Riverscapes Data Exchange."
+      description: "Search, browse, and download riverscapes data. Free to access. No account required to discover public data."
     }
   ]}
 />
 
-## Goal
+## What's Already in There
 
-Make it easier to catalog, share, discover and retrieve the products of riverscapes analysis and modelling.
+The Data Exchange is not an empty repository waiting to be filled — it already holds a massive, freely accessible body of riverscapes data produced by the Consortium and its partners:
 
-## Advantages
+- **115,000+ projects** covering virtually every HUC10 watershed in the conterminous United States
+- **10+ model types** per watershed: [RSContext](https://tools.riverscapes.net/rscontext/), [VBET](https://tools.riverscapes.net/vbet/), [BRAT](https://tools.riverscapes.net/brat/), [RCAT](https://tools.riverscapes.net/rcat/), [TauDEM](https://tools.riverscapes.net/taudem/), [Anthro](https://tools.riverscapes.net/anthro/), [Metric Engine](https://tools.riverscapes.net/rme/), and more
+- **54 million riverscapes** with ~150 metrics each, queryable via the [Riverscapes Reports platform](https://reports.riverscapes.net)
+- Projects from multiple successive national model runs (2021, 2023, and 2025), allowing temporal comparison
+- Custom studies and datasets contributed by partner agencies, universities, and individual researchers worldwide
 
-The advantages of [riverscapes projects](/get-involved/documentation/Riverscapes_Projects/) being hosted in a data warehouse can include:
+This is the third consecutive continental-scale production run. All previous runs are also retained in the Data Exchange as archived projects. [Learn more about the 2025 CONUS run →](/initiatives/2025-CONUS-runs)
 
-- Searchable and queryable catalog
-- Custom web maps
-- Custom field and desktop Apps
-- Secure cloud hosting:
-  - Easy public sharing
-  - Full user access permission control
-- Full integration with EC2 and Lambda for cloud-computing of [Production-Grade](/standards/discrimination#tool-grade) riverscapes models.
--  [Creative Commons licensing](https://creativecommons.org/licenses/) of datasets
-- Ability to mint DOIs to make datasets citable
-- [OGC API](http://www.ogcapi.org/) access to riverscapes projects and warehouse for programmers
--  [OGC Web Map Tile Services](https://www.opengeospatial.org/standards/wmts) access to your datasets
-- [GraphQL API](/products/data-exchange/advanced/data-exchange-api) and [Python client library](/products/data-exchange/advanced/python-api) for programmatic access
-- Searchable and discoverable in [Riverscapes viewers](http://viewer.riverscapes.net) GIS Toolbars
+## What Is a Riverscapes Project?
 
+Everything in the Data Exchange is stored as a **Riverscapes project** — a structured folder of data files accompanied by a plain-text `project.rs.xml` metadata file. This file is the key to the whole system: it tells the Data Exchange what type of project it is, what data it contains, where the files are, how they relate to each other, and who produced them.
 
-## Overview
+Because every project follows this standard, the Data Exchange can:
+- Display any project in a [web map viewer](https://viewer.riverscapes.net/software-help/help-web/) embedded directly on the project page
+- Apply curated cartography automatically when the project is opened in QGIS or ArcGIS via the [Riverscapes Viewer](https://viewer.riverscapes.net)
+- Track provenance, version history, and QA/QC status
+- Make projects searchable by type, geography, metadata, tags, and owner
 
-The playlist below contains videos the provide an overview of the Data Exchange and its functionality
+Projects can contain GeoPackages, rasters, reports, logs, CSVs, images — practically any file format. The smallest projects are a handful of files for a few kilometres of stream; the largest are multi-gigabyte national model outputs.
 
-<YouTubeEmbed videoId="playlist?list=PL35jXN3ZcZGH-BjHgLMuYqpjAVqm5C4HT" />
+## Finding and Downloading Data
 
-:::info
-The video below documented an earlier verion of the Data Exchange.
+### Searching the Catalog
+
+The Data Exchange has a powerful search interface. You can filter projects by:
+- **Project type** — e.g., all VBET projects, all BRAT projects
+- **Geography** — draw or zoom to an area on the interactive map
+- **HUC code** — search by watershed identifier
+- **Tags** — filter by production run, agency, or theme (e.g. `2025CONUS`, `BLM`)
+- **Metadata** — query by any key/value pair stored in the project
+- **Owner** — find all projects belonging to a specific organization or user
+
+Search results can be viewed as a map, a card grid, or a table. The table view supports copying a list of project IDs for batch operations.
+
+### Downloading
+
+Public projects can be downloaded by anyone. Each project page has a **Download** button that packages the project as a zip file. For large projects (>1.5 GB) or selective downloads, use the [QGIS Viewer downloader](https://viewer.riverscapes.net/software-help/help-qgis/qgis-downloader/) or the [rscli command line interface](/products/rscli), both of which download individual files and support regex-based file filtering.
+
+For downloading many projects at once, see the [Downloading Multiple Projects](/products/data-exchange/help/download-multiple-projects) guide which covers everything from simple scripts to the full Python API.
+
+### Viewing in the Browser
+
+Every project page embeds the **Web Viewer** — an interactive map where you can add up to five project layers, switch between curated views, and browse the project's metadata and layer provenance. No GIS software required. [Learn more about the Web Viewer →](/products/riverscapes-viewer#web-viewer)
+
+## Sharing Your Own Data
+
+Anyone with a Riverscapes account can upload data to the Data Exchange. The platform is designed for sharing at every scale — from a single reach study to thousands of model outputs.
+
+### Creating an Account
+
+Create a free account at [data.riverscapes.net](https://data.riverscapes.net) using Google, Apple, or email. This same account works across the Riverscapes platform including [PBR Explorer](https://pbr.riverscapes.net) and [Riverscapes Reports](https://reports.riverscapes.net). [Step-by-step signup instructions →](/products/data-exchange/help/signup)
+
+### Uploading Projects
+
+Once your data is packaged as a Riverscapes-compliant project you can upload it via:
+- The **[QGIS Viewer uploader](https://viewer.riverscapes.net/software-help/help-qgis/qgis-uploader/)** — a point-and-click interface within QGIS for new uploads and updates
+- The **[rscli command line interface](/products/rscli)** — for scripted or bulk uploads
+
+When uploading you assign an **owner** (yourself or an organization) and set **visibility**:
+
+| Visibility | Who can discover it | Who can download it |
+|---|---|---|
+| **Public** | Everyone | Everyone |
+| **Private** | Everyone | Owner + authorized users |
+| **Secret** | Owner + authorized users only | Owner + authorized users |
+
+You can change visibility at any time. [Full permissions reference →](/products/data-exchange/permissions)
+
+### Organizations
+
+Projects can be owned by **organizations** rather than individual accounts, making them easier to manage in teams and collaborations. Organization members are assigned one of four roles — Viewer, Contributor, Administrator, or Owner — each with progressively broader permissions over projects and membership. [Learn about organizations →](/products/data-exchange/help/organizations)
+
+### Attribution
+
+Every project has a single administrative owner, but riverscapes work is often collaborative. The **attributions** feature lets you credit partner organizations in named roles: Funder, Co-Funder, Analyst, Contributor, Designer, QA/QC, Supporter. Attributed projects appear on each partner organization's page, giving credit where it belongs. [Learn about attribution →](/products/data-exchange/help/attribution)
+
+### Archiving
+
+Projects that are no longer actively used can be **archived** to reduce storage costs. Archived projects retain their metadata and remain discoverable in search, but their data files are moved to deep storage and the web map tiles and download ZIP are removed. Projects can be restored at any time (up to 48 hours to complete). [Learn about archiving →](/products/data-exchange/archive)
+
+## Getting Data In: New Project Types
+
+If you want to contribute data of a type that isn't already in the Data Exchange, the process involves three steps:
+
+1. **Define the project type** — a machine code, name, description, and website for the new data type. Contact [support@riverscapes.freshdesk.com](mailto:support@riverscapes.freshdesk.com) to register it.
+2. **Prepare your data** — organize files into a logical folder structure, write the `project.rs.xml` manifest, define project bounds.
+3. **Develop business logic and symbology** — XML and style files that tell the Riverscapes Viewers how to display your project type. These live in the open-source [RiverscapesXML repository](https://github.com/Riverscapes/RiverscapesXML).
+
+The [RSXML Python package](/products/rsxml) can generate valid `project.rs.xml` files programmatically. The [Project Getting Started guide](/get-involved/project-getting-started) walks through each step in detail.
+
+## Programmatic Access
+
+The Data Exchange has a full **GraphQL API** and a Python client library, making it straightforward to search across thousands of projects, download files selectively, and integrate riverscapes data into analysis pipelines.
+
+<ToolsWrapper
+  cardsize="md"
+  cards={[
+    {
+      title: "GraphQL API",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/data-exchange/data-exchange.svg",
+      description: "Query the Data Exchange from any language. Search projects by type, geography, tags, metadata, and more. Self-documenting via Postman or Insomnia.",
+      toolUrl: "/products/data-exchange/advanced/data-exchange-api",
+    },
+    {
+      title: "Python API (pydex)",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/data-exchange/data-exchange.svg",
+      description: "A Python client library for searching, iterating, and downloading from the Data Exchange. Handles auth, pagination, and incremental file downloads automatically.",
+      toolUrl: "/products/data-exchange/advanced/python-api",
+    },
+    {
+      title: "rscli",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/rscli/rscli.svg",
+      description: "Command line interface for uploading and downloading individual projects. The simplest entry point if you don't need to write code.",
+      toolUrl: "/products/rscli",
+    },
+  ]}
+/>
+
+:::tip[When to use which tool]
+- **Browsing and occasional downloads** → use the Data Exchange website
+- **Downloading a handful of known projects** → use [rscli](/products/rscli) or the [QGIS Viewer downloader](https://viewer.riverscapes.net/software-help/help-qgis/qgis-downloader/)
+- **Bulk downloads or data pipelines** → use the [Python API](/products/data-exchange/advanced/python-api)
+- **Custom queries from non-Python languages** → use the [GraphQL API](/products/data-exchange/advanced/data-exchange-api) directly
 :::
-In this 8 minute video, we show off what these warehouses buy you in terms of housekeeping and reaching broader audiences.
 
-<YouTubeEmbed videoId="iuYYsJiTQRI" />
+## Data Quality and Provenance
 
-## Dataset Discrimination
+Every project in the Data Exchange carries provenance metadata recorded in its `project.rs.xml` file: what tool produced it, which version, who ran it, when, and how. For projects produced by [Cybercastor](/products/cybercastor), automated QAQC checks are recorded as part of the project's history.
 
-We refer to 'datasets' as any input(s), output(s) or intermediate(s) used or produced by our various analyses, [tools](/standards/toolStandards) and workflows within the Riverscapes Consortium.  Within the warehouse, we assign to each "dataset" node or instance within a Riverscapes Project we use a couple of concepts to differentiate and contextualize that data :
-- **Dataset Grade** - Describes the rank of dataset curation using an adaptation of  [Bloom's Taxonomy of Educational Objectives](https://cft.vanderbilt.edu/guides-sub-pages/blooms-taxonomy/)
-- **Data Product Status Tags** - Tracks overall status, degree of quality assurance and control, and data generation methods.
+Projects are tagged with an **overall status** that tracks where they sit in the data lifecycle:
 
-As scientists and analysts, we produce a plethora of datasets, some of which go no further than an exploratory analysis and some which are carefully documented, vetted, and validated before being made for external consumption. Not all datasets will proceed sequentially through all stages of dataset status below and some stages are reiterated (e.g. after expert calibration, an output may be requeued for QA/QC assurance. The idea behind dataset discrimination is to keep track of how far, and for what purpose a dataset was
+| Status | Meaning |
+|---|---|
+| **Exploratory** | Preliminary output, not yet reviewed |
+| **Provisional** | Has undergone some automated or manual QA/QC |
+| **Final** | Validated and trusted; DOI assigned for citation |
+| **Promoted** | Fully vetted for external consumption (e.g. used in a published paper or management plan) |
 
-In this 8 minute video, we lay out some concepts we're exploring with respect to dataset status:
+This system makes it clear to data consumers what level of confidence to place in any given dataset. [Full data quality standards →](/standards/discrimination)
 
-<YouTubeEmbed videoId="msBhCp6vCsc" />
+## The Data Exchange in the Riverscapes Ecosystem
 
-### Dataset Rank
+The Data Exchange is the connective tissue of the Riverscapes platform. Data flows into it from [Cybercastor](/products/cybercastor) model runs, is explored via the [Riverscapes Viewers](/products/riverscapes-viewer), extracted via [Riverscapes Reports](https://reports.riverscapes.net), and accessed programmatically via the API:
 
-Not all datasets are created equal, nor have all received the same amount of attention, curation, validating, curation and or story telling. Drawing from and adapting [Bloom's Taxonomy of Educational Objectives](https://cft.vanderbilt.edu/guides-sub-pages/blooms-taxonomy/), we define dataset grade in terms of a similar hierarchy of dataset curation (instead of skills and abilities) with six levels:
-
-1. **Knowledge-Rank** -  A dataset representing raw data and observations.
-2. **Comprehension-Rank** - A dataset that is a derivative product from raw data or observation (e.g. a surface interpolated from raw sample points)
-3. **Application-Rank** - A dataset that represents the typical outputs generated in one realization from a tool or model.
-4. **Analysis-Rank** - A dataset that represents an an analysis, summary or interpretation from an application-rank dataset.
-5. **Synthesis-Rank** - A dataset that involves the pulling together of multiple analysis-rank datasets to describe a larger problem.
-6. **Evaluation-Rank** - A broader summary dataset that provides direct answers or insights into key scientific knowledge gaps or key management questions (e.g. what is published in a peer-reviewed paper as an "original contribution" or used as a basis for decision making)
-
-In general, the higher tiered datasets represent what is filtered out through scientific inquiry from more basic and prolific datasets and observations into a higher form of knowledge. Higher-tiered datasets have more utility to managers to inform decision making, but scientists often at least want the transparency of knowing what datasets went into informing that  synthesis or evaluation. Riverscapes Projects impose this transparency of what evidence every dataset originated from and allow iterative inquiry and exploration.
-
-
-#### Idea from CHaMP
-
-The idea to use [Bloom's Taxonomy of Educational Objectives](https://cft.vanderbilt.edu/guides-sub-pages/blooms-taxonomy/) to communicate the rank or type of curation a dataset had received grew out of a need to communicate what utility the many different datasets we were producing in the [Columbia Habitat Monitoring Program](/initiatives/champ). The figure below shows how we referred to datasets as "products" and uses specific examples of RC-tools and models to illustrate the ideas:
-
-<img src="https://lh5.googleusercontent.com/MrlolkkwfO0OC1pZNKDKkCcoebKTYbGKbVpO5H2vpd7ItVFi-6lVvmUNY9o4TMK1UxQizAGkZwaoBuLntsZvO8mfE4gsh9ohNmfxxhZBG0owahyAr_Tv_eUdt31REXy-MPKEeSMR" />
-
-### Dataset Status Tags
-
-We use three optional status tags:
-
-1. Overall Status,
-2. QA/QC Review, and
-3. Data Generation
-
-to track the development of a dataset. However, it is the Overall Status of a dataset that is most important for tracking its progression within a Riverscape Warehouse.
-
-| Status Tags | Overall Status | QA/QC Review | Data Generation |
-|-------------|----------------|-------------------|-----------------|
-|  |  | None | None |
-|  | Exploratory | Automated Testing | End-User |
-|  | Provisional | Manual Testing | Manual |
-|  | Final | Expert Calibrated | Automated-Local |
-|  | Promoted | Validated | Automated-Cloud |
-
-#### Overall Status
-
-Where in the dataset life cycle the dataset  exists. The four status choices represent a progression.
-  - **Exploratory** - Preliminary datasets produced by an analyst to explore how well a particular analysis works, or to what extent a dataset gives insights into specific questions (e.g., an individual model run used for a talk).  This is as far as the vast majority of analyses get.
-  - **Provisional** - A dataset that has undergone some degree of automated or manual QA/QC testing.
-  - **Final** - A dataset that has been validated and is trusted for inclusion in the riverscape warehouse. Upon elevation to a finalized status a dataset is available for use by  team members and authorized partners. At this point the dataset has a DOI assigned so a static version is available for later reference.
-  - **Promoted** - A dataset promoted from a finalized riverscape warehouse output to ready for external consumption. The degree of documentation and vetting is generally higher than finalized outputs. Examples may include any datasets used in the preparation of a basin or restoration plan or peer-reviewed paper.
-
-#### QA/QC Review
-
-The degree of quality assurance and quality control checks that a dataset has been subjected to. The choices are not a progression per se, and a dataset may undergo just one or all four of these states.
-  - **Automated Testing** - All tool-generated outputs undergo some degree of quality assurance and quality control checking to flag outliers and mistakes. When a dataset has received QA/QC evaluation in an automated, centralized, production mode (e.g., GCD results checked for outliers) it is automatically queued for manual editing, checking and fixing.
-  - **Manual Testing** - A manual, expert evaluation of a dataset and its reporting.
-  - **Expert Calibrated** - An optional step of modifying model outputs by model iteration or analysis to produce new output based on expert modification of inputs and/or parameters to more realistic values.
-  - **Validated**- A dataset can be considered validated after it has undergone some form of testing and the relative quality of that dataset has been assessed and reported. If the inputs and/or parameters have been calibrated or modified with expert insights and the dataset generation has been iterative, the reporting includes how dataset quality has changed with that calibration process.
-
-#### Data Generation
-
-How the data datasets were generated
-  - **Automated Local**- Generated via batch processing using local [network models](https://tools.riverscapes.net).
-  -  **Automated Cloud -** Generated via cloud processing using [Cybercastor](/products/cybercastor)
-  -  **Manual** - Generated via local tools on an individual basis.
+<ToolsWrapper
+  cardsize="md"
+  cards={[
+    {
+      title: "Cybercastor",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/cybercastor/cybercastor.svg",
+      description: "The cloud engine that produced the 115,000+ projects in the Data Exchange. Pulls inputs from the Data Exchange, runs models at scale, and deposits outputs back automatically.",
+      toolUrl: "/products/cybercastor",
+    },
+    {
+      title: "Riverscapes Viewer",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/viewer/viewer.svg",
+      description: "Free web, QGIS, and ArcGIS apps for exploring Data Exchange projects with automatic curated symbology. The Web Viewer is embedded directly in every project page.",
+      toolUrl: "/products/riverscapes-viewer",
+    },
+    {
+      title: "Riverscapes Reports",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/reports/reports.svg",
+      description: "Draw an area of interest and immediately extract metrics and reports from 54 million riverscapes — all sourced from Data Exchange projects.",
+      toolUrl: "https://reports.riverscapes.net",
+    },
+    {
+      title: "Riverscapes Network Models",
+      logoUrl: "https://cdn.riverscapes.net/icons/network-models/rme/rme.svg",
+      description: "The production-grade geospatial models whose outputs populate the Data Exchange. Each model produces a Riverscapes-compliant project for every watershed it runs.",
+      toolUrl: "https://tools.riverscapes.net",
+    },
+  ]}
+/>

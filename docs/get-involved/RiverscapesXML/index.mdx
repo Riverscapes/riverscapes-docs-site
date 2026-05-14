@@ -1,0 +1,152 @@
+---
+title: RiverscapesXML
+description: The central configuration repository that powers the display, validation, and organization of all Riverscapes data
+---
+
+**RiverscapesXML** is the GitHub repository that defines how every Riverscapes project looks, how it is validated, and how it is organized across every tool in the ecosystem. It is the single source of truth for business logic, symbology, project schemas, basemaps, and protocol definitions — and it is silently at work every time you open a project in the Viewer, upload data to the Data Exchange, or run a network model.
+
+:::info[Repository]
+**[github.com/Riverscapes/RiverscapesXML](https://github.com/Riverscapes/RiverscapesXML)**
+
+On every merge to `master`, the repository is automatically published to **[xml.riverscapes.net](https://xml.riverscapes.net)** — the live endpoint that every Riverscapes tool reads from.
+:::
+
+## Why This Repository Matters
+
+When you click **Update Resources** in the QGIS or ArcGIS Viewer, it is downloading files from this repository. When a project is uploaded to the Data Exchange, the `project.rs.xml` is validated against the XSD schema published from here. When Cybercastor produces a BRAT project and a scientist opens it in QGIS, the tree structure they see and the colors applied to every layer are controlled by files in this repository.
+
+This makes RiverscapesXML the most important single repository in the Riverscapes ecosystem. A broken file here can break every version of the Viewer simultaneously. A missing business logic file means a new project type cannot be displayed. A well-maintained symbology file means every user across every platform sees consistent, meaningful cartography without any manual effort.
+
+## What's in the Repository
+
+### Business Logic (`RaveBusinessLogic/`)
+
+Business logic XML files define how each project type appears in the [Riverscapes Viewer's](/products/riverscapes-viewer) project explorer panel — the tree structure, layer groupings, layer names, and which symbology key applies to each layer. There is one file per project type.
+
+Currently **53 project types** have business logic defined, including:
+
+| Network Models | Other Tools | International |
+|---|---|---|
+| RSContext, VBET, BRAT, RCAT | GCD, GUT, QRiS Studio | RSContextNZ, NZGEMS |
+| TauDEM, ChannelArea, Hydro | LTPBRDesign, LTPBRProjects | ItalyNational, NZNational |
+| Anthro, Confinement, RVD | CHaMPMetrics, CHaMPMacroinvertebrate | BLMContext, RSContextBC |
+| rs_metric_engine, IGOs | Inundation, Substrate, Solar | ... and more |
+
+Business logic is written in XML and validated against the [project explorer XSD schema](https://github.com/Riverscapes/RiverscapesXML/blob/master/RaveBusinessLogic/XSD/project_explorer.xsd). The V2 format is current; a V1 legacy format also exists for older projects.
+
+### Symbology (`Symbology/`)
+
+Symbology files translate a layer's symbology key (defined in business logic) into actual visual styles in each GIS platform. The same key `DEM` points to a raster hillshade style in QGIS, ArcGIS Pro, ArcMap, and the Web Viewer simultaneously, ensuring **every user sees the same map regardless of which tool they use**.
+
+| Platform | Format | Files |
+|---|---|---|
+| **QGIS** | `.qml` layer files | ~35 styles |
+| **Web Viewer** | MapBox JSON | ~28 styles |
+| **ArcGIS Pro** | `.lyrx` layer files | ~14 styles |
+| **ArcGIS 10.x** | `.lyr` layer files | ~18 styles |
+
+Symbology keys are shared across platforms wherever possible. A key defined in business logic needs corresponding style files for each target platform.
+
+### Project Schema (`Projects/XSD/`)
+
+The XSD schema files define the required structure of every `project.rs.xml` file. Any project that fails to validate against the current V2 XSD cannot be uploaded to the Data Exchange.
+
+The V2 schema is published at:
+```
+https://xml.riverscapes.net/Projects/XSD/V2/RiverscapesProject.xsd
+```
+
+Include this URL in your `project.rs.xml` to get automatic inline validation in VS Code:
+
+```xml
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://xml.riverscapes.net/Projects/XSD/V2/RiverscapesProject.xsd">
+```
+
+The full V2 schema reference is documented at [project.rs.xml V2 Reference](/standards/Project/project-xml-v2-reference).
+
+### Basemaps (`BaseMaps.xml`)
+
+A single XML file defines the web mapping services available as basemaps across all Viewer versions. The current list includes Google Imagery, Bing Aerial, USGS Hydrography (WBD and NHD), and USGS Topographic layers. Custom basemaps can be added by contributing to this file or by creating a local `BaseMaps.xml` override — see the [Viewer basemap documentation](https://viewer.riverscapes.net/technical-reference/base-maps/).
+
+### QRiS Protocols (`QRiS/`)
+
+Protocol XML files for [Riverscapes Studio (QRiS)](https://qris.riverscapes.net) are stored here alongside a JSON schema for QRiS metrics. Protocol files define structured data collection workflows. Currently **~17 protocols** are defined, including LTPBR design and as-built, beaver census, monitoring, and geomorphic mapping protocols.
+
+### Layer Definitions (`riverscapes_metadata/`)
+
+A JSON schema for standardized layer/column metadata across all Riverscapes tools. Any model or script that generates data can reference this schema to describe its layers and attributes in a machine-readable way. The schema is published at:
+```
+https://xml.riverscapes.net/riverscapes_metadata/schema/layer_definitions.schema.json
+```
+
+Layer definitions are harvested and published to an Athena table, enabling the [Riverscapes Reports](https://reports.riverscapes.net) platform to query and surface metrics across all CONUS model runs.
+
+---
+
+## How It Gets Published
+
+Every merge to `master` triggers a GitHub Actions workflow that:
+
+1. **Builds an `index.json` digest** — an MD5 hash of every file in the repository. All Viewer versions read this file to determine which resources are new and need to be downloaded.
+2. **Publishes to GitHub Pages** — all files become available at `xml.riverscapes.net` within minutes.
+
+Every branch also runs an **XML validation workflow** that checks all business logic, schemas, and program files for errors. A passing validation run is required before any pull request can be merged.
+
+See [GitHub Actions for RiverscapesXML](GHActions) for full details on both workflows.
+
+---
+
+## How to Contribute
+
+### Adding Business Logic for a New Project Type
+
+If you have a new [Riverscapes-compliant](/standards/discrimination) project type that you want to display properly in the Viewers:
+
+1. Read the [business logic authoring guide](https://viewer.riverscapes.net/technical-reference/business-logic/) on the Viewer documentation site.
+2. Create a new `YourProjectType.xml` file in `RaveBusinessLogic/V2/`, following the existing files as templates.
+3. Test your business logic locally by placing it in the root of a project folder — the Viewer checks there first, before the published repository.
+4. Submit a pull request. The automated XML validation must pass before it can be merged.
+
+### Adding or Updating Symbology
+
+1. Read the [symbology authoring guide](https://viewer.riverscapes.net/technical-reference/symbology/) on the Viewer documentation site.
+2. Add style files for your symbology key into the relevant platform subfolders (`Symbology/qgis/`, `Symbology/web/`, etc.).
+3. Test locally by placing the style file in your project folder or APPDATA folder.
+4. Submit a pull request.
+
+Reuse existing symbology keys wherever possible — if an appropriate style already exists for the visual concept you need (e.g. `DEM`, `Slope`, `ValleyBottom`), reference it in your business logic rather than creating a new file.
+
+### Contributing to QRiS Protocols or Layer Definitions
+
+Follow the same pull request process. The automated validation suite will catch structural errors. For significant changes to the layer definitions schema, contact [support@riverscapes.freshdesk.com](mailto:support@riverscapes.freshdesk.com) to discuss backwards compatibility.
+
+---
+
+## In the Ecosystem
+
+RiverscapesXML is the shared configuration layer underpinning the rest of the platform:
+
+<ToolsWrapper
+  cardsize="md"
+  cards={[
+    {
+      title: "Riverscapes Viewer",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/viewer/viewer.svg",
+      description: "All four Viewer versions (Web, QGIS, ArcGIS Pro, ArcGIS 10.x) pull business logic, symbology, and basemaps directly from xml.riverscapes.net every time resources are updated.",
+      toolUrl: "/products/riverscapes-viewer",
+    },
+    {
+      title: "Riverscapes Data Exchange",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/data-exchange/data-exchange.svg",
+      description: "All projects uploaded to the Data Exchange are validated against the project XSD schema published here. The Data Exchange API also reads project type definitions from xml.riverscapes.net.",
+      toolUrl: "/products/data-exchange",
+    },
+    {
+      title: "Getting Data into the Ecosystem",
+      logoUrl: "https://cdn.riverscapes.net/icons/miscellaneous/how-to/how-to.svg",
+      description: "A step-by-step guide covering everything from project type registration to business logic, symbology development, and uploading to the Data Exchange.",
+      toolUrl: "/get-involved/project-getting-started",
+    },
+  ]}
+/>

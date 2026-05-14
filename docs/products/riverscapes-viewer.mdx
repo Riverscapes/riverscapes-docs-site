@@ -1,7 +1,236 @@
 ---
 title: Riverscapes Viewer
 title_icon: https://cdn.riverscapes.net/icons/products/viewer/viewer.svg
-description: Applications allowing exploration of any Riverscapes project
+description: Free GIS applications for exploring any Riverscapes project, with automatic curated symbology
+banner: true
 ---
 
-The Riverscapes Viewer family of products has its own web site. Visit [`viewer.riverscapes.net`](https://viewer.riverscapes.net) for information on installing (as needed) and using the different versions, technical reference material and how to develop business logic and symbology for consistent display of Riverscapes project data.
+<div>
+	<div style={{ float: 'right', width: '160px', paddingLeft: '24px', paddingBottom: '12px' }}>
+		<img src="https://cdn.riverscapes.net/icons/products/viewer/viewer.svg" alt="Riverscapes Viewer" style={{ width: '100%' }} />
+	</div>
+	<div>
+		The **Riverscapes Viewer** is a family of free applications — for your browser, QGIS, and ArcGIS — that let you open any [Riverscapes project](https://data.riverscapes.net) and immediately explore it as a properly organized, correctly symbolized map. No configuration, no manual layer styling, no hunting for the right color ramp.
+
+		Every Riverscapes project contains a consistent metadata file (`project.rs.xml`) that tells the Viewer exactly what data the project contains and how it should be displayed. The Viewer reads this, applies curated symbology, and presents the layers in a logical hierarchy that is specific to that project type. Open a BRAT project and you get a BRAT-organized table of contents with BRAT-appropriate colors. Open a VBET project and it looks like VBET. Every time, for every user.
+	</div>
+</div>
+
+:::info[Full documentation at viewer.riverscapes.net]
+This page provides an overview of the Riverscapes Viewer family. Full installation instructions, tutorials, and technical reference material live at **[viewer.riverscapes.net](https://viewer.riverscapes.net)**.
+:::
+
+## Why the Riverscapes Viewer?
+
+Anyone who has worked with GIS data knows the friction: download a dataset, add it to your map, discover it looks like nothing, spend time symbolizing it, repeat for every layer, repeat for every collaborator on your team, repeat every time the data changes. The Riverscapes Viewer eliminates this entirely.
+
+- **Free** — all versions, always
+- **No symbolizing** — curated symbology is applied automatically from a centrally maintained library
+- **Consistent** — the same project looks identical in your QGIS and your colleague's ArcGIS Pro
+- **Structured** — layers are organized into a meaningful project tree, not a flat list of files
+- **Any compliant project** — if a project is in the [Riverscapes Data Exchange](https://data.riverscapes.net), the Viewer can display it
+
+## Which Version Is Right for You?
+
+| | [Web Viewer](#web-viewer) | [QGIS Viewer](#qgis-viewer) | [ArcGIS Pro](#arcgis-pro-viewer) | [ArcGIS 10.x](#arcgis-10x-viewer-legacy) |
+|---|:---:|:---:|:---:|:---:|
+| **Installation required** | ❌ | ✅ Plugin | ✅ Add-in | ✅ Add-in |
+| **Cost** | Free | Free | Free | Free |
+| **Best for** | Quick exploration | Power users, field teams | Existing ArcGIS users | Legacy ArcMap users |
+| **Open local project** | ❌ | ✅ | ✅ | ✅ |
+| **Open remote project (stream without downloading)** | ✅ | ✅ | ❌ | ❌ |
+| **Download from Data Exchange** | ✅ (zip) | ✅ (within QGIS) | ❌ | ❌ |
+| **Upload to Data Exchange** | ❌ | ✅ | ❌ | ❌ |
+| **Curated symbology** | ✅ | ✅ | ✅ | ✅ |
+| **Project Views** | ✅ | ✅ | ✅ | ✅ |
+| **Basemaps** | ✅ | ✅ | ✅ | ✅ |
+
+---
+
+## Web Viewer
+
+<div>
+	<div style={{ float: 'right', width: '320px', paddingLeft: '20px', paddingBottom: '12px' }}>
+		<img src="https://viewer.riverscapes.net/images/webviewer/web_viewer_tile.png" alt="Riverscapes Web Viewer" style={{ width: '100%', borderRadius: '6px' }} />
+	</div>
+	<div>
+		The Web Viewer requires no software installation whatsoever. It runs directly in your browser and is accessible from any project page on the [Riverscapes Data Exchange](https://data.riverscapes.net). Click the **Open Map Viewer** button on any project page and the map opens immediately.
+
+		The Web Viewer is deliberately simpler than the desktop GIS versions — it is designed for quick exploration rather than deep analysis. It is perfect for sharing data with stakeholders who don't have GIS software, reviewing model outputs, or getting a quick look at a project before deciding whether to download it.
+	</div>
+</div>
+
+### Web Viewer Features
+
+- **Project tree** on the left panel — browse and add up to 5 layers at a time
+- **Layer legend** on the right — shows currently loaded layers with expand/collapse and zoom-to controls
+- **Project Views** — curated layer sets designed to showcase specific aspects of a project type
+- **Basemaps** — choose from three background map options
+- **Metadata panel** — view project-level metadata and provenance
+- **Download button** — download the full project for use in a desktop GIS Viewer
+
+### Getting Started with the Web Viewer
+
+No installation needed. Simply:
+1. Visit the [Riverscapes Data Exchange](https://data.riverscapes.net) and find a project
+2. Click the **Open Map Viewer** button on the project page
+
+:::tip
+The Web Viewer streams tile-based layers over the internet. It is ideal for getting a quick visual overview, but for analysis or working with large datasets, download the project and use the QGIS or ArcGIS Pro Viewer instead.
+:::
+
+---
+
+## QGIS Viewer
+
+<div>
+	<div style={{ float: 'right', width: '320px', paddingLeft: '20px', paddingBottom: '12px' }}>
+		<img src="https://viewer.riverscapes.net/images/qviewer/qviewer_tile_small.min.png" alt="Riverscapes Viewer for QGIS" style={{ width: '100%', borderRadius: '6px' }} />
+	</div>
+	<div>
+		The QGIS Viewer is the most feature-rich of the Riverscapes Viewer family. It is a free plugin for [QGIS](https://qgis.org) that adds a dedicated toolbar and dockable project explorer panel. It is the recommended choice for most users, including those who are new to GIS — QGIS itself is free and the Viewer can be installed in under five minutes.
+
+		In addition to opening and exploring projects locally, the QGIS Viewer is the only desktop version with built-in integration for downloading and uploading projects to the [Riverscapes Data Exchange](https://data.riverscapes.net), and the only version with Remote Projects — the ability to stream and view project layers without downloading them first.
+	</div>
+</div>
+
+### QGIS Viewer Features
+
+**Opening and exploring projects**
+- Open any local Riverscapes project from your computer
+- **Remote Projects** *(new in v1.1)* — paste a project URL or ID to stream and view any Data Exchange project without downloading it. Streams tile services for the visible map area only, saving time and disk space.
+- Browse the Data Exchange filtered to your current map extent
+
+**Data Exchange integration**
+- **Download projects** from within QGIS — supports selective file download, incremental updates, and progress tracking
+- **Upload projects** to the Data Exchange — supports new uploads, updating existing projects, file-by-file selection, and visibility settings
+
+**GIS tools**
+- Full curated symbology, automatically applied on layer load
+- Project Views — right-click to load a curated set of layers for the current project type
+- Basemaps via WMS
+- Generate project bounds (centroid, bounding box, and polygon extent) for new projects
+- Full right-click context menus on all project tree nodes: add to map, zoom to, browse folder, view metadata, upload, download, close
+
+### Installing the QGIS Viewer
+
+The Viewer is available directly from the QGIS Plugin Manager — no external download needed.
+
+1. In QGIS, go to **Plugins → Manage and Install Plugins...**
+2. Search for **"Riverscapes"**
+3. Select **Riverscapes Viewer** and click **Install Plugin**
+
+Installation takes less than 30 seconds.
+
+**Minimum requirements:** QGIS 3.16 or newer. The recommended version is the current QGIS Long Term Release (LTR 3.40). macOS users should install [QGIS 3.42.1](https://qgis.org) instead, as no LTR 3.40 build is currently available for macOS.
+
+:::info[Federal employees]
+If you work for a federal agency (BLM, USFS, etc.) and have IT-managed machines, see the [tutorial for federal employees](https://viewer.riverscapes.net/tutorials/installing-federal/) which covers common permission issues and how to resolve them.
+:::
+
+**Full QGIS Viewer documentation:** [viewer.riverscapes.net/software-help/help-qgis/](https://viewer.riverscapes.net/software-help/help-qgis/)
+
+---
+
+## ArcGIS Pro Viewer
+
+<div>
+	<div style={{ float: 'right', width: '320px', paddingLeft: '20px', paddingBottom: '12px' }}>
+		<img src="https://viewer.riverscapes.net/images/arcpro/arcpro_viewer_tile.png" alt="Riverscapes Viewer for ArcGIS Pro" style={{ width: '100%', borderRadius: '6px' }} />
+	</div>
+	<div>
+		The ArcGIS Pro Viewer is a free add-in for ArcGIS Pro that provides the same curated project exploration experience within the Esri environment. If your organization is already invested in ArcGIS Pro, this lets you open and explore Riverscapes projects without switching tools.
+
+		It works in standard desktop installations as well as **Azure virtual environments**, making it well-suited for organizations that use cloud-based ArcGIS Pro deployments.
+	</div>
+</div>
+
+### ArcGIS Pro Viewer Features
+
+- Open Riverscapes projects (local `*.rs.xml` files)
+- Add raster and vector layers to the current map with automatic curated symbology
+- Project Views — right-click to add a curated set of layers
+- Basemaps via WMS
+- Update Resources — download the latest symbology and business logic from the central repository
+- Works in Azure virtual environments
+
+### Installing the ArcGIS Pro Viewer
+
+1. Close all Esri products
+2. Download the latest `.addinx` file from [viewer.riverscapes.net/Deploy/install-arcpro/](https://viewer.riverscapes.net/Deploy/install-arcpro/)
+3. Double-click the `.addinx` file to install
+4. Restart ArcGIS Pro — the Riverscapes Viewer toolbar will appear in the top-level menu
+
+**Minimum requirements:** ArcGIS Pro 3.3 or newer and Microsoft .NET Framework 8.
+
+:::note
+Clicking **Update Resources** in the toolbar downloads the latest symbology and business logic files. This process currently locks the ArcGIS Pro interface for several minutes while it completes. Wait for the interface to become responsive again before using the Viewer.
+:::
+
+**Full ArcGIS Pro documentation:** [viewer.riverscapes.net/software-help/help-arcpro/](https://viewer.riverscapes.net/software-help/help-arcpro/)
+
+---
+
+## ArcGIS 10.x Viewer (Legacy)
+
+For users still working in ArcMap (ArcGIS 10.x), a legacy version of the Riverscapes Viewer is available as a free add-in. This version provides the core project exploration experience — open a Riverscapes project, browse the project tree, add layers with curated symbology, use basemaps and project views — but does not include the newer Data Exchange integration features available in the QGIS Viewer.
+
+**Minimum requirements:** ArcGIS 10.6.1 or newer.
+
+:::warning
+ArcGIS 10.x (ArcMap) has been retired by Esri. If you are still using ArcMap, we strongly recommend migrating to either the QGIS Viewer or ArcGIS Pro Viewer. The ArcGIS 10.x Viewer will continue to work but will not receive new features.
+:::
+
+**Installation and help:** [viewer.riverscapes.net/Deploy/install-arc/](https://viewer.riverscapes.net/Deploy/install-arc/)
+
+---
+
+## What Makes the Viewer Work: Business Logic and Symbology
+
+Under the hood, the Riverscapes Viewer uses two types of centrally maintained resource files to drive what you see:
+
+**Business Logic XML** defines how a specific project type should be organized and displayed in the project explorer. It maps entries in the `project.rs.xml` project file to nodes in the tree, controls grouping and hierarchy, and specifies which symbology key applies to each layer. There is one business logic file per project type (BRAT, VBET, RSContext, etc.), so every user who opens a BRAT project sees the same tree structure.
+
+**Symbology files** apply the correct visual style to each layer when it is added to the map. The Viewer uses `.lyr` layer files for ArcGIS, `.qml` files for QGIS, and JSON for the Web Viewer. Each is named after a symbology key (e.g. `DEM`, `Vegetation`, `ValleyBottom`) and is looked up automatically when a layer is added to the map.
+
+Both resource types are maintained in the [RiverscapesXML GitHub repository](https://github.com/Riverscapes/RiverscapesXML) and can be updated at any time directly from within the Viewer using the **Update Resources** feature. Custom business logic and symbology can also be placed alongside individual projects to override defaults — useful for presenting data differently to different audiences or during model development.
+
+**Full technical reference:** [viewer.riverscapes.net/technical-reference/](https://viewer.riverscapes.net/technical-reference/)
+
+---
+
+## The Viewer in the Riverscapes Ecosystem
+
+The Riverscapes Viewer is the primary way to explore data produced by the Riverscapes tools and stored in the Data Exchange:
+
+<ToolsWrapper
+  cardsize="md"
+  cards={[
+    {
+      title: "Riverscapes Data Exchange",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/data-exchange/data-exchange.svg",
+      description: "The cloud platform where Riverscapes projects are stored, shared, and discovered. The Web Viewer is embedded directly into every project page. The QGIS Viewer can download and upload projects directly.",
+      toolUrl: "https://data.riverscapes.net",
+    },
+    {
+      title: "Riverscapes Network Models",
+      logoUrl: "https://cdn.riverscapes.net/icons/network-models/rme/rme.svg",
+      description: "The production-grade geospatial models whose outputs — RSContext, VBET, BRAT, RCAT, Metric Engine, and more — can be opened and explored in any Riverscapes Viewer.",
+      toolUrl: "https://tools.riverscapes.net",
+    },
+    {
+      title: "Riverscapes Studio (QRiS)",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/qris/qris.svg",
+      description: "QGIS plugin for monitoring and restoration planning. QRiS works alongside the QGIS Viewer — view Riverscapes projects as context while designing restoration actions.",
+      toolUrl: "https://qris.riverscapes.net",
+    },
+  ]}
+/>
+
+---
+
+## Source Code and License
+
+The Riverscapes Viewer is open source and free to use. The source code is available on GitHub at [github.com/Riverscapes/RaveAddIn](https://github.com/Riverscapes/RaveAddIn). Bug reports and feature requests can be submitted there.
+
+For questions or support, contact **[support@riverscapes.freshdesk.com](mailto:support@riverscapes.freshdesk.com)**.
