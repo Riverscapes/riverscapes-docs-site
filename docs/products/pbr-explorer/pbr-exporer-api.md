@@ -1,0 +1,124 @@
+---
+title: PBR Explorer API
+---
+
+The [PBR Explorer](https://pbr.riverscapes.net) platform sits on top of a publicly accessible API. Users can call this API to perform the same operations that they would through the PBR web application. This includes, retrieving lists of projects.
+
+The [following script](https://github.com/Riverscapes/data-exchange-scripts/blob/ffb78ebd01ad96c5d416d3419f233450a33ad27e/scripts/scrapers/scrape_pbr.py) for an example to query public projects through the PBR Explorer API and write them to a local JSON file.
+
+:::note
+Querying the API without authentication is limited to public projects. Listing private projects, as well as changing data requires that the script authenticate first.
+:::
+
+
+```python
+"""
+Script to query the PBR GraphQL API for projects using the SearchProjects query.
+"""
+
+import json
+import os
+import sys
+from datetime import datetime
+
+import requests
+
+PBR_GRAPHQL_ENDPOINT = "https://api.pbr.riverscapes.net/"
+
+SEARCH_PROJECTS_QUERY = """
+query SearchProjects {
+    searchProjects(limit: 1000, offset: 0, searchTerms: { textSearch: "" }) {
+        limit
+        offset
+        total
+        results {
+            access
+            dateCreated
+            dateUpdated
+            myPermissions
+            name
+            projectUrl
+            streamName
+            watershedName
+            actions {
+                action
+                value
+            }
+            budget {
+                usDollarVal
+                items {
+                    name
+                    usDollarVal
+                }
+            }
+            constructionElements
+            coverPhoto {
+                dateTaken
+                description
+                id
+                projectId
+                url
+                meta {
+                    key
+                    value
+                }
+            }
+            dates {
+                date
+                name
+            }
+            draft
+            extent
+            geoCoding {
+                continent
+                country
+                provState
+            }
+            goals
+            id
+            lengthKm
+            location {
+                geohash
+                latitude
+                longitude
+            }
+        }
+    }
+}
+"""
+
+
+def fetch_pbr_projects(output_path: str | None = None):
+    """This function fetches projects from the PBR GraphQL API and saves them to a JSON file.
+
+    Args:
+        output_path (Optional[str], optional): The path to the output JSON file. Defaults to None.
+    """
+    headers = {"Content-Type": "application/json"}
+    payload = {"query": SEARCH_PROJECTS_QUERY}
+    print(f"Querying PBR GraphQL API at {PBR_GRAPHQL_ENDPOINT} ...")
+    response = requests.post(PBR_GRAPHQL_ENDPOINT, headers=headers, json=payload, timeout=30)
+    response.raise_for_status()
+    data = response.json()
+    if "errors" in data:
+        print("GraphQL errors:", data["errors"])
+        return
+    projects = data["data"]["searchProjects"]["results"]
+    print(f"Fetched {len(projects)} projects.")
+
+    if output_path is None:
+        output_dir = os.path.join(os.path.expanduser("~"), "PBRProjects")
+        os.makedirs(output_dir, exist_ok=True)
+        output_path = os.path.join(output_dir, f"pbr_projects_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(projects, f, indent=2)
+    print(f"Saved project list to {output_path}")
+
+
+if __name__ == "__main__":
+    # Grab a command line argument for output_path
+    output_arg = sys.argv[1] if len(sys.argv) > 1 else None
+
+    fetch_pbr_projects(output_arg)
+```
