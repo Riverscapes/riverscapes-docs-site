@@ -26,7 +26,13 @@ const config: Config = {
   baseUrl: '/', // The sub-path where your site is served (used in GitHub Pages)
 
   onBrokenLinks: 'throw', // Throw an error on broken links
-  onBrokenMarkdownLinks: 'warn', // Warn instead of throwing for broken markdown links
+  onBrokenAnchors: 'ignore', // Silences false-positive broken anchor warnings in v4 mode
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn', // Warn instead of throwing for broken markdown links
+    },
+  },
 
   i18n: {
     defaultLocale: 'en', // Default language

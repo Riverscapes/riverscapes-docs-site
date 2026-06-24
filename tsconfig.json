@@ -3,6 +3,7 @@
   // Updated to include DOM libs
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "baseUrl": "."
   },
   "exclude": [".docusaurus", "build"]

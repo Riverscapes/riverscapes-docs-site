@@ -97,7 +97,7 @@ const IconCard: React.FC<IconCardProps> = ({ name, files, baseUrl }) => {
             const fileName = filePath.split('/').pop() || filePath
             const fileUrl = `${baseUrl}${filePath}`
 
-            let label = fileName
+            let label
             if (fileName.toLowerCase().endsWith('.svg')) {
               label = 'SVG'
             } else {
