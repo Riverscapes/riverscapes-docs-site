@@ -1,5 +1,6 @@
 ---
 title: PBR Explorer API
+slug: api
 ---
 
 The [PBR Explorer](https://pbr.riverscapes.net) platform sits on top of a publicly accessible API. Users can call this API to perform the same operations that they would through the PBR web application. This includes, retrieving lists of projects.
