@@ -1,0 +1,51 @@
+---
+sidebar_label: Reports
+---
+# The Riverscapes Reporting Platform
+
+## Explore and Summarize Riverscapes — Fast!
+
+Turn complex national datasets into clear insights for your watershed or custom geographic area. Generate professional reports, graphics, and statistics. To run a report for a pre-defined or custom area of interest, you will need a Data Exchange account. See [How to create an account](./data-exchange/help/signup).
+
+<ToolsWrapper
+  cardsize="lg"
+  cards={[
+    {
+      title: "Generate a Report Now!",
+      logoUrl: "https://cdn.riverscapes.net/icons/products/reports/reports.svg",
+      toolUrl: "https://reports.riverscapes.net",
+      description: "Generate riverscapes reports for custom areas drawing on 54,000,000 riverscapes across the conterminous United States."
+    }
+  ]}
+/>
+
+## Based on a massive data lakehouse
+
+Behind the scenes we have a Data Lakehouse built on [AWS Athena](https://aws.amazon.com/athena/) that allows for storing and querying vast amounts of data.
+
+A core element of the data catalog is an up-to-date 'scrape' of tens of thousands of individual projects from the [2025 conterminous United States model run](/initiatives/2025-CONUS-runs.mdx) that includes metrics for over 54,000,000 riverscapes segments. 
+
+We also query data from REST and GraphQL endpoints such as US government GIS hubs (EPA Attains, National Inventory of Dams, etc.), Climate Engine, and Riverscapes [PBR Explorer](./pbr-explorer/).
+
+## Custom Parameters
+
+Depending the report type, users have different parameters they can choose when running a report. These typically include the ability to the following
+
+### Area of Interest
+
+Choose which geographic area the report will be based on. We have several separate tools/modalities to make this easy for you:
+
+1. Choose from a predefined area. We have many standard administrative and hydrographic boundary files already loaded, including US States, BLM Field and District Offices, and watersheds at the HUC2 to HUC12 level. 
+2. Pick a segment of river and DGOs upstream or downstream of it
+3. Upload your own GIS layer
+4. Draw a polygon on a web map
+
+### Units of Measure
+
+All metrics have units of measure defined and reports can be rendered in either metric (SI) or US customary (imperial) units.
+
+## Specifying a new report type
+
+While we have a small and growing library of pre-built report types, if you have a specific report you'd like to see, we can help make that happen.
+
+See the [Standards - Reports](../standards/reports) for details on specifying a new report type.
