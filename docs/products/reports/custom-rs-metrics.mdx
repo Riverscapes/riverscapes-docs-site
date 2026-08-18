@@ -1,0 +1,75 @@
+---
+title: Custom Riverscapes Metrics Dataset
+title_icon: https://cdn.riverscapes.net/icons/products/reports/reports.svg
+description: Documentation for the Custom Riverscapes Metrics Dataset report
+---
+
+<ToolsWrapper
+  cards={[
+  {
+    title: "Create Dataset Now",
+    description: "Use the riverscapes reporting platform to create your own custom riverscapes metrics dataset (sign in required).",
+    toolUrl: "https://reports.riverscapes.net/report/custom-rs-metrics",
+    imageUrl: "https://reports.riverscapes.net/reportTypes/custom-rs-metrics.jpg"
+  }
+  ]}
+  cardsize="md"
+/>
+
+## What is an IGO
+
+IGOs, or integrated geographic objects, are simply points positioned along the centerline of a riverscape (red dots in the figure) on which we store riverscape metrics. IGOs are spaced at the midpoint of the DGO (discrete geographic object) of the riverscape. Put another way, IGOs simplify a segmented polygon riverscape network (i.e. the valley bottom chopped up longitudinally) into a point representation of the riverscape. This makes them a very efficient format for storing large amounts of data over large spatial extents. This current version stores over 100 metrics as attribute fields (columns) for each IGO point.
+
+For the lower 48 US States in the Contiguous United States (CONUS), the Riverscapes Consortium has mapped over 8.5 million miles of riverscape in VBET (the [valley bottom extraction tool](https://tools.riverscapes.net/vbet)) and calculated riverscape metrics from our [riverscape network models](https://tools.riverscapes.net) for over 50,000,000 IGO points. The most commonly used metrics from these models are synthesized with some additional riverscape-specific geomorphic metrics into a [Riverscapes Metric Engine](https://tools.riverscapes.net/rme) project type.  These include over a 100 IGO and DGO metrics thematically clustered into Descriptive, Beaver, Hydrologic, Geomorphic, Anthropogenic and Vegetation Metrics.
+
+![IGO Scraper](/img/products/reports/custom-rs-metrics-graphic.png)
+*Figure - Example of a IGO Scraper Project showing IGO points for a BLM Field Office boundary.*
+
+## A little more about “chopping” up riverscapes
+
+When we take riverscapes (valley bottoms) and break them into mutually exclusive sample frames or DGOs (discrete geographic objects - censu Ablers & Piegay 2011 and Noerbart & Piegay 2013). The DGO is defined laterally by the mapping of the valley bottom margins for the riverscape. The DGO spacing longitudinally is a parameter in VBET and is a function of drainage area (smaller catchments have shorter spacing, and larger catchments have coarser spacing). The DGOs represent mutually exclusive polygons organized streamwise from upstream to downstream in a topologically correct way, to allow downstream pattern analysis. With the exception of the starting DGO (headwater) and the outlet DGO, all DGOs have a relationship to the next upstream, and next downstream DGOs. Some DGOs also have tributary DGOs upstream of them. 
+
+The name IGO - integrated geographic object, comes from metrics that are calculated for a “moving window”, based not just on the values found within that DGO, but based on values extracted from some number of IGOs extending upstream and downstream. For example, an IGO metric calculated based on 2 upstream DGOs, the center DGO and 2 downstream DGOs would be a 5 DGO metric. This method of metric generation can smooth out local irregularities calculated in individual DGOs to get a better sense of the downstream pattern. Other metrics make more sense to be calculated over a longer reach scale. For example, sinuosity, which might be calculated for a channel based on the length of mainstem channel divided by the riverscape centerline length, might have low values (e.g. close to 1 - suggesting straight), for too short of length scales, and may make more sense to calculate as the ∑ mainstem channel length divided by the ∑ riverscape centerline length over the larger window. Either way, the values calculated for the moving window, I stored on the IGO point. 
+
+Using the sinuosity example above, an alternative approach would be to coarsen up the DGO spacing to the appropriate length scale. But doing so coarsens the resolution at which a longitudinal pattern can be resolved when only calculated in mutually exclusive DGOs.. This IGO moving window approach  allows the spatial resolution of IGO points to remain aligned with a finder DGO spacing or resolution.  
+
+While the IGO name, and IGO-based metrics made sense to store on IGO points, for convenience we also store DGO-based metrics on the same geometry (point). The DGO metrics are those metrics that are calculated entirely locally from values and zonal statistics within the DGO boundary. 
+
+## Metrics
+
+There are three types of metrics. What this facilitates is the calculation of zonal statistics of the other GIS features that fall within that space.
+
+- Riverscape Core Metrics
+- Riverscape length (along riverscape centerline) for entire levelpath (system)
+- Riverscape length within sample frame (DGO)
+- Riverscape area for entire levelpath
+- Riverscape area within sample frame
+- Integrated riverscape width
+
+### Base Metric Types
+
+| GIS Feature Type     | Zonal Statistic                                      | Attribute-based                                                                 |
+|----------------------|------------------------------------------------------|---------------------------------------------------------------------------------|
+| Point                | Feature *Count*                                      | Distributions by attribute categories *%* by attribute categories *Count* by attribute categories |
+| Polyline             | *Length* Feature *Count*                             | Distributions by attribute categories *%* by attribute categories *Count* by attribute categories *Length* by attribute categories |
+| Polygon              | *Area Perimeter* Feature *Count*                     | Distributions by attribute categories *%* by attribute categories *Count* by attribute categories *Area* by attribute categories |
+| Raster (continuous)  | Distributions by bins % by bins Cell count by bins   | NA                                                                              |
+| Raster (categorical) | Distributions by attribute categories *%* by attribute categories Cell *count* by attribute categories |                                                                                 |
+
+Derivative metrics can then be calculated from any combination of the above core riverscape metrics and base metrics.  An example might be relative flow length - defined by Bartelt (2025) as the total length of channel(s) divided by the length of riverscape. This would require the riverscape core metric of total length of riverscape centerline within centerline and the base metric within the DGO of total length of channel centerlines.
+
+## Acknowledgements
+
+This report type is available for CONUS thanks to the generous support of the Bureau of Land Management. It is based on a synthesis of models run with funding from [Bureau of Land Management Aquatics Program](https://www.blm.gov/programs/aquatics) and the [NRCS CEAP Wetlands](https://www.nrcs.usda.gov/ceap) program.
+
+If you are interested in how this type of report could be made available for your region or country (outside the US), please reach out at [support@riverscapes.freshdesk.com](mailto:support@riverscapes.freshdesk.com). 
+
+## References
+
+Alber, A., & Piegay, H. (2011). Spatial disaggregation and aggregation procedures for characterizing fluvial features at the network-scale: Application to the Rhone basin (France). Geomorphology, 125(3), 343–360. [https://doi.org/10.1016/j.geomorph.2010.09.009](https://doi.org/10.1016/j.geomorph.2010.09.009)
+
+Bartelt, K. M. (2025). Mapping valley bottom inundation patterns from beaver dam activity: A potential proxy for hydrologic inefficiency. PLOS Water, 4(11), e0000428. [https://doi.org/10.1371/journal/pwat.0000428](https://doi.org/10.1371/journal/pwat.0000428)
+
+Glassic, H. C., Al-Chokhachy, R., Wheaton, J., Macfarlane, W. W., Jordan, C. E., Murphy, B., et al. (2025). Principles of Riverscape Health. WIREs Water, 12(4), e70028. [https://doi.org/10.1002/wat2.70028](https://doi.org/10.1002/wat2.70028)
+
+Notebaert, B., & Piegay, H. (2013). Multi-scale factors controlling the pattern of floodplain width at a network scale: The case of the Rhone basin, France. Geomorphology, 200, 155–171. [https://doi.org/10.1016/j.geomorph.2013.03.014](https://doi.org/10.1016/j.geomorph.2013.03.014)
